@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    host: "https://bibliaclube.com.br",
     sitemap: "https://bibliaclube.com.br/sitemap.xml",
   };
 }

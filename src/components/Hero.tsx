@@ -19,10 +19,10 @@ export function Hero() {
         className="absolute -right-16 top-40 size-64 rounded-full border border-[var(--gold)]/20"
       />
 
-      <div className="container-site grid min-h-[calc(100vh-5rem)] items-center gap-14 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
+      <div className="container-site grid min-h-[calc(100vh-5rem)] items-center gap-14 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:py-16">
         <div className="relative z-10">
           <span className="eyebrow">Conhecimento que aproxima</span>
-          <h1 className="display-title mt-6 max-w-3xl text-[clamp(3.2rem,7vw,6.2rem)] text-[var(--navy)]">
+          <h1 className="display-title mt-6 max-w-3xl text-[clamp(2.8rem,5.4vw,5rem)] text-[var(--navy)]">
             Aprenda, jogue e se conecte com a{" "}
             <span className="relative inline-block text-[var(--olive-dark)]">
               Bíblia
@@ -43,12 +43,12 @@ export function Hero() {
             de um jeito leve e divertido.
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            Quizzes, jogos e dinâmicas bíblicas para grupos, famílias,
-            jovens e todos que desejam aprender mais sobre a Palavra.
+            Quiz bíblico grátis, jogos bíblicos online e dinâmicas para grupos,
+            famílias, jovens e todos que desejam aprender mais sobre a Palavra.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href="#quiz" className="button-primary">
-              Começar Quiz
+              Jogar quiz grátis
               <span aria-hidden="true">→</span>
             </a>
             <a href="#como-funciona" className="button-secondary">

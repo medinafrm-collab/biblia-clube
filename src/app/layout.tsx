@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bibliaclube.com.br"),
   title: {
-    default: "Bíblia Clube — Jogos e Dinâmicas Bíblicas",
+    default: "Bíblia Clube — Jogos Bíblicos e Quiz Online",
     template: "%s | Bíblia Clube",
   },
   description:
-    "Quizzes, jogos e dinâmicas bíblicas para grupos, igrejas, células, famílias e todos que desejam aprender mais sobre a Bíblia de forma leve e divertida.",
+    "Quiz bíblico grátis, jogos bíblicos online e dinâmicas para aprender mais sobre a Bíblia de forma leve e divertida.",
   keywords: [
-    "quiz bíblico",
-    "jogos bíblicos",
+    "quiz bíblico grátis",
+    "quiz bíblico online",
+    "jogos bíblicos grátis",
+    "jogos bíblicos online",
     "dinâmicas bíblicas",
-    "jovens cristãos",
-    "células",
-    "escola bíblica",
+    "perguntas bíblicas",
+    "desafio bíblico",
   ],
   authors: [{ name: "Bíblia Clube" }],
   creator: "Bíblia Clube",
@@ -24,19 +27,26 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://bibliaclube.com.br",
     siteName: "Bíblia Clube",
-    title: "Bíblia Clube — Jogos e Dinâmicas Bíblicas",
+    title: "Bíblia Clube — Jogos Bíblicos e Quiz Online",
     description:
-      "Aprenda, jogue e se conecte com a Bíblia de um jeito leve e divertido.",
+      "Jogue quiz bíblico grátis e desafios sobre a Bíblia diretamente no navegador.",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Bíblia Clube — Jogos e Dinâmicas Bíblicas",
+    card: "summary",
+    title: "Bíblia Clube — Jogos Bíblicos e Quiz Online",
     description:
-      "Quizzes, jogos e dinâmicas bíblicas para aprender de forma leve.",
+      "Quiz bíblico grátis e jogos online para aprender de forma leve.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -47,7 +57,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

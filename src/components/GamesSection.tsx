@@ -5,18 +5,22 @@ const games = [
       "Uma seleção variada para aprender sobre personagens, livros e histórias conhecidas.",
     tag: "Disponível",
     featured: true,
+    href: "#quiz",
     icon: "✦",
   },
   {
     title: "Desafios por Tema",
-    description: "Rodadas sobre Jesus, profetas, mulheres da Bíblia e muito mais.",
-    tag: "Em breve",
+    description:
+      "Rodadas sobre o Antigo Testamento, Jesus e grandes personagens bíblicos.",
+    tag: "Disponível",
+    href: "/quiz-biblico",
     icon: "◎",
   },
   {
     title: "Modo Grupo",
     description: "Perguntas e desafios pensados para jogar em equipes.",
-    tag: "Em breve",
+    tag: "Disponível",
+    href: "/modo-grupo",
     icon: "♧",
   },
   {
@@ -37,12 +41,12 @@ export function GamesSection() {
   return (
     <section id="jogos" className="section-space bg-white">
       <div className="container-site">
-        <span className="eyebrow">Jogos disponíveis</span>
+        <span className="eyebrow">Jogos bíblicos grátis</span>
         <div className="grid items-end gap-6 lg:grid-cols-2">
           <h2 className="section-title">Uma biblioteca que vai crescer com você.</h2>
           <p className="section-copy lg:justify-self-end">
-            Este é só o começo. O catálogo foi pensado para receber novas
-            dinâmicas sem perder a simplicidade.
+            Jogue online sem cadastro. O catálogo reúne quiz e desafios
+            bíblicos gratuitos e continuará recebendo novas dinâmicas.
           </p>
         </div>
 
@@ -91,10 +95,14 @@ export function GamesSection() {
               >
                 {game.description}
               </p>
-              {game.featured && (
+              {game.href && (
                 <a
-                  href="#quiz"
-                  className="mt-auto pt-7 text-sm font-extrabold text-[var(--gold)] no-underline"
+                  href={game.href}
+                  className={`mt-auto pt-7 text-sm font-extrabold no-underline ${
+                    game.featured
+                      ? "text-[var(--gold)]"
+                      : "text-[var(--olive-dark)]"
+                  }`}
                 >
                   Jogar agora <span aria-hidden="true">→</span>
                 </a>
