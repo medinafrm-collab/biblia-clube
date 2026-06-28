@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return routes.map((route) => ({
-    url: `https://bibliaclube.com.br${route}`,
+    url: `https://www.bibliaclube.com.br${route}`,
     lastModified: new Date(),
     changeFrequency:
       route === "" || route.startsWith("/quiz-biblico")

@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bibliaclube.com.br"),
+  metadataBase: new URL("https://www.bibliaclube.com.br"),
   title: {
     default: "Bíblia Clube — Jogos Bíblicos e Quiz Online",
     template: "%s | Bíblia Clube",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://bibliaclube.com.br",
+    url: "https://www.bibliaclube.com.br",
     siteName: "Bíblia Clube",
     title: "Bíblia Clube — Jogos Bíblicos e Quiz Online",
     description:
