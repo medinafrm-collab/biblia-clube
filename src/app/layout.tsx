@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -60,12 +59,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <Script
-          id="google-adsense"
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150008386108071"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
         />
       </head>
       <body>
