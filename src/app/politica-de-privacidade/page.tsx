@@ -24,8 +24,8 @@ export default function PoliticaDePrivacidadePage() {
       </div>
       <div>
         <h2>Cookies e preferências</h2>
-        <p className="mt-4">Atualmente, usamos o cookie necessário <strong>biblia_clube_consent</strong> para guardar por até 180 dias a escolha feita no aviso de privacidade. Ele evita que a mensagem seja exibida a cada visita.</p>
-        <p className="mt-4">A escolha pode ser revista em &quot;Preferências de privacidade&quot;, no rodapé, ou apagando os cookies no navegador.</p>
+        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google AdSense pode utilizar cookies, armazenamento local e outros identificadores para publicidade, segurança e medição, conforme a disponibilidade dos anúncios e a localização do visitante.</p>
+        <p className="mt-4">Nas regiões em que o consentimento é exigido, as escolhas são apresentadas e registradas pela plataforma de gestão de consentimento certificada do Google. Ela permite consentir, não consentir, gerenciar opções e, quando aplicável, rever uma decisão anterior.</p>
       </div>
       <div>
         <h2>Finalidades</h2>
@@ -44,7 +44,7 @@ export default function PoliticaDePrivacidadePage() {
       </div>
       <div>
         <h2>Publicidade</h2>
-        <p className="mt-4">O Bíblia Clube ainda não exibe anúncios. Se o Google AdSense ou outro serviço for ativado, esta política será atualizada e os mecanismos exigidos de consentimento serão configurados antes da publicidade personalizada.</p>
+        <p className="mt-4">O Bíblia Clube está em processo de análise pelo Google AdSense e ainda não exibe anúncios. O código do serviço está presente para verificação do site e futura veiculação. A plataforma de gestão de consentimento do Google foi configurada para controlar as escolhas exigidas antes da publicidade personalizada nas regiões aplicáveis.</p>
         <p className="mt-4">Serviços de publicidade podem utilizar cookies, endereços IP, web beacons e outros identificadores. Saiba <a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" target="_blank" rel="noreferrer">como o Google usa dados em sites de parceiros</a>.</p>
       </div>
       <div>
