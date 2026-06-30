@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { PrivacySettingsButton } from "./PrivacySettingsButton";
 
 const links = [
   { label: "Sobre", href: "/sobre" },
@@ -36,7 +37,10 @@ export function Footer() {
       <div className="border-t border-[var(--border)]">
         <div className="container-site flex flex-col gap-2 py-5 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Bíblia Clube. Todos os direitos reservados.</p>
-          <p>bibliaclube.com.br</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <PrivacySettingsButton />
+            <p>bibliaclube.com.br</p>
+          </div>
         </div>
       </div>
     </footer>
