@@ -13,11 +13,14 @@ export function CookieConsent() {
     const saved = document.cookie
       .split("; ")
       .some((item) => item.startsWith(`${COOKIE_NAME}=`));
-    setOpen(!saved);
+    const timer = window.setTimeout(() => setOpen(!saved), 0);
 
     const reopen = () => setOpen(true);
     window.addEventListener(OPEN_EVENT, reopen);
-    return () => window.removeEventListener(OPEN_EVENT, reopen);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener(OPEN_EVENT, reopen);
+    };
   }, []);
 
   function choose(value: "all" | "necessary") {
@@ -61,4 +64,3 @@ export function CookieConsent() {
     </aside>
   );
 }
-
