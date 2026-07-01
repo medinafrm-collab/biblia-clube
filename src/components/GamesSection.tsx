@@ -64,7 +64,7 @@ export function GamesSection() {
               key={game.title}
               className={`card flex min-h-64 flex-col p-7 ${
                 game.featured
-                  ? "border-[var(--navy)] bg-[var(--navy)] text-white md:col-span-2 lg:col-span-1"
+                  ? "!border-[var(--navy)] !bg-[var(--navy)] text-white md:col-span-2 lg:col-span-1"
                   : ""
               }`}
             >
