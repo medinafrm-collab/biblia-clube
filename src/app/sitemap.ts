@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/quiz-biblico/jesus-e-evangelhos",
     "/quiz-biblico/personagens-biblicos",
     "/modo-grupo",
+    "/ligue-os-pares",
     "/sobre",
     "/contato",
     "/politica-de-privacidade",

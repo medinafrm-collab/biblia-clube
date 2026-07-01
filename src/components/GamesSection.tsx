@@ -24,6 +24,14 @@ const games = [
     icon: "♧",
   },
   {
+    title: "Ligue os Pares",
+    description:
+      "Conecte personagens, livros, lugares e acontecimentos bíblicos.",
+    tag: "Novo",
+    href: "/ligue-os-pares",
+    icon: "↔",
+  },
+  {
     title: "Ranking Bíblico",
     description: "Acompanhe pontuações e celebre a evolução da comunidade.",
     tag: "Em breve",
