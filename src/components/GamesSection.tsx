@@ -4,7 +4,6 @@ const games = [
     description:
       "Uma seleção variada para aprender sobre personagens, livros e histórias conhecidas.",
     tag: "Disponível",
-    featured: true,
     href: "#quiz",
     icon: "✦",
   },
@@ -62,55 +61,31 @@ export function GamesSection() {
           {games.map((game) => (
             <article
               key={game.title}
-              className={`card flex min-h-64 flex-col p-7 ${
-                game.featured
-                  ? "!border-[var(--navy)] !bg-[var(--navy)] text-white md:col-span-2 lg:col-span-1"
-                  : ""
-              }`}
+              className="card flex min-h-64 flex-col p-7"
             >
               <div className="flex items-start justify-between gap-4">
                 <span
                   aria-hidden="true"
-                  className={`grid size-12 place-items-center rounded-2xl text-xl ${
-                    game.featured
-                      ? "bg-white/10 text-[var(--gold)]"
-                      : "bg-[var(--surface-soft)] text-[var(--olive-dark)]"
-                  }`}
+                  className="grid size-12 place-items-center rounded-2xl bg-[var(--surface-soft)] text-xl text-[var(--olive-dark)]"
                 >
                   {game.icon}
                 </span>
                 <span
-                  className={`rounded-full px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] ${
-                    game.featured
-                      ? "bg-[var(--gold)] text-[var(--navy)]"
-                      : "bg-[var(--gold-soft)] text-[var(--olive-dark)]"
-                  }`}
+                  className="rounded-full bg-[var(--gold-soft)] px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-[var(--olive-dark)]"
                 >
                   {game.tag}
                 </span>
               </div>
-              <h3
-                className={`mt-8 font-serif text-2xl ${
-                  game.featured ? "text-white" : "text-[var(--navy)]"
-                }`}
-              >
+              <h3 className="mt-8 font-serif text-2xl text-[var(--navy)]">
                 {game.title}
               </h3>
-              <p
-                className={`mt-3 leading-7 ${
-                  game.featured ? "text-white/70" : "text-[var(--muted)]"
-                }`}
-              >
+              <p className="mt-3 leading-7 text-[var(--muted)]">
                 {game.description}
               </p>
               {game.href && (
                 <a
                   href={game.href}
-                  className={`mt-auto pt-7 text-sm font-extrabold no-underline ${
-                    game.featured
-                      ? "text-[var(--gold)]"
-                      : "text-[var(--olive-dark)]"
-                  }`}
+                  className="mt-auto inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-[var(--navy)] px-5 text-sm font-extrabold text-white no-underline shadow-sm transition hover:bg-[var(--navy-light)]"
                 >
                   Jogar agora <span aria-hidden="true">→</span>
                 </a>
