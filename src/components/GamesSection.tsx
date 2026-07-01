@@ -50,7 +50,7 @@ export function GamesSection() {
       <div className="container-site">
         <span className="eyebrow">Jogos bíblicos grátis</span>
         <div className="grid items-end gap-6 lg:grid-cols-2">
-          <h2 className="section-title">Uma biblioteca que vai crescer com você.</h2>
+          <h2 className="section-title">Novas formas de aprender a Bíblia jogando.</h2>
           <p className="section-copy lg:justify-self-end">
             Jogue online sem cadastro. O catálogo reúne quiz e desafios
             bíblicos gratuitos e continuará recebendo novas dinâmicas.
