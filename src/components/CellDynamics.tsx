@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { cellDynamics, type CellAudience } from "@/data/cellDynamics";
 
 type FilterId = "todos" | CellAudience | "quebra-gelos";
@@ -89,6 +90,7 @@ export function CellDynamics() {
             ))}
           </div>
 
+          <div className="grid gap-4">
           <article className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6 sm:p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
@@ -152,6 +154,8 @@ export function CellDynamics() {
               </div>
             </div>
           </article>
+            <AdPlaceholder compact />
+          </div>
         </div>
       </div>
     </section>

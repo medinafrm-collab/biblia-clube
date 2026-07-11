@@ -1,18 +1,21 @@
-export function AdPlaceholder() {
+type AdPlaceholderProps = {
+  compact?: boolean;
+};
+
+export function AdPlaceholder({ compact = false }: AdPlaceholderProps) {
   return (
     <aside
-      aria-label="Espaço reservado para apoiadores"
-      className="border-y border-[var(--border)] bg-[var(--surface-soft)] py-5"
+      aria-label="Espaço reservado para publicidade"
+      className="border-y border-[var(--border)] bg-[var(--surface-soft)] py-6"
     >
-      <div className="container-site flex flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-3">
-        <span
-          aria-hidden="true"
-          className="grid size-7 place-items-center rounded-full border border-[var(--border)] bg-white text-xs text-[var(--olive)]"
-        >
-          ♡
+      <div
+        className={`${compact ? "" : "container-site "}flex min-h-20 flex-col items-center justify-center gap-2 text-center`}
+      >
+        <span className="text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--olive-dark)]">
+          Publicidade
         </span>
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
-          Espaço reservado para futuros apoiadores do projeto
+        <p className="text-xs leading-5 text-[var(--muted)]">
+          Espaço reservado para anúncios relevantes
         </p>
       </div>
     </aside>
