@@ -31,15 +31,18 @@ const games = [
     icon: "↔",
   },
   {
-    title: "Ranking Bíblico",
-    description: "Acompanhe pontuações e celebre a evolução da comunidade.",
-    tag: "Em breve",
-    icon: "♜",
+    title: "Complete a Frase",
+    description:
+      "Escolha a continuação correta de frases e passagens bíblicas.",
+    tag: "Novo",
+    href: "/complete-a-frase",
+    icon: "✎",
   },
   {
     title: "Dinâmicas para Células",
     description: "Atividades prontas para quebrar o gelo, conversar e aprender.",
-    tag: "Em breve",
+    tag: "Novo",
+    href: "/dinamicas-para-celulas",
     icon: "◇",
   },
 ];

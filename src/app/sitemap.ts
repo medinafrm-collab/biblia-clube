@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/quiz-biblico/personagens-biblicos",
     "/modo-grupo",
     "/ligue-os-pares",
+    "/complete-a-frase",
+    "/dinamicas-para-celulas",
     "/sobre",
     "/contato",
     "/politica-de-privacidade",
