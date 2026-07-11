@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Dinâmicas para Células | Bíblia Clube",
+  title: "Dinâmicas para Células",
   description:
     "Dinâmicas para células, grupos de jovens e casais. Encontros prontos para quebrar o gelo, conversar e aprender juntos.",
   alternates: { canonical: "/dinamicas-para-celulas" },
