@@ -10,9 +10,11 @@ type QuizTopicPageProps = {
 };
 
 export function QuizTopicPage({ topic }: QuizTopicPageProps) {
-  const questionCount = quizQuestions.filter((question) =>
-    question.topics.includes(topic.id),
-  ).length;
+  const journeyCount = new Set(
+    quizQuestions
+      .filter((question) => question.topics.includes(topic.id))
+      .map((question) => question.journey ?? 1),
+  ).size;
 
   return (
     <>
@@ -64,12 +66,14 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-5">
-              <p className="font-bold text-[var(--navy)]">{questionCount} perguntas com correção imediata</p>
+              <p className="font-bold text-[var(--navy)]">
+                {journeyCount} {journeyCount === 1 ? "jornada disponível" : "jornadas disponíveis"} com correção imediata
+              </p>
               <nav aria-label="Outros temas de quiz" className="flex flex-wrap gap-2">
                 {quizTopics.map((item) => (
                   <Link
                     key={item.id}
-                    href={item.path}
+                    href={`${item.path}#quiz`}
                     aria-current={item.id === topic.id ? "page" : undefined}
                     className={`rounded-md border px-3 py-2 text-sm font-bold no-underline transition ${item.id === topic.id ? "border-[var(--navy)] bg-[var(--navy)] text-white" : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--gold)] hover:text-[var(--navy)]"}`}
                   >

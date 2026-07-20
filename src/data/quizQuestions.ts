@@ -1,3 +1,5 @@
+import { quizQuestionExpansions } from "./quizQuestionExpansions";
+
 export type QuizTopicId =
   | "geral"
   | "antigo-testamento"
@@ -7,6 +9,7 @@ export type QuizTopicId =
 export type QuizQuestion = {
   id: number;
   topics: QuizTopicId[];
+  journey?: 1 | 2;
   question: string;
   options: string[];
   correctAnswer: string;
@@ -450,4 +453,5 @@ export const quizQuestions: QuizQuestion[] = [
       "Por ser de baixa estatura, Zaqueu subiu em uma árvore para ver Jesus quando ele passava por Jericó.",
     reference: "Lucas 19:1–10",
   },
+  ...quizQuestionExpansions,
 ];

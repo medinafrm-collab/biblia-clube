@@ -1,5 +1,5 @@
 const miniCards = [
-  { value: "12", label: "perguntas no quiz" },
+  { value: "6+", label: "jogos e dinâmicas" },
   { value: "100%", label: "gratuito para jogar" },
   { value: "1–5", label: "minutos por rodada" },
 ];

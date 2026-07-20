@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   quizQuestions,
   type QuizTopicId,
@@ -25,20 +25,48 @@ function getResultMessage(percentage: number) {
   return "Excelente! Você mandou muito bem no Quiz Bíblico.";
 }
 
+function getQuestionJourney(question: { journey?: 1 | 2 }) {
+  return question.journey ?? 1;
+}
+
+function scrollToElement(
+  element: HTMLElement | null,
+  behavior: ScrollBehavior = "smooth",
+) {
+  if (!element) return;
+
+  const top = element.getBoundingClientRect().top + window.scrollY - 96;
+  window.scrollTo({
+    top: Math.max(top, 0),
+    behavior,
+  });
+}
+
 export function Quiz({
   initialTopic = "geral",
   showIntroduction = true,
   showTopicSelector = true,
 }: QuizProps = {}) {
+  const quizCardRef = useRef<HTMLDivElement>(null);
   const [selectedTopic, setSelectedTopic] =
     useState<QuizTopicId>(initialTopic);
+  const [selectedJourney, setSelectedJourney] = useState<1 | 2>(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
 
-  const activeQuestions = quizQuestions.filter((question) =>
-    question.topics.includes(selectedTopic),
+  const availableJourneys = Array.from(
+    new Set(
+      quizQuestions
+        .filter((question) => question.topics.includes(selectedTopic))
+        .map(getQuestionJourney),
+    ),
+  ).sort((a, b) => a - b);
+  const activeQuestions = quizQuestions.filter(
+    (question) =>
+      question.topics.includes(selectedTopic) &&
+      getQuestionJourney(question) === selectedJourney,
   );
   const selectedTopicLabel =
     quizTopics.find((topic) => topic.id === selectedTopic)?.label ?? "Geral";
@@ -74,10 +102,26 @@ export function Quiz({
 
   function changeTopic(topic: QuizTopicId) {
     setSelectedTopic(topic);
+    setSelectedJourney(1);
     setCurrentIndex(0);
     setSelectedAnswer(null);
     setScore(0);
     setIsFinished(false);
+  }
+
+  function changeJourney(journey: 1 | 2, trigger?: HTMLButtonElement) {
+    trigger?.blur();
+    setSelectedJourney(journey);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setScore(0);
+    setIsFinished(false);
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => scrollToElement(quizCardRef.current));
+    });
+    window.setTimeout(() => scrollToElement(quizCardRef.current, "auto"), 120);
+    window.setTimeout(() => scrollToElement(quizCardRef.current, "auto"), 280);
   }
 
   return (
@@ -90,53 +134,117 @@ export function Quiz({
               Escolha seu desafio bíblico.
             </h2>
             <p className="section-copy mx-auto">
-              Jogue uma rodada geral ou concentre-se em um assunto para
-              aprender um pouco mais a cada resposta.
+              Primeiro selecione um tema. Depois escolha uma jornada para
+              começar uma rodada com perguntas e respostas comentadas.
             </p>
           </div>
         )}
 
         {showTopicSelector && (
-          <div
-            id="quiz-topics"
-            className="mx-auto mt-10 grid max-w-[820px] gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-2 lg:grid-cols-4"
-            role="radiogroup"
-            aria-label="Tema do quiz"
-          >
-            {quizTopics.map((topic) => {
-              const questionCount = quizQuestions.filter((question) =>
-                question.topics.includes(topic.id),
-              ).length;
-              const isActive = selectedTopic === topic.id;
+          <>
+            <div className="mx-auto mt-10 max-w-[820px]">
+              <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive)]">
+                1. Escolha uma temática
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Cada temática reúne jornadas diferentes para você jogar por
+                assunto.
+              </p>
+            </div>
+            <div
+              id="quiz-topics"
+              className="mx-auto mt-4 grid max-w-[820px] gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-2 lg:grid-cols-4"
+              role="radiogroup"
+              aria-label="Tema do quiz"
+            >
+              {quizTopics.map((topic) => {
+                const topicQuestions = quizQuestions.filter((question) =>
+                  question.topics.includes(topic.id),
+                );
+                const topicJourneyCount = new Set(
+                  topicQuestions.map(getQuestionJourney),
+                ).size;
+                const isActive = selectedTopic === topic.id;
 
-              return (
-                <button
-                  key={topic.id}
-                  type="button"
-                  role="radio"
-                  aria-checked={isActive}
-                  onClick={() => changeTopic(topic.id)}
-                  className={`min-h-14 rounded-md px-4 py-2 text-sm font-bold transition ${
-                    isActive
-                      ? "bg-[var(--navy)] text-white shadow-sm"
-                      : "text-[var(--muted)] hover:bg-[var(--surface-soft)] hover:text-[var(--navy)]"
-                  }`}
-                >
-                  <span className="block">{topic.label}</span>
-                  <span
-                    className={`mt-0.5 block text-xs font-normal ${
-                      isActive ? "text-white/65" : "text-[var(--muted)]"
+                return (
+                  <button
+                    key={topic.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={isActive}
+                    onClick={() => changeTopic(topic.id)}
+                    className={`min-h-14 rounded-md px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--navy)] text-white shadow-sm"
+                        : "text-[var(--muted)] hover:bg-[var(--surface-soft)] hover:text-[var(--navy)]"
                     }`}
                   >
-                    {questionCount} perguntas
-                  </span>
-                </button>
-              );
-            })}
+                    <span className="block">{topic.label}</span>
+                    <span
+                      className={`mt-0.5 block text-xs font-normal ${
+                        isActive ? "text-white/65" : "text-[var(--muted)]"
+                      }`}
+                    >
+                      {topicJourneyCount} jornadas
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        {availableJourneys.length > 1 && (
+          <div className={`mx-auto max-w-[820px] ${showTopicSelector ? "mt-7" : "mt-2"}`}>
+            <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive)]">
+              {showTopicSelector ? "2. Escolha uma jornada" : "Escolha uma jornada"}
+            </p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              A jornada define a rodada de perguntas dentro da temática
+              selecionada.
+            </p>
+            <div
+              className="mt-4 grid max-w-md gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-2"
+              role="radiogroup"
+              aria-label="Jornada do quiz"
+            >
+              {availableJourneys.map((journey) => {
+                const journeyQuestions = quizQuestions.filter(
+                  (question) =>
+                    question.topics.includes(selectedTopic) &&
+                    getQuestionJourney(question) === journey,
+                );
+                const isActive = selectedJourney === journey;
+
+                return (
+                  <button
+                    key={journey}
+                    type="button"
+                    role="radio"
+                    aria-checked={isActive}
+                    onMouseDown={(event) => event.preventDefault()}
+                    onClick={(event) => changeJourney(journey, event.currentTarget)}
+                    className={`min-h-12 rounded-md px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--gold-soft)] text-[var(--olive-dark)] shadow-sm"
+                        : "text-[var(--muted)] hover:bg-[var(--surface-soft)] hover:text-[var(--navy)]"
+                    }`}
+                  >
+                    <span className="block">Jornada {journey}</span>
+                    <span className="mt-0.5 block text-xs font-normal text-[var(--muted)]">
+                      {journeyQuestions.length} perguntas
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
 
-        <div className="card mx-auto mt-12 max-w-[820px] overflow-hidden !rounded-[2rem]">
+        <div
+          ref={quizCardRef}
+          className="card mx-auto mt-12 max-w-[820px] scroll-mt-24 overflow-hidden !rounded-[2rem]"
+        >
           {!isFinished ? (
             <>
               <div className="bg-[var(--navy)] px-6 py-6 text-white sm:px-10">
