@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { cellDynamics, type CellAudience } from "@/data/cellDynamics";
 
 type FilterId = "todos" | CellAudience | "quebra-gelos";
@@ -154,7 +153,6 @@ export function CellDynamics() {
               </div>
             </div>
           </article>
-            <AdPlaceholder compact />
           </div>
         </div>
       </div>

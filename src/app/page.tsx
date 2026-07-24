@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Footer } from "@/components/Footer";
 import { FutureSection } from "@/components/FutureSection";
 import { GamesSection } from "@/components/GamesSection";
@@ -95,7 +94,6 @@ export default function Home() {
       <main>
         <Hero />
         <HowItWorks />
-        <AdPlaceholder />
         <Quiz />
         <GamesSection />
         <PremiumSection />

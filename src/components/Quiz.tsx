@@ -173,7 +173,7 @@ export function Quiz({
                     role="radio"
                     aria-checked={isActive}
                     onClick={() => changeTopic(topic.id)}
-                    className={`min-h-14 rounded-md px-4 py-2 text-sm font-bold transition ${
+                    className={`min-h-14 rounded-md px-4 py-2 text-sm font-bold transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                       isActive
                         ? "bg-[var(--navy)] text-white shadow-sm"
                         : "text-[var(--muted)] hover:bg-[var(--surface-soft)] hover:text-[var(--navy)]"
@@ -224,7 +224,7 @@ export function Quiz({
                     aria-checked={isActive}
                     onMouseDown={(event) => event.preventDefault()}
                     onClick={(event) => changeJourney(journey, event.currentTarget)}
-                    className={`min-h-12 rounded-md px-4 py-2 text-sm font-bold transition ${
+                    className={`min-h-12 rounded-md px-4 py-2 text-sm font-bold transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                       isActive
                         ? "bg-[var(--gold-soft)] text-[var(--olive-dark)] shadow-sm"
                         : "text-[var(--muted)] hover:bg-[var(--surface-soft)] hover:text-[var(--navy)]"
@@ -298,7 +298,8 @@ export function Quiz({
                         type="button"
                         disabled={selectedAnswer !== null}
                         onClick={() => selectAnswer(option)}
-                        className={`flex min-h-16 items-center gap-4 rounded-2xl border p-4 text-left transition ${
+                        aria-label={`Alternativa ${String.fromCharCode(65 + index)}: ${option}`}
+                        className={`flex min-h-16 items-center gap-4 rounded-2xl border p-4 text-left transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                           isCorrect
                             ? "border-[var(--success)] bg-[var(--success-soft)] text-[var(--success)]"
                             : isWrong
@@ -310,6 +311,15 @@ export function Quiz({
                           {isCorrect ? "✓" : isWrong ? "×" : String.fromCharCode(65 + index)}
                         </span>
                         <span className="font-bold">{option}</span>
+                        {selectedAnswer !== null && (
+                          <span className="sr-only">
+                            {isCorrect
+                              ? "Resposta correta."
+                              : isWrong
+                                ? "Resposta incorreta."
+                                : ""}
+                          </span>
+                        )}
                       </button>
                     );
                   })}

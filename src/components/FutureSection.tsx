@@ -1,12 +1,8 @@
 const futureItems = [
-  "Quizzes por tema",
-  "Rankings e desafios",
-  "Modo multiplayer",
+  "Novas jornadas",
+  "Ranking bíblico",
   "Materiais para líderes",
-  "Jogos educativos",
-  "Área de assinantes",
-  "Materiais digitais",
-  "Conteúdos exclusivos",
+  "Conteúdos especiais",
 ];
 
 export function FutureSection() {
@@ -17,9 +13,9 @@ export function FutureSection() {
           <span className="eyebrow">Futuro do projeto</span>
           <h2 className="section-title">Um clube feito para crescer em comunidade.</h2>
           <p className="section-copy">
-            Queremos transformar bons momentos de aprendizado em experiências
-            que aproximem pessoas, atravessem gerações e apoiem quem cuida de
-            grupos e comunidades.
+            As próximas evoluções serão lançadas aos poucos, priorizando
+            conteúdos gratuitos, melhorias de experiência e recursos úteis para
+            quem conduz grupos e comunidades.
           </p>
           <a href="/sobre" className="button-secondary mt-8">
             Conheça nossa proposta
@@ -27,12 +23,12 @@ export function FutureSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
           {futureItems.map((item, index) => (
             <div
               key={item}
               className={`card flex min-h-32 flex-col justify-between p-5 sm:p-6 ${
-                index === 0 || index === 5 ? "bg-[var(--surface-soft)]" : ""
+                index === 0 ? "bg-[var(--surface-soft)]" : ""
               }`}
             >
               <span className="text-xs font-bold text-[var(--gold)]">

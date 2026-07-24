@@ -11,15 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "Quiz bíblico grátis, jogos bíblicos online e dinâmicas para aprender mais sobre a Bíblia de forma leve e divertida.",
-  keywords: [
-    "quiz bíblico grátis",
-    "quiz bíblico online",
-    "jogos bíblicos grátis",
-    "jogos bíblicos online",
-    "dinâmicas bíblicas",
-    "perguntas bíblicas",
-    "desafio bíblico",
-  ],
   authors: [{ name: "Bíblia Clube" }],
   creator: "Bíblia Clube",
   openGraph: {
