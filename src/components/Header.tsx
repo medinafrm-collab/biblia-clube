@@ -7,8 +7,9 @@ import { Logo } from "./Logo";
 const navItems = [
   { label: "Início", href: "/#inicio" },
   { label: "Como funciona", href: "/#como-funciona" },
-  { label: "Quiz", href: "/#quiz" },
+  { label: "Quiz", href: "/quiz-biblico" },
   { label: "Jogos", href: "/#jogos" },
+  { label: "Guias", href: "/guias" },
   { label: "Premium", href: "/#premium" },
   { label: "Futuro", href: "/#futuro" },
 ];
@@ -36,7 +37,10 @@ export function Header() {
           </ul>
         </nav>
 
-        <Link href="/#quiz" className="button-primary hidden !min-h-11 !px-5 lg:inline-flex">
+        <Link
+          href="/quiz-biblico"
+          className="hidden min-h-11 items-center justify-center gap-2 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-5 text-sm font-extrabold text-white no-underline shadow-[0_12px_30px_rgba(23,60,77,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--navy-light)] lg:inline-flex"
+        >
           Jogar agora
           <span aria-hidden="true">→</span>
         </Link>

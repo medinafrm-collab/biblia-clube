@@ -98,7 +98,7 @@ export function CompletePhraseGame() {
       <section className="paper-texture min-h-[calc(100vh-5rem)] py-12 sm:py-16">
         <div className="container-site">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="eyebrow">Novo jogo bíblico</span>
+            <span className="eyebrow">Novo jogo</span>
             <h1 className="section-title mx-auto">
               Complete a frase e reconheça passagens da Bíblia.
             </h1>
@@ -121,7 +121,7 @@ export function CompletePhraseGame() {
                   </li>
                   <li className="flex gap-3">
                     <strong className="text-[var(--gold)]">02</strong>
-                    Confira a passagem completa e sua referência bíblica.
+                    Confira a passagem completa e sua referência.
                   </li>
                   <li className="flex gap-3">
                     <strong className="text-[var(--gold)]">03</strong>

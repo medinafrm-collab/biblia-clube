@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { FutureSection } from "@/components/FutureSection";
 import { GamesSection } from "@/components/GamesSection";
+import { GuidesPreviewSection } from "@/components/GuidesPreviewSection";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { PremiumSection } from "@/components/PremiumSection";
-import { Quiz } from "@/components/Quiz";
 
-const title = "Jogos Bíblicos Grátis e Quiz Bíblico Online | Bíblia Clube";
+const title = "Jogos Bíblicos Grátis e Quiz Online | Bíblia Clube";
 const description =
-  "Jogue quiz bíblico grátis online, escolha desafios por tema e aprenda com perguntas, respostas e referências bíblicas.";
+  "Jogue quiz grátis online, escolha desafios por tema e aprenda com perguntas, respostas e referências.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -63,7 +63,7 @@ const structuredData = {
       "@id": "https://www.bibliaclube.com.br/#app",
       name: "Bíblia Clube",
       alternateName: "Quiz Bíblico Grátis",
-      url: "https://www.bibliaclube.com.br/#quiz",
+      url: "https://www.bibliaclube.com.br/quiz-biblico",
       description,
       applicationCategory: "GameApplication",
       operatingSystem: "Qualquer dispositivo com navegador",
@@ -94,8 +94,8 @@ export default function Home() {
       <main>
         <Hero />
         <HowItWorks />
-        <Quiz />
         <GamesSection />
+        <GuidesPreviewSection />
         <PremiumSection />
         <FutureSection />
       </main>

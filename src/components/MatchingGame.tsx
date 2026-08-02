@@ -100,11 +100,11 @@ export function MatchingGame() {
         <div className="container-site">
           <div className="mx-auto grid max-w-5xl items-center gap-9 lg:grid-cols-[minmax(0,1fr)_20rem]">
             <div>
-              <span className="eyebrow">Novo jogo bíblico</span>
+              <span className="eyebrow">Novo jogo</span>
               <h1 className="section-title">Ligue os pares e descubra novas conexões.</h1>
               <p className="section-copy">
-                Personagens, lugares, livros e imagens bíblicas aparecem em
-                rodadas rápidas com contexto e referências para continuar o estudo.
+                Personagens, lugares, livros e imagens aparecem em rodadas
+                rápidas com contexto e referências para continuar o estudo.
               </p>
             </div>
             <svg
@@ -259,4 +259,3 @@ export function MatchingGame() {
     </section>
   );
 }
-

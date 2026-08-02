@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const miniCards = [
-  { value: "6+", label: "jogos e dinâmicas" },
+  { value: "7", label: "jogos e dinâmicas" },
+  { value: "6", label: "guias práticos" },
   { value: "100%", label: "gratuito para jogar" },
-  { value: "1–5", label: "minutos por rodada" },
 ];
 
 export function Hero() {
@@ -43,16 +45,17 @@ export function Hero() {
             de um jeito leve e divertido.
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            Quiz bíblico grátis, jogos bíblicos online e dinâmicas para grupos,
-            famílias, jovens e todos que desejam aprender mais sobre a Palavra.
+            Escolha entre quiz, jogo da memória, ligue os pares e dinâmicas para
+            grupos, famílias, jovens e todos que desejam aprender mais sobre a
+            Palavra.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#quiz" className="button-primary">
+            <Link href="/quiz-biblico" className="button-primary">
               Jogar quiz grátis
               <span aria-hidden="true">→</span>
-            </a>
-            <a href="#como-funciona" className="button-secondary">
-              Conhecer o projeto
+            </Link>
+            <a href="#jogos" className="button-secondary">
+              Ver outros jogos
             </a>
           </div>
 

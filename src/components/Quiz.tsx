@@ -129,9 +129,9 @@ export function Quiz({
       <div className="container-site">
         {showIntroduction && (
           <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">Quiz bíblico grátis</span>
+            <span className="eyebrow">Quiz grátis</span>
             <h2 className="section-title mx-auto">
-              Escolha seu desafio bíblico.
+              Escolha seu desafio.
             </h2>
             <p className="section-copy mx-auto">
               Primeiro selecione um tema. Depois escolha uma jornada para

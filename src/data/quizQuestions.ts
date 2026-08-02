@@ -4,7 +4,11 @@ export type QuizTopicId =
   | "geral"
   | "antigo-testamento"
   | "jesus-evangelhos"
-  | "personagens";
+  | "personagens"
+  | "mulheres-da-biblia"
+  | "parabolas-de-jesus"
+  | "lugares-da-biblia"
+  | "igreja-primitiva";
 
 export type QuizQuestion = {
   id: number;

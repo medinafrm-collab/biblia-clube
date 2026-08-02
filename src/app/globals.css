@@ -178,6 +178,64 @@ a:focus-visible {
     radial-gradient(circle at 88% 82%, rgba(111, 126, 82, 0.13), transparent 28%);
 }
 
+.prose-content {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.prose-content h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.prose-content p + h2 {
+  margin-top: 2.75rem;
+}
+
+.prose-content h2 + p,
+.prose-content p + p {
+  margin-top: 1.2rem;
+}
+
+.guide-motion-dot {
+  animation: guide-drift 3.6s ease-in-out infinite;
+}
+
+.guide-pulse {
+  animation: guide-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes guide-drift {
+  0%,
+  100% {
+    left: 0;
+    opacity: 0.45;
+  }
+
+  50% {
+    left: calc(100% - 0.5rem);
+    opacity: 1;
+  }
+}
+
+@keyframes guide-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
 @media (max-width: 640px) {
   .container-site {
     width: min(100% - 1.25rem, 1160px);

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 
 const links = [
+  { label: "Guias", href: "/guias" },
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/contato" },
   { label: "Política de Privacidade", href: "/politica-de-privacidade" },
@@ -15,7 +16,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-5 max-w-md leading-7 text-[var(--muted)]">
-            Jogos e dinâmicas bíblicas para aprender de forma leve.
+            Jogos, guias e dinâmicas para aprender de forma leve.
           </p>
         </div>
         <nav aria-label="Links institucionais">

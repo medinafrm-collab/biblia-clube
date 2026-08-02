@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Quiz } from "./Quiz";
-import { quizQuestions } from "@/data/quizQuestions";
 import { quizTopics, type QuizTopic } from "@/data/quizTopics";
 
 type QuizTopicPageProps = {
@@ -10,12 +9,6 @@ type QuizTopicPageProps = {
 };
 
 export function QuizTopicPage({ topic }: QuizTopicPageProps) {
-  const journeyCount = new Set(
-    quizQuestions
-      .filter((question) => question.topics.includes(topic.id))
-      .map((question) => question.journey ?? 1),
-  ).size;
-
   return (
     <>
       <Header />
@@ -65,21 +58,37 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-5">
-              <p className="font-bold text-[var(--navy)]">
-                {journeyCount} {journeyCount === 1 ? "jornada disponível" : "jornadas disponíveis"} com correção imediata
-              </p>
-              <nav aria-label="Outros temas de quiz" className="flex flex-wrap gap-2">
-                {quizTopics.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={`${item.path}#quiz`}
-                    aria-current={item.id === topic.id ? "page" : undefined}
-                    className={`rounded-md border px-3 py-2 text-sm font-bold no-underline transition ${item.id === topic.id ? "border-[var(--navy)] bg-[var(--navy)] text-white" : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--gold)] hover:text-[var(--navy)]"}`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+            <div className="mt-10 rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)]/55 p-4 sm:p-5">
+              <div>
+                <div>
+                  <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive-dark)]">
+                    Escolha uma temática
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Selecione um tema e depois escolha uma jornada para começar.
+                  </p>
+                </div>
+              </div>
+
+              <nav aria-label="Outros temas de quiz" className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4">
+                {quizTopics.map((item) => {
+                  const isActive = item.id === topic.id;
+
+                  return (
+                    <Link
+                      key={item.id}
+                      href={`${item.path}#quiz`}
+                      aria-current={isActive ? "page" : undefined}
+                      className={`flex min-h-12 items-center justify-center rounded-xl border px-3 py-2 text-center text-sm font-bold leading-tight no-underline transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
+                        isActive
+                          ? "border-[var(--navy)] bg-[var(--navy)] text-white shadow-sm"
+                          : "border-[var(--border)] bg-white text-[var(--muted)] hover:border-[var(--gold)] hover:text-[var(--navy)]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
           </div>
