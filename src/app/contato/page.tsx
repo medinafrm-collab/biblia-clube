@@ -23,6 +23,17 @@ export default function ContatoPage() {
           </a>
           .
         </p>
+        <p className="mt-4">
+          Acompanhe tambÃ©m pelo Instagram:{" "}
+          <a
+            href="https://www.instagram.com/bibliaclube.br/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @bibliaclube.br
+          </a>
+          .
+        </p>
       </div>
       <div>
         <h2>Você pode escrever sobre</h2>

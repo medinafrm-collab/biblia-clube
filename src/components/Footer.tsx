@@ -37,7 +37,17 @@ export function Footer() {
       <div className="border-t border-[var(--border)]">
         <div className="container-site flex flex-col gap-2 py-5 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Bíblia Clube. Todos os direitos reservados.</p>
-          <p>bibliaclube.com.br</p>
+          <p className="flex flex-wrap gap-x-3 gap-y-1">
+            <span>bibliaclube.com.br</span>
+            <a
+              href="https://www.instagram.com/bibliaclube.br/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-[var(--muted)] no-underline hover:text-[var(--navy)]"
+            >
+              @bibliaclube.br
+            </a>
+          </p>
         </div>
       </div>
     </footer>

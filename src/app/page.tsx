@@ -46,6 +46,7 @@ const structuredData = {
         url: "https://www.bibliaclube.com.br/icon.svg",
       },
       email: "bibliaclubeweb@gmail.com",
+      sameAs: ["https://www.instagram.com/bibliaclube.br/"],
     },
     {
       "@type": "WebSite",
