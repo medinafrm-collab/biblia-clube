@@ -9,6 +9,54 @@ const links = [
   { label: "Termos de Uso", href: "/termos-de-uso" },
 ];
 
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4">
+      <path
+        d="M4.75 6.75h14.5v10.5H4.75V6.75Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+      <path
+        d="m5.25 7.25 6.75 5 6.75-5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4">
+      <rect
+        x="5"
+        y="5"
+        width="14"
+        height="14"
+        rx="4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="3.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle cx="16.2" cy="7.8" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface-soft)]">
@@ -37,14 +85,21 @@ export function Footer() {
       <div className="border-t border-[var(--border)]">
         <div className="container-site flex flex-col gap-2 py-5 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Bíblia Clube. Todos os direitos reservados.</p>
-          <p className="flex flex-wrap gap-x-3 gap-y-1">
-            <span>bibliaclube.com.br</span>
+          <p className="flex flex-wrap gap-x-4 gap-y-2">
+            <a
+              href="mailto:bibliaclubeweb@gmail.com"
+              className="inline-flex items-center gap-1.5 font-bold text-[var(--muted)] no-underline hover:text-[var(--navy)]"
+            >
+              <MailIcon />
+              bibliaclubeweb@gmail.com
+            </a>
             <a
               href="https://www.instagram.com/bibliaclube.br/"
               target="_blank"
               rel="noreferrer"
-              className="font-bold text-[var(--muted)] no-underline hover:text-[var(--navy)]"
+              className="inline-flex items-center gap-1.5 font-bold text-[var(--muted)] no-underline hover:text-[var(--navy)]"
             >
+              <InstagramIcon />
               @bibliaclube.br
             </a>
           </p>
