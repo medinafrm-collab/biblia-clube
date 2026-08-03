@@ -140,7 +140,7 @@ export function CompletePhraseGame() {
                 <button
                   type="button"
                   onClick={startGame}
-                  className="button-light mt-6"
+                  className="button-light mt-6 self-center whitespace-nowrap !min-h-11 !px-5 !py-2 !text-sm"
                 >
                   Começar rodada <span aria-hidden="true">→</span>
                 </button>
