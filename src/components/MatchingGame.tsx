@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   matchingThemes,
   type MatchingPair,
   type MatchingTheme,
 } from "@/data/matchingPairs";
+import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { trackGameEvent } from "@/lib/analytics";
 
 type Phase = "setup" | "playing" | "finished";
 type PairItem = Pick<MatchingPair, "id"> & { label: string };
@@ -46,6 +48,10 @@ export function MatchingGame() {
 
   const score = Math.max(0, theme.pairs.length * 100 - mistakes * 25);
 
+  useEffect(() => {
+    trackGameEvent("ligue-os-pares", "view");
+  }, []);
+
   function startGame(nextTheme = theme) {
     setTheme(nextTheme);
     setLeftItems(buildColumn(nextTheme.pairs, "left"));
@@ -56,6 +62,10 @@ export function MatchingGame() {
     setMistakes(0);
     setFeedback("Rodada iniciada.");
     setPhase("playing");
+    trackGameEvent("ligue-os-pares", "start", {
+      theme: nextTheme.id,
+      pairs: nextTheme.pairs.length,
+    });
   }
 
   function resolvePair(leftId: string, rightId: string) {
@@ -69,6 +79,12 @@ export function MatchingGame() {
       setFeedback(`Par correto: ${pair?.left} e ${pair?.right}.`);
 
       if (nextMatched.length === theme.pairs.length) {
+        trackGameEvent("ligue-os-pares", "finish", {
+          theme: theme.id,
+          pairs: theme.pairs.length,
+          mistakes,
+          score,
+        });
         setPhase("finished");
       }
       return;
@@ -179,6 +195,7 @@ export function MatchingGame() {
               <button type="button" onClick={() => startGame()} className="button-primary">Jogar novamente</button>
               <button type="button" onClick={() => setPhase("setup")} className="button-secondary">Escolher outro tema</button>
             </div>
+            <FeedbackPrompt game="ligue-os-pares" label="ligue_os_pares_result" />
           </div>
         </div>
       </section>

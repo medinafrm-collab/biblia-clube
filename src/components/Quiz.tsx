@@ -1,11 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import {
   quizQuestions,
   type QuizTopicId,
 } from "@/data/quizQuestions";
 import { quizTopics } from "@/data/quizTopics";
+import { trackGameEvent } from "@/lib/analytics";
 
 type QuizProps = {
   initialTopic?: QuizTopicId;
@@ -74,8 +76,23 @@ export function Quiz({
   const progress = ((currentIndex + 1) / activeQuestions.length) * 100;
   const percentage = Math.round((score / activeQuestions.length) * 100);
 
+  useEffect(() => {
+    trackGameEvent("quiz", "view", {
+      topic: selectedTopic,
+      journey: selectedJourney,
+    });
+  }, [selectedJourney, selectedTopic]);
+
   function selectAnswer(answer: string) {
     if (selectedAnswer !== null) return;
+
+    if (currentIndex === 0 && selectedAnswer === null) {
+      trackGameEvent("quiz", "start", {
+        topic: selectedTopic,
+        journey: selectedJourney,
+        questions: activeQuestions.length,
+      });
+    }
 
     setSelectedAnswer(answer);
     if (answer === currentQuestion.correctAnswer) {
@@ -85,6 +102,13 @@ export function Quiz({
 
   function goToNextQuestion() {
     if (currentIndex === activeQuestions.length - 1) {
+      trackGameEvent("quiz", "finish", {
+        topic: selectedTopic,
+        journey: selectedJourney,
+        questions: activeQuestions.length,
+        score,
+        percentage,
+      });
       setIsFinished(true);
       return;
     }
@@ -101,6 +125,9 @@ export function Quiz({
   }
 
   function changeTopic(topic: QuizTopicId) {
+    trackGameEvent("quiz", "topic_select", {
+      topic,
+    });
     setSelectedTopic(topic);
     setSelectedJourney(1);
     setCurrentIndex(0);
@@ -111,6 +138,10 @@ export function Quiz({
 
   function changeJourney(journey: 1 | 2, trigger?: HTMLButtonElement) {
     trigger?.blur();
+    trackGameEvent("quiz", "journey_select", {
+      topic: selectedTopic,
+      journey,
+    });
     setSelectedJourney(journey);
     setCurrentIndex(0);
     setSelectedAnswer(null);
@@ -393,6 +424,7 @@ export function Quiz({
               <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[var(--muted)]">
                 {getResultMessage(percentage)}
               </p>
+              <FeedbackPrompt game="quiz" label="quiz_result" />
               <button
                 type="button"
                 onClick={restartQuiz}

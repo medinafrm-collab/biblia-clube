@@ -2,11 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import {
   memoryGameModes,
   type MemoryGameMode,
   type MemoryGameModeConfig,
 } from "@/data/memoryGamePairs";
+import { trackGameEvent } from "@/lib/analytics";
 
 type Phase = "setup" | "playing" | "finished";
 type Difficulty = "easy" | "medium";
@@ -135,18 +137,28 @@ export function MemoryGame() {
     return () => window.clearInterval(timer);
   }, [phase]);
 
+  useEffect(() => {
+    trackGameEvent("jogo-da-memoria", "view");
+  }, []);
+
   function startGame(nextModeId = modeId, nextDifficulty = difficulty) {
     const nextMode = findMode(nextModeId);
+    const nextCards = buildDeck(nextMode, nextDifficulty);
 
     setModeId(nextModeId);
     setDifficulty(nextDifficulty);
-    setCards(buildDeck(nextMode, nextDifficulty));
+    setCards(nextCards);
     setFlipped([]);
     setMatched([]);
     setMoves(0);
     setSeconds(0);
     setMessage("Escolha duas cartas para começar.");
     setPhase("playing");
+    trackGameEvent("jogo-da-memoria", "start", {
+      mode: nextModeId,
+      difficulty: nextDifficulty,
+      pairs: nextCards.length / 2,
+    });
   }
 
   function chooseCard(card: MemoryCard) {
@@ -187,6 +199,13 @@ export function MemoryGame() {
       window.setTimeout(() => setFlipped([]), 500);
 
       if (nextMatched.length === totalPairs) {
+        trackGameEvent("jogo-da-memoria", "finish", {
+          mode: mode.id,
+          difficulty,
+          pairs: totalPairs,
+          moves: moves + 1,
+          seconds,
+        });
         window.setTimeout(() => {
           setPhase("finished");
           setMessage("Rodada concluída.");
@@ -353,6 +372,7 @@ export function MemoryGame() {
                   Ver outros jogos
                 </Link>
               </div>
+              <FeedbackPrompt game="jogo-da-memoria" label="jogo_da_memoria_result" />
             </div>
           </div>
         </div>

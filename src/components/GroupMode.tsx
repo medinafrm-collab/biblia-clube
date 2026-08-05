@@ -6,7 +6,9 @@ import {
   type QuizQuestion,
   type QuizTopicId,
 } from "@/data/quizQuestions";
+import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import { quizTopics } from "@/data/quizTopics";
+import { trackGameEvent } from "@/lib/analytics";
 
 type Phase = "setup" | "playing" | "finished";
 type RoundResult = "correct" | "wrong" | "timeout" | "skipped" | null;
@@ -77,6 +79,10 @@ export function GroupMode() {
   const winners = ranking.filter((team) => team.score === topScore);
 
   useEffect(() => {
+    trackGameEvent("modo-grupo", "view");
+  }, []);
+
+  useEffect(() => {
     if (
       phase !== "playing" ||
       timerSeconds === 0 ||
@@ -144,6 +150,13 @@ export function GroupMode() {
     setTimeLeft(timerSeconds);
     setIsPaused(false);
     setPhase("playing");
+    trackGameEvent("modo-grupo", "start", {
+      topic: selectedTopic,
+      teams: teamCount,
+      questions: gameQuestions.length,
+      timer_seconds: timerSeconds,
+      rebound: allowRebound,
+    });
   }
 
   function awardPoints(teamIndex: number, points: number) {
@@ -190,6 +203,13 @@ export function GroupMode() {
 
   function goToNextQuestion() {
     if (questionIndex === questions.length - 1) {
+      trackGameEvent("modo-grupo", "finish", {
+        topic: selectedTopic,
+        teams: teams.length,
+        questions: questions.length,
+        timer_seconds: timerSeconds,
+        rebound: allowRebound,
+      });
       setPhase("finished");
       return;
     }
@@ -371,6 +391,7 @@ export function GroupMode() {
               <button type="button" onClick={startGame} className="button-primary">Jogar novamente</button>
               <button type="button" onClick={() => setPhase("setup")} className="button-secondary">Nova configuração</button>
             </div>
+            <FeedbackPrompt game="modo-grupo" label="modo_grupo_result" />
           </div>
         </div>
       </section>

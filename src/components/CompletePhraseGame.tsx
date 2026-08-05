@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import {
   completePhraseQuestions,
   type CompletePhraseQuestion,
 } from "@/data/completePhraseQuestions";
+import { trackGameEvent } from "@/lib/analytics";
 
 type Phase = "setup" | "playing" | "finished";
 type RoundQuestion = CompletePhraseQuestion & { shuffledOptions: string[] };
@@ -58,14 +60,23 @@ export function CompletePhraseGame() {
     ? Math.round((score / questions.length) * 100)
     : 0;
 
+  useEffect(() => {
+    trackGameEvent("complete-a-frase", "view");
+  }, []);
+
   function startGame() {
-    setQuestions(buildRound());
+    const nextQuestions = buildRound();
+
+    setQuestions(nextQuestions);
     setCurrentIndex(0);
     setSelectedAnswer(null);
     setScore(0);
     setStreak(0);
     setBestStreak(0);
     setPhase("playing");
+    trackGameEvent("complete-a-frase", "start", {
+      questions: nextQuestions.length,
+    });
   }
 
   function selectAnswer(answer: string) {
@@ -85,6 +96,12 @@ export function CompletePhraseGame() {
 
   function goToNextQuestion() {
     if (currentIndex === questions.length - 1) {
+      trackGameEvent("complete-a-frase", "finish", {
+        questions: questions.length,
+        score,
+        percentage,
+        best_streak: bestStreak,
+      });
       setPhase("finished");
       return;
     }
@@ -208,6 +225,7 @@ export function CompletePhraseGame() {
                   Ver outros jogos
                 </Link>
               </div>
+              <FeedbackPrompt game="complete-a-frase" label="complete_a_frase_result" />
             </div>
           </div>
         </div>
