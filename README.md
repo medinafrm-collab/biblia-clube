@@ -1,15 +1,15 @@
 # Bíblia Clube
 
-MVP do site **bibliaclube.com.br**, criado com Next.js, React, TypeScript e
-Tailwind CSS.
+Site **bibliaclube.com.br**, criado com Next.js, React, TypeScript e Tailwind
+CSS e publicado na Vercel.
 
 ## O que está incluído
 
 - página inicial responsiva;
-- quiz bíblico com 12 perguntas;
-- catálogo inicial de jogos;
-- apresentação da futura área premium;
-- espaço discreto para futuros apoiadores;
+- quizzes organizados em temas e jornadas;
+- Modo Grupo, Ligue os Pares, Complete a Frase e Jogo da Memória;
+- dinâmicas para células e guias práticos;
+- integração com Vercel Analytics, Speed Insights e Google AdSense;
 - páginas Sobre, Contato, Política de Privacidade e Termos de Uso;
 - metadados de SEO, sitemap e robots.txt.
 
@@ -28,10 +28,14 @@ Depois, acesse `http://localhost:3000`.
 
 ```bash
 npm run lint
+npm run typecheck
 npm run build
 ```
 
+Para executar as três verificações em sequência, use `npm run check`.
+
 ## Publicação
 
-O projeto está preparado para publicação na Vercel. Consulte o arquivo
-`GUIA_PUBLICACAO.md` para o passo a passo completo.
+Cada envio para a branch `main` inicia uma publicação na Vercel. Desenvolva em
+uma branch separada, valide localmente e só depois integre as alterações à
+`main`. Consulte `GUIA_PUBLICACAO.md` para os detalhes de publicação.

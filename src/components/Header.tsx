@@ -10,8 +10,7 @@ const navItems = [
   { label: "Quiz", href: "/quiz-biblico" },
   { label: "Jogos", href: "/#jogos" },
   { label: "Guias", href: "/guias" },
-  { label: "Premium", href: "/#premium" },
-  { label: "Futuro", href: "/#futuro" },
+  { label: "Benefícios", href: "/#beneficios" },
 ];
 
 export function Header() {

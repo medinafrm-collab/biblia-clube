@@ -27,10 +27,27 @@ Antes de publicar, confira:
 
 ```bash
 npm run lint
+npm run typecheck
 npm run build
 ```
 
 ## 3. Enviar o projeto ao GitHub
+
+Para melhorias e correções, crie uma branch separada e só integre o trabalho à
+`main` depois das validações locais. A branch `main` representa a versão de
+produção.
+
+```bash
+git switch -c feature/nome-da-melhoria
+git add .
+git commit -m "Descreva a melhoria"
+git push -u origin feature/nome-da-melhoria
+```
+
+Abra um Pull Request no GitHub, revise as alterações e então faça a integração
+à `main`.
+
+### Configuração inicial do repositório
 
 No GitHub, crie um repositório novo chamado `biblia-clube`. Não marque as opções
 para criar README ou `.gitignore`, porque estes arquivos já existem.

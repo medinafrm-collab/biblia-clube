@@ -4,6 +4,7 @@ import { InstitutionalPage } from "@/components/InstitutionalPage";
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description: "Termos de Uso do site Bíblia Clube.",
+  alternates: { canonical: "/termos-de-uso" },
 };
 
 export default function TermosDeUsoPage() {
@@ -40,13 +41,14 @@ export default function TermosDeUsoPage() {
         </p>
       </div>
       <div>
-        <h2>Recursos futuros</h2>
+        <h2>Atualizações destes termos</h2>
         <p className="mt-4">
-          Serviços pagos, assinaturas ou contas de usuário poderão ter
-          condições específicas quando forem lançados. Esses termos serão
-          atualizados antes da disponibilização desses recursos.
+          Estes termos podem ser atualizados para acompanhar mudanças no site,
+          aprimorar informações ou atender a requisitos legais. Quando houver
+          uma alteração relevante, a data de atualização será indicada nesta
+          página.
         </p>
-        <p className="mt-4 text-sm">Última atualização: junho de 2026.</p>
+        <p className="mt-4 text-sm">Última atualização: agosto de 2026.</p>
       </div>
     </InstitutionalPage>
   );

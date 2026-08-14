@@ -1,12 +1,9 @@
 import type { MetadataRoute } from "next";
+import { quizTopics } from "@/data/quizTopics";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const staticRoutes = [
     "",
-    "/quiz-biblico",
-    "/quiz-biblico/antigo-testamento",
-    "/quiz-biblico/jesus-e-evangelhos",
-    "/quiz-biblico/personagens-biblicos",
     "/modo-grupo",
     "/ligue-os-pares",
     "/complete-a-frase",
@@ -24,10 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/politica-de-privacidade",
     "/termos-de-uso",
   ];
+  const routes = [
+    ...staticRoutes,
+    ...quizTopics.map((topic) => topic.path),
+  ];
 
   return routes.map((route) => ({
     url: `https://www.bibliaclube.com.br${route}`,
-    lastModified: new Date(),
     changeFrequency:
       route === "" || route.startsWith("/quiz-biblico")
         ? "weekly"

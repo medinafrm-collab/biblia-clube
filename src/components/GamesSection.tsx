@@ -67,15 +67,19 @@ export function GamesSection() {
             <h2 className="section-title">Novas formas de aprender a Bíblia jogando.</h2>
             <p className="section-copy lg:justify-self-end">
               Jogue online sem cadastro. O catálogo reúne quiz, desafios e
-              dinâmicas gratuitas, com novos formatos em construção.
+              dinâmicas gratuitas para aprender sozinho, em família ou em grupo.
             </p>
           </div>
         </ScrollReveal>
 
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {games.map((game, index) => (
-            <ScrollReveal key={game.title} delay={120 + index * 70}>
-              <article className="card flex min-h-64 flex-col p-7">
+            <ScrollReveal
+              key={game.title}
+              className="h-full"
+              delay={120 + index * 70}
+            >
+              <article className="card flex h-full min-h-64 flex-col p-7">
                 <div className="flex items-start justify-between gap-4">
                   <span
                     aria-hidden="true"
@@ -96,12 +100,14 @@ export function GamesSection() {
                   {game.description}
                 </p>
                 {game.href && (
-                  <a
-                    href={game.href}
-                    className="mt-auto inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-[var(--navy)] px-5 text-sm font-extrabold text-white no-underline shadow-sm transition hover:bg-[var(--navy-light)]"
-                  >
-                    Jogar agora <span aria-hidden="true">→</span>
-                  </a>
+                  <div className="mt-auto pt-7">
+                    <a
+                      href={game.href}
+                      className="inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-[var(--navy)] px-5 text-sm font-extrabold text-white no-underline shadow-sm transition hover:bg-[var(--navy-light)]"
+                    >
+                      Jogar agora <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
                 )}
               </article>
             </ScrollReveal>

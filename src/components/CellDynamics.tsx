@@ -50,16 +50,15 @@ export function CellDynamics() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-2" role="tablist" aria-label="Filtrar dinâmicas por público">
-          {filters.map((filter, index) => {
+        <div className="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filtrar dinâmicas por público">
+          {filters.map((filter) => {
             const isSelected = activeFilter === filter.id;
 
             return (
               <button
-                key={`${filter.label}-${index}`}
+                key={filter.id}
                 type="button"
-                role="tab"
-                aria-selected={isSelected}
+                aria-pressed={isSelected}
                 onClick={() => selectFilter(filter.id)}
                 className={`min-h-11 rounded-full border px-5 text-sm font-extrabold transition ${isSelected ? "border-[var(--navy)] bg-[var(--navy)] text-white" : "border-[var(--border)] bg-white text-[var(--navy)] hover:border-[var(--gold)]"}`}
               >
@@ -75,6 +74,7 @@ export function CellDynamics() {
               <button
                 key={dynamic.id}
                 type="button"
+                aria-pressed={activeDynamic.id === dynamic.id}
                 onClick={() => setActiveDynamicId(dynamic.id)}
                 className={`rounded-lg border p-5 text-left transition ${activeDynamic.id === dynamic.id ? "border-[var(--navy)] bg-[var(--navy)] text-white shadow-sm" : "border-[var(--border)] bg-white text-[var(--navy)] hover:border-[var(--gold)]"}`}
               >

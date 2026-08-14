@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import {
@@ -112,6 +112,7 @@ function findMode(modeId: MemoryGameMode) {
 }
 
 export function MemoryGame() {
+  const pendingTimeoutsRef = useRef<number[]>([]);
   const [phase, setPhase] = useState<Phase>("setup");
   const [modeId, setModeId] = useState<MemoryGameMode>("symbols");
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
@@ -141,7 +142,39 @@ export function MemoryGame() {
     trackGameEvent("jogo-da-memoria", "view");
   }, []);
 
+  useEffect(() => {
+    return () => {
+      pendingTimeoutsRef.current.forEach((timeoutId) =>
+        window.clearTimeout(timeoutId),
+      );
+    };
+  }, []);
+
+  function clearPendingTimeouts() {
+    pendingTimeoutsRef.current.forEach((timeoutId) =>
+      window.clearTimeout(timeoutId),
+    );
+    pendingTimeoutsRef.current = [];
+  }
+
+  function scheduleTimeout(callback: () => void, delay: number) {
+    const timeoutId = window.setTimeout(() => {
+      pendingTimeoutsRef.current = pendingTimeoutsRef.current.filter(
+        (pendingId) => pendingId !== timeoutId,
+      );
+      callback();
+    }, delay);
+
+    pendingTimeoutsRef.current.push(timeoutId);
+  }
+
+  function openSetup() {
+    clearPendingTimeouts();
+    setPhase("setup");
+  }
+
   function startGame(nextModeId = modeId, nextDifficulty = difficulty) {
+    clearPendingTimeouts();
     const nextMode = findMode(nextModeId);
     const nextCards = buildDeck(nextMode, nextDifficulty);
 
@@ -196,7 +229,7 @@ export function MemoryGame() {
 
       setMatched(nextMatched);
       setMessage(pair ? `Par correto: ${pair.note}` : "Par correto.");
-      window.setTimeout(() => setFlipped([]), 500);
+      scheduleTimeout(() => setFlipped([]), 500);
 
       if (nextMatched.length === totalPairs) {
         trackGameEvent("jogo-da-memoria", "finish", {
@@ -206,7 +239,7 @@ export function MemoryGame() {
           moves: moves + 1,
           seconds,
         });
-        window.setTimeout(() => {
+        scheduleTimeout(() => {
           setPhase("finished");
           setMessage("Rodada concluída.");
         }, 650);
@@ -215,7 +248,7 @@ export function MemoryGame() {
     }
 
     setMessage("Essas cartas não formam um par. Observe e tente novamente.");
-    window.setTimeout(() => setFlipped([]), 900);
+    scheduleTimeout(() => setFlipped([]), 900);
   }
 
   if (phase === "setup") {
@@ -363,7 +396,7 @@ export function MemoryGame() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setPhase("setup")}
+                  onClick={openSetup}
                   className="button-secondary"
                 >
                   Trocar modo
@@ -512,7 +545,7 @@ export function MemoryGame() {
 
               <button
                 type="button"
-                onClick={() => setPhase("setup")}
+                onClick={openSetup}
                 className="button-secondary mt-6 w-full"
               >
                 Trocar modo

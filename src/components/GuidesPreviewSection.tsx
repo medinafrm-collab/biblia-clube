@@ -48,10 +48,14 @@ export function GuidesPreviewSection() {
 
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {guides.map((guide, index) => (
-            <ScrollReveal key={guide.href} delay={120 + index * 90}>
+            <ScrollReveal
+              key={guide.href}
+              className="h-full"
+              delay={120 + index * 90}
+            >
               <Link
                 href={guide.href}
-                className="card group flex min-h-64 flex-col !rounded-lg p-7 no-underline transition hover:-translate-y-1 hover:border-[var(--gold)] hover:shadow-[0_20px_55px_rgba(37,50,43,0.08)]"
+                className="card group flex h-full min-h-64 flex-col !rounded-lg p-7 no-underline transition hover:-translate-y-1 hover:border-[var(--gold)] hover:shadow-[0_20px_55px_rgba(37,50,43,0.08)]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="rounded-full bg-[var(--gold-soft)] px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-[var(--olive-dark)]">
