@@ -47,10 +47,10 @@ export function ScrollReveal({ children, className = "", delay = 0 }: ScrollReve
       style={
         {
           opacity: isVisible ? 1 : 0,
-          transform: isVisible || reduceMotion ? "translateY(0)" : "translateY(1.5rem)",
+          transform: isVisible || reduceMotion ? "translateY(0)" : "translateY(0.9rem)",
           transition: reduceMotion
             ? "none"
-            : "opacity 950ms ease, transform 950ms ease",
+            : "opacity 560ms ease, transform 560ms ease",
           transitionDelay: `${delay}ms`,
           willChange: "opacity, transform",
         } as CSSProperties

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { FooterLink } from "./FooterLink";
 import { Logo } from "./Logo";
 
 const links = [
@@ -71,12 +71,12 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-6 gap-y-3">
             {links.map((link) => (
               <li key={link.href}>
-                <Link
+                <FooterLink
                   href={link.href}
                   className="text-sm font-bold text-[var(--muted)] no-underline hover:text-[var(--navy)]"
                 >
                   {link.label}
-                </Link>
+                </FooterLink>
               </li>
             ))}
           </ul>
