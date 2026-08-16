@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
 import {
   quizQuestions,
+  type QuizJourney,
   type QuizTopicId,
 } from "@/data/quizQuestions";
 import { quizTopics } from "@/data/quizTopics";
@@ -27,7 +28,7 @@ function getResultMessage(percentage: number) {
   return "Excelente! Você mandou muito bem no Quiz Bíblico.";
 }
 
-function getQuestionJourney(question: { journey?: 1 | 2 }) {
+function getQuestionJourney(question: { journey?: QuizJourney }) {
   return question.journey ?? 1;
 }
 
@@ -52,7 +53,7 @@ export function Quiz({
   const quizCardRef = useRef<HTMLDivElement>(null);
   const [selectedTopic, setSelectedTopic] =
     useState<QuizTopicId>(initialTopic);
-  const [selectedJourney, setSelectedJourney] = useState<1 | 2>(1);
+  const [selectedJourney, setSelectedJourney] = useState<QuizJourney>(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -136,7 +137,7 @@ export function Quiz({
     setIsFinished(false);
   }
 
-  function changeJourney(journey: 1 | 2, trigger?: HTMLButtonElement) {
+  function changeJourney(journey: QuizJourney, trigger?: HTMLButtonElement) {
     trigger?.blur();
     trackGameEvent("quiz", "journey_select", {
       topic: selectedTopic,
@@ -235,7 +236,7 @@ export function Quiz({
               selecionada.
             </p>
             <div
-              className="mt-4 grid max-w-md gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-2"
+              className="mt-4 grid max-w-xl gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-3"
               role="radiogroup"
               aria-label="Jornada do quiz"
             >

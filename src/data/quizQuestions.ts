@@ -1,4 +1,5 @@
 import { quizQuestionExpansions } from "./quizQuestionExpansions";
+import { quizQuestionJourneyThree } from "./quizQuestionJourneyThree";
 
 export type QuizTopicId =
   | "geral"
@@ -13,13 +14,15 @@ export type QuizTopicId =
 export type QuizQuestion = {
   id: number;
   topics: QuizTopicId[];
-  journey?: 1 | 2;
+  journey?: QuizJourney;
   question: string;
   options: string[];
   correctAnswer: string;
   explanation: string;
   reference: string;
 };
+
+export type QuizJourney = 1 | 2 | 3;
 
 export const quizQuestions: QuizQuestion[] = [
   {
@@ -458,4 +461,5 @@ export const quizQuestions: QuizQuestion[] = [
     reference: "Lucas 19:1–10",
   },
   ...quizQuestionExpansions,
+  ...quizQuestionJourneyThree,
 ];

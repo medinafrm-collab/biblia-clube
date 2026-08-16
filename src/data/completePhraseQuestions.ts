@@ -172,4 +172,113 @@ export const completePhraseQuestions: CompletePhraseQuestion[] = [
     fullText: "Mas que o ‘Sim’ de vocês seja ‘Sim’, e o ‘Não’ seja ‘Não’.",
     reference: "Mateus 5:37",
   },
+  {
+    id: "commit-way",
+    prompt: "Entregue o seu caminho ao SENHOR;...",
+    answer: "confie também nele, e ele o fará.",
+    options: [
+      "confie também nele, e ele o fará.",
+      "espere nele, e você não se cansará.",
+      "ouça a sua voz, e você achará descanso.",
+      "permaneça firme, e você vencerá o medo.",
+    ],
+    fullText: "Entregue o seu caminho ao SENHOR; confie também nele, e ele o fará.",
+    reference: "Salmos 37:5",
+  },
+  {
+    id: "trust-heart",
+    prompt: "Confie no SENHOR de todo o seu coração,...",
+    answer: "e não se apoie no seu próprio entendimento.",
+    options: [
+      "e guarde os seus passos do mal.",
+      "e não se apoie no seu próprio entendimento.",
+      "e conserve a sabedoria diante dos seus olhos.",
+      "e espere com paciência pela resposta.",
+    ],
+    fullText:
+      "Confie no SENHOR de todo o seu coração, e não se apoie no seu próprio entendimento.",
+    reference: "Provérbios 3:5",
+  },
+  {
+    id: "renew-strength",
+    prompt: "Mas aqueles que esperam no SENHOR...",
+    answer: "renovarão as suas forças.",
+    options: [
+      "receberão tudo o que pedirem.",
+      "jamais enfrentarão dificuldades.",
+      "renovarão as suas forças.",
+      "encontrarão atalhos no caminho.",
+    ],
+    fullText:
+      "Mas aqueles que esperam no SENHOR renovarão as suas forças. Eles subirão com asas como águias. Eles correrão, e não se cansarão. Eles caminharão, e não desfalecerão.",
+    reference: "Isaías 40:31",
+  },
+  {
+    id: "practice-justice",
+    prompt: "Ele lhe mostrou, ó homem, o que é bom. O que o SENHOR exige de você, senão que...",
+    answer: "pratique a justiça, ame a misericórdia e ande humildemente com o seu Deus?",
+    options: [
+      "ofereça muitos sacrifícios e guarde silêncio?",
+      "conheça todos os mistérios e nunca duvide?",
+      "trabalhe sem descanso e reparta toda a riqueza?",
+      "pratique a justiça, ame a misericórdia e ande humildemente com o seu Deus?",
+    ],
+    fullText:
+      "Ele lhe mostrou, ó homem, o que é bom. O que o SENHOR exige de você, senão que pratique a justiça, ame a misericórdia e ande humildemente com o seu Deus?",
+    reference: "Miqueias 6:8",
+  },
+  {
+    id: "come-to-me",
+    prompt: "Venham a mim, todos vocês que estão cansados e sobrecarregados,...",
+    answer: "e eu lhes darei descanso.",
+    options: [
+      "e eu lhes darei descanso.",
+      "e encontrareis uma estrada sem lutas.",
+      "e recebereis riquezas em abundância.",
+      "e nunca mais sentireis tristeza.",
+    ],
+    fullText:
+      "Venham a mim, todos vocês que estão cansados e sobrecarregados, e eu lhes darei descanso.",
+    reference: "Mateus 11:28",
+  },
+  {
+    id: "way-truth-life",
+    prompt: "Eu sou o caminho, a verdade e a vida....",
+    answer: "Ninguém vem ao Pai, a não ser por mim.",
+    options: [
+      "Quem me segue nunca terá perguntas.",
+      "Ninguém vem ao Pai, a não ser por mim.",
+      "Todo aquele que me ouve verá sinais.",
+      "Quem conhece a verdade não tropeçará.",
+    ],
+    fullText:
+      "Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.",
+    reference: "João 14:6",
+  },
+  {
+    id: "love-patient",
+    prompt: "O amor é paciente,...",
+    answer: "e é bondoso.",
+    options: [
+      "não precisa de cuidado.",
+      "sempre recebe recompensa.",
+      "e é bondoso.",
+      "não conhece limites.",
+    ],
+    fullText: "O amor é paciente e é bondoso. O amor não inveja.",
+    reference: "1 Coríntios 13:4",
+  },
+  {
+    id: "pray-without-ceasing",
+    prompt: "Orem...",
+    answer: "sem cessar.",
+    options: [
+      "somente no templo.",
+      "quando houver necessidade.",
+      "antes de cada decisão.",
+      "sem cessar.",
+    ],
+    fullText: "Orem sem cessar.",
+    reference: "1 Tessalonicenses 5:17",
+  },
 ];

@@ -66,4 +66,30 @@ export const matchingThemes: MatchingTheme[] = [
       { id: "armadura", left: "Armadura de Deus", right: "Firmeza na vida de fé", explanation: "Paulo usa peças de uma armadura como imagens de preparo e perseverança.", reference: "Efésios 6:10–18" },
     ],
   },
+  {
+    id: "profetas",
+    title: "Profetas e mensagens",
+    description: "Relacione cada profeta a uma mensagem ou imagem marcante de seu livro.",
+    pairs: [
+      { id: "profeta-isaias", left: "Isaías", right: "O sinal do Emanuel", explanation: "Isaías anunciou o sinal de um menino chamado Emanuel em uma mensagem ao rei Acaz.", reference: "Isaías 7:10-14" },
+      { id: "profeta-jeremias", left: "Jeremias", right: "A promessa de uma nova aliança", explanation: "Jeremias falou de uma aliança escrita no coração e marcada pelo conhecimento de Deus.", reference: "Jeremias 31:31-34" },
+      { id: "profeta-ezequiel", left: "Ezequiel", right: "A responsabilidade do atalaia", explanation: "Ezequiel recebeu a imagem do atalaia para explicar sua responsabilidade de transmitir o aviso recebido.", reference: "Ezequiel 33:1-9" },
+      { id: "profeta-oseias", left: "Oséias", right: "Amor fiel diante da infidelidade", explanation: "A vida e a mensagem de Oséias comunicam o chamado de Deus para que o povo retorne.", reference: "Oséias 1-3; 14:1-4" },
+      { id: "profeta-miqueias", left: "Miqueias", right: "Um governante vindo de Belém", explanation: "Miqueias apontou para Belém ao anunciar a origem de um governante para Israel.", reference: "Miqueias 5:2" },
+      { id: "profeta-malaquias", left: "Malaquias", right: "Um mensageiro prepararia o caminho", explanation: "Malaquias encerra sua mensagem com a expectativa de preparação antes da vinda do Senhor.", reference: "Malaquias 3:1" },
+    ],
+  },
+  {
+    id: "relacoes",
+    title: "Famílias e relações",
+    description: "Conecte pessoas que caminharam juntas em diferentes histórias.",
+    pairs: [
+      { id: "relacao-abraao-isaque", left: "Abraão", right: "Pai de Isaque", explanation: "Isaque foi o filho da promessa recebido por Abraão e Sara na velhice.", reference: "Gênesis 21:1-7" },
+      { id: "relacao-moises-arao", left: "Moisés", right: "Irmão de Arão", explanation: "Arão acompanhou Moisés diante do faraó e serviu como sacerdote em Israel.", reference: "Êxodo 4:14-16; 28:1" },
+      { id: "relacao-noemi-rute", left: "Noemi", right: "Sogra de Rute", explanation: "Rute decidiu permanecer com Noemi e acompanhá-la no retorno a Belém.", reference: "Rute 1:6-18" },
+      { id: "relacao-maria-marta", left: "Maria de Betânia", right: "Irmã de Marta", explanation: "As duas receberam Jesus em casa e aparecem também na narrativa sobre Lázaro.", reference: "Lucas 10:38-42; João 11:1-5" },
+      { id: "relacao-priscila-aquila", left: "Priscila", right: "Esposa de Áquila", explanation: "O casal trabalhou com Paulo e ajudou Apolo a compreender com mais precisão o caminho de Deus.", reference: "Atos 18:1-3; 18:24-26" },
+      { id: "relacao-paulo-timoteo", left: "Paulo", right: "Mentor de Timóteo", explanation: "Timóteo acompanhou Paulo e recebeu dele orientações para servir e cuidar das comunidades.", reference: "Atos 16:1-5; 1 Timóteo 1:1-2" },
+    ],
+  },
 ];
