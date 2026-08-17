@@ -1,9 +1,15 @@
 import Link from "next/link";
+import { completePhraseQuestions } from "@/data/completePhraseQuestions";
+import { quizQuestions } from "@/data/quizQuestions";
+import { quizTopics } from "@/data/quizTopics";
+
+const questionCount = quizQuestions.length + completePhraseQuestions.length;
+const roundedQuestionCount = Math.floor(questionCount / 100) * 100;
 
 const miniCards = [
-  { value: "7", label: "jogos e dinâmicas" },
-  { value: "6", label: "guias práticos" },
-  { value: "100%", label: "gratuito para jogar" },
+  { value: `+${roundedQuestionCount}`, label: "perguntas e desafios" },
+  { value: String(quizTopics.length), label: "temáticas para explorar" },
+  { value: "Grátis", label: "e sem cadastro" },
 ];
 
 export function Hero() {

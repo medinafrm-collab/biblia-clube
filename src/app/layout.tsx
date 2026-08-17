@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Jogue quiz bíblico grátis e desafios sobre a Bíblia diretamente no navegador.",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Bíblia Clube — Jogos e Quiz Online",
     description:
       "Quiz grátis e jogos online para aprender de forma leve.",

@@ -82,8 +82,8 @@ export function GuidesPreviewSection() {
 
         <div className="mt-8 grid gap-3 border-t border-[var(--border)] pt-7 sm:grid-cols-3">
           {[
-            ["6", "guias práticos"],
-            ["7", "jogos e dinâmicas"],
+            ["13", "dinâmicas para grupos"],
+            ["6", "guias de condução"],
             ["0", "cadastro obrigatório"],
           ].map(([value, label], index) => (
             <ScrollReveal key={label} delay={160 + index * 70}>
