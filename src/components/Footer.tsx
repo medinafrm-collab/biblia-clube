@@ -1,3 +1,4 @@
+import { AnalyticsPreferencesButton } from "./AnalyticsPreferencesButton";
 import { FooterLink } from "./FooterLink";
 import { Logo } from "./Logo";
 
@@ -79,6 +80,9 @@ export function Footer() {
                 </FooterLink>
               </li>
             ))}
+            <li>
+              <AnalyticsPreferencesButton />
+            </li>
           </ul>
         </nav>
       </div>

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { ResultShare } from "@/components/ResultShare";
 import {
   memoryGameModes,
   type MemoryGameMode,
@@ -386,6 +387,19 @@ export function MemoryGame() {
                 </div>
               </div>
 
+              <ResultShare
+                game="jogo-da-memoria"
+                title="Meu resultado no Jogo da Memória"
+                text={`Encontrei ${matchedPairs} pares no modo ${mode.title} do Bíblia Clube, com ${moves} movimentos em ${formatTime(seconds)}. Tente também!`}
+                path="/jogo-da-memoria-biblico"
+                eventProperties={{
+                  mode: mode.id,
+                  difficulty,
+                  pairs: matchedPairs,
+                  moves,
+                  seconds,
+                }}
+              />
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <button
                   type="button"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BenefitsSection } from "@/components/BenefitsSection";
+import { ContinueQuizPrompt } from "@/components/ContinueQuizPrompt";
 import { Footer } from "@/components/Footer";
 import { GamesSection } from "@/components/GamesSection";
 import { GuidesPreviewSection } from "@/components/GuidesPreviewSection";
@@ -93,6 +94,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <ContinueQuizPrompt />
         <HowItWorks />
         <GamesSection />
         <GuidesPreviewSection />

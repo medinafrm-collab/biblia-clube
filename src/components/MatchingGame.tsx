@@ -7,6 +7,8 @@ import {
   type MatchingTheme,
 } from "@/data/matchingPairs";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { ResultShare } from "@/components/ResultShare";
+import { ScriptureReader } from "@/components/ScriptureReader";
 import { trackGameEvent } from "@/lib/analytics";
 
 type Phase = "setup" | "playing" | "finished";
@@ -188,9 +190,22 @@ export function MatchingGame() {
                   <strong className="text-[var(--navy)]">{pair.left} — {pair.right}</strong>
                   <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{pair.explanation}</p>
                   <p className="mt-2 text-xs font-bold text-[var(--olive-dark)]">{pair.reference}</p>
+                  <ScriptureReader reference={pair.reference} />
                 </li>
               ))}
             </ul>
+            <ResultShare
+              game="ligue-os-pares"
+              title="Meu resultado no Ligue os Pares"
+              text={`Conectei os ${theme.pairs.length} pares do tema ${theme.title} no Bíblia Clube e fiz ${score} pontos. Tente também!`}
+              path="/ligue-os-pares"
+              eventProperties={{
+                theme: theme.id,
+                pairs: theme.pairs.length,
+                mistakes,
+                score,
+              }}
+            />
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <button type="button" onClick={() => startGame()} className="button-primary">Jogar novamente</button>
               <button type="button" onClick={() => setPhase("setup")} className="button-secondary">Escolher outro tema</button>

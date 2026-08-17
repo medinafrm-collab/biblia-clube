@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { ResultShare } from "@/components/ResultShare";
+import { ScriptureReader } from "@/components/ScriptureReader";
 import {
   completePhraseQuestions,
   type CompletePhraseQuestion,
@@ -217,6 +219,17 @@ export function CompletePhraseGame() {
               <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[var(--muted)]">
                 {getResultMessage(percentage)}
               </p>
+              <ResultShare
+                game="complete-a-frase"
+                title="Meu resultado no Complete a Frase"
+                text={`Completei ${score} de ${questions.length} frases no Bíblia Clube, com ${percentage}% de aproveitamento e uma sequência de ${bestStreak} acertos. Tente também!`}
+                path="/complete-a-frase"
+                eventProperties={{
+                  score,
+                  total: questions.length,
+                  best_streak: bestStreak,
+                }}
+              />
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <button type="button" onClick={startGame} className="button-primary">
                   Jogar novamente <span aria-hidden="true">↻</span>
@@ -328,6 +341,7 @@ export function CompletePhraseGame() {
                   <p className="mt-3 text-sm font-bold text-[var(--olive-dark)]">
                     {currentQuestion.reference}
                   </p>
+                  <ScriptureReader reference={currentQuestion.reference} />
                 </div>
                 <button
                   type="button"

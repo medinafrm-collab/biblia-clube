@@ -21,10 +21,12 @@ export default function PoliticaDePrivacidadePage() {
         <h2>Dados tratados atualmente</h2>
         <p className="mt-4">Os jogos funcionam no navegador e não exigem cadastro. Respostas, pontuações e nomes informados no Modo Grupo não são enviados para um banco de dados do Bíblia Clube.</p>
         <p className="mt-4">Utilizamos Web Analytics e Speed Insights, da Vercel, para entender acessos e desempenho. Essas ferramentas podem registrar dados técnicos e agregados, como página visitada, origem do acesso, país, dispositivo, navegador e métricas de velocidade. O Web Analytics da Vercel não usa cookies nem cria um histórico que identifique o visitante entre diferentes sites ou dias.</p>
+        <p className="mt-4">Com a autorização do visitante, também utilizamos o Google Analytics 4 para medir visualizações, início e conclusão de jogos, retomadas e compartilhamentos. Não enviamos respostas escolhidas, nomes de equipes, e-mails ou outros dados informados durante os jogos.</p>
       </div>
       <div>
         <h2>Cookies e preferências</h2>
-        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google AdSense pode utilizar cookies, armazenamento local e outros identificadores para publicidade, segurança e medição, conforme a disponibilidade dos anúncios e a localização do visitante.</p>
+        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google Analytics 4 só é carregado depois que o visitante seleciona “Aceitar métricas”. A preferência fica armazenada no próprio navegador e pode ser revista pelo link “Preferências de métricas” no rodapé.</p>
+        <p className="mt-4">O Google AdSense pode utilizar cookies, armazenamento local e outros identificadores para publicidade, segurança e medição, conforme a disponibilidade dos anúncios e a localização do visitante.</p>
         <p className="mt-4">Nas regiões em que o consentimento é exigido, as escolhas são apresentadas e registradas pela plataforma de gestão de consentimento certificada do Google. Ela permite consentir, não consentir, gerenciar opções e, quando aplicável, rever uma decisão anterior.</p>
       </div>
       <div>
@@ -40,7 +42,7 @@ export default function PoliticaDePrivacidadePage() {
       </div>
       <div>
         <h2>Serviços de terceiros</h2>
-        <p className="mt-4">O site é hospedado na Vercel, que também fornece as métricas mencionadas. Informações técnicas podem ser processadas por sua infraestrutura conforme as políticas e medidas de segurança do fornecedor. O código é armazenado no GitHub, sem que isso implique acesso do GitHub aos dados de navegação.</p>
+        <p className="mt-4">O site é hospedado na Vercel, que também fornece parte das métricas mencionadas. Quando autorizado, o Google Analytics 4 processa métricas de navegação e interação para gerar relatórios agregados. Informações técnicas podem ser processadas pelas infraestruturas desses fornecedores conforme suas políticas e medidas de segurança. O código é armazenado no GitHub, sem que isso implique acesso do GitHub aos dados de navegação.</p>
       </div>
       <div>
         <h2>Publicidade</h2>
@@ -54,7 +56,7 @@ export default function PoliticaDePrivacidadePage() {
       <div>
         <h2>Atualizações desta política</h2>
         <p className="mt-4">Esta página poderá ser revisada quando novos recursos, fornecedores ou formas de tratamento forem adicionados.</p>
-        <p className="mt-4 text-sm">Última atualização: 30 de junho de 2026.</p>
+        <p className="mt-4 text-sm">Última atualização: 17 de agosto de 2026.</p>
       </div>
     </InstitutionalPage>
   );

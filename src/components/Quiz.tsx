@@ -1,7 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { ContinueQuizPrompt } from "@/components/ContinueQuizPrompt";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { ResultShare } from "@/components/ResultShare";
+import { ScriptureReader } from "@/components/ScriptureReader";
 import {
   quizQuestions,
   type QuizJourney,
@@ -9,6 +13,16 @@ import {
 } from "@/data/quizQuestions";
 import { quizTopics } from "@/data/quizTopics";
 import { trackGameEvent } from "@/lib/analytics";
+import {
+  clearQuizProgress,
+  getJourneyKey,
+  readQuizHistory,
+  readQuizProgress,
+  recordCompletedJourney,
+  saveQuizProgress,
+  type CompletedQuizJourney,
+  type SavedQuizProgress,
+} from "@/lib/quizProgress";
 
 type QuizProps = {
   initialTopic?: QuizTopicId;
@@ -45,11 +59,32 @@ function scrollToElement(
   });
 }
 
+function isValidProgress(progress: SavedQuizProgress) {
+  const questions = quizQuestions.filter(
+    (question) =>
+      question.topics.includes(progress.topic) &&
+      getQuestionJourney(question) === progress.journey,
+  );
+  const question = questions[progress.currentIndex];
+
+  return (
+    questions.length === progress.total &&
+    progress.currentIndex >= 0 &&
+    progress.currentIndex < questions.length &&
+    progress.score >= 0 &&
+    progress.score <= progress.currentIndex + 1 &&
+    Boolean(question) &&
+    (progress.selectedAnswer === null ||
+      question.options.includes(progress.selectedAnswer))
+  );
+}
+
 export function Quiz({
   initialTopic = "geral",
   showIntroduction = true,
   showTopicSelector = true,
 }: QuizProps = {}) {
+  const router = useRouter();
   const quizCardRef = useRef<HTMLDivElement>(null);
   const [selectedTopic, setSelectedTopic] =
     useState<QuizTopicId>(initialTopic);
@@ -58,6 +93,10 @@ export function Quiz({
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [hasResumedProgress, setHasResumedProgress] = useState(false);
+  const [completedJourneys, setCompletedJourneys] = useState<
+    Record<string, CompletedQuizJourney>
+  >({});
 
   const availableJourneys = Array.from(
     new Set(
@@ -71,11 +110,108 @@ export function Quiz({
       question.topics.includes(selectedTopic) &&
       getQuestionJourney(question) === selectedJourney,
   );
-  const selectedTopicLabel =
-    quizTopics.find((topic) => topic.id === selectedTopic)?.label ?? "Geral";
+  const selectedTopicDetails = quizTopics.find(
+    (topic) => topic.id === selectedTopic,
+  );
+  const selectedTopicLabel = selectedTopicDetails?.label ?? "Geral";
   const currentQuestion = activeQuestions[currentIndex];
   const progress = ((currentIndex + 1) / activeQuestions.length) * 100;
   const percentage = Math.round((score / activeQuestions.length) * 100);
+  const journeyOptions = quizTopics.flatMap((topic) =>
+    Array.from(
+      new Set(
+        quizQuestions
+          .filter((question) => question.topics.includes(topic.id))
+          .map(getQuestionJourney),
+      ),
+    )
+      .sort((a, b) => a - b)
+      .map((journey) => ({
+        topic: topic.id,
+        topicLabel: topic.label,
+        topicPath: topic.path,
+        journey,
+        total: quizQuestions.filter(
+          (question) =>
+            question.topics.includes(topic.id) &&
+            getQuestionJourney(question) === journey,
+        ).length,
+      })),
+  );
+  const currentJourneyPosition = journeyOptions.findIndex(
+    (option) =>
+      option.topic === selectedTopic && option.journey === selectedJourney,
+  );
+  const orderedRecommendations =
+    currentJourneyPosition >= 0
+      ? [
+          ...journeyOptions.slice(currentJourneyPosition + 1),
+          ...journeyOptions.slice(0, currentJourneyPosition),
+        ]
+      : journeyOptions;
+  const recommendedJourney =
+    orderedRecommendations.find(
+      (option) =>
+        !completedJourneys[getJourneyKey(option.topic, option.journey)],
+    ) ?? orderedRecommendations[0];
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setCompletedJourneys(readQuizHistory());
+
+      const savedProgress = readQuizProgress();
+      if (!savedProgress || !isValidProgress(savedProgress)) {
+        if (savedProgress) clearQuizProgress();
+        return;
+      }
+
+      const shouldResume =
+        new URLSearchParams(window.location.search).get("continuar") === "1";
+      if (!shouldResume) {
+        const requestedJourney = Number(
+          new URLSearchParams(window.location.search).get("jornada"),
+        );
+        if (
+          requestedJourney === 1 ||
+          requestedJourney === 2 ||
+          requestedJourney === 3
+        ) {
+          const journey = requestedJourney as QuizJourney;
+          const journeyExists = quizQuestions.some(
+            (question) =>
+              question.topics.includes(initialTopic) &&
+              getQuestionJourney(question) === journey,
+          );
+          if (journeyExists) {
+            setSelectedJourney(journey);
+            window.history.replaceState(null, "", `${window.location.pathname}#quiz`);
+            window.requestAnimationFrame(() =>
+              scrollToElement(quizCardRef.current, "auto"),
+            );
+          }
+        }
+        return;
+      }
+
+      setSelectedTopic(savedProgress.topic);
+      setSelectedJourney(savedProgress.journey);
+      setCurrentIndex(savedProgress.currentIndex);
+      setSelectedAnswer(savedProgress.selectedAnswer);
+      setScore(savedProgress.score);
+      setIsFinished(false);
+      setHasResumedProgress(true);
+      window.history.replaceState(
+        null,
+        "",
+        `${savedProgress.topicPath}#quiz`,
+      );
+      window.requestAnimationFrame(() =>
+        scrollToElement(quizCardRef.current, "auto"),
+      );
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [initialTopic]);
 
   useEffect(() => {
     trackGameEvent("quiz", "view", {
@@ -95,10 +231,21 @@ export function Quiz({
       });
     }
 
+    const nextScore =
+      answer === currentQuestion.correctAnswer ? score + 1 : score;
     setSelectedAnswer(answer);
-    if (answer === currentQuestion.correctAnswer) {
-      setScore((currentScore) => currentScore + 1);
-    }
+    setScore(nextScore);
+    saveQuizProgress({
+      version: 1,
+      topic: selectedTopic,
+      topicLabel: selectedTopicLabel,
+      topicPath: selectedTopicDetails?.path ?? "/quiz-biblico",
+      journey: selectedJourney,
+      currentIndex,
+      selectedAnswer: answer,
+      score: nextScore,
+      total: activeQuestions.length,
+    });
   }
 
   function goToNextQuestion() {
@@ -110,15 +257,37 @@ export function Quiz({
         score,
         percentage,
       });
+      clearQuizProgress();
+      setCompletedJourneys(
+        recordCompletedJourney({
+          topic: selectedTopic,
+          journey: selectedJourney,
+          score,
+          total: activeQuestions.length,
+        }),
+      );
       setIsFinished(true);
       return;
     }
 
-    setCurrentIndex((index) => index + 1);
+    const nextIndex = currentIndex + 1;
+    setCurrentIndex(nextIndex);
     setSelectedAnswer(null);
+    saveQuizProgress({
+      version: 1,
+      topic: selectedTopic,
+      topicLabel: selectedTopicLabel,
+      topicPath: selectedTopicDetails?.path ?? "/quiz-biblico",
+      journey: selectedJourney,
+      currentIndex: nextIndex,
+      selectedAnswer: null,
+      score,
+      total: activeQuestions.length,
+    });
   }
 
   function restartQuiz() {
+    clearQuizProgress();
     setCurrentIndex(0);
     setSelectedAnswer(null);
     setScore(0);
@@ -154,6 +323,66 @@ export function Quiz({
     });
     window.setTimeout(() => scrollToElement(quizCardRef.current, "auto"), 120);
     window.setTimeout(() => scrollToElement(quizCardRef.current, "auto"), 280);
+  }
+
+  function resumeSavedProgress(savedProgress: SavedQuizProgress) {
+    if (!isValidProgress(savedProgress)) {
+      clearQuizProgress();
+      return;
+    }
+
+    if (savedProgress.topic !== initialTopic) {
+      router.push(`${savedProgress.topicPath}?continuar=1#quiz`);
+      return;
+    }
+
+    trackGameEvent("quiz", "resume", {
+      topic: savedProgress.topic,
+      journey: savedProgress.journey,
+      question: savedProgress.currentIndex + 1,
+    });
+    setSelectedTopic(savedProgress.topic);
+    setSelectedJourney(savedProgress.journey);
+    setCurrentIndex(savedProgress.currentIndex);
+    setSelectedAnswer(savedProgress.selectedAnswer);
+    setScore(savedProgress.score);
+    setIsFinished(false);
+    setHasResumedProgress(true);
+    window.history.replaceState(
+      null,
+      "",
+      `${savedProgress.topicPath}#quiz`,
+    );
+    window.requestAnimationFrame(() =>
+      scrollToElement(quizCardRef.current, "auto"),
+    );
+  }
+
+  function startRecommendedJourney() {
+    if (!recommendedJourney) return;
+
+    clearQuizProgress();
+    if (recommendedJourney.topic !== selectedTopic) {
+      router.push(
+        `${recommendedJourney.topicPath}?jornada=${recommendedJourney.journey}#quiz`,
+      );
+      return;
+    }
+
+    setSelectedTopic(recommendedJourney.topic);
+    setSelectedJourney(recommendedJourney.journey);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setScore(0);
+    setIsFinished(false);
+    window.history.replaceState(
+      null,
+      "",
+      `${recommendedJourney.topicPath}#quiz`,
+    );
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => scrollToElement(quizCardRef.current));
+    });
   }
 
   return (
@@ -225,6 +454,13 @@ export function Quiz({
             </div>
           </>
         )}
+
+        <ContinueQuizPrompt
+          compact
+          hidden={hasResumedProgress}
+          initialOnly
+          onContinue={resumeSavedProgress}
+        />
 
         {availableJourneys.length > 1 && (
           <div className={`mx-auto max-w-[820px] ${showTopicSelector ? "mt-7" : "mt-2"}`}>
@@ -378,6 +614,7 @@ export function Quiz({
                       <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">
                         Referência: {currentQuestion.reference}
                       </p>
+                      <ScriptureReader reference={currentQuestion.reference} />
                     </div>
                     <button
                       type="button"
@@ -425,6 +662,43 @@ export function Quiz({
               <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[var(--muted)]">
                 {getResultMessage(percentage)}
               </p>
+              {recommendedJourney && (
+                <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6">
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive)]">
+                      Próxima jornada recomendada
+                    </p>
+                    <p className="mt-2 font-serif text-2xl text-[var(--navy)]">
+                      {recommendedJourney.topicLabel} · Jornada{" "}
+                      {recommendedJourney.journey}
+                    </p>
+                    <p className="mt-1 text-sm text-[var(--muted)]">
+                      {recommendedJourney.total} perguntas para continuar
+                      aprendendo.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={startRecommendedJourney}
+                    className="button-primary mt-4 shrink-0 sm:mt-0"
+                  >
+                    Começar
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+              )}
+              <ResultShare
+                game="quiz"
+                title="Meu resultado no Quiz Bíblico"
+                text={`Concluí uma jornada do tema ${selectedTopicLabel} no Bíblia Clube e acertei ${score} de ${activeQuestions.length} perguntas (${percentage}%). Que tal tentar também?`}
+                path={`${selectedTopicDetails?.path ?? "/quiz-biblico"}#quiz`}
+                eventProperties={{
+                  topic: selectedTopic,
+                  journey: selectedJourney,
+                  score,
+                  total: activeQuestions.length,
+                }}
+              />
               <FeedbackPrompt game="quiz" label="quiz_result" />
               <button
                 type="button"

@@ -7,6 +7,8 @@ import {
   type QuizTopicId,
 } from "@/data/quizQuestions";
 import { FeedbackPrompt } from "@/components/FeedbackPrompt";
+import { ResultShare } from "@/components/ResultShare";
+import { ScriptureReader } from "@/components/ScriptureReader";
 import { quizTopics } from "@/data/quizTopics";
 import { trackGameEvent } from "@/lib/analytics";
 
@@ -77,6 +79,8 @@ export function GroupMode() {
   const ranking = [...teams].sort((a, b) => b.score - a.score);
   const topScore = ranking[0]?.score ?? 0;
   const winners = ranking.filter((team) => team.score === topScore);
+  const selectedTopicLabel =
+    quizTopics.find((topic) => topic.id === selectedTopic)?.label ?? "Geral";
 
   useEffect(() => {
     trackGameEvent("modo-grupo", "view");
@@ -387,6 +391,22 @@ export function GroupMode() {
                 </li>
               ))}
             </ol>
+            <ResultShare
+              game="modo-grupo"
+              title="Resultado do Modo Grupo"
+              text={
+                winners.length > 1
+                  ? `Terminamos uma partida do Modo Grupo no Bíblia Clube com empate entre ${winners.map((team) => team.name).join(" e ")}, com ${topScore} pontos. Reúna seu grupo e tente também!`
+                  : `${winners[0]?.name ?? "Uma equipe"} venceu uma partida do Modo Grupo no Bíblia Clube com ${topScore} pontos. Reúna seu grupo e tente também!`
+              }
+              path="/modo-grupo"
+              eventProperties={{
+                topic: selectedTopic,
+                topic_label: selectedTopicLabel,
+                teams: teams.length,
+                top_score: topScore,
+              }}
+            />
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <button type="button" onClick={startGame} className="button-primary">Jogar novamente</button>
               <button type="button" onClick={() => setPhase("setup")} className="button-secondary">Nova configuração</button>
@@ -500,6 +520,7 @@ export function GroupMode() {
                   </strong>
                   <p className="mt-2 leading-7 text-[var(--muted)]">{currentQuestion.explanation}</p>
                   <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">Referência: {currentQuestion.reference}</p>
+                  <ScriptureReader reference={currentQuestion.reference} />
                 </div>
                 <button type="button" onClick={goToNextQuestion} className="button-primary order-first w-full sm:order-none">
                   {questionIndex === questions.length - 1 ? "Ver resultado" : "Próxima pergunta"}
