@@ -76,7 +76,7 @@ export function GoogleAnalytics() {
 
   return (
     <aside
-      aria-label="Preferências de métricas"
+      aria-label="Preferências de cookies"
       className="fixed inset-x-0 bottom-0 z-[70] border-t border-[var(--border)] bg-white shadow-[0_-18px_50px_rgba(15,49,63,0.14)]"
     >
       <div className="container-site py-5 sm:flex sm:items-center sm:justify-between sm:gap-8">
@@ -85,8 +85,9 @@ export function GoogleAnalytics() {
             Sua privacidade importa
           </strong>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            As métricas opcionais nos ajudam a entender quais jogos são mais
-            úteis. Elas só serão ativadas com sua escolha. Consulte a{" "}
+            O site usa recursos essenciais para funcionar e lembrar sua
+            escolha. Com sua permissão, também usamos cookies de análise para
+            entender quais jogos são mais úteis. Consulte a{" "}
             <Link href="/politica-de-privacidade">
               Política de Privacidade
             </Link>
@@ -99,14 +100,14 @@ export function GoogleAnalytics() {
             onClick={() => chooseConsent("denied")}
             className="button-secondary"
           >
-            Somente necessário
+            Apenas necessários
           </button>
           <button
             type="button"
             onClick={() => chooseConsent("granted")}
             className="button-primary"
           >
-            Aceitar métricas
+            Aceitar cookies
           </button>
         </div>
       </div>

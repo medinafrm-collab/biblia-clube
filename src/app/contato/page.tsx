@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Contato",
   description:
     "Entre em contato com o Bíblia Clube para sugestões, dúvidas e parcerias.",
+  alternates: {
+    canonical: "/contato",
+  },
 };
 
 export default function ContatoPage() {

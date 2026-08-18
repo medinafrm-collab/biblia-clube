@@ -15,7 +15,7 @@ export function AnalyticsPreferencesButton() {
       }}
       className="text-sm font-bold text-[var(--muted)] hover:text-[var(--navy)]"
     >
-      Preferências de métricas
+      Preferências de cookies
     </button>
   );
 }

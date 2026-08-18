@@ -4,6 +4,9 @@ import { InstitutionalPage } from "@/components/InstitutionalPage";
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description: "Como o Bíblia Clube utiliza dados, cookies e métricas de acesso.",
+  alternates: {
+    canonical: "/politica-de-privacidade",
+  },
 };
 
 export default function PoliticaDePrivacidadePage() {
@@ -25,7 +28,7 @@ export default function PoliticaDePrivacidadePage() {
       </div>
       <div>
         <h2>Cookies e preferências</h2>
-        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google Analytics 4 só é carregado depois que o visitante seleciona “Aceitar métricas”. A preferência fica armazenada no próprio navegador e pode ser revista pelo link “Preferências de métricas” no rodapé.</p>
+        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google Analytics 4 só é carregado depois que o visitante seleciona “Aceitar cookies”. A preferência fica armazenada no próprio navegador e pode ser revista pelo link “Preferências de cookies” no rodapé.</p>
         <p className="mt-4">O Google AdSense pode utilizar cookies, armazenamento local e outros identificadores para publicidade, segurança e medição, conforme a disponibilidade dos anúncios e a localização do visitante.</p>
         <p className="mt-4">Nas regiões em que o consentimento é exigido, as escolhas são apresentadas e registradas pela plataforma de gestão de consentimento certificada do Google. Ela permite consentir, não consentir, gerenciar opções e, quando aplicável, rever uma decisão anterior.</p>
       </div>

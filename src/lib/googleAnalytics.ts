@@ -20,7 +20,7 @@ const ANALYTICS_HOSTS = new Set([
 declare global {
   interface Window {
     bibliaClubeGaInitialized?: boolean;
-    dataLayer?: unknown[][];
+    dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     [key: `ga-disable-${string}`]: boolean | undefined;
   }
@@ -78,8 +78,10 @@ export function initializeGoogleAnalytics() {
   window.dataLayer = window.dataLayer ?? [];
   window.gtag =
     window.gtag ??
-    function gtag(...args: unknown[]) {
-      window.dataLayer?.push(args);
+    function gtag() {
+      // The Google tag loader expects the native arguments object.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer?.push(arguments);
     };
 
   window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;

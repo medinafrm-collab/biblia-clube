@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
-const title = "Guias para jogos e células | Bíblia Clube";
+const title = "Guias para jogos e células";
 const description =
   "Guias práticos para usar jogos, quiz, dinâmicas e estudos em células, grupos de jovens, casais e pequenos grupos cristãos.";
 
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "/guias",
-    title,
+    title: `${title} | Bíblia Clube`,
     description,
   },
 };
