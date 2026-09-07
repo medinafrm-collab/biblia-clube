@@ -8,9 +8,14 @@ import { printableResources } from "@/data/printableResources";
 export const metadata: Metadata = {
   title: "Sobre",
   description:
-    "Conheça a proposta, a responsabilidade editorial e os critérios usados nos jogos, guias e dinâmicas do Bíblia Clube.",
+    "Conheça a proposta, a responsabilidade editorial e os canais para enviar sugestões ao Bíblia Clube.",
   alternates: { canonical: "/sobre" },
-  openGraph: { title: "Sobre", description: "Conheça a proposta, a responsabilidade editorial e os critérios usados nos jogos, guias e dinâmicas do Bíblia Clube.", url: "/sobre" },
+  openGraph: {
+    title: "Sobre",
+    description:
+      "Conheça a proposta, a responsabilidade editorial e os canais para enviar sugestões ao Bíblia Clube.",
+    url: "/sobre",
+  },
 };
 
 export default function SobrePage() {
@@ -18,15 +23,15 @@ export default function SobrePage() {
     <InstitutionalPage
       eyebrow="Sobre o Bíblia Clube"
       title="Aprender junto pode ser leve, profundo e divertido."
-      intro="O Bíblia Clube é um projeto independente que aproxima pessoas da Bíblia por meio de jogos, guias e dinâmicas gratuitas, simples de usar e fáceis de compartilhar."
+      intro="O Bíblia Clube é um projeto independente que aproxima pessoas da Bíblia por meio de jogos, conteúdos editoriais, materiais e ferramentas gratuitas para preparar encontros."
     >
       <div>
         <h2>Nossa proposta</h2>
         <p className="mt-4">
-          Criamos quizzes, jogos e dinâmicas para quem quer aprender mais sobre
-          a Bíblia sozinho ou em comunidade. O conteúdo é pensado para
-          famílias, jovens, igrejas, células, escolas bíblicas e pequenos
-          grupos.
+          Criamos quizzes, jogos, dinâmicas, artigos, materiais para imprimir e
+          uma ferramenta de roteiro para quem quer aprender mais sobre a Bíblia
+          sozinho ou em comunidade. O conteúdo é pensado para famílias, jovens,
+          igrejas, células, escolas bíblicas e pequenos grupos.
         </p>
       </div>
       <div>
@@ -36,16 +41,6 @@ export default function SobrePage() {
           Nosso compromisso é apresentar informações claras, referências
           verificáveis e atividades respeitosas para diferentes contextos
           cristãos.
-        </p>
-        <p className="mt-4">
-          Dúvidas, sugestões e pedidos de correção podem ser enviados para{" "}
-          <a
-            href="mailto:bibliaclubeweb@gmail.com"
-            className="font-bold text-[var(--navy)]"
-          >
-            bibliaclubeweb@gmail.com
-          </a>
-          .
         </p>
       </div>
       <div>
@@ -81,7 +76,7 @@ export default function SobrePage() {
           Artigos editoriais informam a data da revisão mais recente. Sugestões de atividades são verificadas quanto à clareza, ao contexto bíblico e ao risco de exposição desnecessária de participantes. Correções relevantes são incorporadas ao conteúdo assim que confirmadas.
         </p>
         <p className="mt-4">
-          A última revisão geral desta página foi feita em 29 de agosto de 2026.
+          A última revisão geral desta página foi feita em 6 de setembro de 2026.
         </p>
       </div>
       <div>
@@ -113,6 +108,35 @@ export default function SobrePage() {
           <li>Referências que aproximem o jogo da leitura bíblica.</li>
           <li>Tecnologia simples, rápida e agradável de usar.</li>
         </ul>
+      </div>
+      <div>
+        <h2>Contato e participação</h2>
+        <p className="mt-4">
+          Recados, sugestões de temas, relatos de uso e pedidos de correção são
+          bem-vindos. Você pode falar com o Bíblia Clube por um destes canais:
+        </p>
+        <ul className="mt-4">
+          <li>
+            E-mail:{" "}
+            <a href="mailto:bibliaclubeweb@gmail.com?subject=Recado%20ou%20sugest%C3%A3o%20para%20o%20B%C3%ADblia%20Clube">
+              bibliaclubeweb@gmail.com
+            </a>
+          </li>
+          <li>
+            Instagram:{" "}
+            <a
+              href="https://www.instagram.com/bibliaclube.br/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @bibliaclube.br
+            </a>
+          </li>
+        </ul>
+        <p className="mt-4">
+          Para outros assuntos, consulte também a página de{" "}
+          <Link href="/contato">contato</Link>.
+        </p>
       </div>
     </InstitutionalPage>
   );
