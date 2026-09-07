@@ -6,28 +6,9 @@ import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
 
-const title = "Ideias para estudo bíblico em grupo | Bíblia Clube";
+const title = "Ideias para estudo bíblico em grupo";
 const description =
   "Ideias práticas para organizar estudo bíblico em grupo com perguntas, referências, conversa guiada e atividades bíblicas simples.";
-
-const methods = [
-  {
-    title: "Observação do texto",
-    text: "Comece perguntando o que o texto mostra: personagens, ações, contexto, repetições e ideias principais. Essa etapa ajuda o grupo a não pular direto para opiniões.",
-  },
-  {
-    title: "Entendimento da mensagem",
-    text: "Depois, conduza o grupo a pensar no significado. O que o texto ensina sobre Deus, sobre o ser humano, sobre fé, obediência, pecado, graça ou esperança?",
-  },
-  {
-    title: "Aplicação para a vida",
-    text: "Por fim, pergunte que atitude prática pode nascer daquela leitura. A aplicação deve ser possível, honesta e conectada ao texto bíblico.",
-  },
-  {
-    title: "Oração relacionada ao tema",
-    text: "A oração final ajuda a transformar conversa em resposta diante de Deus. Ela pode pedir força, arrependimento, sabedoria, unidade ou perseverança.",
-  },
-];
 
 const ideas = [
   "Começar com uma pergunta bíblica simples.",
@@ -37,6 +18,39 @@ const ideas = [
   "Usar um quiz como revisão do tema.",
   "Encerrar com uma pergunta de aplicação para a semana.",
 ];
+
+const readyStudy = {
+  passage: "Marcos 10:46-52",
+  theme: "Jesus para, escuta e chama Bartimeu",
+  purpose: "Observar como a multidão e Jesus reagem ao clamor de Bartimeu e pensar em maneiras concretas de uma comunidade abrir espaço para quem costuma ser silenciado.",
+  context: "Jesus está saindo de Jericó a caminho de Jerusalém. Pouco antes, os discípulos discutiram grandeza e Jesus apresentou o serviço como caminho (Marcos 10:32-45). À margem da estrada, Bartimeu reconhece Jesus como Filho de Davi, insiste em clamar e, depois de ser chamado, expressa diretamente o que deseja.",
+  observations: [
+    "Quem aparece na cena e onde Bartimeu está no início?",
+    "Quais verbos descrevem a reação da multidão antes e depois de Jesus parar?",
+    "O que Bartimeu chama Jesus e o que ele pede?",
+    "O que Jesus faz antes de responder ao pedido?",
+    "Onde Bartimeu está no fim da narrativa?",
+  ],
+  interpretation: [
+    {
+      question: "O que o contraste entre a multidão e Jesus revela sobre atenção e acolhimento?",
+      support: "A multidão inicialmente manda Bartimeu se calar; Jesus para e manda chamá-lo. Depois, as mesmas pessoas dizem que ele tenha coragem e se levante. O grupo pode notar essa mudança sem transformar todos os presentes em personagens inteiramente maus ou bons.",
+    },
+    {
+      question: "Por que a pergunta de Jesus, 'Que queres que eu te faça?', importa se a necessidade parecia visível?",
+      support: "Jesus permite que Bartimeu fale por si. A cena oferece um princípio de escuta: reconhecer uma necessidade não dá ao grupo o direito de presumir toda a história ou decidir sem ouvir a pessoa.",
+    },
+    {
+      question: "Como o final conecta restauração e discipulado?",
+      support: "Bartimeu recupera a visão e segue Jesus pelo caminho. Marcos não apresenta apenas uma mudança de condição, mas uma resposta que passa a acompanhar a jornada de Jesus.",
+    },
+  ],
+  applications: [
+    "Identificar uma prática do grupo que dificulta a participação de visitantes, pessoas tímidas ou quem precisa de mais tempo para falar.",
+    "Durante a próxima conversa, fazer uma pergunta e ouvir a resposta sem completá-la pela outra pessoa.",
+    "Escolher uma barreira concreta de acesso ou acolhimento que o grupo pode reduzir nesta semana.",
+  ],
+};
 
 export const metadata: Metadata = {
   title,
@@ -125,7 +139,8 @@ export default function GroupBibleStudyIdeasGuide() {
                   Neste guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Um caminho simples para estudar o texto.</li>
+                  <li>- Um caminho de quatro movimentos para estudar o texto.</li>
+                  <li>- Estudo completo de Marcos 10:46-52.</li>
                   <li>- Ideias para aumentar participação do grupo.</li>
                   <li>- Como usar jogos sem perder profundidade.</li>
                   <li>- Ferramentas relacionadas para aplicar o estudo.</li>
@@ -152,18 +167,18 @@ export default function GroupBibleStudyIdeasGuide() {
                     pessoas.
                   </p>
 
-                  <h2>Um caminho de três perguntas</h2>
+                  <h2>Um caminho de quatro movimentos</h2>
                   <p>
-                    Uma forma prática de conduzir o estudo é passar por três
-                    perguntas: o que o texto mostra, o que o texto ensina e como
-                    podemos responder. Esse caminho preserva o foco do texto e
-                    favorece participação.
+                    Uma forma prática de conduzir o estudo é observar o que o
+                    texto mostra, buscar sua mensagem no contexto, escolher uma
+                    resposta possível e orar a partir do que foi lido. Esse
+                    caminho preserva o foco do texto e favorece participação.
                   </p>
                 </div>
 
                 <GuideVisualBlock
                   eyebrow="Método simples"
-                  title="Três perguntas para conduzir melhor"
+                  title="Quatro movimentos para conduzir melhor"
                   description="Esse caminho ajuda o grupo a observar o texto antes de partir para opiniões e aplicações."
                   variant="timeline"
                   items={[
@@ -190,24 +205,67 @@ export default function GroupBibleStudyIdeasGuide() {
                   ]}
                 />
 
-                <div className="mt-10 grid gap-4">
-                  {methods.map((method, index) => (
-                    <section
-                      key={method.title}
-                      className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6"
-                    >
-                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold)]">
-                        Caminho {index + 1}
-                      </span>
-                      <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">
-                        {method.title}
-                      </h3>
-                      <p className="mt-3 leading-7 text-[var(--muted)]">
-                        {method.text}
-                      </p>
+                <section className="mt-12" aria-labelledby="estudo-pronto">
+                  <span className="eyebrow">Estudo pronto · 40 minutos</span>
+                  <h2 id="estudo-pronto" className="section-title mt-4">{readyStudy.theme}</h2>
+                  <p className="section-copy max-w-3xl"><strong>Texto principal:</strong> {readyStudy.passage}</p>
+                  <p className="mt-4 max-w-3xl leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Propósito:</strong> {readyStudy.purpose}</p>
+
+                  <div className="mt-8 border-y border-[var(--border)] py-7">
+                    <h3 className="font-serif text-2xl text-[var(--navy)]">Contexto para quem conduz</h3>
+                    <p className="mt-3 leading-7 text-[var(--muted)]">{readyStudy.context}</p>
+                    <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Leia toda a passagem antes do encontro. Durante o estudo, diferencie o que o texto afirma das inferências feitas pelo grupo e evite usar a cura para culpar pessoas por enfermidade ou deficiência.</p>
+                  </div>
+
+                  <div className="mt-8 grid gap-8 lg:grid-cols-2">
+                    <section>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--gold-ink)]">1 · Observar</p>
+                      <h3 className="mt-2 font-serif text-2xl text-[var(--navy)]">Perguntas respondidas pelo próprio texto</h3>
+                      <ol className="mt-4 grid gap-3 leading-7 text-[var(--muted)]">
+                        {readyStudy.observations.map((question, index) => <li key={question} className="flex gap-3"><span className="font-bold text-[var(--olive-dark)]">{index + 1}.</span><span>{question}</span></li>)}
+                      </ol>
                     </section>
-                  ))}
-                </div>
+
+                    <section>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--gold-ink)]">2 · Entender</p>
+                      <h3 className="mt-2 font-serif text-2xl text-[var(--navy)]">Perguntas e apoio ao condutor</h3>
+                      <div className="mt-4 grid gap-5">
+                        {readyStudy.interpretation.map((item) => (
+                          <div key={item.question} className="border-l-2 border-[var(--gold)] pl-4">
+                            <p className="font-bold leading-7 text-[var(--navy)]">{item.question}</p>
+                            <p className="mt-2 text-sm leading-6 text-[var(--muted)]"><strong>Apoio:</strong> {item.support}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  </div>
+
+                  <section className="mt-9 border-t border-[var(--border)] pt-7">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--gold-ink)]">3 · Responder</p>
+                    <h3 className="mt-2 font-serif text-2xl text-[var(--navy)]">Escolha uma aplicação, não todas</h3>
+                    <ul className="mt-4 grid gap-3 leading-7 text-[var(--muted)]">
+                      {readyStudy.applications.map((application) => <li key={application} className="flex gap-3"><span aria-hidden="true" className="text-[var(--gold-ink)]">•</span><span>{application}</span></li>)}
+                    </ul>
+                  </section>
+
+                  <section className="mt-9 border-t border-[var(--border)] pt-7">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--gold-ink)]">4 · Orar</p>
+                    <h3 className="mt-2 font-serif text-2xl text-[var(--navy)]">Oração ligada ao texto</h3>
+                    <p className="mt-3 leading-7 text-[var(--muted)]">Agradeça porque Jesus percebe pessoas que a multidão ignora. Peça atenção para ouvir antes de presumir, coragem para remover barreiras e disposição para seguir Jesus no caminho do serviço.</p>
+                  </section>
+                </section>
+
+                <section className="mt-12 border-y border-[var(--border)] py-8">
+                  <h2 className="font-serif text-3xl text-[var(--navy)]">Cronograma do encontro</h2>
+                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--muted)] sm:grid-cols-2">
+                    <li><strong className="text-[var(--navy)]">5 min · Acolhimento:</strong> apresente o propósito e combine participação voluntária.</li>
+                    <li><strong className="text-[var(--navy)]">8 min · Leitura:</strong> leia Marcos 10:46-52 duas vezes, com leitores diferentes.</li>
+                    <li><strong className="text-[var(--navy)]">10 min · Observação:</strong> trabalhe as cinco perguntas sem antecipar aplicações.</li>
+                    <li><strong className="text-[var(--navy)]">10 min · Interpretação:</strong> escolha duas perguntas e use os apoios apenas depois de ouvir o grupo.</li>
+                    <li><strong className="text-[var(--navy)]">4 min · Aplicação:</strong> o grupo escolhe uma prática pequena e verificável.</li>
+                    <li><strong className="text-[var(--navy)]">3 min · Oração:</strong> encerre respondendo ao texto, sem pressionar pedidos pessoais.</li>
+                  </ol>
+                </section>
 
                 <div className="prose-content mt-12">
                   <h2>Ideias simples para variar o encontro</h2>
@@ -229,19 +287,6 @@ export default function GroupBibleStudyIdeasGuide() {
                     ))}
                   </ul>
                 </div>
-
-                <section className="mt-12 rounded-lg border border-[var(--gold)]/30 bg-[var(--gold-soft)] p-6 sm:p-8">
-                  <h2 className="font-serif text-3xl text-[var(--navy)]">
-                    Sugestão de roteiro
-                  </h2>
-                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--olive-dark)]">
-                    <li>1. Apresente o tema e faça uma pergunta de abertura.</li>
-                    <li>2. Leia a referência principal com o grupo.</li>
-                    <li>3. Pergunte o que o texto mostra antes de pedir aplicações.</li>
-                    <li>4. Use uma atividade curta para revisar ou fixar o tema.</li>
-                    <li>5. Encerre com uma oração conectada à resposta prática.</li>
-                  </ol>
-                </section>
 
                 <RelatedTools
                   description="Estas ferramentas podem ajudar a transformar o estudo em participação, revisão e conversa guiada."
@@ -273,7 +318,7 @@ export default function GroupBibleStudyIdeasGuide() {
                     {
                       title: "Jogo da Memória",
                       description:
-                        "Use pares de versos e referências para revisar o estudo.",
+                        "Relacione personagens e símbolos para revisar associações bíblicas.",
                       href: "/jogo-da-memoria-biblico",
                     },
                   ]}

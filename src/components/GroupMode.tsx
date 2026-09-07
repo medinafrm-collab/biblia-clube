@@ -333,6 +333,7 @@ export function GroupMode() {
                     key={option.value}
                     type="button"
                     onClick={() => setTimerSeconds(option.value)}
+                    aria-pressed={timerSeconds === option.value}
                     className={`min-h-12 rounded-md border px-4 text-sm font-bold ${timerSeconds === option.value ? "border-[var(--navy)] bg-[var(--navy)] text-white" : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--gold)]"}`}
                   >
                     {option.label}

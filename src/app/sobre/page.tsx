@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { InstitutionalPage } from "@/components/InstitutionalPage";
+import { cellDynamics } from "@/data/cellDynamics";
+import { editorialArticles } from "@/data/editorialContent";
+import { printableResources } from "@/data/printableResources";
 
 export const metadata: Metadata = {
   title: "Sobre",
   description:
     "Conheça a proposta, a responsabilidade editorial e os critérios usados nos jogos, guias e dinâmicas do Bíblia Clube.",
   alternates: { canonical: "/sobre" },
+  openGraph: { title: "Sobre", description: "Conheça a proposta, a responsabilidade editorial e os critérios usados nos jogos, guias e dinâmicas do Bíblia Clube.", url: "/sobre" },
 };
 
 export default function SobrePage() {
@@ -44,13 +49,46 @@ export default function SobrePage() {
         </p>
       </div>
       <div>
+        <h2>Quem produz o conteúdo</h2>
+        <p className="mt-4">
+          O Bíblia Clube é um projeto independente. Os textos, roteiros, perguntas e explicações são preparados e revisados sob a autoria editorial do próprio projeto. Não atribuímos credenciais, equipe ou especialistas que não existem.
+        </p>
+        <p className="mt-4">
+          O acervo atual inclui {editorialArticles.length} artigos editoriais, {cellDynamics.length} dinâmicas completas e {printableResources.length} materiais para imprimir, além dos jogos e guias interativos.
+        </p>
+      </div>
+      <div>
         <h2>Como o conteúdo é preparado</h2>
         <ol className="mt-4">
           <li>1. O tema e o objetivo de aprendizado são definidos.</li>
           <li>2. A pergunta ou dinâmica é confrontada com a passagem indicada.</li>
           <li>3. Alternativas, explicações e referências passam por revisão.</li>
           <li>4. A linguagem é adaptada para ser clara sem infantilizar o conteúdo.</li>
+          <li>5. Páginas novas são verificadas em celular e computador antes da publicação.</li>
         </ol>
+        <p className="mt-5">
+          O processo completo de pesquisa, revisão, uso de ferramentas e
+          tratamento de correções está documentado em nossa página de{" "}
+          <Link href="/como-produzimos-conteudos">
+            critérios e processo editorial
+          </Link>
+          .
+        </p>
+      </div>
+      <div>
+        <h2>Atualização e correções</h2>
+        <p className="mt-4">
+          Artigos editoriais informam a data da revisão mais recente. Sugestões de atividades são verificadas quanto à clareza, ao contexto bíblico e ao risco de exposição desnecessária de participantes. Correções relevantes são incorporadas ao conteúdo assim que confirmadas.
+        </p>
+        <p className="mt-4">
+          A última revisão geral desta página foi feita em 29 de agosto de 2026.
+        </p>
+      </div>
+      <div>
+        <h2>Imagens e licenças</h2>
+        <p className="mt-4">
+            O site utiliza fotografias de bancos de imagens, com fontes registradas, e imagens ilustrativas geradas ou editadas com inteligência artificial. Essas ilustrações representam situações de uso e não documentam encontros reais. Algumas incluem representações dos jogos; a interface disponível pode ser diferente da ilustração.
+        </p>
       </div>
       <div>
         <h2>Fontes e critérios</h2>

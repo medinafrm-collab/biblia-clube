@@ -6,6 +6,8 @@ const CONSENT_KEY = "biblia-clube:analytics-consent:v1";
 const CONSENT_EVENT = "biblia-clube:analytics-consent-updated";
 
 export type AnalyticsConsent = "granted" | "denied";
+// Keep this page's choice authoritative when storage cannot be changed.
+let consentOverride: AnalyticsConsent | null | undefined;
 export type GoogleAnalyticsValue = string | number | boolean | null;
 export type GoogleAnalyticsParameters = Record<
   string,
@@ -28,6 +30,7 @@ declare global {
 
 export function readAnalyticsConsent(): AnalyticsConsent | null {
   if (typeof window === "undefined") return null;
+  if (consentOverride !== undefined) return consentOverride;
 
   try {
     const consent = window.localStorage.getItem(CONSENT_KEY);
@@ -39,21 +42,25 @@ export function readAnalyticsConsent(): AnalyticsConsent | null {
 
 export function saveAnalyticsConsent(consent: AnalyticsConsent) {
   if (typeof window === "undefined") return;
+  if (consent !== "granted") disableGoogleAnalytics();
 
   try {
     window.localStorage.setItem(CONSENT_KEY, consent);
+    consentOverride = undefined;
   } catch {
-    // The current page still respects the visitor's choice.
-    return;
+    consentOverride = consent;
   }
   window.dispatchEvent(new Event(CONSENT_EVENT));
 }
 
 export function resetAnalyticsConsent() {
   if (typeof window === "undefined") return;
+  disableGoogleAnalytics();
+  consentOverride = null;
 
   try {
     window.localStorage.removeItem(CONSENT_KEY);
+    consentOverride = undefined;
   } catch {
     // The preferences panel can still reopen for the current page.
   }
@@ -61,20 +68,31 @@ export function resetAnalyticsConsent() {
 }
 
 export function subscribeToAnalyticsConsent(callback: () => void) {
+  const handleChange = () => {
+    if (readAnalyticsConsent() !== "granted") disableGoogleAnalytics();
+    callback();
+  };
   const handleStorage = (event: StorageEvent) => {
-    if (event.key === CONSENT_KEY) callback();
+    if (event.key === CONSENT_KEY || event.key === null) {
+      consentOverride = undefined;
+      handleChange();
+    }
   };
 
   window.addEventListener("storage", handleStorage);
-  window.addEventListener(CONSENT_EVENT, callback);
+  window.addEventListener(CONSENT_EVENT, handleChange);
 
   return () => {
     window.removeEventListener("storage", handleStorage);
-    window.removeEventListener(CONSENT_EVENT, callback);
+    window.removeEventListener(CONSENT_EVENT, handleChange);
   };
 }
 
 export function initializeGoogleAnalytics() {
+  if (!isGoogleAnalyticsHost() || readAnalyticsConsent() !== "granted") {
+    disableGoogleAnalytics();
+    return false;
+  }
   window.dataLayer = window.dataLayer ?? [];
   window.gtag =
     window.gtag ??
@@ -88,7 +106,7 @@ export function initializeGoogleAnalytics() {
   window.gtag("consent", "update", {
     analytics_storage: "granted",
   });
-  if (window.bibliaClubeGaInitialized) return;
+  if (window.bibliaClubeGaInitialized) return true;
 
   window.bibliaClubeGaInitialized = true;
   window.gtag("js", new Date());
@@ -96,6 +114,7 @@ export function initializeGoogleAnalytics() {
     send_page_view: false,
     anonymize_ip: true,
   });
+  return true;
 }
 
 export function isGoogleAnalyticsHost() {

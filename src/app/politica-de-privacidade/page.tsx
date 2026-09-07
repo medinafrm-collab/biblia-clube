@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/politica-de-privacidade",
   },
+  openGraph: { title: "Política de Privacidade", description: "Como o Bíblia Clube utiliza dados, cookies e métricas de acesso.", url: "/politica-de-privacidade" },
 };
 
 export default function PoliticaDePrivacidadePage() {
@@ -28,7 +29,8 @@ export default function PoliticaDePrivacidadePage() {
       </div>
       <div>
         <h2>Cookies e preferências</h2>
-        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google Analytics 4 só é carregado depois que o visitante seleciona “Aceitar cookies”. A preferência fica armazenada no próprio navegador e pode ser revista pelo link “Preferências de cookies” no rodapé.</p>
+        <p className="mt-4">O Web Analytics da Vercel não utiliza cookies. O Google Analytics 4 só é carregado depois que o visitante seleciona “Aceitar cookies”. A preferência fica armazenada no próprio navegador e pode ser revista pelo link “Preferências de cookies” no rodapé das demais páginas do site.</p>
+        <p className="mt-4">Esta página de privacidade não carrega anúncios, a mensagem de consentimento do Google nem ferramentas de análise de audiência e desempenho, para permitir a consulta da política sem esses recursos.</p>
         <p className="mt-4">O Google AdSense pode utilizar cookies, armazenamento local e outros identificadores para publicidade, segurança e medição, conforme a disponibilidade dos anúncios e a localização do visitante.</p>
         <p className="mt-4">Nas regiões em que o consentimento é exigido, as escolhas são apresentadas e registradas pela plataforma de gestão de consentimento certificada do Google. Ela permite consentir, não consentir, gerenciar opções e, quando aplicável, rever uma decisão anterior.</p>
       </div>
@@ -59,7 +61,7 @@ export default function PoliticaDePrivacidadePage() {
       <div>
         <h2>Atualizações desta política</h2>
         <p className="mt-4">Esta página poderá ser revisada quando novos recursos, fornecedores ou formas de tratamento forem adicionados.</p>
-        <p className="mt-4 text-sm">Última atualização: 17 de agosto de 2026.</p>
+        <p className="mt-4 text-sm">Última atualização: 5 de setembro de 2026.</p>
       </div>
     </InstitutionalPage>
   );

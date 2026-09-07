@@ -1,20 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { type MouseEvent, useEffect, useRef, useState } from "react";
 import { Logo } from "./Logo";
 
 const navItems = [
   { label: "Início", href: "/#inicio" },
-  { label: "Como funciona", href: "/#como-funciona" },
-  { label: "Quiz", href: "/quiz-biblico" },
   { label: "Jogos", href: "/#jogos" },
-  { label: "Guias", href: "/guias" },
-  { label: "Benefícios", href: "/#beneficios" },
+  { label: "Biblioteca", href: "/biblioteca" },
+  { label: "Criar roteiro", href: "/monte-seu-encontro" },
+  { label: "Sobre", href: "/sobre" },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setIsOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
+
+  function handleNavigation(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    setIsOpen(false);
+
+    if (!href.startsWith("/#") || window.location.pathname !== "/") return;
+
+    const hash = href.slice(1);
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    if (window.location.hash !== hash) {
+      window.history.pushState(null, "", hash);
+    }
+    const scrollToTarget = () => {
+      target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    };
+
+    if (isOpen) {
+      requestAnimationFrame(() => requestAnimationFrame(scrollToTarget));
+      return;
+    }
+
+    scrollToTarget();
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-[rgba(251,250,246,0.9)] backdrop-blur-xl">
@@ -27,6 +64,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  onClick={(event) => handleNavigation(event, item.href)}
                   className="rounded-full px-3 py-2 text-sm font-bold text-[var(--muted)] no-underline transition hover:bg-white hover:text-[var(--navy)]"
                 >
                   {item.label}
@@ -45,6 +83,7 @@ export function Header() {
         </Link>
 
         <button
+          ref={menuButtonRef}
           type="button"
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isOpen}
@@ -67,7 +106,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(event) => handleNavigation(event, item.href)}
                   className="block rounded-xl px-4 py-3 font-bold text-[var(--navy)] no-underline hover:bg-white"
                 >
                   {item.label}

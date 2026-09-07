@@ -204,16 +204,113 @@ for (const phrase of phrases) {
   }
 }
 
-const dynamics = loadArray("src/data/cellDynamics.ts", "cellDynamics");
+const pausedDynamicIds = loadArray("src/data/cellDynamics.ts", "pausedDynamicIds");
+const dynamics = loadArray("src/data/cellDynamics.ts", "cellDynamicDrafts")
+  .filter((item) => !pausedDynamicIds.includes(item.id));
 assertUnique(dynamics, (item) => item.id, "ID de dinâmica");
 assertUnique(dynamics, (item) => item.title, "Título de dinâmica");
+
+const pausedEditorialSlugs = loadArray("src/data/editorialContent.ts", "pausedEditorialSlugs");
+const editorialArticles = loadArray("src/data/editorialContent.ts", "editorialArticleDrafts")
+  .filter((item) => !pausedEditorialSlugs.includes(item.slug));
+assertUnique(editorialArticles, (item) => item.slug, "Slug de artigo");
+assertUnique(editorialArticles, (item) => item.title, "Título de artigo");
+for (const article of editorialArticles) {
+  if (article.introduction.length < 2 || article.sections.length < 4) {
+    errors.push(`Artigo ${article.slug} não possui profundidade editorial mínima.`);
+  }
+  if (!article.summary || !article.audience || !article.updatedAt) {
+    errors.push(`Artigo ${article.slug} não possui metadados editoriais completos.`);
+  }
+}
+
+const whoAmICharacters = loadArray("src/data/whoAmICharacters.ts", "whoAmICharacters");
+assertUnique(whoAmICharacters, (item) => item.id, "ID de personagem do Quem sou eu");
+assertUnique(whoAmICharacters, (item) => item.name, "Personagem do Quem sou eu");
+for (const character of whoAmICharacters) {
+  if (character.clues.length < 3 || character.clues.length > 5) {
+    errors.push(`Personagem ${character.id} deve possuir entre três e cinco pistas.`);
+  }
+  if (character.options.length !== 4 || character.options.filter((item) => normalize(item) === normalize(character.name)).length !== 1) {
+    errors.push(`Personagem ${character.id} possui alternativas inválidas.`);
+  }
+  if (new Set(character.options.map(normalize)).size !== 4) {
+    errors.push(`Personagem ${character.id} possui alternativas repetidas.`);
+  }
+  if (!character.explanation || !character.reference) {
+    errors.push(`Personagem ${character.id} não possui explicação ou referência.`);
+  }
+}
+for (const journey of ["known", "intermediate"]) {
+  const count = whoAmICharacters.filter((character) => character.journey === journey).length;
+  if (count !== 12) errors.push(`Jornada ${journey} do Quem sou eu possui ${count} personagens; esperado: 12.`);
+}
+
+const existingKnowledge = [
+  ...quizQuestions.map((item) => ({ id: `quiz:${item.id}`, text: `${item.question} ${item.correctAnswer} ${item.explanation}`, reference: item.reference })),
+  ...matchingThemes.flatMap((theme) => theme.pairs.map((item) => ({ id: `pares:${item.id}`, text: `${item.left} ${item.right} ${item.explanation}`, reference: item.reference }))),
+  ...memoryPairs.map((item) => ({ id: `memoria:${item.id}`, text: `${item.first} ${item.second} ${item.note}`, reference: "" })),
+  ...phrases.map((item) => ({ id: `frase:${item.id}`, text: `${item.prompt} ${item.answer} ${item.fullText}`, reference: item.reference })),
+];
+for (const character of whoAmICharacters) {
+  const newKnowledge = `${character.name} ${character.clues.join(" ")} ${character.explanation}`;
+  for (const existing of existingKnowledge) {
+    const similarity = jaccardSimilarity(newKnowledge, existing.text);
+    const sameReference = existing.reference && normalize(existing.reference) === normalize(character.reference);
+    if (sameReference && similarity >= 0.45) {
+      errors.push(`Possível fato repetido entre quem-sou-eu:${character.id} e ${existing.id}: mesma referência e conteúdo semelhante.`);
+    } else if (similarity >= 0.62) {
+      warnings.push(`Revisar possível semelhança (${similarity.toFixed(2)}) entre quem-sou-eu:${character.id} e ${existing.id}.`);
+    }
+  }
+}
+
+const printableResources = loadArray("src/data/printableResources.ts", "printableResources");
+assertUnique(printableResources, (item) => item.slug, "Slug de material");
+assertUnique(printableResources, (item) => item.title, "Título de material");
+for (const resource of printableResources) {
+  if (resource.instructions.length < 3 || resource.sections.length < 2) {
+    errors.push(`Material ${resource.slug} não possui instruções e conteúdo suficientes.`);
+  }
+}
+
+const quizTopics = loadArray("src/data/quizTopics.ts", "quizTopics");
+const knownRelatedRoutes = new Set([
+  "/quiz-biblico",
+  "/modo-grupo",
+  "/ligue-os-pares",
+  "/complete-a-frase",
+  "/jogo-da-memoria-biblico",
+  "/quem-sou-eu",
+  "/monte-seu-encontro",
+  "/guias/como-usar-quiz-biblico-em-celulas",
+  "/guias/dinamicas-biblicas-para-jovens",
+  "/guias/jogos-biblicos-para-grupos",
+  "/guias/quiz-biblico-para-casais",
+  "/guias/como-conduzir-uma-celula-participativa",
+  "/guias/ideias-para-estudo-biblico-em-grupo",
+  ...quizTopics.map((topic) => topic.path),
+  ...dynamics.map((dynamic) => `/dinamicas-para-celulas/${dynamic.id}`),
+  ...editorialArticles.map((article) => `/biblioteca/${article.slug}`),
+  ...printableResources.map((resource) => `/materiais/${resource.slug}`),
+]);
+for (const article of editorialArticles) {
+  for (const route of article.relatedPaths) {
+    if (!knownRelatedRoutes.has(route)) {
+      errors.push(`Artigo ${article.slug} aponta para uma rota relacionada inexistente: ${route}.`);
+    }
+  }
+}
 
 console.log(`Quiz: ${quizQuestions.length} perguntas (${newQuestions.length} na jornada 3).`);
 console.log(`Respostas A-D na jornada 3: ${answerDistribution.join(" / ")}.`);
 console.log(`Memória: ${memoryPairs.length} pares em ${memoryModes.length} modos.`);
 console.log(`Ligue os Pares: ${matchingThemes.length} temas.`);
 console.log(`Complete a Frase: ${phrases.length} frases.`);
+console.log(`Quem sou eu: ${whoAmICharacters.length} personagens em 2 jornadas; ${existingKnowledge.length} itens existentes comparados.`);
 console.log(`Dinâmicas: ${dynamics.length} roteiros.`);
+console.log(`Biblioteca editorial: ${editorialArticles.length} artigos.`);
+console.log(`Materiais: ${printableResources.length} recursos imprimíveis.`);
 
 for (const warning of warnings) console.warn(`AVISO: ${warning}`);
 if (errors.length) {

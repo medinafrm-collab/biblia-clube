@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const benefits = [
   {
     number: "01",
@@ -28,42 +30,44 @@ const benefits = [
 export function BenefitsSection() {
   return (
     <section
-      id="beneficios"
-      className="section-space border-t border-[var(--border)] bg-white"
+      id="como-funciona"
+      className="scroll-mt-20 border-t border-[var(--border)] bg-[var(--background)] py-14 lg:py-16"
     >
-      <div className="container-site grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-        <div>
-          <span className="eyebrow">Por que usar</span>
-          <h2 className="section-title">
-            Recursos simples para aprender e compartilhar.
-          </h2>
-          <p className="section-copy">
-            O Bíblia Clube reúne jogos e conteúdos que ajudam pessoas de
-            diferentes idades a participar, conversar e aprender com leveza.
-          </p>
-          <a href="/sobre" className="button-secondary mt-8">
-            Conheça nossa proposta
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+      <div className="container-site">
+        <div className="grid overflow-hidden rounded-lg border border-[var(--border)] bg-white lg:grid-cols-[0.9fr_0.7fr_1.4fr] lg:items-stretch">
+          <figure className="relative min-h-64 overflow-hidden lg:min-h-full">
+            <Image
+              src="/images/editorial/grupo-estudo-mesa-preta.webp"
+              alt="Grupo reunido para conversar e estudar a Bíblia"
+              fill
+              sizes="(max-width: 1024px) 100vw, 32vw"
+              className="object-cover object-center"
+            />
+          </figure>
 
-        <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.number}
-              className="border-t border-[var(--border)] pt-5"
-            >
-              <span className="text-xs font-extrabold text-[var(--gold)]">
-                {benefit.number}
-              </span>
-              <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">
-                {benefit.title}
-              </h3>
-              <p className="mt-3 leading-7 text-[var(--muted)]">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+          <div className="flex flex-col justify-center border-b border-[var(--border)] p-6 lg:border-b-0 lg:border-r lg:p-7">
+            <span className="eyebrow">Por que usar</span>
+            <h2 className="mt-4 font-serif text-[clamp(1.8rem,2.6vw,2.4rem)] leading-[1.08] text-[var(--navy)]">
+              Conteúdo que ensina, conecta e transforma.
+            </h2>
+            <p className="mt-4 text-sm leading-6 text-[var(--muted)]">
+              Recursos para aprender, conduzir conversas e compartilhar a Palavra em diferentes contextos.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <article
+                key={benefit.number}
+                className="grid grid-cols-[1.75rem_1fr] gap-3 border-b border-[var(--border)] p-5 even:sm:border-l sm:[&:nth-last-child(-n+2)]:border-b-0"
+              >
+                <span className="pt-1 text-xs font-extrabold text-[var(--gold-ink)]">{benefit.number}</span>
+                <div>
+                  <h3 className="font-serif text-lg leading-tight text-[var(--navy)]">{benefit.title}</h3>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{benefit.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

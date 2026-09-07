@@ -5,29 +5,11 @@ import { GuideHeroPanel } from "@/components/GuideHeroPanel";
 import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
+import { quizQuestions } from "@/data/quizQuestions";
 
-const title = "Como usar quiz bíblico em células | Bíblia Clube";
+const title = "Como usar quiz bíblico em células";
 const description =
   "Veja como usar um quiz bíblico em células, grupos pequenos e encontros cristãos de forma leve, participativa e edificante.";
-
-const steps = [
-  {
-    title: "Escolha o objetivo do encontro",
-    text: "Antes de abrir o quiz, defina se a intenção é quebrar o gelo, revisar uma história bíblica, iniciar uma conversa ou encerrar o encontro com uma atividade leve.",
-  },
-  {
-    title: "Explique que não é uma prova",
-    text: "O quiz funciona melhor quando todos entendem que a proposta é aprender juntos. Evite expor quem erra e valorize a participação de quem tenta responder.",
-  },
-  {
-    title: "Leia a referência com calma",
-    text: "Depois de cada pergunta, use a referência bíblica como ponto de apoio. O grupo pode ler o trecho, comentar o contexto e conversar sobre o aprendizado principal.",
-  },
-  {
-    title: "Transforme respostas em conversa",
-    text: "A explicação da resposta pode virar uma pergunta aberta: o que esse texto nos ensina, como aplicar isso durante a semana e que atitude prática podemos assumir?",
-  },
-];
 
 const useCases = [
   "Abertura de célula, para integrar pessoas novas.",
@@ -44,6 +26,38 @@ const cautions = [
   "Prefira perguntas simples quando houver visitantes ou novos convertidos.",
   "Finalize apontando para a mensagem bíblica, não apenas para o placar.",
 ];
+
+const sessionQuestionNotes = [
+  {
+    id: 9,
+    transition: "Jesus une amor a Deus e amor ao próximo. A célula não precisa escolher entre devoção e cuidado concreto.",
+    conversation: "Que prática simples pode manter essas duas dimensões juntas durante a próxima semana?",
+  },
+  {
+    id: 30,
+    transition: "Na parábola, proximidade não é apenas estar no mesmo caminho, mas interromper a rota para cuidar de alguém vulnerável.",
+    conversation: "Sem citar casos pessoais, que barreiras costumam impedir uma comunidade de perceber e oferecer ajuda?",
+  },
+  {
+    id: 41,
+    transition: "Barnabé é lembrado pelo encorajamento. Palavras e gestos de apoio também ajudam uma comunidade a perseverar.",
+    conversation: "Como podemos encorajar alguém sem bajular, controlar ou prometer o que não podemos cumprir?",
+  },
+  {
+    id: 175,
+    transition: "Atos descreve ensino, comunhão, refeições e orações como partes relacionadas da vida da primeira comunidade.",
+    conversation: "Qual dessas práticas está mais presente em nosso encontro e qual precisa de atenção, sem tentar copiar mecanicamente todos os detalhes?",
+  },
+  {
+    id: 277,
+    transition: "Os bereanos receberam a mensagem com interesse e também a examinaram à luz das Escrituras. Abertura e verificação aparecem juntas.",
+    conversation: "Que hábito pode nos ajudar a conferir uma afirmação bíblica com respeito e responsabilidade?",
+  },
+].map((note) => {
+  const question = quizQuestions.find((item) => item.id === note.id);
+  if (!question) throw new Error(`Pergunta ${note.id} não encontrada.`);
+  return { ...question, ...note };
+});
 
 export const metadata: Metadata = {
   title,
@@ -130,10 +144,10 @@ export default function ComoUsarQuizBiblicoEmCelulasPage() {
                   Resumo do guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Ideal para células, jovens, casais e famílias.</li>
-                  <li>- Funciona melhor como conversa, não como prova.</li>
-                  <li>- Pode ser usado no início, meio ou final do encontro.</li>
-                  <li>- As referências ajudam a aprofundar cada resposta.</li>
+                  <li>- Sessão pronta com cinco perguntas.</li>
+                  <li>- Respostas, referências e transições.</li>
+                  <li>- Perguntas abertas sem exposição pessoal.</li>
+                  <li>- Cronograma completo de 20 minutos.</li>
                 </ul>
                 <Link href="/quiz-biblico#quiz" className="button-primary mt-6">
                   Abrir quiz
@@ -199,24 +213,49 @@ export default function ComoUsarQuizBiblicoEmCelulasPage() {
                   ]}
                 />
 
-                <div className="mt-10 grid gap-4">
-                  {steps.map((step, index) => (
-                    <section
-                      key={step.title}
-                      className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6"
-                    >
-                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold)]">
-                        Passo {index + 1}
-                      </span>
-                      <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">
-                        {step.title}
-                      </h3>
-                      <p className="mt-3 leading-7 text-[var(--muted)]">
-                        {step.text}
-                      </p>
-                    </section>
-                  ))}
-                </div>
+                <section className="mt-12" aria-labelledby="sessao-pronta">
+                  <span className="eyebrow">Sessão pronta · 20 minutos</span>
+                  <h2 id="sessao-pronta" className="section-title mt-4">Comunidade que aprende e cuida.</h2>
+                  <p className="section-copy max-w-3xl">Esta sequência usa cinco perguntas que já fazem parte do Quiz Bíblico. Leia as alternativas, aceite uma resposta por equipe e revele a explicação sem destacar quem errou. Se a conversa crescer, use três perguntas e preserve a leitura final.</p>
+
+                  <div className="mt-8 border-y border-[var(--border)]">
+                    {sessionQuestionNotes.map((item, index) => (
+                      <section key={item.id} className="border-b border-[var(--border)] py-8 last:border-0">
+                        <div className="grid gap-5 sm:grid-cols-[2.5rem_1fr]">
+                          <span className="font-serif text-2xl text-[var(--gold-ink)]" aria-hidden="true">{index + 1}</span>
+                          <div>
+                            <h3 className="font-serif text-2xl leading-tight text-[var(--navy)]">{item.question}</h3>
+                            <ol className="mt-4 grid gap-2 text-[var(--muted)] sm:grid-cols-2">
+                              {item.options.map((option, optionIndex) => <li key={option}><strong className="mr-2 text-[var(--olive-dark)]">{String.fromCharCode(65 + optionIndex)}.</strong>{option}</li>)}
+                            </ol>
+                            <details className="mt-5 border-l-2 border-[var(--gold)] pl-4">
+                              <summary className="cursor-pointer font-bold text-[var(--olive-dark)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--navy)]">Ver resposta e condução</summary>
+                              <div className="pt-4">
+                                <p className="font-bold text-[var(--navy)]">Resposta: {item.correctAnswer}</p>
+                                <p className="mt-2 leading-7 text-[var(--muted)]">{item.explanation}</p>
+                                <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">Leia: {item.reference}</p>
+                                <p className="mt-4 leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Transição:</strong> {item.transition}</p>
+                                <p className="mt-2 leading-7 text-[var(--foreground)]"><strong>Para conversar:</strong> {item.conversation}</p>
+                              </div>
+                            </details>
+                          </div>
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="mt-12 border-y border-[var(--border)] py-8">
+                  <h2 className="font-serif text-3xl text-[var(--navy)]">Como conduzir os 20 minutos</h2>
+                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--muted)] sm:grid-cols-2">
+                    <li><strong className="text-[var(--navy)]">0–2 min · Combinado:</strong> “Não é prova. Podemos pensar juntos e aprender também com uma resposta incorreta.”</li>
+                    <li><strong className="text-[var(--navy)]">2–10 min · Rodada:</strong> faça as cinco perguntas, com até 90 segundos para resposta e explicação.</li>
+                    <li><strong className="text-[var(--navy)]">10–16 min · Leitura:</strong> escolha a referência que mais despertou interesse, leia a passagem completa e localize seu contexto.</li>
+                    <li><strong className="text-[var(--navy)]">16–19 min · Conversa:</strong> use uma pergunta aberta e recolha duas ou três contribuições breves.</li>
+                    <li><strong className="text-[var(--navy)]">19–20 min · Fechamento:</strong> retome uma ideia do texto e faça uma oração de resposta, sem transformar pedidos pessoais em obrigação.</li>
+                  </ol>
+                  <p className="mt-6 text-sm leading-6 text-[var(--muted)]"><strong className="text-[var(--navy)]">Quando alguém errar:</strong> diga “vamos conferir no texto” e leia a explicação. Evite perguntar quem marcou a alternativa incorreta ou usar o resultado para medir maturidade espiritual.</p>
+                </section>
 
                 <div className="prose-content mt-12">
                   <h2>Em quais momentos o quiz pode ser usado?</h2>
@@ -245,19 +284,6 @@ export default function ComoUsarQuizBiblicoEmCelulasPage() {
                     </ul>
                   </div>
                 </div>
-
-                <section className="mt-12 rounded-lg border border-[var(--gold)]/30 bg-[var(--gold-soft)] p-6 sm:p-8">
-                  <h2 className="font-serif text-3xl text-[var(--navy)]">
-                    Sugestão de roteiro rápido
-                  </h2>
-                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--olive-dark)]">
-                    <li>1. Apresente o tema da rodada e explique que todos podem participar.</li>
-                    <li>2. Faça de 5 a 8 perguntas, sem pressa para avançar.</li>
-                    <li>3. Após cada resposta, leia a referência indicada.</li>
-                    <li>4. Escolha uma pergunta para virar conversa em grupo.</li>
-                    <li>5. Finalize com uma oração breve relacionada ao aprendizado.</li>
-                  </ol>
-                </section>
 
                 <RelatedTools
                   description="Use estas ferramentas para transformar o guia em uma atividade prática durante a célula."

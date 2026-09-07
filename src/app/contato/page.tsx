@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contato",
   },
+  openGraph: { title: "Contato", description: "Entre em contato com o Bíblia Clube para sugestões, dúvidas e parcerias.", url: "/contato" },
 };
 
 export default function ContatoPage() {
@@ -22,12 +23,12 @@ export default function ContatoPage() {
         <div className="mt-5 grid gap-3">
           <a
             href="mailto:bibliaclubeweb@gmail.com"
-            className="flex w-fit items-center gap-3 font-bold text-[var(--navy)] no-underline hover:text-[var(--olive-dark)]"
+            className="flex max-w-full items-center gap-3 font-bold text-[var(--navy)] no-underline hover:text-[var(--olive-dark)]"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              className="size-5 text-[var(--gold)]"
+              className="size-5 shrink-0 text-[var(--gold)]"
             >
               <path
                 d="M4.75 6.75h14.5v10.5H4.75V6.75Z"
@@ -45,7 +46,7 @@ export default function ContatoPage() {
                 strokeWidth="1.8"
               />
             </svg>
-            bibliaclubeweb@gmail.com
+            <span className="min-w-0 [overflow-wrap:anywhere]">bibliaclubeweb@gmail.com</span>
           </a>
           <a
             href="https://www.instagram.com/bibliaclube.br/"

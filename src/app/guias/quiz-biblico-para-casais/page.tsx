@@ -6,7 +6,7 @@ import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
 
-const title = "Quiz bíblico para casais | Bíblia Clube";
+const title = "Quiz bíblico para casais";
 const description =
   "Orientações para usar quiz bíblico em encontros de casais, células e reuniões com foco em diálogo, cuidado e edificação.";
 
@@ -36,6 +36,57 @@ const themes = [
   "Cuidado com palavras.",
   "Serviço mútuo.",
   "Oração no lar.",
+];
+
+const couplesQuiz = [
+  {
+    question: "Segundo Provérbios 18:13, o que acontece quando alguém responde antes de ouvir?",
+    options: ["Demonstra segurança", "Evita uma discussão", "Comete insensatez e passa vergonha", "Ganha tempo"],
+    answer: "Comete insensatez e passa vergonha.",
+    explanation: "O provérbio liga uma resposta precipitada à falta de sabedoria. O princípio vale para qualquer conversa e ajuda o casal a distinguir escutar de apenas esperar a vez de falar.",
+    reference: "Provérbios 18:13",
+    conversation: "Que atitude simples pode nos ajudar a verificar se entendemos o outro antes de responder?",
+  },
+  {
+    question: "Em Efésios 4:29, que tipo de palavra deve ocupar o lugar da comunicação prejudicial?",
+    options: ["Uma palavra que edifique conforme a necessidade", "Uma resposta mais forte", "O silêncio em toda situação", "Uma explicação pública"],
+    answer: "Uma palavra que edifique conforme a necessidade.",
+    explanation: "Paulo orienta a comunidade a usar palavras que façam bem a quem ouve. Aplicado ao lar, o texto convida a considerar tanto o conteúdo quanto o momento da fala.",
+    reference: "Efésios 4:29",
+    conversation: "Como podemos falar a verdade sem perder de vista a necessidade de quem escuta?",
+  },
+  {
+    question: "Qual é o padrão de perdão apresentado em Colossenses 3:13?",
+    options: ["Perdoar somente quando houver acordo", "Perdoar como o Senhor perdoou", "Esquecer sem conversar", "Evitar qualquer limite"],
+    answer: "Perdoar como o Senhor perdoou.",
+    explanation: "O texto chama os cristãos a suportar e perdoar uns aos outros. Perdão não significa negar o dano, dispensar limites seguros ou impedir a busca de ajuda quando necessária.",
+    reference: "Colossenses 3:12-13",
+    conversation: "Sem relatar conflitos pessoais, o que diferencia perdão de fingir que nada aconteceu?",
+  },
+  {
+    question: "Em Filipenses 2:4, para onde o olhar do cristão também deve se voltar?",
+    options: ["Apenas para seus próprios interesses", "Para os interesses dos outros", "Para a opinião da maioria", "Para evitar toda discordância"],
+    answer: "Para os interesses dos outros.",
+    explanation: "A orientação faz parte de um chamado comunitário à humildade. No casamento, ela pode inspirar atenção real às necessidades do outro sem apagar responsabilidades, limites ou individualidade.",
+    reference: "Filipenses 2:3-4",
+    conversation: "Que pergunta prática ajuda a descobrir do que o outro precisa, em vez de apenas presumir?",
+  },
+  {
+    question: "O que Priscila e Áquila fizeram quando ouviram Apolo ensinando em Éfeso?",
+    options: ["Expuseram o erro diante de todos", "Afastaram-se dele", "Explicaram-lhe com mais exatidão o caminho de Deus", "Pediram que ele parasse de ensinar"],
+    answer: "Explicaram-lhe com mais exatidão o caminho de Deus.",
+    explanation: "O casal acolheu Apolo e o ajudou a compreender melhor. A cena oferece um exemplo de serviço conjunto e correção cuidadosa, sem transformar o casal em modelo perfeito ou tirar o episódio de seu contexto missionário.",
+    reference: "Atos 18:24-26",
+    conversation: "Como duas pessoas podem aprender e servir juntas sem competir por reconhecimento?",
+  },
+  {
+    question: "Qual atitude é rejeitada na descrição do amor em 1 Coríntios 13:5?",
+    options: ["Alegrar-se com a verdade", "Perseverar", "Buscar somente os próprios interesses", "Ter esperança"],
+    answer: "Buscar somente os próprios interesses.",
+    explanation: "O capítulo foi escrito à igreja de Corinto no contexto dos dons e da vida comunitária, não como um manual exclusivo de casamento. Ainda assim, seu retrato do amor confronta o egoísmo também na convivência do casal.",
+    reference: "1 Coríntios 12:31-13:7",
+    conversation: "Que decisão cotidiana pode equilibrar cuidado próprio e consideração pelo outro nesta semana?",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -127,7 +178,8 @@ export default function CouplesQuizGuide() {
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
                   <li>- Como usar quiz sem expor o casal.</li>
                   <li>- Temas que favorecem diálogo e oração.</li>
-                  <li>- Sugestão de condução para encontros de casais.</li>
+                  <li>- Rodada pronta com seis perguntas e respostas.</li>
+                  <li>- Sugestão de condução em 15 minutos.</li>
                   <li>- Links para atividades relacionadas.</li>
                 </ul>
                 <Link href="/dinamicas-para-celulas" className="button-primary mt-6">
@@ -191,13 +243,56 @@ export default function CouplesQuizGuide() {
                   ]}
                 />
 
+                <section className="mt-12" aria-labelledby="rodada-pronta">
+                  <span className="eyebrow">Atividade pronta</span>
+                  <h2 id="rodada-pronta" className="section-title mt-4">Seis perguntas para jogar e conversar.</h2>
+                  <p className="section-copy max-w-3xl">
+                    Leia as alternativas antes de revelar a resposta. Em seguida, confira a passagem e escolha apenas a pergunta de conversa que couber no grupo. Ninguém precisa relatar conflitos ou responder em nome do cônjuge.
+                  </p>
+
+                  <div className="mt-8 border-y border-[var(--border)]">
+                    {couplesQuiz.map((item, index) => (
+                      <section key={item.reference} className="border-b border-[var(--border)] py-8 last:border-0">
+                        <div className="grid gap-5 sm:grid-cols-[2.5rem_1fr]">
+                          <span className="font-serif text-2xl text-[var(--gold-ink)]" aria-hidden="true">{index + 1}</span>
+                          <div>
+                            <h3 className="font-serif text-2xl leading-tight text-[var(--navy)]">{item.question}</h3>
+                            <ol className="mt-4 grid gap-2 text-[var(--muted)] sm:grid-cols-2">
+                              {item.options.map((option, optionIndex) => <li key={option}><strong className="mr-2 text-[var(--olive-dark)]">{String.fromCharCode(65 + optionIndex)}.</strong>{option}</li>)}
+                            </ol>
+                            <div className="mt-5 border-l-2 border-[var(--gold)] pl-4">
+                              <p className="font-bold text-[var(--navy)]">Resposta: {item.answer}</p>
+                              <p className="mt-2 leading-7 text-[var(--muted)]">{item.explanation}</p>
+                              <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">Leia: {item.reference}</p>
+                            </div>
+                            <p className="mt-4 leading-7 text-[var(--foreground)]"><strong>Para conversar sem exposição:</strong> {item.conversation}</p>
+                          </div>
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="mt-12 border-y border-[var(--border)] py-8">
+                  <h2 className="font-serif text-3xl text-[var(--navy)]">Uma rodada de 15 minutos</h2>
+                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--muted)] sm:grid-cols-2">
+                    <li><strong className="text-[var(--navy)]">2 min · Combinado:</strong> explique que o objetivo é aprender e que compartilhar experiências é opcional.</li>
+                    <li><strong className="text-[var(--navy)]">6 min · Quiz:</strong> use três perguntas, com até dois minutos para resposta e explicação.</li>
+                    <li><strong className="text-[var(--navy)]">5 min · Texto e conversa:</strong> leia uma referência completa e faça uma pergunta de aplicação.</li>
+                    <li><strong className="text-[var(--navy)]">2 min · Oração:</strong> cada casal pode orar em silêncio ou acompanhar uma oração breve do condutor.</li>
+                  </ol>
+                  <p className="mt-6 text-sm leading-6 text-[var(--muted)]">
+                    Nota de contexto: Efésios, Colossenses, Filipenses e 1 Coríntios foram escritos para comunidades cristãs. As aplicações ao casamento derivam de princípios de convivência presentes nesses textos; elas não substituem a leitura do contexto nem aconselhamento adequado em situações de violência, coerção ou risco.
+                  </p>
+                </section>
+
                 <div className="mt-10 grid gap-4">
                   {principles.map((principle, index) => (
                     <section
                       key={principle.title}
                       className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6"
                     >
-                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold)]">
+                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold-ink)]">
                         Orientação {index + 1}
                       </span>
                       <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">

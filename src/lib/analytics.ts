@@ -12,7 +12,8 @@ export type GameId =
   | "modo-grupo"
   | "ligue-os-pares"
   | "jogo-da-memoria"
-  | "complete-a-frase";
+  | "complete-a-frase"
+  | "quem-sou-eu";
 
 export function trackGameEvent(
   game: GameId,

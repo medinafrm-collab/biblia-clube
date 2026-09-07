@@ -22,7 +22,7 @@ export function InstitutionalPage({
         <section className="paper-texture border-b border-[var(--border)] py-20 sm:py-28">
           <div className="container-site">
             <span className="eyebrow">{eyebrow}</span>
-            <h1 className="display-title mt-5 max-w-4xl text-[clamp(3rem,7vw,5.5rem)] text-[var(--navy)]">
+            <h1 className="display-title mt-5 max-w-4xl text-4xl text-[var(--navy)] sm:text-6xl lg:text-7xl [overflow-wrap:anywhere]">
               {title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">

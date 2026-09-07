@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run content:check && npm run lint && npm run typecheck && npm run build"
+    "test": "node --test scripts/test-regressions.mjs",
+    "check": "npm run content:check && npm run test && npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

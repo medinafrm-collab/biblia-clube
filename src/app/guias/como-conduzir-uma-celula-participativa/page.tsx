@@ -6,40 +6,53 @@ import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
 
-const title = "Como conduzir uma célula participativa | Bíblia Clube";
+const title = "Como conduzir uma célula participativa";
 const description =
   "Orientações para conduzir uma célula cristã mais participativa, com leitura bíblica, conversa, dinâmica e oração aplicada.";
 
-const steps = [
-  {
-    title: "Prepare o encontro com um objetivo claro",
-    text: "Antes de pensar na dinâmica, defina o foco do encontro. Pode ser comunhão, discipulado, evangelismo, cuidado pastoral ou aplicação de um tema estudado pela igreja.",
-  },
-  {
-    title: "Comece com acolhimento, não com pressa",
-    text: "Os primeiros minutos ajudam a criar o ambiente. Receba as pessoas, permita uma conversa breve e explique o caminho do encontro de forma simples.",
-  },
-  {
-    title: "Leia a referência bíblica com participação",
-    text: "Convide uma ou duas pessoas para lerem os textos principais, ou leia você mesmo quando o grupo estiver mais tímido. O importante é que a Palavra conduza o encontro.",
-  },
-  {
-    title: "Use perguntas que abrem conversa",
-    text: "Perguntas boas não servem para constranger. Elas ajudam o grupo a observar o texto, entender a mensagem e pensar em uma aplicação possível.",
-  },
-  {
-    title: "Feche com oração conectada ao tema",
-    text: "A oração final pode retomar o que foi conversado e pedir que Deus fortaleça o grupo naquela área específica, sem transformar o momento em uma fórmula fixa.",
-  },
+const facilitationRoles = [
+  { title: "Facilitador", text: "Apresenta a pergunta, distribui a palavra, resume o que foi dito e devolve a conversa ao texto." },
+  { title: "Guardião do tempo", text: "Sinaliza discretamente quando uma etapa está terminando. Não interrompe participantes por conta própria." },
+  { title: "Anfitrião", text: "Cuida do espaço, recebe quem chega e percebe necessidades práticas durante o encontro." },
+  { title: "Responsável pelo cuidado", text: "Combina conversas posteriores e aciona ajuda adequada quando surge uma situação que não deve ser tratada em público." },
 ];
 
-const participationTips = [
-  "Faça perguntas curtas e claras.",
-  "Dê tempo para as pessoas pensarem.",
-  "Agradeça participações simples.",
-  "Evite corrigir em tom de constrangimento.",
-  "Convide pessoas diferentes ao longo do encontro.",
-  "Respeite quem ainda não se sente à vontade para falar.",
+const facilitationCases = [
+  {
+    situation: "Depois da pergunta, ninguém fala",
+    action: "Espere de seis a oito segundos. Refaça a pergunta de modo observável ou dê dois minutos para conversa em duplas. Silêncio não prova desinteresse.",
+    phrase: "Vamos olhar apenas para o versículo: qual ação ou palavra vocês conseguem identificar primeiro?",
+  },
+  {
+    situation: "Uma pessoa ocupa quase todo o tempo",
+    action: "Interrompa na primeira pausa natural, reconheça a contribuição e explique que abrirá espaço para outras vozes. Converse em particular se o padrão continuar.",
+    phrase: "Obrigado por trazer esse ponto. Vou pausar aqui para ouvirmos quem ainda não falou e depois retomamos o que ficou aberto.",
+  },
+  {
+    situation: "Há interrupções ou conversas paralelas",
+    action: "Nomeie o comportamento, não a intenção. Retome o combinado de uma fala por vez e faça uma rodada curta, com direito de passar.",
+    phrase: "Temos mais de uma conversa acontecendo. Vamos ouvir esta fala até o fim e depois sigo pela ordem, tudo bem?",
+  },
+  {
+    situation: "A resposta se afasta do texto",
+    action: "Registre o assunto para depois e volte à pergunta central. Não transforme toda associação interessante em novo tema do encontro.",
+    phrase: "Esse assunto merece atenção e vou anotá-lo. Para concluir esta pergunta, onde percebemos essa ideia na passagem?",
+  },
+  {
+    situation: "Surge uma interpretação apressada",
+    action: "Peça evidência textual, diferencie observação de inferência e ofereça contexto sem ridicularizar. Não use votação para decidir o sentido do texto.",
+    phrase: "Vamos separar o que o texto afirma do que estamos concluindo. Qual frase sustenta essa leitura? Há outra possibilidade no contexto?",
+  },
+  {
+    situation: "Duas pessoas discordam e o tom sobe",
+    action: "Resuma as duas posições sem declarar vencedores, reafirme limites de respeito e decida se o grupo tem elementos para continuar. Consenso forçado não é participação.",
+    phrase: "Estou ouvindo duas leituras diferentes. Vou resumir cada uma e voltaremos ao texto; se não houver clareza hoje, registramos a questão para estudar.",
+  },
+  {
+    situation: "Alguém revela sofrimento ou risco",
+    action: "Agradeça a confiança, interrompa perguntas invasivas e pergunte do que a pessoa precisa agora. Situações de violência, abuso, autoagressão, crise de saúde ou risco exigem ajuda responsável fora da discussão pública.",
+    phrase: "Obrigado por confiar isso. Não precisamos pedir detalhes aqui. Podemos pausar e combinar, com você, quem deve acompanhar esta situação agora?",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -129,10 +142,10 @@ export default function ParticipativeCellGuide() {
                   Neste guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Como estruturar o encontro sem engessar.</li>
-                  <li>- Como incentivar participação com segurança.</li>
-                  <li>- Onde entram leitura bíblica, dinâmica e oração.</li>
-                  <li>- Ferramentas para apoiar a condução.</li>
+                  <li>- Quatro papéis de apoio à condução.</li>
+                  <li>- Sete situações difíceis com respostas prontas.</li>
+                  <li>- Simulação de uma conversa bíblica.</li>
+                  <li>- Limites entre facilitação e cuidado particular.</li>
                 </ul>
                 <Link href="/dinamicas-para-celulas" className="button-primary mt-6">
                   Ver dinâmicas
@@ -193,57 +206,75 @@ export default function ParticipativeCellGuide() {
                   ]}
                 />
 
-                <div className="mt-10 grid gap-4">
-                  {steps.map((step, index) => (
-                    <section
-                      key={step.title}
-                      className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6"
-                    >
-                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold)]">
-                        Etapa {index + 1}
-                      </span>
-                      <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">
-                        {step.title}
-                      </h3>
-                      <p className="mt-3 leading-7 text-[var(--muted)]">
-                        {step.text}
-                      </p>
-                    </section>
-                  ))}
-                </div>
-
-                <div className="prose-content mt-12">
-                  <h2>Como incentivar participação com cuidado</h2>
-                  <p>
-                    A participação cresce quando o grupo percebe que o ambiente
-                    é seguro. O líder pode fazer perguntas, mas também precisa
-                    ouvir com atenção e administrar o tempo para que poucas
-                    pessoas não dominem toda a conversa.
-                  </p>
-                </div>
-
-                <div className="mt-6 rounded-lg border border-[var(--border)] p-6">
-                  <h3 className="font-bold text-[var(--navy)]">
-                    Práticas que ajudam
-                  </h3>
-                  <ul className="mt-4 grid gap-3 leading-7 text-[var(--muted)] sm:grid-cols-2">
-                    {participationTips.map((tip) => (
-                      <li key={tip}>- {tip}</li>
+                <section className="mt-12" aria-labelledby="papeis-conducao">
+                  <span className="eyebrow">Responsabilidade compartilhada</span>
+                  <h2 id="papeis-conducao" className="section-title mt-4">Quatro papéis, sem quatro comandantes.</h2>
+                  <p className="section-copy max-w-3xl">O facilitador continua responsável pelo fluxo da conversa, mas não precisa cuidar sozinho de tempo, recepção e acompanhamento. Apresente as funções antes do encontro e deixe claro quem toma cada decisão.</p>
+                  <dl className="mt-8 border-y border-[var(--border)]">
+                    {facilitationRoles.map((role) => (
+                      <div key={role.title} className="grid gap-2 border-b border-[var(--border)] py-5 last:border-0 sm:grid-cols-[12rem_1fr] sm:gap-6">
+                        <dt className="font-serif text-xl text-[var(--navy)]">{role.title}</dt>
+                        <dd className="leading-7 text-[var(--muted)]">{role.text}</dd>
+                      </div>
                     ))}
-                  </ul>
-                </div>
+                  </dl>
+                </section>
 
-                <section className="mt-12 rounded-lg border border-[var(--gold)]/30 bg-[var(--gold-soft)] p-6 sm:p-8">
-                  <h2 className="font-serif text-3xl text-[var(--navy)]">
-                    Sugestão de condução
-                  </h2>
-                  <ol className="mt-5 grid gap-4 leading-7 text-[var(--olive-dark)]">
-                    <li>1. Acolha o grupo e apresente o tema do encontro.</li>
-                    <li>2. Convide participantes para lerem as referências bíblicas.</li>
-                    <li>3. Faça uma dinâmica curta ou uma pergunta de abertura.</li>
-                    <li>4. Conduza a conversa para observação, entendimento e aplicação.</li>
-                    <li>5. Finalize com oração relacionada ao tema vivido pelo grupo.</li>
-                  </ol>
+                <section className="mt-12" aria-labelledby="intervencoes-prontas">
+                  <span className="eyebrow">Durante a conversa</span>
+                  <h2 id="intervencoes-prontas" className="section-title mt-4">Sete situações e como intervir.</h2>
+                  <p className="section-copy max-w-3xl">Intervir não é controlar cada resposta. É proteger pessoas, tempo e propósito para que a participação continue possível.</p>
+                  <div className="mt-8 border-y border-[var(--border)]">
+                    {facilitationCases.map((item, index) => (
+                      <section key={item.situation} className="border-b border-[var(--border)] py-7 last:border-0">
+                        <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr]">
+                          <span className="font-serif text-2xl text-[var(--gold-ink)]" aria-hidden="true">{index + 1}</span>
+                          <div>
+                            <h3 className="font-serif text-2xl text-[var(--navy)]">{item.situation}</h3>
+                            <p className="mt-3 leading-7 text-[var(--muted)]">{item.action}</p>
+                            <p className="mt-4 border-l-2 border-[var(--gold)] pl-4 leading-7 text-[var(--foreground)]"><strong>Uma frase possível:</strong> “{item.phrase}”</p>
+                          </div>
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+
+                  <aside className="mt-7 border-l-2 border-[var(--gold)] bg-[var(--surface-soft)] px-5 py-4" aria-label="Orientação para situações de risco">
+                    <p className="leading-7 text-[var(--muted)]">
+                      <strong className="text-[var(--navy)]">Quando houver risco:</strong>{" "}
+                      facilitação de grupo não substitui atendimento especializado. No Brasil, urgências de saúde podem ser encaminhadas ao SAMU 192; o CVV atende pelo 188 para apoio emocional; e o Disque 100 recebe denúncias de violações de direitos humanos. Em perigo imediato, interrompa a atividade e procure o serviço adequado.
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                      Fontes oficiais: <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao" className="font-bold text-[var(--navy)]">Ministério da Saúde</a> e <a href="https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos" className="font-bold text-[var(--navy)]">Disque Direitos Humanos</a>.
+                    </p>
+                  </aside>
+                </section>
+
+                <section className="mt-12" aria-labelledby="simulacao-conversa">
+                  <span className="eyebrow">Exemplo fictício · Lucas 10:38-42</span>
+                  <h2 id="simulacao-conversa" className="section-title mt-4">Uma conversa facilitada, passo a passo.</h2>
+                  <p className="section-copy max-w-3xl">Leia a passagem completa. O objetivo deste exemplo é demonstrar intervenções, não oferecer uma interpretação exaustiva do episódio de Marta e Maria.</p>
+
+                  <div className="mt-8 grid gap-6 border-y border-[var(--border)] py-7">
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Facilitador</strong><p className="leading-7 text-[var(--muted)]">“Antes de aplicar, o que Marta e Maria fazem na cena e o que Jesus diz?”</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Participante 1</strong><p className="leading-7 text-[var(--muted)]">“Marta recebe Jesus e se ocupa com o serviço; Maria se senta para ouvi-lo.”</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Participante 2</strong><p className="leading-7 text-[var(--muted)]">“Então servir é errado e só Maria teve fé.”</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Facilitador</strong><p className="leading-7 text-[var(--muted)]">“Vamos conferir: Jesus chama atenção para ansiedade e distração de Marta. O texto diz que todo serviço é errado ou essa é uma conclusão além da frase? O que o contexto permite afirmar com segurança?”</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Participante 3</strong><p className="leading-7 text-[var(--muted)]">Começa uma história longa sobre tarefas e conflitos de outra pessoa.</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Facilitador</strong><p className="leading-7 text-[var(--muted)]">“Obrigado por relacionar o tema à rotina. Vou interromper antes de entrarmos na história de quem não está aqui e abrir espaço para outra voz: que contraste do texto ainda não observamos?”</p></div>
+                    <div className="grid gap-2 sm:grid-cols-[9rem_1fr]"><strong className="text-[var(--navy)]">Após silêncio</strong><p className="leading-7 text-[var(--muted)]">“Conversem em duplas por dois minutos: o que ajuda alguém a perceber quando muitas tarefas estão retirando sua atenção do que é essencial? Vocês podem responder de modo geral.”</p></div>
+                  </div>
+
+                  <div className="mt-7 border-l-2 border-[var(--gold)] pl-5">
+                    <h3 className="font-serif text-2xl text-[var(--navy)]">O que o facilitador fez</h3>
+                    <ul className="mt-3 grid gap-2 leading-7 text-[var(--muted)]">
+                      <li>- Começou por observações verificáveis no texto.</li>
+                      <li>- Corrigiu uma conclusão sem rotular a pessoa.</li>
+                      <li>- Protegeu a privacidade de alguém ausente.</li>
+                      <li>- Interrompeu uma fala longa e devolveu a palavra ao grupo.</li>
+                      <li>- Usou duplas e uma pergunta geral quando surgiu silêncio.</li>
+                    </ul>
+                  </div>
                 </section>
 
                 <RelatedTools

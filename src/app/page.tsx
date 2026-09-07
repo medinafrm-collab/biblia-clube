@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { ContinueQuizPrompt } from "@/components/ContinueQuizPrompt";
+import {
+  HomeAudiencePaths,
+  HomeEditorialHighlights,
+} from "@/components/EditorialHomeSections";
 import { Footer } from "@/components/Footer";
 import { GamesSection } from "@/components/GamesSection";
-import { GuidesPreviewSection } from "@/components/GuidesPreviewSection";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { HowItWorks } from "@/components/HowItWorks";
+import { HomeClosingCta, HomeEntryPoints } from "@/components/HomeEntryPoints";
 
 const title = "Jogos Bíblicos Grátis e Quiz Online | Bíblia Clube";
 const description =
@@ -95,10 +98,12 @@ export default function Home() {
       <main>
         <Hero />
         <ContinueQuizPrompt />
-        <HowItWorks />
+        <HomeEntryPoints />
         <GamesSection />
-        <GuidesPreviewSection />
         <BenefitsSection />
+        <HomeEditorialHighlights />
+        <HomeAudiencePaths />
+        <HomeClosingCta />
       </main>
       <Footer />
     </>

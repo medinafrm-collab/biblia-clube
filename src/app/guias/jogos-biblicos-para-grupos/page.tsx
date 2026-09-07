@@ -5,37 +5,11 @@ import { GuideHeroPanel } from "@/components/GuideHeroPanel";
 import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
+import { quizQuestions } from "@/data/quizQuestions";
 
-const title = "Jogos bíblicos para grupos | Bíblia Clube";
+const title = "Jogos bíblicos para grupos";
 const description =
   "Veja como escolher e conduzir jogos bíblicos para grupos, células, jovens e equipes de forma leve, participativa e edificante.";
-
-const choices = [
-  {
-    title: "Para quebrar o gelo",
-    text: "Prefira jogos rápidos, com regras simples e perguntas acessíveis. O objetivo é fazer o grupo começar a interagir sem medo de errar.",
-  },
-  {
-    title: "Para revisar um tema",
-    text: "Escolha perguntas ligadas ao estudo anterior. Depois de cada resposta, reserve alguns minutos para recuperar a ideia principal do texto bíblico.",
-  },
-  {
-    title: "Para trabalhar em equipes",
-    text: "Divida o grupo em times pequenos, combine uma pontuação simbólica e deixe claro que o aprendizado vale mais do que o placar.",
-  },
-  {
-    title: "Para aprofundar uma conversa",
-    text: "Use menos perguntas e mais tempo de diálogo. Uma única resposta pode abrir uma boa conversa sobre fé, obediência, perdão ou serviço.",
-  },
-];
-
-const formats = [
-  "Quiz bíblico com alternativas.",
-  "Ligue os pares com personagens, lugares e acontecimentos.",
-  "Complete a frase para trabalhar atenção e memória.",
-  "Rodadas em equipe com tempo controlado.",
-  "Perguntas abertas após a explicação da resposta.",
-];
 
 const cautions = [
   "Explique as regras antes da primeira rodada.",
@@ -43,6 +17,31 @@ const cautions = [
   "Adapte a dificuldade ao grupo presente.",
   "Use o jogo como ponte para a Palavra, não como fim em si mesmo.",
   "Encerre retomando o aprendizado principal.",
+];
+
+const readyRound = [1, 5, 7, 9, 30].map((id) => {
+  const question = quizQuestions.find((item) => item.id === id);
+  if (!question) throw new Error(`Pergunta ${id} não encontrada.`);
+  return question;
+});
+
+const groupSetups = [
+  {
+    size: "12 participantes",
+    teams: "3 equipes de 4",
+    room: "Três pequenos círculos voltados para a tela. Deixe passagem livre para quem precisa circular ou se sentar em posição diferente.",
+    roles: "Em cada equipe: porta-voz, pessoa que consulta a Bíblia, responsável pelo consenso e observador do placar. Troque os papéis após três perguntas.",
+    settings: "5 perguntas · 30 segundos · rebote ativado",
+    timing: "25 minutos: 4 para regras, 10 para jogo, 7 para leitura e 4 para conversa e oração.",
+  },
+  {
+    size: "30 participantes",
+    teams: "6 equipes de 5",
+    room: "Seis fileiras ou ilhas identificadas por nome ou cor. A tela precisa ser legível do fundo; teste tamanho do texto e áudio antes da chegada.",
+    roles: "Em cada equipe: porta-voz, pessoa que consulta a Bíblia, anotador, guardião do tempo e facilitador do consenso. Alterne o porta-voz a cada pergunta.",
+    settings: "5 perguntas · 60 segundos · rebote ativado",
+    timing: "30 minutos: 6 para organização, 13 para jogo, 7 para leitura e 4 para conversa e oração.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -132,10 +131,10 @@ export default function BiblicalGamesForGroupsGuide() {
                   Neste guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Como escolher o jogo certo para cada momento.</li>
-                  <li>- Formatos simples para grupos pequenos ou grandes.</li>
-                  <li>- Cuidados para manter a dinâmica saudável.</li>
-                  <li>- Ferramentas do Bíblia Clube para aplicar na prática.</li>
+                  <li>- Configuração para 12 participantes.</li>
+                  <li>- Configuração para 30 participantes.</li>
+                  <li>- Rodada pronta com cinco perguntas.</li>
+                  <li>- Pontuação, desempate e resultado de exemplo.</li>
                 </ul>
                 <Link href="/modo-grupo" className="button-primary mt-6">
                   Abrir modo grupo
@@ -198,56 +197,85 @@ export default function BiblicalGamesForGroupsGuide() {
                   ]}
                 />
 
-                <div className="mt-10 grid gap-4">
-                  {choices.map((choice, index) => (
-                    <section
-                      key={choice.title}
-                      className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-6"
-                    >
-                      <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--gold)]">
-                        Uso {index + 1}
-                      </span>
-                      <h3 className="mt-3 font-serif text-2xl text-[var(--navy)]">
-                        {choice.title}
-                      </h3>
-                      <p className="mt-3 leading-7 text-[var(--muted)]">
-                        {choice.text}
-                      </p>
-                    </section>
-                  ))}
-                </div>
-
-                <div className="prose-content mt-12">
-                  <h2>Formatos que ajudam o grupo a participar</h2>
-                  <p>
-                    O ideal é variar os formatos ao longo dos encontros. Assim,
-                    o grupo não fica preso a uma única dinâmica e pessoas com
-                    estilos diferentes encontram formas diferentes de participar.
-                  </p>
-                </div>
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-lg border border-[var(--border)] p-6">
-                    <h3 className="font-bold text-[var(--navy)]">
-                      Ideias de formato
-                    </h3>
-                    <ul className="mt-4 space-y-3 leading-7 text-[var(--muted)]">
-                      {formats.map((item) => (
-                        <li key={item}>- {item}</li>
-                      ))}
-                    </ul>
+                <section className="mt-12" aria-labelledby="tamanho-do-grupo">
+                  <span className="eyebrow">Organização prática</span>
+                  <h2 id="tamanho-do-grupo" className="section-title mt-4">O que muda entre 12 e 30 pessoas.</h2>
+                  <p className="section-copy max-w-3xl">Nos dois casos, use um computador ou celular para controlar a partida e uma TV ou projetor para o grupo. O número de pessoas por equipe, o tempo de consenso e a organização do espaço precisam mudar.</p>
+                  <div className="mt-8 border-y border-[var(--border)]">
+                    {groupSetups.map((setup) => (
+                      <section key={setup.size} className="border-b border-[var(--border)] py-8 last:border-0">
+                        <div className="grid gap-6 lg:grid-cols-[12rem_1fr]">
+                          <div>
+                            <h3 className="font-serif text-2xl text-[var(--navy)]">{setup.size}</h3>
+                            <p className="mt-2 font-bold text-[var(--olive-dark)]">{setup.teams}</p>
+                          </div>
+                          <dl className="grid gap-4 text-[var(--muted)]">
+                            <div><dt className="font-bold text-[var(--navy)]">Espaço</dt><dd className="mt-1 leading-7">{setup.room}</dd></div>
+                            <div><dt className="font-bold text-[var(--navy)]">Papéis</dt><dd className="mt-1 leading-7">{setup.roles}</dd></div>
+                            <div><dt className="font-bold text-[var(--navy)]">Configuração no Modo Grupo</dt><dd className="mt-1 leading-7">{setup.settings}</dd></div>
+                            <div><dt className="font-bold text-[var(--navy)]">Tempo total</dt><dd className="mt-1 leading-7">{setup.timing}</dd></div>
+                          </dl>
+                        </div>
+                      </section>
+                    ))}
                   </div>
-                  <div className="rounded-lg border border-[var(--border)] p-6">
-                    <h3 className="font-bold text-[var(--navy)]">
-                      Cuidados na condução
-                    </h3>
-                    <ul className="mt-4 space-y-3 leading-7 text-[var(--muted)]">
-                      {cautions.map((item) => (
-                        <li key={item}>- {item}</li>
-                      ))}
-                    </ul>
+                </section>
+
+                <section className="mt-12" aria-labelledby="rodada-pronta">
+                  <span className="eyebrow">Rodada pronta · nível inicial</span>
+                  <h2 id="rodada-pronta" className="section-title mt-4">Cinco perguntas para conduzir do guia.</h2>
+                  <p className="section-copy max-w-3xl">Esta seleção fixa serve para uma primeira experiência com participantes de repertórios diferentes. O Modo Grupo usa perguntas sorteadas do tema escolhido; para repetir exatamente esta sequência, conduza a partir desta página.</p>
+
+                  <div className="mt-8 border-y border-[var(--border)]">
+                    {readyRound.map((item, index) => (
+                      <section key={item.id} className="border-b border-[var(--border)] py-7 last:border-0">
+                        <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr]">
+                          <span className="font-serif text-2xl text-[var(--gold-ink)]" aria-hidden="true">{index + 1}</span>
+                          <div>
+                            <h3 className="font-serif text-2xl leading-tight text-[var(--navy)]">{item.question}</h3>
+                            <ol className="mt-4 grid gap-2 text-[var(--muted)] sm:grid-cols-2">
+                              {item.options.map((option, optionIndex) => <li key={option}><strong className="mr-2 text-[var(--olive-dark)]">{String.fromCharCode(65 + optionIndex)}.</strong>{option}</li>)}
+                            </ol>
+                            <details className="mt-5 border-l-2 border-[var(--gold)] pl-4">
+                              <summary className="cursor-pointer font-bold text-[var(--olive-dark)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--navy)]">Ver resposta e referência</summary>
+                              <div className="pt-4">
+                                <p className="font-bold text-[var(--navy)]">Resposta: {item.correctAnswer}</p>
+                                <p className="mt-2 leading-7 text-[var(--muted)]">{item.explanation}</p>
+                                <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">Leia: {item.reference}</p>
+                              </div>
+                            </details>
+                          </div>
+                        </div>
+                      </section>
+                    ))}
                   </div>
-                </div>
+                </section>
+
+                <section className="mt-12 border-y border-[var(--border)] py-8">
+                  <h2 className="font-serif text-3xl text-[var(--navy)]">Pontuação e resultado de exemplo</h2>
+                  <p className="mt-3 leading-7 text-[var(--muted)]">Resposta direta vale 10 pontos; após um erro, a equipe seguinte pode usar o rebote por 5. Não desconte pontos por erro. Em caso de empate, peça que as equipes localizem uma das referências da rodada; todas que encontrarem participam da leitura, sem “morte súbita”.</p>
+                  <div className="mt-6 overflow-x-auto">
+                    <table className="w-full min-w-[38rem] border-collapse text-left text-sm">
+                      <caption className="sr-only">Exemplo de pontuação de uma rodada com três equipes</caption>
+                      <thead><tr className="border-b border-[var(--border)] text-[var(--navy)]"><th className="py-3 pr-4">Pergunta</th><th className="py-3 pr-4">Equipe da vez</th><th className="py-3 pr-4">Resultado</th><th className="py-3">Placar acumulado</th></tr></thead>
+                      <tbody className="text-[var(--muted)]">
+                        <tr className="border-b border-[var(--border)]"><td className="py-3 pr-4">1</td><td className="py-3 pr-4">Caminho</td><td className="py-3 pr-4">Acerto, +10</td><td className="py-3">10 · 0 · 0</td></tr>
+                        <tr className="border-b border-[var(--border)]"><td className="py-3 pr-4">2</td><td className="py-3 pr-4">Ponte</td><td className="py-3 pr-4">Acerto, +10</td><td className="py-3">10 · 10 · 0</td></tr>
+                        <tr className="border-b border-[var(--border)]"><td className="py-3 pr-4">3</td><td className="py-3 pr-4">Luz</td><td className="py-3 pr-4">Acerto, +10</td><td className="py-3">10 · 10 · 10</td></tr>
+                        <tr className="border-b border-[var(--border)]"><td className="py-3 pr-4">4</td><td className="py-3 pr-4">Caminho</td><td className="py-3 pr-4">Erro; Ponte no rebote, +5</td><td className="py-3">10 · 15 · 10</td></tr>
+                        <tr><td className="py-3 pr-4">5</td><td className="py-3 pr-4">Ponte</td><td className="py-3 pr-4">Acerto, +10</td><td className="py-3">10 · 25 · 10</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-5 font-bold text-[var(--navy)]">Resultado: Ponte, 25 pontos; Caminho e Luz, 10 cada. Leia Lucas 10:25-37 e encerre perguntando: “Que forma concreta de cuidado está ao alcance do nosso grupo?”</p>
+                </section>
+
+                <section className="mt-12">
+                  <h2 className="font-serif text-3xl text-[var(--navy)]">Cinco cuidados na condução</h2>
+                  <ul className="mt-5 grid gap-3 border-y border-[var(--border)] py-6 leading-7 text-[var(--muted)] sm:grid-cols-2">
+                    {cautions.map((item) => <li key={item} className="flex gap-3"><span aria-hidden="true" className="text-[var(--gold-ink)]">•</span><span>{item}</span></li>)}
+                  </ul>
+                </section>
 
                 <RelatedTools
                   description="Escolha uma ferramenta conforme o perfil do grupo e o tempo disponível para a atividade."
@@ -279,7 +307,7 @@ export default function BiblicalGamesForGroupsGuide() {
                     {
                       title: "Jogo da Memória",
                       description:
-                        "Encontre pares com cartas de personagens, símbolos, versos e referências.",
+                        "Encontre pares de personagens e símbolos em uma rodada visual.",
                       href: "/jogo-da-memoria-biblico",
                     },
                   ]}

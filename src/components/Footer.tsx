@@ -3,8 +3,13 @@ import { FooterLink } from "./FooterLink";
 import { Logo } from "./Logo";
 
 const links = [
+  { label: "Biblioteca", href: "/biblioteca" },
   { label: "Guias", href: "/guias" },
+  { label: "Dinâmicas", href: "/dinamicas-para-celulas" },
+  { label: "Monte seu encontro", href: "/monte-seu-encontro" },
+  { label: "Materiais", href: "/materiais" },
   { label: "Sobre", href: "/sobre" },
+  { label: "Como produzimos", href: "/como-produzimos-conteudos" },
   { label: "Contato", href: "/contato" },
   { label: "Política de Privacidade", href: "/politica-de-privacidade" },
   { label: "Termos de Uso", href: "/termos-de-uso" },
@@ -61,15 +66,15 @@ function InstagramIcon() {
 export function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface-soft)]">
-      <div className="container-site grid gap-10 py-12 md:grid-cols-[1fr_auto] md:items-end">
-        <div>
+      <div className="container-site grid gap-10 py-12 lg:grid-cols-[minmax(260px,0.8fr)_minmax(0,1.6fr)] lg:items-start lg:gap-16">
+        <div className="max-w-sm">
           <Logo />
           <p className="mt-5 max-w-md leading-7 text-[var(--muted)]">
-            Jogos, guias e dinâmicas para aprender de forma leve.
+            Jogos, conteúdos e ferramentas para aprender, preparar encontros e compartilhar a Bíblia de forma leve.
           </p>
         </div>
-        <nav aria-label="Links institucionais">
-          <ul className="flex flex-wrap gap-x-6 gap-y-3">
+        <nav aria-label="Links institucionais" className="lg:pt-1">
+          <ul className="grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-3">
             {links.map((link) => (
               <li key={link.href}>
                 <FooterLink

@@ -18,7 +18,7 @@ export type CellDynamic = {
   prayerSuggestion: string;
 };
 
-export const cellDynamics: CellDynamic[] = [
+const cellDynamicDrafts: CellDynamic[] = [
   {
     id: "verdade-ou-pressao",
     audience: "jovens",
@@ -572,3 +572,13 @@ export const cellDynamics: CellDynamic[] = [
       "O condutor pode orar por amor, sensibilidade e coragem para compartilhar esperança com palavras honestas, mansidão e respeito.",
   },
 ];
+
+const pausedDynamicIds = ["quando-a-mente-acelera"];
+
+export const cellDynamics = cellDynamicDrafts.filter(
+  (dynamic) => !pausedDynamicIds.includes(dynamic.id),
+);
+
+export function getCellDynamicById(id: string) {
+  return cellDynamics.find((dynamic) => dynamic.id === id);
+}

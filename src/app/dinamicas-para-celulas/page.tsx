@@ -30,7 +30,7 @@ export default function DinamicasParaCelulasPage() {
               Encontros que ajudam pessoas a se aproximarem.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              Roteiros simples para jovens, casais e células conversarem com profundidade, leveza e propósito.
+              Roteiros para jovens, casais e células, com objetivo, referências bíblicas, etapas de condução e perguntas para conversar.
             </p>
           </div>
         </section>

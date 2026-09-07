@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -108,18 +109,35 @@ export default function GuidesPage() {
               <span>Guias</span>
             </nav>
 
-            <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
               <div>
                 <span className="eyebrow">Conteúdo para conduzir melhor</span>
-                <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,6vw,4.7rem)] text-[var(--navy)]">
+                <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,5vw,4.25rem)] text-[var(--navy)]">
                   Guias para jogos, células e estudos em grupo.
                 </h1>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
+                  Reunimos orientações práticas para líderes, casais, jovens e
+                  pequenos grupos usarem as ferramentas do Bíblia Clube com
+                  propósito, leveza e cuidado.
+                </p>
               </div>
-              <p className="text-lg leading-8 text-[var(--muted)]">
-                Reunimos orientações práticas para líderes, casais, jovens e
-                pequenos grupos usarem as ferramentas do Bíblia Clube com
-                propósito, leveza e cuidado.
-              </p>
+
+              <figure className="relative mb-3 mr-3">
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-3 -right-3 left-3 top-3 rounded-lg border border-[var(--gold)] opacity-40"
+                />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/editorial/grupo-estudo-mesa-preta.webp"
+                    alt="Grupo de diferentes idades reunido para preparar e conversar sobre um estudo bíblico"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="object-cover"
+                  />
+                </div>
+              </figure>
             </div>
           </div>
         </section>

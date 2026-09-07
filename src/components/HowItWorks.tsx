@@ -43,7 +43,7 @@ export function HowItWorks() {
             <ScrollReveal key={step.number} delay={120 + index * 90}>
               <article className="card group h-full p-7 sm:p-8">
                 <div className="flex items-center justify-between">
-                  <span className="font-serif text-4xl text-[var(--gold)]">
+                  <span className="font-serif text-4xl text-[var(--gold-ink)]">
                     {step.number}
                   </span>
                   <span

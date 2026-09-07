@@ -135,15 +135,15 @@ export function CompletePhraseGame() {
                 </h2>
                 <ul className="mt-5 grid gap-4 text-[var(--muted)]">
                   <li className="flex gap-3">
-                    <strong className="text-[var(--gold)]">01</strong>
+                    <strong className="text-[var(--gold-ink)]">01</strong>
                     Complete uma frase por vez escolhendo entre quatro opções.
                   </li>
                   <li className="flex gap-3">
-                    <strong className="text-[var(--gold)]">02</strong>
+                    <strong className="text-[var(--gold-ink)]">02</strong>
                     Confira a passagem completa e sua referência.
                   </li>
                   <li className="flex gap-3">
-                    <strong className="text-[var(--gold)]">03</strong>
+                    <strong className="text-[var(--gold-ink)]">03</strong>
                     Some acertos e tente alcançar a melhor sequência.
                   </li>
                 </ul>

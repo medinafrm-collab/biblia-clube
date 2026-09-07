@@ -19,6 +19,10 @@ export function FooterLink({ href, children, className }: FooterLinkProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  if (href === "/politica-de-privacidade") {
+    return <a href={href} onClick={handleClick} className={className}>{children}</a>;
+  }
+
   return (
     <Link href={href} onClick={handleClick} className={className}>
       {children}

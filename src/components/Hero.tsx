@@ -18,54 +18,45 @@ export function Hero() {
       id="inicio"
       className="paper-texture relative overflow-hidden border-b border-[var(--border)]"
     >
-      <div
-        aria-hidden="true"
-        className="absolute -right-32 top-24 size-96 rounded-full border border-[var(--gold)]/25"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-16 top-40 size-64 rounded-full border border-[var(--gold)]/20"
-      />
-
-      <div className="container-site grid min-h-[calc(100vh-5rem)] items-center gap-14 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:py-16">
+      <div className="container-site grid items-center gap-10 py-10 sm:py-12 lg:grid-cols-[0.82fr_1.18fr] lg:py-14">
         <div className="relative z-10">
           <span className="eyebrow">Conhecimento que aproxima</span>
-          <h1 className="display-title mt-6 max-w-3xl text-[clamp(2.8rem,5.4vw,5rem)] text-[var(--navy)]">
-            Aprenda, jogue e se conecte com a{" "}
+          <h1 className="display-title mt-5 max-w-2xl text-[clamp(2.5rem,4.2vw,3.75rem)] text-[var(--navy)]">
+            Aprenda, jogue e compartilhe a{" "}
             <span className="relative inline-block text-[var(--olive-dark)]">
-              Bíblia
+              Bíblia com leveza
               <svg
                 aria-hidden="true"
                 viewBox="0 0 260 18"
-                className="absolute -bottom-1 left-0 w-full text-[var(--gold)]"
+                preserveAspectRatio="none"
+                className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full overflow-visible text-[var(--gold)]"
               >
                 <path
                   d="M4 13C73 2 171 3 256 10"
                   fill="none"
                   stroke="currentColor"
                   strokeLinecap="round"
-                  strokeWidth="5"
+                  strokeWidth="4"
                 />
               </svg>
-            </span>{" "}
-            de um jeito leve e divertido.
+            </span>
+            .
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            Escolha entre quiz, jogo da memória, ligue os pares e dinâmicas para
-            grupos, famílias, jovens e todos que desejam aprender mais sobre a
-            Palavra.
+          <p className="mt-6 max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">
+            Aqui você encontra quiz, jogos e dinâmicas para grupos, famílias,
+            jovens e todos que desejam aprender mais sobre a Palavra de Deus.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link href="/quiz-biblico" className="button-primary">
               Jogar quiz grátis
               <span aria-hidden="true">→</span>
             </Link>
-            <a href="#jogos" className="button-secondary">
-              Ver outros jogos
-            </a>
+            <Link href="/biblioteca" className="button-secondary">
+              Conhecer a biblioteca
+            </Link>
           </div>
 
-          <div className="mt-12 grid max-w-2xl grid-cols-3 gap-3 border-t border-[var(--border)] pt-7">
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-t border-[var(--border)] pt-5">
             {miniCards.map((item) => (
               <div key={item.label}>
                 <strong className="block font-serif text-2xl text-[var(--navy)]">
@@ -79,10 +70,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[480px]">
-          <div className="absolute -inset-5 rotate-3 rounded-[2.5rem] bg-[var(--gold-soft)]" />
-          <div className="card relative overflow-hidden !rounded-[2.2rem] border-white/70 p-3 shadow-[0_35px_90px_rgba(32,56,47,0.16)]">
-            <div className="rounded-[1.7rem] bg-[var(--navy)] p-7 text-white sm:p-9">
+        <div className="relative mx-auto w-full max-w-[680px]">
+          <div className="absolute -inset-3 rotate-1 rounded-lg bg-[var(--gold-soft)]" />
+          <div className="relative overflow-hidden rounded-lg border border-white/70 bg-white p-3 shadow-[0_24px_65px_rgba(32,56,47,0.14)]">
+            <div className="rounded-md bg-[var(--navy)] p-6 text-white sm:p-8">
               <div className="flex items-center justify-between">
                 <span className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em]">
                   Rodada rápida
@@ -95,14 +86,14 @@ export function Hero() {
               <p className="mt-8 text-sm font-bold text-[var(--gold)]">
                 Antigo Testamento
               </p>
-              <p className="mt-3 font-serif text-3xl leading-tight">
+              <p className="mt-3 max-w-xl font-serif text-[clamp(1.75rem,3vw,2.45rem)] leading-tight">
                 Quem recebeu os Dez Mandamentos no monte Sinai?
               </p>
               <div className="mt-7 grid gap-2.5">
                 {["Josué", "Moisés", "Elias", "Samuel"].map((option, index) => (
                   <div
                     key={option}
-                    className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-sm ${
+                    className={`flex items-center gap-3 rounded-md border px-4 py-3 text-sm ${
                       index === 1
                         ? "border-[var(--gold)] bg-[var(--gold)] text-[var(--navy)]"
                         : "border-white/15 bg-white/5"
@@ -117,7 +108,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-7 -left-6 hidden rounded-2xl border border-[var(--border)] bg-white p-4 shadow-xl sm:flex sm:items-center sm:gap-3">
+          <div className="absolute -bottom-5 -left-4 hidden rounded-md border border-[var(--border)] bg-white p-3 shadow-lg sm:flex sm:items-center sm:gap-3">
             <span className="grid size-11 place-items-center rounded-full bg-[var(--success-soft)] text-xl">
               ✓
             </span>

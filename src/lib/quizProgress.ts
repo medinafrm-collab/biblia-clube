@@ -1,6 +1,7 @@
 "use client";
 
 import type { QuizJourney, QuizTopicId } from "@/data/quizQuestions";
+import { quizTopics } from "@/data/quizTopics";
 
 const PROGRESS_KEY = "biblia-clube:quiz-progress:v1";
 const HISTORY_KEY = "biblia-clube:quiz-history:v1";
@@ -44,10 +45,9 @@ export function getJourneyKey(topic: QuizTopicId, journey: QuizJourney) {
 export function readQuizProgress(): SavedQuizProgress | null {
   if (typeof window === "undefined") return null;
 
-  const storedProgress = window.localStorage.getItem(PROGRESS_KEY);
-  if (storedProgress === null) return null;
-
   try {
+    const storedProgress = window.localStorage.getItem(PROGRESS_KEY);
+    if (storedProgress === null) return null;
     const parsed = JSON.parse(storedProgress) as
       | Partial<SavedQuizProgress>
       | null;
@@ -63,6 +63,16 @@ export function readQuizProgress(): SavedQuizProgress | null {
       typeof parsed.score !== "number" ||
       typeof parsed.total !== "number" ||
       typeof parsed.updatedAt !== "number" ||
+      !quizTopics.some((topic) => topic.id === parsed.topic && topic.path === parsed.topicPath) ||
+      ![1, 2, 3].includes(parsed.journey) ||
+      !Number.isSafeInteger(parsed.currentIndex) ||
+      !Number.isSafeInteger(parsed.score) ||
+      !Number.isSafeInteger(parsed.total) ||
+      !Number.isSafeInteger(parsed.updatedAt) ||
+      parsed.total < 1 || parsed.total > 1000 ||
+      parsed.currentIndex < 0 || parsed.currentIndex >= parsed.total ||
+      parsed.score < 0 || parsed.score > parsed.currentIndex + 1 ||
+      parsed.updatedAt > Date.now() ||
       (parsed.selectedAnswer !== null &&
         typeof parsed.selectedAnswer !== "string") ||
       Date.now() - parsed.updatedAt > MAX_PROGRESS_AGE
@@ -115,7 +125,14 @@ export function readQuizHistory(): Record<string, CompletedQuizJourney> {
     ) as QuizHistory | null;
 
     if (!parsed || parsed.version !== 1 || !parsed.completed) return {};
-    return parsed.completed;
+    return Object.fromEntries(Object.entries(parsed.completed).filter(([key, entry]) =>
+      entry && quizTopics.some((topic) => topic.id === entry.topic) &&
+      [1, 2, 3].includes(entry.journey) &&
+      key === getJourneyKey(entry.topic, entry.journey) &&
+      Number.isSafeInteger(entry.score) && Number.isSafeInteger(entry.total) &&
+      entry.total > 0 && entry.total <= 1000 && entry.score >= 0 && entry.score <= entry.total &&
+      Number.isSafeInteger(entry.completedAt) && entry.completedAt > 0 && entry.completedAt <= Date.now(),
+    ));
   } catch {
     return {};
   }

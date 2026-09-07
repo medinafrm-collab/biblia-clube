@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import {
   disableGoogleAnalytics,
   GA_MEASUREMENT_ID,
@@ -48,13 +47,13 @@ export function GoogleAnalytics() {
 
   useEffect(() => {
     if (consent !== "granted") {
-      if (consent === "denied") disableGoogleAnalytics();
+      disableGoogleAnalytics();
       return;
     }
 
     if (!isGoogleAnalyticsHost()) return;
 
-    initializeGoogleAnalytics();
+    if (!initializeGoogleAnalytics()) return;
     loadGoogleTag();
 
     if (lastTrackedPath.current === pathname) return;
@@ -88,9 +87,9 @@ export function GoogleAnalytics() {
             O site usa recursos essenciais para funcionar e lembrar sua
             escolha. Com sua permissão, também usamos cookies de análise para
             entender quais jogos são mais úteis. Consulte a{" "}
-            <Link href="/politica-de-privacidade">
+            <a href="/politica-de-privacidade">
               Política de Privacidade
-            </Link>
+            </a>
             .
           </p>
         </div>

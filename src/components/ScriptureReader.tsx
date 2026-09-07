@@ -38,6 +38,8 @@ export function ScriptureReader({ reference }: ScriptureReaderProps) {
   const descriptionId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const requestRef = useRef<AbortController | null>(null);
   const [open, setOpen] = useState(false);
   const [passage, setPassage] = useState<PassageResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -55,13 +57,15 @@ export function ScriptureReader({ reference }: ScriptureReaderProps) {
       if (event.key === "Escape") setOpen(false);
       if (event.key === "Tab") {
         event.preventDefault();
-        closeRef.current?.focus();
+        if (document.activeElement === closeRef.current) contentRef.current?.focus();
+        else closeRef.current?.focus();
       }
     }
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      requestRef.current?.abort();
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
       trigger?.focus();
@@ -69,8 +73,13 @@ export function ScriptureReader({ reference }: ScriptureReaderProps) {
   }, [open]);
 
   async function openReader() {
+    requestRef.current?.abort();
+    const controller = new AbortController();
+    requestRef.current = controller;
     setOpen(true);
     setError(null);
+    setPassage(null);
+    setLoading(false);
 
     const cachedPassage = passageCache.get(reference);
     if (cachedPassage) {
@@ -83,19 +92,23 @@ export function ScriptureReader({ reference }: ScriptureReaderProps) {
     try {
       const response = await fetch(
         `/api/bible-passage?reference=${encodeURIComponent(reference)}`,
+        { signal: controller.signal },
       );
 
       if (!response.ok) throw new Error("Não foi possível carregar o texto.");
 
       const nextPassage = (await response.json()) as PassageResponse;
+      if (controller.signal.aborted) return;
+      if (passageCache.size >= 100) passageCache.delete(passageCache.keys().next().value!);
       passageCache.set(reference, nextPassage);
       setPassage(nextPassage);
     } catch {
+      if (controller.signal.aborted) return;
       setError(
         "Não foi possível abrir esta leitura agora. Tente novamente em instantes.",
       );
     } finally {
-      setLoading(false);
+      if (!controller.signal.aborted) setLoading(false);
     }
   }
 
@@ -143,7 +156,7 @@ export function ScriptureReader({ reference }: ScriptureReaderProps) {
           </button>
         </header>
 
-        <div className="overflow-y-auto px-5 py-6 sm:px-7">
+        <div ref={contentRef} tabIndex={0} role="region" aria-label="Texto da passagem bíblica" className="overflow-y-auto px-5 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[var(--olive-dark)] sm:px-7">
           {loading ? (
             <p aria-live="polite" className="py-10 text-center text-[var(--muted)]">
               Preparando a leitura…

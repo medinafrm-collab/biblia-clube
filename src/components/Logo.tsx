@@ -4,7 +4,6 @@ export function Logo() {
   return (
     <Link
       href="/"
-      aria-label="Bíblia Clube — página inicial"
       className="inline-flex items-center gap-3 text-[var(--navy)] no-underline"
     >
       <svg

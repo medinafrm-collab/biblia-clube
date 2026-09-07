@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Termos de Uso",
   description: "Termos de Uso do site Bíblia Clube.",
   alternates: { canonical: "/termos-de-uso" },
+  openGraph: { title: "Termos de Uso", description: "Termos de Uso do site Bíblia Clube.", url: "/termos-de-uso" },
 };
 
 export default function TermosDeUsoPage() {

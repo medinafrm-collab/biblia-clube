@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cellDynamics } from "@/data/cellDynamics";
 import { ScrollReveal } from "./ScrollReveal";
 
 const guides = [
@@ -82,7 +83,7 @@ export function GuidesPreviewSection() {
 
         <div className="mt-8 grid gap-3 border-t border-[var(--border)] pt-7 sm:grid-cols-3">
           {[
-            ["13", "dinâmicas para grupos"],
+            [String(cellDynamics.length), "dinâmicas para grupos"],
             ["6", "guias de condução"],
             ["0", "cadastro obrigatório"],
           ].map(([value, label], index) => (

@@ -36,7 +36,7 @@ export function GameEditorialSection({
             <ul className="mt-5 space-y-3 leading-7 text-[var(--muted)]">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex gap-3">
-                  <span aria-hidden="true" className="text-[var(--gold)]">
+                  <span aria-hidden="true" className="text-[var(--gold-ink)]">
                     ✓
                   </span>
                   <span>{benefit}</span>
@@ -52,7 +52,7 @@ export function GameEditorialSection({
             <ol className="mt-5 space-y-3 leading-7 text-[var(--muted)]">
               {groupTips.map((tip, index) => (
                 <li key={tip} className="flex gap-3">
-                  <strong className="text-[var(--gold)]">
+                  <strong className="text-[var(--gold-ink)]">
                     {String(index + 1).padStart(2, "0")}
                   </strong>
                   <span>{tip}</span>

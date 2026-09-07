@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { SiteIntegrations } from "@/components/SiteIntegrations";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,9 +23,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bíblia Clube — Jogos e Quiz Online",
-    description:
-      "Quiz grátis e jogos online para aprender de forma leve.",
   },
   robots: {
     index: true,
@@ -49,18 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8150008386108071"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body>
         {children}
-        <GoogleAnalytics />
-        <Analytics />
-        <SpeedInsights />
+        <SiteIntegrations />
       </body>
     </html>
   );

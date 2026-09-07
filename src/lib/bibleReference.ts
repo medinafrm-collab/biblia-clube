@@ -186,7 +186,15 @@ export function resolveBibleReference(reference: string): ResolvedBibleReference
   let inheritedBook: BookDefinition | undefined;
   let verseCount = 0;
 
+  function appendPreview(preview: ResolvedPassageSection | null) {
+    if (!preview) return;
+    const verses = preview.verses.slice(0, MAX_VERSES - verseCount);
+    if (verses.length) sections.push({ ...preview, verses });
+    verseCount += verses.length;
+  }
+
   for (const segment of segments) {
+    if (verseCount >= MAX_VERSES) break;
     if (!segment) continue;
 
     if (/\sa\s/i.test(segment)) {
@@ -194,10 +202,7 @@ export function resolveBibleReference(reference: string): ResolvedBibleReference
       const firstBook = identifyBook(firstBookName)?.book;
       const preview = firstBook ? createChapterPreview(firstBook) : null;
 
-      if (preview) {
-        sections.push(preview);
-        verseCount += preview.verses.length;
-      }
+      appendPreview(preview);
 
       notices.push(`“${segment}” é uma referência panorâmica. Para manter a leitura leve, exibimos apenas o início.`);
       continue;
@@ -215,10 +220,7 @@ export function resolveBibleReference(reference: string): ResolvedBibleReference
     if (!bibleBook || !identified.remainder) {
       const preview = createChapterPreview(identified.book);
 
-      if (preview) {
-        sections.push(preview);
-        verseCount += preview.verses.length;
-      }
+      appendPreview(preview);
 
       notices.push(`“${segment}” abrange um livro inteiro. Para manter a leitura leve, exibimos apenas o início.`);
       continue;
@@ -237,13 +239,24 @@ export function resolveBibleReference(reference: string): ResolvedBibleReference
     const verseStart = verseMatch ? Number(verseMatch[2]) : undefined;
     const verseEnd = verseMatch ? Number(verseMatch[3] ?? verseStart) : undefined;
 
+    // Unsafe integers can stop increasing in the chapter loop (IEEE-754).
+    const numbers = [chapterStart, chapterEnd, verseStart, verseEnd].filter(
+      (value): value is number => value !== undefined,
+    );
+    if (
+      numbers.some((value) => !Number.isSafeInteger(value) || value < 1) ||
+      chapterEnd < chapterStart ||
+      chapterEnd > bibleBook.chapters.length ||
+      (verseStart !== undefined && verseEnd !== undefined && verseEnd < verseStart)
+    ) {
+      notices.push(`O intervalo de “${segment}” não é válido nesta edição.`);
+      continue;
+    }
+
     if (chapterEnd - chapterStart + 1 > MAX_CHAPTER_RANGE) {
       const preview = createChapterPreview(identified.book, chapterStart);
 
-      if (preview) {
-        sections.push(preview);
-        verseCount += preview.verses.length;
-      }
+      appendPreview(preview);
 
       notices.push(`“${segment}” abrange muitos capítulos. Para manter a leitura leve, exibimos apenas o início.`);
       continue;
@@ -282,10 +295,10 @@ export function resolveBibleReference(reference: string): ResolvedBibleReference
       notices.push(`O texto de “${segment}” não foi encontrado nesta edição.`);
     }
 
-    if (verseCount >= MAX_VERSES) {
-      notices.push("A leitura foi limitada aos primeiros 80 versículos para manter a página leve.");
-      break;
-    }
+  }
+
+  if (verseCount >= MAX_VERSES) {
+    notices.push("A leitura foi limitada aos primeiros 80 versículos para manter a página leve.");
   }
 
   return {

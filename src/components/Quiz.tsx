@@ -55,7 +55,7 @@ function scrollToElement(
   const top = element.getBoundingClientRect().top + window.scrollY - 96;
   window.scrollTo({
     top: Math.max(top, 0),
-    behavior,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : behavior,
   });
 }
 
@@ -159,12 +159,6 @@ export function Quiz({
     const timer = window.setTimeout(() => {
       setCompletedJourneys(readQuizHistory());
 
-      const savedProgress = readQuizProgress();
-      if (!savedProgress || !isValidProgress(savedProgress)) {
-        if (savedProgress) clearQuizProgress();
-        return;
-      }
-
       const shouldResume =
         new URLSearchParams(window.location.search).get("continuar") === "1";
       if (!shouldResume) {
@@ -193,6 +187,16 @@ export function Quiz({
         return;
       }
 
+      const savedProgress = readQuizProgress();
+      if (!savedProgress || !isValidProgress(savedProgress)) {
+        if (savedProgress) clearQuizProgress();
+        return;
+      }
+      if (savedProgress.topic !== initialTopic) {
+        router.replace(`${savedProgress.topicPath}?continuar=1#quiz`);
+        return;
+      }
+
       setSelectedTopic(savedProgress.topic);
       setSelectedJourney(savedProgress.journey);
       setCurrentIndex(savedProgress.currentIndex);
@@ -211,7 +215,7 @@ export function Quiz({
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, [initialTopic]);
+  }, [initialTopic, router]);
 
   useEffect(() => {
     trackGameEvent("quiz", "view", {
@@ -249,6 +253,8 @@ export function Quiz({
   }
 
   function goToNextQuestion() {
+    if (selectedAnswer === null) return;
+    window.requestAnimationFrame(() => quizCardRef.current?.querySelector<HTMLElement>("h3")?.focus());
     if (currentIndex === activeQuestions.length - 1) {
       trackGameEvent("quiz", "finish", {
         topic: selectedTopic,
@@ -306,8 +312,7 @@ export function Quiz({
     setIsFinished(false);
   }
 
-  function changeJourney(journey: QuizJourney, trigger?: HTMLButtonElement) {
-    trigger?.blur();
+  function changeJourney(journey: QuizJourney) {
     trackGameEvent("quiz", "journey_select", {
       topic: selectedTopic,
       journey,
@@ -415,7 +420,7 @@ export function Quiz({
             <div
               id="quiz-topics"
               className="mx-auto mt-4 grid max-w-[820px] gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-2 lg:grid-cols-4"
-              role="radiogroup"
+              role="group"
               aria-label="Tema do quiz"
             >
               {quizTopics.map((topic) => {
@@ -431,8 +436,7 @@ export function Quiz({
                   <button
                     key={topic.id}
                     type="button"
-                    role="radio"
-                    aria-checked={isActive}
+                    aria-pressed={isActive}
                     onClick={() => changeTopic(topic.id)}
                     className={`min-h-14 rounded-md px-4 py-2 text-sm font-bold transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                       isActive
@@ -473,7 +477,7 @@ export function Quiz({
             </p>
             <div
               className="mt-4 grid max-w-xl gap-1.5 rounded-lg border border-[var(--border)] bg-white p-1.5 sm:grid-cols-3"
-              role="radiogroup"
+              role="group"
               aria-label="Jornada do quiz"
             >
               {availableJourneys.map((journey) => {
@@ -488,10 +492,8 @@ export function Quiz({
                   <button
                     key={journey}
                     type="button"
-                    role="radio"
-                    aria-checked={isActive}
-                    onMouseDown={(event) => event.preventDefault()}
-                    onClick={(event) => changeJourney(journey, event.currentTarget)}
+                    aria-pressed={isActive}
+                    onClick={() => changeJourney(journey)}
                     className={`min-h-12 rounded-md px-4 py-2 text-sm font-bold transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                       isActive
                         ? "bg-[var(--gold-soft)] text-[var(--olive-dark)] shadow-sm"
@@ -548,7 +550,7 @@ export function Quiz({
                 <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive)]">
                   Escolha uma alternativa
                 </p>
-                <h3 className="mt-4 max-w-3xl font-serif text-2xl leading-tight text-[var(--navy)] sm:text-4xl">
+                <h3 tabIndex={-1} className="mt-4 max-w-3xl font-serif text-2xl leading-tight text-[var(--navy)] sm:text-4xl">
                   {currentQuestion.question}
                 </h3>
 
@@ -566,7 +568,6 @@ export function Quiz({
                         type="button"
                         disabled={selectedAnswer !== null}
                         onClick={() => selectAnswer(option)}
-                        aria-label={`Alternativa ${String.fromCharCode(65 + index)}: ${option}`}
                         className={`flex min-h-16 items-center gap-4 rounded-2xl border p-4 text-left transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)] ${
                           isCorrect
                             ? "border-[var(--success)] bg-[var(--success-soft)] text-[var(--success)]"
@@ -575,7 +576,8 @@ export function Quiz({
                               : "border-[var(--border)] bg-white text-[var(--foreground)] hover:border-[var(--gold)] hover:bg-[var(--gold-soft)] disabled:cursor-default disabled:hover:border-[var(--border)] disabled:hover:bg-white"
                         }`}
                       >
-                        <span className="grid size-9 shrink-0 place-items-center rounded-full border border-current/25 text-sm font-extrabold">
+                        <span className="sr-only">{`Alternativa ${String.fromCharCode(65 + index)}: `}</span>
+                        <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center rounded-full border border-current/25 text-sm font-extrabold">
                           {isCorrect ? "✓" : isWrong ? "×" : String.fromCharCode(65 + index)}
                         </span>
                         <span className="font-bold">{option}</span>
@@ -651,7 +653,7 @@ export function Quiz({
               <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--olive)]">
                 Rodada concluída
               </p>
-              <h3 className="mt-3 font-serif text-4xl text-[var(--navy)] sm:text-5xl">
+              <h3 tabIndex={-1} className="mt-3 font-serif text-4xl text-[var(--navy)] sm:text-5xl">
                 Você acertou {score} de {activeQuestions.length}
               </h3>
               <div className="mx-auto mt-6 flex size-32 items-center justify-center rounded-full border-[10px] border-[var(--surface-soft)] bg-white shadow-inner">
