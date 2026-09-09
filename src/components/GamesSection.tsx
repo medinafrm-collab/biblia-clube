@@ -63,8 +63,8 @@ const games: Array<{
     description: "Atividades para fortalecer relacionamentos e aprender em grupo.",
     href: "/dinamicas-para-celulas",
     action: "Ver dinâmicas",
-    image: "/images/editorial/grupo-estudo-mesa-preta.webp",
-    imageAlt: "Grupo de diferentes idades reunido para conversar sobre a Bíblia",
+    image: "/images/editorial/casal-encontro-noturno.webp",
+    imageAlt: "Casal conduzindo uma conversa bíblica com oito adultos à mesa em um encontro noturno",
   },
   {
     title: "Modo grupo",
