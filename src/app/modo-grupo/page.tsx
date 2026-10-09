@@ -26,6 +26,7 @@ export default function ModoGrupoPage() {
       <main>
         <GroupMode />
         <GameEditorialSection
+          examples={[{"title":"Um exemplo de placar com rebote","explanation":"Imagine duas equipes, Alfa e Beta, sem cronômetro. Alfa acerta na sua vez: soma 10 pontos. Depois Beta erra e Alfa acerta o rebote: soma mais 5, ficando com 15. Se o rebote estiver desativado, essa segunda tentativa não existe. O exemplo é fictício; combine as regras antes da primeira pergunta.","reference":"Regras do Modo Grupo: acerto normal 10; rebote 5"},{"title":"Conferência sem transformar pontos em julgamento","explanation":"Na pergunta sobre quem construiu a arca, a resposta é Noé. Gênesis 6:13-22 registra a orientação e a execução. Após a tentativa e eventual rebote, leia a explicação e permita conferir a passagem. Saber essa resposta não mede a fé da equipe; a leitura serve para aprender, não para constranger quem errou.","reference":"Gênesis 6:13-22"}]}
           title="Uma competição leve que aproxima o grupo."
           paragraphs={[
             "O Modo Grupo transforma uma sequência de perguntas em uma atividade coletiva. As equipes participam por turnos, acompanham o placar e podem usar o rebote para manter todos atentos. O objetivo não é expor quem sabe menos, mas criar uma oportunidade de lembrar histórias, ouvir explicações e conversar sobre as referências apresentadas.",

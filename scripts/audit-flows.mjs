@@ -188,7 +188,7 @@ try {
     const response = await fetch(origin + '/api/bible-passage?reference=' + encodeURIComponent('Gênesis 9999999999999999999999'), { signal: AbortSignal.timeout(3000) });
     assert.equal((await response.json()).sections.length, 0);
   });
-  const routes = JSON.parse(fs.readFileSync(`${output}/browser-baseline.json`, 'utf8')).routes.map(r => r.route);
+  const routes = JSON.parse(fs.readFileSync(`${output}/browser-${process.env.AUDIT_LABEL || 'baseline'}.json`, 'utf8')).routes.map(r => r.route);
   for (const route of (process.env.AUDIT_FLOW_FILTER ? [] : routes)) {
     await go(route);
     await page.addScriptTag({ path: '.tools/audit/node_modules/axe-core/axe.min.js' });

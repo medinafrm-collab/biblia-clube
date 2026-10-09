@@ -105,6 +105,14 @@ export default function EditorialProcessPage() {
             respostas, linguagem e adequação ao propósito precisam ser
             verificadas antes da publicação.
           </p>
+          <p className="mt-4">
+            A assistência de IA e os testes automáticos não equivalem a uma revisão
+            por especialistas. O projeto não possui conselho editorial ou assessoria
+            profissional; a decisão de publicação é do responsável pelo Bíblia Clube.
+            Nosso foco é leitura e divertimento, não aconselhamento médico, financeiro
+            ou conjugal. Sugestões de jogos e roteiros não são relatos de aplicação
+            real, salvo quando isso estiver expressamente identificado.
+          </p>
         </div>
 
         <div>
@@ -134,7 +142,7 @@ export default function EditorialProcessPage() {
             . Consulte também a página <Link href="/sobre">Sobre</Link> e nossos{" "}
             <Link href="/termos-de-uso">Termos de Uso</Link>.
           </p>
-          <p className="mt-4">Última revisão desta página: 1º de setembro de 2026.</p>
+          <p className="mt-4">Última revisão desta página: 9 de outubro de 2026.</p>
         </div>
       </InstitutionalPage>
     </>

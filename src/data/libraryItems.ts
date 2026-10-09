@@ -72,6 +72,15 @@ const guides: LibraryItem[] = [
 
 const games: LibraryItem[] = [
   {
+    title: "Quem sou eu?",
+    description: "Descubra personagens bíblicos por pistas progressivas e confira suas histórias nas referências.",
+    href: "/quem-sou-eu",
+    type: "Jogo",
+    audience: "Todos",
+    topic: "Personagens",
+    meta: "Jogar online",
+  },
+  {
     title: "Monte seu encontro",
     description: "Combine público, duração e objetivo em um roteiro com dinâmica, jogo, referências e perguntas.",
     href: "/monte-seu-encontro",
@@ -155,6 +164,6 @@ export const libraryItems: LibraryItem[] = [
     type: "Material" as const,
     audience: resource.audience,
     topic: "Para imprimir",
-    meta: resource.pages,
+    meta: resource.format,
   })),
 ];

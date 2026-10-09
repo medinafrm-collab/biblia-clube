@@ -9,9 +9,9 @@ export type MeetingDynamic = {
   title: string;
   summary: string;
   duration: string;
+  meetingCore?: string;
   materials: string[];
   objective: string;
-  steps: { title: string; description: string }[];
   questions: string[];
   references: string[];
   leaderNote: string;
@@ -61,25 +61,17 @@ const welcomeByAudience: Record<MeetingAudience, string> = {
   familias: "Acomode as diferentes idades, explique o encontro com palavras simples e distribua pequenas formas de participação.",
 };
 
-function selectDynamicSteps(dynamic: MeetingDynamic, duration: MeetingDuration) {
-  const practical = dynamic.steps.filter((step) => !step.title.toLocaleLowerCase("pt-BR").includes("leitura bíblica"));
-  const count = duration === 30 ? 1 : duration === 45 ? 2 : practical.length;
-  return practical.slice(0, count);
-}
-
 function dynamicInstruction(dynamic: MeetingDynamic, duration: MeetingDuration) {
-  const selected = selectDynamicSteps(dynamic, duration);
-  const actions = selected.map((step) => `${step.title}: ${step.description}`).join(" ");
-  if (duration === 30) return `Use somente o núcleo da dinâmica, não o roteiro integral de ${dynamic.duration}. ${actions} Interrompa no tempo indicado e registre uma conclusão em uma frase.`;
-  if (duration === 45) return `${actions} Limite as falas a uma contribuição breve por pessoa e guarde as demais perguntas para outro encontro.`;
-  if (duration === 60) return `${actions} Conduza cada transição de forma objetiva para preservar o tempo da conversa.`;
-  return `${actions} Depois, forme duplas ou trios para aprofundar uma aplicação e recolha duas sínteses no plenário.`;
+  const minutes = minuteProfiles[duration][1];
+  const preparation = minutes <= 8 ? 1 : minutes <= 12 ? 2 : 3;
+  const practice = minutes - 2 * preparation;
+  return `Use este núcleo adaptado, não o roteiro integral de ${dynamic.duration}. Reserve ${preparation} min para apresentar, ${practice} min para praticar e ${preparation} min para conferir e encerrar: total ${minutes} min. ${dynamic.meetingCore} Limite as contribuições a duas falas breves no bloco curto. Nos blocos maiores, as duplas podem repetir a prática antes da síntese. A leitura e a conversa geral já têm etapas próprias; não some novamente os tempos da página original. Observar, pedir leitura assistida ou passar a vez são opções.`;
 }
 
 function gameInstruction(goal: MeetingGoal, minutes: number) {
   const count = minutes <= 5 ? 3 : minutes <= 7 ? 5 : minutes <= 10 ? 7 : 10;
   if (goal === "integrar") return `Faça ${count} associações em modo cooperativo. Convide pessoas diferentes a explicar cada par em uma frase; pule uma associação se a conversa se alongar.`;
-  if (goal === "aprender") return `Faça ${count} perguntas. Após cada resposta, leia apenas a explicação; marque no máximo duas referências para a etapa de leitura.`;
+  if (goal === "aprender") return `Faça ${count} perguntas. Após cada resposta, leia apenas a explicação; marque no máximo duas referências para consulta posterior. A etapa de leitura usa a passagem da dinâmica.`;
   if (goal === "conversar") return `Complete ${count} frases. Escolha uma delas para reler no contexto e não transforme a atividade em teste de memorização.`;
   return `Faça uma rodada de ${count} perguntas com equipes equilibradas. Use rebote somente se houver tempo e reconheça colaboração, não apenas pontos.`;
 }
@@ -105,6 +97,7 @@ export function buildMeetingPlan(
   variant = 0,
 ) {
   const matches = dynamics.filter((dynamic) => {
+    if (!dynamic.meetingCore) return false;
     if (audience === "jovens") return dynamic.audience === "jovens";
     if (audience === "casais") return dynamic.audience === "casais";
     return dynamic.audience === "todos";

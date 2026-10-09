@@ -32,12 +32,22 @@ export function MeetingBuilder({ dynamics = [] }: MeetingBuilderProps) {
 
   async function sharePlan() {
     if (!plan) return;
+    setMessage("");
     const text = formatMeetingPlanForSharing(plan, duration);
     try {
-      if (navigator.share) await navigator.share({ title: "Meu encontro no Bíblia Clube", text });
-      else { await navigator.clipboard.writeText(text); setMessage("Roteiro completo copiado."); }
-    } catch {
-      setMessage("O compartilhamento foi cancelado.");
+      if (navigator.share) {
+        await navigator.share({ title: "Meu encontro no Bíblia Clube", text });
+        setMessage("Roteiro compartilhado.");
+      } else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        setMessage("Roteiro completo copiado.");
+      } else {
+        setMessage("A cópia não está disponível neste navegador. Você pode imprimir ou salvar o roteiro em PDF.");
+      }
+    } catch (error) {
+      setMessage(error instanceof DOMException && error.name === "AbortError"
+        ? "O compartilhamento foi cancelado."
+        : "Não foi possível compartilhar ou copiar. Tente novamente ou salve o roteiro em PDF.");
     }
   }
 
@@ -136,7 +146,7 @@ export function MeetingBuilder({ dynamics = [] }: MeetingBuilderProps) {
                       {index === 1 && <Link href={`/dinamicas-para-celulas/${plan.dynamic.id}`} className="mt-3 inline-flex font-extrabold text-[var(--olive-dark)] no-underline print:hidden">Consultar dinâmica completa →</Link>}
                       {index === 2 && <Link href={plan.game.href} className="mt-3 inline-flex font-extrabold text-[var(--olive-dark)] no-underline print:hidden">Abrir jogo →</Link>}
                     </div>
-                    <span className="w-fit rounded-full border border-[var(--border)] px-3 py-1 text-sm font-bold text-[var(--navy)] sm:row-start-1">{slot.minutes} min</span>
+                    <span className="w-fit self-start whitespace-nowrap rounded-full border border-[var(--border)] px-3 py-1 text-sm font-bold text-[var(--navy)] sm:col-start-3 sm:row-start-1">{slot.minutes} min</span>
                   </li>
                 ))}
               </ol>

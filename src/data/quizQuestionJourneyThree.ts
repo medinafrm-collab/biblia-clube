@@ -9,51 +9,51 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Eclesiastes", "Provérbios", "Jó", "Salmos"],
     correctAnswer: "Eclesiastes",
     explanation:
-      "Eclesiastes apresenta uma reflexão sobre os diferentes tempos e experiências que fazem parte da vida.",
+      "O trecho de Eclesiastes organiza experiências em pares, como plantar e arrancar, chorar e rir, ficar calado e falar. A abertura afirma que há um tempo para cada propósito debaixo do céu. Essa reflexão não fornece um calendário para prever quando cada acontecimento ocorrerá na vida de uma pessoa.",
     reference: "Eclesiastes 3:1-8",
   },
   {
     id: 196,
     topics: ["geral"],
     journey: 3,
-    question: "Qual carta do Novo Testamento trata do reencontro entre Filemom e Onésimo?",
+    question: "Qual carta do Novo Testamento contém o pedido de Paulo para que Filemom receba Onésimo?",
     options: ["Tito", "Filemom", "Judas", "2 João"],
     correctAnswer: "Filemom",
     explanation:
-      "Paulo escreveu a Filemom pedindo que recebesse Onésimo com uma nova disposição, não apenas como servo, mas como irmão.",
+      "Paulo pede a Filemom que receba Onésimo como um irmão amado e como receberia o próprio Paulo. Também se oferece para assumir eventual dívida ou prejuízo. A carta registra o pedido, mas o trecho não conta como Filemom reagiu nem descreve um reencontro já realizado. A palavra servo aparece na tradução do leitor, dentro da relação descrita na carta.",
     reference: "Filemom 1:8-21",
   },
   {
     id: 197,
     topics: ["geral"],
     journey: 3,
-    question: "Qual livro relata a chegada de um escriba a Jerusalém para ensinar a Lei ao povo?",
+    question: "Qual livro relata a viagem do escriba Esdras da Babilônia a Jerusalém no sétimo ano de Artaxerxes?",
     options: ["Neemias", "Ageu", "Esdras", "Zacarias"],
     correctAnswer: "Esdras",
     explanation:
-      "Esdras chegou a Jerusalém decidido a estudar, praticar e ensinar a Lei depois do exílio.",
+      "Esdras 7 apresenta o escriba saindo da Babilônia e chegando a Jerusalém no sétimo ano do rei Artaxerxes. O texto liga sua viagem à disposição de estudar, praticar e ensinar a Lei. Neemias também apresenta Esdras lendo a Lei, mas a pergunta identifica a viagem narrada neste capítulo, não qualquer episódio em que ele ensina.",
     reference: "Esdras 7:6-10",
   },
   {
     id: 198,
     topics: ["geral"],
     journey: 3,
-    question: "Qual livro profético começa apresentando seu autor como criador de ovelhas de Tecoa?",
+    question: "Qual livro profético começa com as palavras de um homem que estava entre os pastores de Tecoa?",
     options: ["Miqueias", "Oséias", "Joel", "Amós"],
     correctAnswer: "Amós",
     explanation:
-      "Amós veio de Tecoa e anunciou mensagens de justiça e responsabilidade ao reino de Israel.",
+      "O primeiro versículo apresenta as palavras de Amós, que estava entre os pastores de Tecoa, e situa sua visão sobre Israel nos reinados de Uzias e Jeroboão. Tecoa é a localidade associada a Amós; Israel é o povo sobre o qual a abertura diz que ele teve a visão. O versículo também situa o relato dois anos antes de um terremoto, sem fornecer uma data de calendário moderno.",
     reference: "Amós 1:1",
   },
   {
     id: 199,
     topics: ["geral"],
     journey: 3,
-    question: "Em qual carta a palavra de Deus é comparada a uma espada de dois gumes?",
+    question: "Em qual livro a palavra de Deus é descrita como viva, eficaz e mais afiada que uma espada de dois gumes?",
     options: ["Hebreus", "Romanos", "Efésios", "1 Pedro"],
     correctAnswer: "Hebreus",
     explanation:
-      "Hebreus descreve a palavra de Deus como viva, eficaz e capaz de discernir pensamentos e intenções.",
+      "Hebreus 4 descreve a palavra de Deus como viva e eficaz e usa a imagem de uma espada de dois gumes para falar de sua capacidade de julgar pensamentos e intenções. O versículo seguinte acrescenta que nada está oculto diante de Deus. Efésios também menciona uma espada associada à palavra, mas a combinação de expressões da pergunta está em Hebreus.",
     reference: "Hebreus 4:12-13",
   },
   {
@@ -64,8 +64,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Ester", "Lamentações", "Daniel", "Ezequiel"],
     correctAnswer: "Lamentações",
     explanation:
-      "Lamentações reúne poemas de dor diante da ruína da cidade, mas também preserva palavras de esperança.",
-    reference: "Lamentações 1:1-5; 3:21-24",
+      "A abertura de Lamentações retrata a cidade antes populosa agora solitária, seus caminhos em pranto e seu povo no cativeiro. No capítulo 3, a lembrança das misericórdias do Senhor aparece como motivo de esperança em meio à aflição. A esperança não apaga a dor expressa nos poemas; os dois trechos ajudam a perceber esse contraste.",
+    reference: "Lamentações 1:1-5; Lamentações 3:21-24",
   },
   {
     id: 201,
@@ -75,7 +75,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["1 João", "Gálatas", "Tiago", "Colossenses"],
     correctAnswer: "Tiago",
     explanation:
-      "Tiago mostra que uma fé viva se torna visível em atitudes coerentes e no cuidado com as pessoas.",
+      "Tiago começa com o exemplo de alguém sem roupa e sem alimento: desejar que essa pessoa fique bem não supre sua necessidade. A partir desse contraste, afirma que a fé sem obras é morta e apresenta os exemplos de Abraão e Raabe. A pergunta identifica onde está a afirmação, sem transformar o quiz em uma avaliação da fé do participante.",
     reference: "Tiago 2:14-26",
   },
   {
@@ -86,7 +86,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Filipenses", "2 Coríntios", "1 Tessalonicenses", "Efésios"],
     correctAnswer: "Efésios",
     explanation:
-      "Efésios usa as peças de uma armadura para ensinar sobre verdade, justiça, fé, salvação e perseverança.",
+      "Efésios associa peças da armadura à verdade, justiça, prontidão do evangelho da paz, fé, salvação e palavra de Deus. O trecho termina com oração e perseverança e diz que a luta não é contra carne e sangue. A imagem não é uma orientação para atacar pessoas ou usar armas reais.",
     reference: "Efésios 6:10-18",
   },
   {
@@ -97,7 +97,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Ezequiel", "Jeremias", "Zacarias", "Daniel"],
     correctAnswer: "Ezequiel",
     explanation:
-      "A visão inicial de Ezequiel comunica a majestade de Deus ao profeta que estava entre os exilados.",
+      "O capítulo situa Ezequiel entre os exilados junto ao rio Quebar. A visão descreve quatro seres, rodas com aros cheios de olhos e, acima deles, a semelhança de um trono. O encerramento a identifica como visão da semelhança da glória do Senhor. Na edição do leitor, os seres também são chamados de animais; o texto usa imagens e comparações, não uma descrição de máquinas modernas.",
     reference: "Ezequiel 1:1-28",
   },
   {
@@ -108,7 +108,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Romanos", "Gálatas", "Colossenses", "2 Timóteo"],
     correctAnswer: "Gálatas",
     explanation:
-      "Gálatas contrasta as obras da natureza humana com o caráter produzido pelo Espírito.",
+      "Gálatas contrasta as obras da carne com o fruto do Espírito e lista amor, alegria, paz, paciência, benignidade, bondade, fidelidade, mansidão e domínio próprio. O trecho termina ligando viver no Espírito e andar no Espírito. A imagem do fruto descreve essas qualidades em conjunto, não uma pontuação que o jogo possa atribuir ao caráter de alguém.",
     reference: "Gálatas 5:16-25",
   },
   {
@@ -119,7 +119,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["1 Pedro", "Romanos", "Hebreus", "Judas"],
     correctAnswer: "Hebreus",
     explanation:
-      "Hebreus convida os leitores a se aproximarem de Deus com confiança por meio de Jesus, o grande sumo sacerdote.",
+      "Hebreus chama Jesus, o Filho de Deus, de grande sumo sacerdote e afirma que ele pode se compadecer das fraquezas humanas. O trecho reúne o convite a manter a declaração de fé e a se aproximar do trono da graça para receber misericórdia. A resposta depende desse título explícito, sem exigir uma interpretação de todos os detalhes do sacerdócio apresentados no restante do livro.",
     reference: "Hebreus 4:14-16",
   },
   {
@@ -130,7 +130,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["2 Reis", "Esdras", "Josué", "1 Crônicas"],
     correctAnswer: "1 Crônicas",
     explanation:
-      "Em meio às genealogias, 1 Crônicas registra a breve oração de Jabez e o pedido que ele apresentou a Deus.",
+      "Em meio aos nomes de 1 Crônicas 4, dois versículos destacam Jabez e sua oração por bênção, ampliação de seus limites e proteção do mal. O narrador diz que Deus atendeu seu pedido. O relato fala dessa pessoa e dessa oração; não apresenta a repetição de suas palavras como fórmula que garanta riqueza ou elimine o sofrimento de qualquer leitor.",
     reference: "1 Crônicas 4:9-10",
   },
   {
@@ -141,19 +141,19 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Babel", "Betel", "Hebrom", "Siquém"],
     correctAnswer: "Babel",
     explanation:
-      "A construção foi interrompida quando os trabalhadores deixaram de compreender uns aos outros e foram espalhados.",
+      "O relato começa com uma língua comum e um projeto de cidade e torre na terra de Sinear. Os construtores querem fazer um nome e evitar a dispersão; depois da confusão da língua, deixam de edificar a cidade e são espalhados. O encerramento identifica o lugar como Babel. A pergunta se refere ao nome dado na narrativa, não à altura comprovada de uma construção.",
     reference: "Gênesis 11:1-9",
   },
   {
     id: 208,
     topics: ["antigo-testamento"],
     journey: 3,
-    question: "Qual sobrinho acompanhou Abraão quando ele saiu de Harã?",
+    question: "Qual sobrinho acompanhou Abrão, depois chamado Abraão, quando ele saiu de Harã?",
     options: ["Ismael", "Ló", "Esaú", "Labão"],
     correctAnswer: "Ló",
     explanation:
-      "Ló seguiu com Abraão até Canaã; mais tarde, os dois separaram seus rebanhos e escolheram regiões diferentes.",
-    reference: "Gênesis 12:4-5; 13:5-12",
+      "Gênesis 12 identifica Ló como filho do irmão de Abrão e o inclui entre os que saem de Harã para Canaã. No capítulo seguinte, o tamanho dos rebanhos e as brigas entre os pastores levam à separação: Ló escolhe a planície do Jordão. Nesse ponto do relato, Abraão ainda aparece com o nome Abrão; não são duas pessoas diferentes.",
+    reference: "Gênesis 12:4-5; Gênesis 13:5-12",
   },
   {
     id: 209,
@@ -163,19 +163,19 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Raquel", "Lia", "Rebeca", "Mical"],
     correctAnswer: "Rebeca",
     explanation:
-      "Rebeca aceitou deixar sua família, encontrou Isaque no campo e foi recebida por ele em sua casa.",
+      "Quando lhe perguntam se irá com o servo, Rebeca responde que sim. Ela viaja com suas acompanhantes e encontra Isaque, que havia saído ao campo. O encerramento diz que Isaque a leva à tenda de Sara, a toma por mulher e a ama. O servo acompanha a viagem, mas é Isaque quem se torna seu marido.",
     reference: "Gênesis 24:58-67",
   },
   {
     id: 210,
     topics: ["antigo-testamento"],
     journey: 3,
-    question: "Quantos filhos de Jacó deram origem às tribos de Israel?",
+    question: "Quantos filhos homens de Jacó são enumerados em Gênesis 35:22-26?",
     options: ["Sete", "Dez", "Onze", "Doze"],
     correctAnswer: "Doze",
     explanation:
-      "Os doze filhos de Jacó aparecem ligados à formação das tribos que compuseram o povo de Israel.",
-    reference: "Gênesis 35:22-26; 49:1-28",
+      "A lista reúne Rúben, Simeão, Levi, Judá, Issacar, Zebulom, José, Benjamim, Dã, Naftali, Gade e Aser, totalizando doze filhos homens. Gênesis 49 encerra as palavras de Jacó relacionando esses nomes às doze tribos de Israel. A pergunta conta os homens dessa lista, não todos os filhos e filhas de Jacó nem todas as formas posteriores de enumerar as tribos.",
+    reference: "Gênesis 35:22-26; Gênesis 49:28",
   },
   {
     id: 211,
@@ -185,18 +185,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Balaão", "Balaque", "Corá", "Calebe"],
     correctAnswer: "Balaão",
     explanation:
-      "A jumenta percebeu o anjo no caminho antes de Balaão e foi usada para interromper sua marcha.",
+      "Balaão viaja com os príncipes de Moabe quando a jumenta vê o anjo e muda seu comportamento. Balaão a agride sem perceber o obstáculo; o relato diz que o Senhor abre a boca do animal e, depois, os olhos de Balaão. O anjo questiona as agressões e limita o que Balaão poderá falar ao continuar a viagem. Balaque é mencionado como outro personagem, não é quem monta a jumenta nessa cena.",
     reference: "Números 22:21-35",
   },
   {
     id: 212,
     topics: ["antigo-testamento"],
     journey: 3,
-    question: "Sob a liderança de quem o sol parou durante uma batalha?",
+    question: "Segundo Josué 10, qual líder falou ao Senhor antes de o sol se deter durante a batalha?",
     options: ["Gideão", "Josué", "Otniel", "Saul"],
     correctAnswer: "Josué",
     explanation:
-      "Durante o confronto contra os amorreus, Josué pediu mais tempo para que Israel concluísse a batalha.",
+      "Os moradores de Gibeão pedem ajuda a Josué contra os reis amorreus. Durante o confronto, Josué fala ao Senhor e menciona o sol em Gibeão e a lua no vale de Aijalom; o narrador descreve o prolongamento do dia e afirma que o Senhor lutava por Israel. A pergunta identifica o líder na narrativa, sem propor uma explicação astronômica do acontecimento.",
     reference: "Josué 10:6-14",
   },
   {
@@ -207,8 +207,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Jefté", "Otniel", "Eúde", "Tola"],
     correctAnswer: "Eúde",
     explanation:
-      "Eúde levou uma mensagem ao rei moabita e depois conduziu Israel à vitória sobre seus opressores.",
-    reference: "Juízes 3:12-30",
+      "O começo do episódio apresenta Eglom como rei de Moabe e diz que Israel o serviu por dezoito anos. Eúde, benjamita e canhoto, é então apresentado como libertador; no desfecho, lidera os israelitas e o domínio moabita termina. Os trechos selecionados permitem conferir a identidade e o resultado, sem reproduzir os detalhes violentos da cena intermediária.",
+    reference: "Juízes 3:12-15; Juízes 3:27-30",
   },
   {
     id: 214,
@@ -218,7 +218,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Um manto", "Uma vasilha", "Um cajado", "Uma porção de lã"],
     correctAnswer: "Uma porção de lã",
     explanation:
-      "Gideão pediu que o orvalho aparecesse primeiro apenas na lã e depois somente no chão ao redor dela.",
+      "Gideão coloca um velo de lã na era, o espaço usado para trabalhar os cereais, e pede primeiro que só a lã fique molhada. Depois pede o contrário: lã seca e orvalho na terra ao redor. Velo é a porção de lã mencionada na alternativa; a vasilha aparece quando ele espreme a água. O relato descreve seus pedidos, não estabelece um método obrigatório para tomar decisões.",
     reference: "Juízes 6:36-40",
   },
   {
@@ -229,8 +229,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Jônatas", "Isbosete", "Abinadabe", "Malquisua"],
     correctAnswer: "Jônatas",
     explanation:
-      "Jônatas demonstrou amizade leal a Davi mesmo quando a relação entre Saul e Davi se tornou perigosa.",
-    reference: "1 Samuel 18:1-4; 20:12-17",
+      "Jônatas e Davi fazem uma aliança, e Jônatas lhe entrega roupas, espada, arco e cinto. Mais adiante, Jônatas promete informar Davi sobre a disposição de seu pai e ajudá-lo a partir em segurança se houver ameaça. Ele também pede que a bondade alcance sua família. Os dois trechos mostram o compromisso inicial e uma ação concreta de lealdade.",
+    reference: "1 Samuel 18:1-4; 1 Samuel 20:12-17",
   },
   {
     id: 216,
@@ -240,18 +240,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Elias", "Eliseu", "Isaías", "Ageu"],
     correctAnswer: "Eliseu",
     explanation:
-      "Quando um trabalhador perdeu o ferro emprestado na água, Eliseu interveio e o objeto voltou à superfície.",
+      "Os filhos dos profetas vão ao Jordão buscar madeira para ampliar o lugar onde vivem, e Eliseu os acompanha. Ao cortar uma árvore, um deles perde na água o ferro de um machado emprestado. Eliseu pergunta onde caiu, lança ali um pedaço de madeira e o ferro flutua; o homem então o recolhe. O episódio é de Eliseu, não de Elias.",
     reference: "2 Reis 6:1-7",
   },
   {
     id: 217,
     topics: ["antigo-testamento"],
     journey: 3,
-    question: "Quem recebeu novamente família e bens depois de atravessar um longo período de sofrimento?",
+    question: "Qual personagem, no encerramento de seu livro, ora por seus amigos e depois tem sete filhos e três filhas?",
     options: ["Jeremias", "Ezequias", "Jó", "Esdras"],
     correctAnswer: "Jó",
     explanation:
-      "O encerramento do livro mostra Jó orando por seus amigos e vivendo uma restauração depois de sua provação.",
+      "O encerramento de Jó descreve sua oração pelos amigos, a visita de familiares que o consolam e a recuperação de seus bens. Também informa que teve sete filhos e três filhas e viveu para ver outras gerações. O trecho não diz que os filhos que haviam morrido voltaram à vida. Esse desfecho não é uma garantia de compensação material para toda pessoa que sofre.",
     reference: "Jó 42:7-17",
   },
   {
@@ -262,8 +262,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Dario", "Nabucodonosor", "Ciro", "Belsazar"],
     correctAnswer: "Belsazar",
     explanation:
-      "A mensagem anunciou o fim do governo de Belsazar na mesma noite em que ele profanou utensílios do templo.",
-    reference: "Daniel 5:1-30",
+      "Belsazar manda trazer os utensílios retirados do templo de Jerusalém para o banquete. Depois da escrita na parede, Daniel interpreta a mensagem como anúncio de que o reino foi contado, pesado e dividido; o capítulo relata a morte de Belsazar naquela noite. Belsazar é o rei do banquete, enquanto Beltessazar é o outro nome dado a Daniel e mencionado no mesmo capítulo.",
+    reference: "Daniel 5:1-5; Daniel 5:12-13; Daniel 5:25-30",
   },
   {
     id: 219,
@@ -273,40 +273,40 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["No templo", "Em Belém", "À margem do Jordão", "Em Cafarnaum"],
     correctAnswer: "No templo",
     explanation:
-      "Depois de procurá-lo, seus pais o encontraram entre os mestres, ouvindo e fazendo perguntas.",
+      "Maria e José voltam a Jerusalém depois de perceber que Jesus não estava entre os companheiros de viagem. Encontram-no no templo, sentado entre os mestres, ouvindo e fazendo perguntas; os presentes se admiram de suas respostas. O relato termina com a volta a Nazaré e seu crescimento. O templo em Jerusalém é o lugar do encontro, não Belém, onde ocorreu seu nascimento.",
     reference: "Lucas 2:41-52",
   },
   {
     id: 220,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Quem apontou para Jesus e o chamou de Cordeiro de Deus?",
+    question: "Quem chamou Jesus de Cordeiro de Deus em João 1?",
     options: ["André", "João Batista", "Filipe", "Simeão"],
     correctAnswer: "João Batista",
     explanation:
-      "João direcionou a atenção de seus ouvintes para Jesus, e alguns de seus discípulos passaram a segui-lo.",
+      "João Batista vê Jesus e o identifica como o Cordeiro de Deus. No dia seguinte, repete a identificação diante de dois discípulos, que passam a seguir Jesus. O João que fala nessa cena é o Batista; o nome do evangelho não deve ser confundido com a identidade de quem faz a declaração.",
     reference: "João 1:29-37",
   },
   {
     id: 221,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Quem pediu que Jesus fosse até sua casa porque sua filha estava morrendo?",
+    question: "Em Marcos 5, qual dirigente da sinagoga pediu que Jesus fosse até sua filha, que estava a ponto de morrer?",
     options: ["Nicodemos", "Bartimeu", "Jairo", "Zaqueu"],
     correctAnswer: "Jairo",
     explanation:
-      "Jairo, dirigente da sinagoga, procurou Jesus em favor da filha e testemunhou sua restauração.",
+      "Jairo procura Jesus quando sua filha está a ponto de morrer. Durante o caminho, o relato intercala o encontro com uma mulher que toca a roupa de Jesus; depois chegam mensageiros informando a morte da menina. Na casa, Jesus toma sua mão e manda que se levante. A sequência distingue o pedido inicial de Jairo da notícia recebida mais tarde; a menina tem doze anos.",
     reference: "Marcos 5:21-43",
   },
   {
     id: 222,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Por onde os amigos fizeram descer o paralítico até Jesus quando a casa estava cheia?",
+    question: "Em Marcos 2, por onde os que carregavam o paralítico o fizeram descer até Jesus quando a casa estava cheia?",
     options: ["Pela janela", "Pelo pátio", "Por uma escada", "Pelo telhado"],
     correctAnswer: "Pelo telhado",
     explanation:
-      "Os amigos abriram uma passagem na cobertura e demonstraram persistência para aproximar o homem de Jesus.",
+      "Marcos situa a cena em Cafarnaum e informa que quatro pessoas carregam o homem. Como a multidão impede a aproximação, abrem o telhado e baixam o leito onde ele está. Mais adiante, Jesus manda que ele se levante e leve o leito para casa. O trecho não dá os nomes dos carregadores nem identifica o proprietário da casa.",
     reference: "Marcos 2:1-12",
   },
   {
@@ -317,29 +317,29 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Pedro, Tiago e João", "André, Filipe e Tomé", "Mateus, Simão e Judas", "Pedro, André e Mateus"],
     correctAnswer: "Pedro, Tiago e João",
     explanation:
-      "Os três subiram com Jesus ao monte e viram Moisés e Elias conversando com ele.",
+      "Mateus nomeia Pedro, Tiago e João como os discípulos que Jesus leva a um monte alto. Moisés e Elias aparecem conversando com Jesus, mas não são integrantes do grupo de discípulos que sobe com ele. Depois da voz vinda da nuvem, Jesus os toca e diz que não tenham medo. O trecho não informa o nome do monte.",
     reference: "Mateus 17:1-8",
   },
   {
     id: 224,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Onde Pedro encontrou a moeda usada para pagar o imposto do templo?",
+    question: "Segundo a orientação de Jesus em Mateus 17, onde Pedro acharia a moeda para pagar a taxa por ambos?",
     options: ["Em uma bolsa", "Na boca de um peixe", "Junto ao poço", "Dentro de um pão"],
     correctAnswer: "Na boca de um peixe",
     explanation:
-      "Jesus orientou Pedro a pescar e usar a moeda encontrada para cumprir a obrigação por ambos.",
+      "Os cobradores perguntam a Pedro sobre a taxa de duas dracmas. Jesus o orienta a lançar o anzol e abrir a boca do primeiro peixe, onde acharia uma moeda de quatro dracmas, suficiente para os dois. O trecho termina com essa orientação; não descreve Pedro pescando, encontrando a moeda ou efetuando o pagamento.",
     reference: "Mateus 17:24-27",
   },
   {
     id: 225,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Quantos homens com lepra foram curados por Jesus enquanto ele seguia para Jerusalém?",
+    question: "Em Lucas 17, quantos homens descritos como leprosos ficaram limpos enquanto iam se mostrar aos sacerdotes?",
     options: ["Cinco", "Sete", "Dez", "Doze"],
     correctAnswer: "Dez",
     explanation:
-      "Os dez foram orientados a se apresentar aos sacerdotes e ficaram limpos durante o caminho.",
+      "Dez homens ficam à distância e pedem misericórdia a Jesus. Ele os manda se mostrar aos sacerdotes, e o relato diz que ficam limpos enquanto vão. Um deles, identificado como samaritano, retorna para agradecer. Dez é o total que ficou limpo; um é o número dos que voltaram nessa cena. A pergunta acompanha a descrição bíblica, sem estabelecer diagnóstico médico moderno.",
     reference: "Lucas 17:11-19",
   },
   {
@@ -350,40 +350,40 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Jairo", "Malco", "Lázaro", "Bartimeu"],
     correctAnswer: "Bartimeu",
     explanation:
-      "Mesmo repreendido pela multidão, Bartimeu continuou clamando e recebeu de Jesus a oportunidade de enxergar.",
+      "Marcos identifica Bartimeu como filho de Timeu, sentado junto ao caminho na saída de Jericó. Ele chama Jesus de Filho de Davi e insiste apesar das repreensões. Quando Jesus pergunta o que deseja, pede para ver; o relato diz que passa a enxergar e segue Jesus pelo caminho. Seu nome distingue esta cena de outros relatos de pessoas cegas nos evangelhos.",
     reference: "Marcos 10:46-52",
   },
   {
     id: 227,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Quem teve a orelha curada por Jesus durante a prisão no monte das Oliveiras?",
+    question: "Segundo Lucas 22, quem teve a orelha curada por Jesus durante sua prisão?",
     options: ["O servo do sumo sacerdote", "Um soldado romano", "Um discípulo", "Um guarda do templo"],
     correctAnswer: "O servo do sumo sacerdote",
     explanation:
-      "Mesmo no momento da prisão, Jesus interrompeu a violência e restaurou o homem que havia sido ferido.",
+      "Um dos que estão com Jesus fere a orelha direita do servo do sumo sacerdote. Jesus manda parar, toca a orelha e o cura. Lucas identifica a função do homem, mas não lhe dá nome nesse trecho nem nomeia quem o feriu. A cura é narrada aqui; esses limites ajudam a não acrescentar detalhes de outro evangelho à passagem citada.",
     reference: "Lucas 22:47-53",
   },
   {
     id: 228,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Qual título foi escrito na placa colocada na cruz de Jesus?",
+    question: "Segundo João 19, qual título acompanha o nome de Jesus na inscrição colocada na cruz?",
     options: ["Filho de Davi", "Rei dos Judeus", "Profeta da Galileia", "Mestre de Israel"],
     correctAnswer: "Rei dos Judeus",
     explanation:
-      "Pilatos mandou registrar o título em diferentes idiomas e recusou o pedido para alterar a inscrição.",
+      "João registra a inscrição Jesus Nazareno, Rei dos Judeus e informa que estava em hebraico, grego e latim. Os chefes dos sacerdotes pedem que Pilatos a altere para dizer que Jesus havia afirmado ser rei, mas ele recusa. Rei dos Judeus é o título pedido na questão, não a transcrição de toda a inscrição.",
     reference: "João 19:19-22",
   },
   {
     id: 229,
     topics: ["jesus-evangelhos"],
     journey: 3,
-    question: "Quantos peixes os discípulos recolheram na pesca narrada após a ressurreição?",
+    question: "Em João 21, quantos grandes peixes havia na rede puxada por Simão Pedro após a ressurreição?",
     options: ["Setenta", "Cento e vinte", "Cento e cinquenta e três", "Duzentos"],
     correctAnswer: "Cento e cinquenta e três",
     explanation:
-      "Depois de obedecerem à orientação de Jesus, os discípulos puxaram uma rede cheia sem que ela se rompesse.",
+      "Depois de uma noite sem pesca, os discípulos lançam a rede à direita do barco conforme a orientação de Jesus. Simão Pedro a puxa para terra, e o narrador conta cento e cinquenta e três grandes peixes, destacando que a rede não se rompe. O número pertence à pesca junto ao mar de Tibérias neste capítulo, não a todas as pescas relatadas nos evangelhos. O texto não explica um significado simbólico para essa quantidade.",
     reference: "João 21:1-14",
   },
   {
@@ -394,7 +394,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Belém", "Nazaré", "Cafarnaum", "Jerusalém"],
     correctAnswer: "Jerusalém",
     explanation:
-      "Antes da ascensão, Jesus orientou os discípulos a esperar na cidade pelo cumprimento da promessa.",
+      "Jesus fala do anúncio do arrependimento e do perdão começando por Jerusalém e orienta os discípulos a permanecer na cidade até receber poder do alto. Depois os leva até Betânia, os abençoa e se afasta; eles voltam a Jerusalém com alegria. Jerusalém é a cidade da espera, enquanto Betânia aparece no momento da despedida.",
     reference: "Lucas 24:44-53",
   },
   {
@@ -405,7 +405,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Melquisedeque", "Abimeleque", "Quedorlaomer", "Manassés"],
     correctAnswer: "Melquisedeque",
     explanation:
-      "Melquisedeque encontrou Abraão depois de uma batalha, trouxe pão e vinho e pronunciou uma bênção.",
+      "Melquisedeque é apresentado como rei de Salém e sacerdote do Deus Altíssimo quando traz pão e vinho e abençoa Abrão após a batalha. O rei de Sodoma também aparece no encontro, mas não é quem recebe essas duas qualificações. Nesse ponto do relato, Abraão ainda aparece com o nome Abrão. A resposta depende da apresentação de Melquisedeque em Gênesis, sem exigir interpretações sobre sua identidade em outros livros.",
     reference: "Gênesis 14:17-20",
   },
   {
@@ -416,18 +416,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Arão", "Jetro", "Hur", "Calebe"],
     correctAnswer: "Jetro",
     explanation:
-      "Jetro percebeu o peso que Moisés carregava sozinho e sugeriu a escolha de líderes capazes para ajudá-lo.",
-    reference: "Êxodo 18:13-27",
+      "O início do capítulo identifica Jetro como sogro de Moisés. Ao ver o povo esperando desde a manhã até a tarde, ele alerta que a tarefa é pesada demais para uma pessoa. Sugere escolher homens capazes e íntegros para os casos menores, mantendo os mais difíceis com Moisés. Moisés segue o conselho; não deixa de ensinar nem transfere todas as decisões aos novos responsáveis.",
+    reference: "Êxodo 18:1-5; Êxodo 18:13-27",
   },
   {
     id: 233,
     topics: ["personagens"],
     journey: 3,
-    question: "Quem recebeu habilidade especial para liderar os trabalhos artísticos do tabernáculo?",
+    question: "Qual artesão da tribo de Judá é chamado pelo nome em Êxodo 31 para trabalhar com ouro, prata, bronze, pedras e madeira?",
     options: ["Eleazar", "Josué", "Bezalel", "Fineias"],
     correctAnswer: "Bezalel",
     explanation:
-      "Bezalel foi capacitado para trabalhar com metais, pedras, madeira e outros elementos usados no santuário.",
+      "Bezalel, filho de Uri e neto de Hur, é nomeado para trabalhos de desenho, metais, pedras e madeira. O trecho também coloca Aoliabe com ele e menciona a habilidade de outros artesãos. A lista inclui o tabernáculo, seus utensílios e as vestes do serviço. Bezalel é o nome pedido, mas não realiza sozinho todo o trabalho descrito.",
     reference: "Êxodo 31:1-11",
   },
   {
@@ -438,8 +438,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Corá", "Datã", "Balaão", "Calebe"],
     correctAnswer: "Calebe",
     explanation:
-      "Calebe e Josué não acompanharam o medo dos outros espias e incentivaram o povo a confiar em Deus.",
-    reference: "Números 13:25-33; 14:6-9",
+      "Ao voltar da observação da terra, Calebe incentiva o povo a subir, enquanto outros espias afirmam que os habitantes são fortes demais. No capítulo seguinte, Josué e Calebe falam juntos, descrevendo a terra como boa e pedindo que o povo não tema. A diferença está na resposta ao que observaram; o relato não diz que Calebe deixou de ver as cidades e seus habitantes.",
+    reference: "Números 13:25-33; Números 14:6-9",
   },
   {
     id: 235,
@@ -449,8 +449,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Acã", "Agar", "Abner", "Amasa"],
     correctAnswer: "Acã",
     explanation:
-      "Acã guardou para si objetos que não deveria tomar, e sua ação foi descoberta depois da derrota em Ai.",
-    reference: "Josué 7:1-26",
+      "O capítulo identifica Acã como quem tomou objetos que estavam sob proibição. Ao ser interrogado, ele admite ter visto, desejado e escondido um manto, prata e ouro debaixo da terra em sua tenda. Os mensageiros encontram os objetos onde ele indica. Os trechos selecionados mostram sua identificação e confissão; a pergunta não pede os detalhes da punição narrada no restante do capítulo.",
+    reference: "Josué 7:1; Josué 7:19-23",
   },
   {
     id: 236,
@@ -460,7 +460,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Jessé", "Boaz", "Obede", "Elimeleque"],
     correctAnswer: "Boaz",
     explanation:
-      "A genealogia ao final de Rute liga Boaz e Rute a Obede, Jessé e, posteriormente, ao rei Davi.",
+      "Rute se torna esposa de Boaz e dá à luz Obede. O final do livro apresenta a sequência Boaz, Obede, Jessé e Davi: Obede é o avô de Davi, Jessé é seu pai e Boaz é seu bisavô. Noemi cuida do menino, mas isso não altera a sequência familiar informada no texto. As alternativas representam pessoas diferentes dessa história.",
     reference: "Rute 4:13-22",
   },
   {
@@ -471,8 +471,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Gade", "Samuel", "Natã", "Aías"],
     correctAnswer: "Natã",
     explanation:
-      "Natã usou uma história para levar Davi a reconhecer a gravidade de suas ações contra Urias.",
-    reference: "2 Samuel 12:1-14",
+      "Natã conta sobre um homem rico que toma a única cordeira de um homem pobre, em vez de usar um animal de seu próprio rebanho. Davi condena a ação, e Natã lhe diz que ele é aquele homem, relacionando a história ao que fez contra Urias. Mais adiante, Davi admite seu pecado. A cordeirinha pertence à história usada no confronto, não é apresentada como um animal que Davi havia roubado literalmente.",
+    reference: "2 Samuel 12:1-9; 2 Samuel 12:13",
   },
   {
     id: 238,
@@ -482,7 +482,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Geazi", "Hazael", "Ben-Hadade", "Naamã"],
     correctAnswer: "Naamã",
     explanation:
-      "Naamã resistiu à orientação simples de Eliseu, mas decidiu obedecer e foi restaurado.",
+      "Naamã é apresentado como comandante do exército sírio. Eliseu lhe transmite por um mensageiro a orientação de se lavar sete vezes no Jordão. Ele primeiro se irrita, pois esperava outro atendimento e menciona rios de Damasco; depois escuta seus servos, mergulha no Jordão e fica limpo. O relato descreve esse episódio, não oferece o banho no rio como tratamento médico para o leitor.",
     reference: "2 Reis 5:1-14",
   },
   {
@@ -493,7 +493,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Esdras", "Neemias", "Zorobabel", "Malaquias"],
     correctAnswer: "Esdras",
     explanation:
-      "Esdras leu o texto publicamente enquanto outros ajudavam o povo a compreender o que estava sendo ensinado.",
+      "O povo reunido diante da porta das Águas pede a Esdras que traga o Livro da Lei. Ele lê desde o amanhecer até o meio-dia, enquanto os levitas ajudam a explicar o sentido da leitura. Neemias também participa e é identificado como governador, mas Esdras é o escriba pedido na questão. A cena reúne leitura pública, explicação e compreensão, não apenas exposição de um livro.",
     reference: "Neemias 8:1-12",
   },
   {
@@ -504,7 +504,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Esdras", "Mordecai", "Neemias", "Zorobabel"],
     correctAnswer: "Mordecai",
     explanation:
-      "A recusa de Mordecai despertou a ira de Hamã e deu início à ameaça contra todo o povo judeu.",
+      "Mordecai não se inclina diante de Hamã, apesar da ordem do rei e das perguntas dos outros servos. Ao saber a qual povo ele pertence, Hamã decide atingir todos os judeus do reino, e não somente Mordecai. A explicação atribui essa decisão a Hamã, sem responsabilizar o povo ameaçado. Na tradução do leitor, Mordecai aparece com o nome Mardoqueu.",
     reference: "Ester 3:1-6",
   },
   {
@@ -515,7 +515,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Zacarias", "José", "Simeão", "Nicodemos"],
     correctAnswer: "Simeão",
     explanation:
-      "Simeão aguardava a consolação de Israel e reconheceu no menino o cumprimento da promessa que havia recebido.",
+      "Lucas apresenta Simeão como um homem justo e devoto que esperava a consolação de Israel. Ele vai ao templo quando os pais trazem Jesus, toma o menino nos braços e louva a Deus, lembrando a promessa de ver o Cristo antes de morrer. O trecho não informa sua idade nem o chama de sacerdote. José está presente como pai na cena, mas não é quem pronuncia esse louvor.",
     reference: "Lucas 2:25-35",
   },
   {
@@ -526,8 +526,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Trófimo", "Aristarco", "Tíquico", "Êutico"],
     correctAnswer: "Êutico",
     explanation:
-      "Êutico caiu do terceiro andar em Trôade, mas voltou vivo ao convívio da comunidade.",
-    reference: "Atos 20:7-12",
+      "Em Trôade, Paulo fala até a meia-noite antes de partir no dia seguinte. Êutico, sentado numa janela, é tomado pelo sono e cai do terceiro andar; o relato diz que foi levantado morto. Paulo desce e o abraça, e o encerramento informa que o rapaz é trazido vivo, para consolo dos presentes. O texto o chama de rapaz, sem dar sua idade exata.",
+    reference: "Atos 20:5-12",
   },
   {
     id: 243,
@@ -537,18 +537,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Joquebede", "Elisabá", "Zípora", "Quetura"],
     correctAnswer: "Joquebede",
     explanation:
-      "Joquebede foi mãe de Moisés, Arão e Miriã. Ela protegeu Moisés nos primeiros meses de vida e participou de seus cuidados após ele ser acolhido pela filha do faraó.",
-    reference: "Êxodo 2:1-10; 6:20; Números 26:59",
+      "Êxodo 2 narra a proteção do menino Moisés por sua mãe, que o esconde por três meses e depois o coloca numa cesta entre os juncos. Nessa cena, ela não é chamada pelo nome. Êxodo 6 nomeia Joquebede como mãe de Arão e Moisés, e Números 26 acrescenta Miriã à mesma família. As referências unem o relato do cuidado à identificação dos três filhos.",
+    reference: "Êxodo 2:1-10; Êxodo 6:20; Números 26:59",
   },
   {
     id: 244,
     topics: ["mulheres-da-biblia"],
     journey: 3,
-    question: "Qual filha de Jetro se tornou esposa de Moisés?",
+    question: "Em Êxodo 2, qual filha do sacerdote de Midiã, chamado Reuel nesse trecho, se tornou esposa de Moisés?",
     options: ["Miriã", "Zípora", "Diná", "Tamar"],
     correctAnswer: "Zípora",
     explanation:
-      "Depois de fugir do Egito, Moisés viveu em Midiã, ajudou as filhas de Jetro e se casou com Zípora.",
+      "Moisés foge para Midiã e ajuda as sete filhas do sacerdote a dar água ao rebanho quando outros pastores as afastam. O pai, chamado Reuel nesse trecho, convida Moisés para comer e depois lhe dá Zípora como esposa. O relato informa o nascimento de Gérson. Zípora é a filha nomeada no casamento, não Miriã, irmã de Moisés.",
     reference: "Êxodo 2:15-22",
   },
   {
@@ -559,19 +559,19 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["As filhas de Jó", "As filhas de Labão", "As filhas de Zelofeade", "As filhas de Jetro"],
     correctAnswer: "As filhas de Zelofeade",
     explanation:
-      "Maalá, Noa, Hogla, Milca e Tirza apresentaram sua causa, e uma orientação foi estabelecida a partir do pedido delas.",
+      "Maalá, Noa, Hogla, Milca e Tirza explicam que seu pai morreu sem filhos homens e pedem uma herança entre os parentes dele. Moisés leva a causa ao Senhor, e a resposta confirma o pedido e estabelece uma orientação para situações semelhantes em Israel. A pergunta identifica as cinco irmãs desse episódio, não descreve as regras atuais de herança.",
     reference: "Números 27:1-11",
   },
   {
     id: 246,
     topics: ["mulheres-da-biblia"],
     journey: 3,
-    question: "Qual mulher recebeu Sísera em sua tenda e pôs fim à fuga dele?",
+    question: "Qual mulher recebeu Sísera em sua tenda e lhe ofereceu leite quando ele pediu água?",
     options: ["Débora", "Dalila", "Mical", "Jael"],
     correctAnswer: "Jael",
     explanation:
-      "Sísera procurou abrigo na tenda de Jael depois de abandonar o campo de batalha, mas não escapou da derrota anunciada.",
-    reference: "Juízes 4:17-22",
+      "Sísera chega a pé à tenda de Jael, mulher de Héber. Ela o convida a entrar, o cobre com uma manta e lhe oferece leite quando ele pede água. A passagem identifica Jael nessa cena; Débora é outra personagem do capítulo. A referência selecionada se limita à chegada à tenda, sem reproduzir o desfecho violento posterior.",
+    reference: "Juízes 4:17-20",
   },
   {
     id: 247,
@@ -581,8 +581,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Dalila", "Mical", "Jezabel", "Orfa"],
     correctAnswer: "Dalila",
     explanation:
-      "Pressionado repetidamente por Dalila, Sansão revelou a relação entre seu voto e o cabelo que nunca havia sido cortado.",
-    reference: "Juízes 16:4-22",
+      "Os líderes filisteus oferecem dinheiro a Dalila para descobrir como dominar Sansão. Depois de respostas que não revelam seu segredo, ela insiste, e Sansão diz que é nazireu de Deus desde o ventre materno e que sua cabeça nunca foi raspada. O relato situa a revelação nessa condição, não afirma que qualquer pessoa de cabelo comprido tenha a mesma força.",
+    reference: "Juízes 16:4-6; Juízes 16:15-18",
   },
   {
     id: 248,
@@ -592,7 +592,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Rute", "Noemi", "Orfa", "Ana"],
     correctAnswer: "Noemi",
     explanation:
-      "Noemi usou o nome Mara para expressar a amargura das perdas que havia vivido antes de voltar para sua terra.",
+      "Ao chegar a Belém com Rute, Noemi é reconhecida pelas pessoas da cidade, mas pede que a chamem de Mara para expressar sua amargura. Diz que partiu cheia e voltou vazia; o narrador, porém, continua a chamá-la de Noemi no versículo seguinte. Mara aparece como o nome que ela pede naquele momento, não como uma pessoa diferente de Rute ou Noemi.",
     reference: "Rute 1:19-22",
   },
   {
@@ -603,7 +603,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Abigail", "Mical", "Bate-Seba", "Maaca"],
     correctAnswer: "Bate-Seba",
     explanation:
-      "Bate-Seba deu à luz Salomão e, mais tarde, participou do momento em que ele foi confirmado como sucessor de Davi.",
+      "2 Samuel identifica Bate-Seba como a mulher que dá à luz Salomão. Em 1 Reis, ela conversa com Davi sobre a sucessão depois de receber o conselho de Natã; Davi reafirma que Salomão ocupará o trono. A segunda passagem apresenta essa reafirmação, não ainda toda a cerimônia que vem depois. Bate-Seba é a mãe; Natã participa como profeta.",
     reference: "2 Samuel 12:24-25; 1 Reis 1:11-31",
   },
   {
@@ -614,7 +614,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Uma viúva de Naim", "Uma mulher de Suném", "Uma serva de Jezabel", "Uma viúva de Sarepta"],
     correctAnswer: "Uma viúva de Sarepta",
     explanation:
-      "Mesmo com poucos recursos, a viúva acolheu Elias e viu a farinha e o azeite sustentarem sua casa durante a crise.",
+      "Elias vai a Sarepta, onde encontra uma viúva juntando gravetos. Ela conta que tem apenas um punhado de farinha e um pouco de azeite para preparar alimento para si e seu filho. Depois da orientação de Elias, o relato diz que a farinha e o azeite não acabam durante muitos dias. A mulher não recebe nome no trecho, e o episódio não estabelece uma promessa de sustento material automático para quem oferece comida.",
     reference: "1 Reis 17:8-16",
   },
   {
@@ -625,7 +625,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["A mulher sunamita", "A viúva de Sarepta", "A esposa de Naamã", "A mãe de Samuel"],
     correctAnswer: "A mulher sunamita",
     explanation:
-      "Ela reconheceu Eliseu como homem de Deus e, com o marido, separou um espaço simples para recebê-lo.",
+      "A mulher de Suném já recebe Eliseu para comer e propõe ao marido preparar um quarto com cama, mesa, cadeira e candelabro. O relato depois mostra o profeta se hospedando ali. Sunamita indica sua ligação com Suném, não é um nome pessoal informado no trecho. Ela acolhe Eliseu; a viúva de Sarepta da outra questão acolhe Elias.",
     reference: "2 Reis 4:8-17",
   },
   {
@@ -636,7 +636,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Rainha Vasti", "Rainha de Sabá", "Rainha Ester", "Rainha Atalia"],
     correctAnswer: "Rainha de Sabá",
     explanation:
-      "A visitante ouviu as respostas de Salomão, observou seu reino e reconheceu a sabedoria que ele havia recebido.",
+      "A rainha de Sabá viaja a Jerusalém com sua comitiva para apresentar perguntas a Salomão. Além de ouvir suas respostas, observa a casa, a mesa e os servidores, e diz que o que viu supera a fama que conhecia. O trecho a identifica pelo reino, sem informar nome pessoal nem transcrever suas perguntas. A visita termina com sua volta à própria terra.",
     reference: "1 Reis 10:1-13",
   },
   {
@@ -647,7 +647,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Salomé", "Susana", "Joana", "Marta"],
     correctAnswer: "Joana",
     explanation:
-      "Joana aparece entre as mulheres que acompanhavam Jesus e contribuíam com seus próprios recursos.",
+      "Lucas menciona Joana como esposa de Cuza, administrador de Herodes, entre as mulheres que servem Jesus com seus bens. Susana também aparece na lista, mas não é identificada como esposa de Cuza. O detalhe da pergunta distingue Joana dentro do grupo, sem afirmar que apenas ela contribuía ou informar o valor das contribuições.",
     reference: "Lucas 8:1-3",
   },
   {
@@ -658,18 +658,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Dâmaris", "Drusila", "Berenice", "Rode"],
     correctAnswer: "Rode",
     explanation:
-      "Rode ficou tão alegre ao reconhecer Pedro que correu para avisar os demais antes de abrir a porta.",
+      "Pedro chega à casa de Maria, mãe de João Marcos, onde várias pessoas estão reunidas em oração. Rode reconhece sua voz, mas de alegria corre para avisar os demais sem abrir a porta. Eles primeiro não acreditam nela; Pedro continua batendo até que abrem e o veem. O relato chama Rode de moça, sem informar sua idade exata.",
     reference: "Atos 12:12-17",
   },
   {
     id: 255,
     topics: ["parabolas-de-jesus"],
     journey: 3,
-    question: "Na parábola dos lavradores maus, o que eles fizeram com o filho do dono da vinha?",
+    question: "Em Mateus 21, na parábola dos lavradores maus, o que eles fizeram com o filho do dono da vinha?",
     options: ["Expulsaram-no e o mataram", "Entregaram-lhe os frutos", "Pediram-lhe mais tempo", "Fizeram-no administrador"],
     correctAnswer: "Expulsaram-no e o mataram",
     explanation:
-      "Depois de maltratarem os servos enviados pelo proprietário, os lavradores rejeitaram também o filho.",
+      "O proprietário envia servos para receber os frutos da vinha arrendada e, por último, envia seu filho. Os lavradores o reconhecem como herdeiro, pretendem tomar a herança e o lançam para fora antes de matá-lo. Essa é a sequência apresentada em Mateus. O encerramento identifica os chefes dos sacerdotes e fariseus como os que percebem o confronto dirigido a eles, sem atribuir a ação da história a todo um povo.",
     reference: "Mateus 21:33-46",
   },
   {
@@ -680,7 +680,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Que cortasse a árvore imediatamente", "Que esperasse mais um ano", "Que plantasse outra espécie", "Que vendesse o terreno"],
     correctAnswer: "Que esperasse mais um ano",
     explanation:
-      "O cuidador propôs cavar ao redor da figueira e adubá-la antes de uma nova avaliação.",
+      "O dono diz que procura frutos há três anos e propõe cortar a figueira. O cuidador pede mais um ano para cavar ao redor e adubar, deixando a decisão posterior depender do resultado. A parábola termina com esse pedido; não conta se a árvore depois produziu frutos. A alternativa identifica o prazo solicitado, não uma garantia de que o problema já foi resolvido.",
     reference: "Lucas 13:6-9",
   },
   {
@@ -691,7 +691,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Um", "Dois", "Três", "Sete"],
     correctAnswer: "Três",
     explanation:
-      "O pedido foi feito para receber um viajante inesperado, e Jesus usou a insistência para ensinar sobre oração.",
+      "O homem pede três pães porque um amigo chegou de viagem e ele não tem o que lhe oferecer. Quem está dentro da casa primeiro responde que a porta está fechada e a família já está deitada. Jesus usa a cena no ensino sobre pedir, buscar e bater. O número três pertence ao pedido de pão, não é apresentado como quantidade obrigatória de orações.",
     reference: "Lucas 11:5-13",
   },
   {
@@ -702,7 +702,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["De uma viagem de negócios", "Do campo", "Do tribunal", "De uma festa de casamento"],
     correctAnswer: "De uma festa de casamento",
     explanation:
-      "Os servos deveriam manter as lâmpadas acesas e estar prontos para abrir a porta quando o senhor chegasse.",
+      "Jesus compara a prontidão dos ouvintes à de servos que esperam seu senhor voltar de um casamento. As lâmpadas acesas e a abertura imediata da porta mostram essa preparação. A aplicação fala de estar pronto para a vinda do Filho do homem, sem fornecer uma data. O casamento é o evento do qual o senhor volta nessa comparação.",
     reference: "Lucas 12:35-40",
   },
   {
@@ -713,8 +713,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Distribuir alimento no tempo certo", "Cobrar impostos dos vizinhos", "Guardar o rebanho no campo", "Organizar uma festa para o senhor"],
     correctAnswer: "Distribuir alimento no tempo certo",
     explanation:
-      "Jesus destacou a fidelidade de quem cumpre sua tarefa mesmo sem saber quando o senhor voltará.",
-    reference: "Lucas 12:41-48",
+      "Depois de Pedro perguntar a quem se dirige a parábola, Jesus descreve um mordomo encarregado de dar alimento aos demais servos no tempo certo. O senhor o encontra cumprindo a tarefa quando volta. Mordomo, termo da tradução do leitor, corresponde ao administrador da pergunta; a responsabilidade é cuidar da distribuição, não cobrar impostos ou escolher uma tarefa por conta própria.",
+    reference: "Lucas 12:41-44",
   },
   {
     id: 260,
@@ -724,7 +724,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["O lugar junto ao anfitrião", "O último lugar", "O lugar mais visível", "O lugar reservado aos parentes"],
     correctAnswer: "O último lugar",
     explanation:
-      "A orientação ensina humildade: é melhor ser convidado a subir do que precisar deixar um lugar de honra.",
+      "Ao observar convidados escolhendo os primeiros assentos, Jesus propõe ocupar o último lugar. Na comparação, cabe ao anfitrião convidar a pessoa para um lugar melhor, em vez de obrigá-la a ceder um assento escolhido por conta própria. A conclusão contrasta exaltar a si mesmo e humilhar-se. A cena é de um convite para casamento, não uma regra sobre a posição de toda cadeira em qualquer encontro.",
     reference: "Lucas 14:7-11",
   },
   {
@@ -735,7 +735,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Precisava visitar um irmão", "Estava doente", "Havia acabado de se casar", "Esperava uma colheita"],
     correctAnswer: "Havia acabado de se casar",
     explanation:
-      "Os convidados apresentaram diferentes compromissos como justificativa, e o anfitrião chamou outras pessoas para a mesa.",
+      "Três convidados apresentam motivos diferentes: um comprou um campo, outro quer testar cinco pares de bois e outro diz que se casou. Após essas respostas, o anfitrião manda chamar pessoas das ruas e, depois, dos caminhos, pois ainda há lugar. A pergunta identifica uma das desculpas da história, não afirma que casar seja, por si só, uma conduta condenada.",
     reference: "Lucas 14:15-24",
   },
   {
@@ -746,8 +746,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Escolher trabalhadores", "Comprar outro terreno", "Pedir ajuda aos vizinhos", "Calcular o custo"],
     correctAnswer: "Calcular o custo",
     explanation:
-      "A imagem da construção mostra a importância de considerar com seriedade o compromisso de seguir Jesus.",
-    reference: "Lucas 14:25-33",
+      "Na comparação, o homem se senta primeiro para calcular os gastos e verificar se consegue concluir a torre. O risco descrito é lançar o fundamento e deixar a obra inacabada. Jesus acrescenta o exemplo de um rei que avalia suas forças antes de uma guerra e liga as comparações ao compromisso de ser discípulo. O texto não oferece uma planilha de construção nem uma recomendação de investimento.",
+    reference: "Lucas 14:28-33",
   },
   {
     id: 263,
@@ -757,19 +757,19 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Reduziu os valores registrados", "Cobrou tudo imediatamente", "Transferiu as dívidas para si", "Perdoou apenas os juros"],
     correctAnswer: "Reduziu os valores registrados",
     explanation:
-      "Ao perceber que perderia o cargo, o administrador alterou os registros para conquistar o favor dos devedores.",
+      "Ao saber que perderá o cargo, o administrador chama os devedores para ser recebido por eles depois. Manda registrar cinquenta em vez de cem medidas de azeite e oitenta em vez de cem de trigo. O senhor elogia sua prudência, mas o narrador ainda o chama de injusto. A pergunta reconhece a redução dos registros; não transforma o episódio em aprovação de falsificar contas nem afirma que foram perdoados apenas juros.",
     reference: "Lucas 16:1-9",
   },
   {
     id: 264,
     topics: ["parabolas-de-jesus"],
     journey: 3,
-    question: "Na parábola das minas, por que o homem nobre viajou para uma terra distante?",
-    options: ["Para comprar uma vinha", "Para receber autoridade real", "Para fugir de uma dívida", "Para procurar trabalhadores"],
-    correctAnswer: "Para receber autoridade real",
+    question: "Na parábola das minas, o que o homem nobre havia recebido quando voltou da terra distante?",
+    options: ["Uma vinha", "Autoridade real", "O perdão de uma dívida", "Novos trabalhadores"],
+    correctAnswer: "Autoridade real",
     explanation:
-      "Antes de partir, o homem confiou recursos aos servos e depois voltou para avaliar como foram utilizados.",
-    reference: "Lucas 19:11-27",
+      "Jesus conta a parábola perto de Jerusalém, quando os ouvintes esperam que o Reino se manifeste imediatamente. O homem nobre parte, confia dinheiro aos servos e volta tendo recebido o reino; então pede contas do que fizeram. A resposta se refere à autoridade real mencionada no retorno, não ao dinheiro entregue aos servos. Mina é o recurso monetário da história, não uma mina de extração nem uma habilidade pessoal.",
+    reference: "Lucas 19:11-15",
   },
   {
     id: 265,
@@ -779,7 +779,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Replanta a semente todos os dias", "Permanece acordado no campo", "Dorme e se levanta", "Move a plantação para outro solo"],
     correctAnswer: "Dorme e se levanta",
     explanation:
-      "A semente germina e cresce sem que o agricultor domine cada etapa, até chegar o tempo da colheita.",
+      "Jesus compara o Reino de Deus à semente lançada na terra por um homem. Ele dorme e se levanta enquanto ela cresce sem que saiba como; o texto descreve a passagem da planta à espiga e ao grão. Quando o fruto está pronto, o homem faz a colheita. Dormir e se levantar descreve a rotina, não uma ausência de participação em todo o processo.",
     reference: "Marcos 4:26-29",
   },
   {
@@ -790,7 +790,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Em vasos de pedra", "Em odres antigos", "Em jarros abertos", "Em odres novos"],
     correctAnswer: "Em odres novos",
     explanation:
-      "Jesus explicou que o vinho novo romperaria recipientes envelhecidos, fazendo perder tanto o vinho quanto os odres.",
+      "A comparação aparece na resposta à pergunta dos discípulos de João sobre o jejum. Jesus diz que o vinho novo romperia os odres velhos, derramando o vinho e perdendo os recipientes; em odres novos, ambos se conservam. O contraste é entre odres novos e velhos, não entre vinho e água ou entre os jarros de outra narrativa. A imagem acompanha a resposta de Jesus, sem decidir todas as práticas atuais de jejum.",
     reference: "Mateus 9:14-17",
   },
   {
@@ -801,18 +801,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Ur dos caldeus", "Babilônia", "Nínive", "Damasco"],
     correctAnswer: "Ur dos caldeus",
     explanation:
-      "Terá deixou Ur com Abraão, Sara e Ló, pretendendo seguir para Canaã, mas a família permaneceu por um tempo em Harã.",
+      "Terá sai de Ur dos caldeus com Abrão, Sarai e Ló, com o destino anunciado de Canaã, mas o grupo se estabelece em Harã. Abrão e Sarai são os nomes usados para Abraão e Sara nessa etapa. O capítulo também menciona Harã como nome do pai de Ló, que morreu em Ur; essa pessoa não deve ser confundida com o lugar onde a família passa a morar.",
     reference: "Gênesis 11:27-32",
   },
   {
     id: 268,
     topics: ["lugares-da-biblia"],
     journey: 3,
-    question: "De qual cidade Abraão partiu quando recebeu o chamado para seguir à terra que Deus mostraria?",
+    question: "Segundo Gênesis 12:4-5, de qual cidade Abrão partiu rumo a Canaã?",
     options: ["Hebrom", "Harã", "Berseba", "Siquém"],
     correctAnswer: "Harã",
     explanation:
-      "Abraão deixou Harã com sua família e seus bens, iniciando a caminhada em direção a Canaã.",
+      "Gênesis 12 diz que Abrão tinha setenta e cinco anos quando saiu de Harã. Ele leva Sarai, Ló e seus pertences, e o grupo chega a Canaã. Harã é o ponto de partida desta etapa; Ur dos caldeus aparece na saída anterior com Terá, narrada no capítulo 11. A pergunta identifica a partida explicitamente descrita, não procura determinar o local de todos os chamados a Abraão.",
     reference: "Gênesis 12:1-5",
   },
   {
@@ -823,7 +823,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Gilgal", "Peniel", "Betel", "Mispa"],
     correctAnswer: "Betel",
     explanation:
-      "Jacó ergueu a pedra que havia usado como apoio e chamou o lugar de Betel, reconhecendo a presença de Deus.",
+      "Durante a viagem de Berseba para Harã, Jacó dorme num lugar onde sonha com uma escada e anjos. Ao acordar, ergue como coluna a pedra usada de cabeceira e chama o lugar de Betel. O narrador informa que o nome anterior da cidade era Luz. Betel é o nome dado ao lugar; a escada faz parte do sonho, não é uma construção que Jacó ergue nessa cena.",
     reference: "Gênesis 28:10-22",
   },
   {
@@ -834,18 +834,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Maanaim", "Sucote", "Siquém", "Peniel"],
     correctAnswer: "Peniel",
     explanation:
-      "Depois do encontro, Jacó recebeu o nome Israel e marcou o local com um nome ligado à experiência que viveu.",
+      "Depois de atravessar seus familiares e bens pelo Jaboque, Jacó fica sozinho e luta até o amanhecer. No encontro, recebe o nome Israel; depois chama o lugar de Peniel, dizendo ter visto Deus face a face e sobrevivido. Israel é o nome dado à pessoa, e Peniel é o nome do local. O relato também menciona que Jacó segue mancando, sem identificar o lugar como Betel.",
     reference: "Gênesis 32:22-32",
   },
   {
     id: 271,
     topics: ["lugares-da-biblia"],
     journey: 3,
-    question: "Em qual vale os exércitos de Israel e dos filisteus estavam posicionados antes do confronto entre Davi e Golias?",
+    question: "Segundo 1 Samuel 17:1-3, em qual vale Saul e os homens de Israel acamparam diante dos filisteus?",
     options: ["Vale de Elá", "Vale de Escol", "Vale de Hinom", "Vale de Cedrom"],
     correctAnswer: "Vale de Elá",
     explanation:
-      "Os dois exércitos ocupavam lados opostos do vale quando Golias desafiou Israel e Davi se apresentou.",
+      "A abertura do capítulo situa os filisteus entre Socó e Azeca e o acampamento de Saul e dos israelitas no vale de Elá. Cada exército ocupa um monte, com o vale entre eles. Esses versículos descrevem a posição inicial; os desafios de Golias e a participação de Davi são apresentados mais adiante no capítulo. O vale não é o de Escol nem o de Cedrom.",
     reference: "1 Samuel 17:1-3",
   },
   {
@@ -856,7 +856,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Persépolis", "Susã", "Babilônia", "Ecbátana"],
     correctAnswer: "Susã",
     explanation:
-      "A cidadela de Susã serviu de cenário para decisões do palácio que mudaram a vida de Ester e de seu povo.",
+      "O começo de Ester situa o trono de Assuero na fortaleza de Susã. Descreve um banquete para os príncipes e servidores e, depois, outro de sete dias para os presentes na fortaleza, no jardim do palácio. Vasti também oferece um banquete para as mulheres. Fortaleza é a palavra da tradução do leitor para a cidadela mencionada na pergunta; Ester ainda não é apresentada como rainha nessa abertura.",
     reference: "Ester 1:1-9",
   },
   {
@@ -867,8 +867,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Tiberíades", "Betsaida", "Cesareia de Filipe", "Naim"],
     correctAnswer: "Cesareia de Filipe",
     explanation:
-      "Naquela região, Jesus perguntou aos discípulos quem eles diziam que ele era, e Pedro respondeu em nome do grupo.",
-    reference: "Mateus 16:13-20",
+      "Mateus situa Jesus na região de Cesareia de Filipe. Primeiro ele pergunta o que as pessoas dizem sobre sua identidade; depois dirige a pergunta aos discípulos, e Pedro responde que ele é o Cristo, o Filho do Deus vivo. A pergunta identifica a região dessa conversa. Cesareia de Filipe não deve ser confundida com a Cesareia da visita de Pedro a Cornélio em outra narrativa.",
+    reference: "Mateus 16:13-17",
   },
   {
     id: 274,
@@ -878,7 +878,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Getsêmani", "Gábata", "Cedrom", "Gólgota"],
     correctAnswer: "Gólgota",
     explanation:
-      "O nome é explicado como Lugar da Caveira, situado fora do espaço onde Jesus foi julgado.",
+      "João narra que Jesus é levado para ser crucificado e sai carregando a cruz até o lugar chamado Caveira, cujo nome em hebraico é Gólgota. Ali é crucificado entre outros dois. A resposta é o nome informado para o local da crucificação, não o lugar de uma oração ou de uma passagem anterior. O trecho não descreve sua aparência física nem fornece coordenadas modernas.",
     reference: "João 19:16-18",
   },
   {
@@ -889,7 +889,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Patmos", "Creta", "Malta", "Chipre"],
     correctAnswer: "Patmos",
     explanation:
-      "João afirma que estava em Patmos por causa da palavra de Deus quando recebeu a visão no dia do Senhor.",
+      "O narrador se apresenta como João e diz estar na ilha de Patmos por causa da palavra de Deus e do testemunho de Jesus Cristo. No dia do Senhor, ouve uma voz e recebe a orientação de escrever e enviar o livro às sete igrejas. Patmos é a ilha onde ele está; as cidades das igrejas são destinos da mensagem. O trecho não identifica uma data moderna nem informa todos os detalhes de sua permanência na ilha.",
     reference: "Apocalipse 1:9-11",
   },
   {
@@ -900,8 +900,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Antioquia", "Tarso", "Listra", "Derbe"],
     correctAnswer: "Tarso",
     explanation:
-      "Ao falar com o comandante romano, Paulo apresentou-se como judeu natural de Tarso, uma cidade da Cilícia.",
-    reference: "Atos 21:37-39; 22:3",
+      "Paulo diz ao comandante que é judeu de Tarso, cidade da Cilícia. Ao falar ao povo, afirma explicitamente que nasceu ali e foi criado na cidade onde está falando, instruído por Gamaliel. As duas referências distinguem sua cidade natal da etapa de formação. Tarso é a cidade; Cilícia é a região indicada na mesma declaração.",
+    reference: "Atos 21:37-39; Atos 22:3",
   },
   {
     id: 277,
@@ -911,7 +911,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Tessalônica", "Atenas", "Bereia", "Corinto"],
     correctAnswer: "Bereia",
     explanation:
-      "Os bereanos receberam a mensagem com interesse e comparavam o ensino com as Escrituras.",
+      "Paulo e Silas são enviados de noite a Bereia e vão à sinagoga. O narrador destaca a disposição dos ouvintes para receber a mensagem e seu exame diário das Escrituras para conferir o que era dito. Muitos creem, mas o trecho não afirma que todos reagiram da mesma forma. Bereia é o local dessa recepção, e Tessalônica é a cidade usada na comparação.",
     reference: "Atos 17:10-12",
   },
   {
@@ -922,19 +922,19 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Trôade", "Assôs", "Tiro", "Mileto"],
     correctAnswer: "Mileto",
     explanation:
-      "Paulo chamou os presbíteros de Éfeso a Mileto e apresentou orientações de despedida sobre o cuidado da comunidade.",
-    reference: "Atos 20:15-38",
+      "Paulo decide passar ao largo de Éfeso para não demorar na viagem a Jerusalém. Desde Mileto, manda chamar os anciãos da igreja de Éfeso, que vão ao seu encontro. Na despedida, recomenda atenção a si mesmos e à comunidade, ora com eles e segue para o navio. Éfeso é a origem dos líderes; Mileto é o lugar da reunião. Anciãos é o termo usado no leitor para esses líderes da igreja, também chamados de presbíteros.",
+    reference: "Atos 20:15-18; Atos 20:28; Atos 20:36-38",
   },
   {
     id: 279,
     topics: ["igreja-primitiva"],
     journey: 3,
-    question: "O que permitiu que visitantes de diferentes regiões entendessem os discípulos no Pentecostes?",
+    question: "Segundo Atos 2, o que permitiu que ouvintes de diferentes regiões entendessem os discípulos no Pentecostes?",
     options: ["Eles falavam em diferentes línguas", "Todos conheciam o aramaico", "Um intérprete repetia a mensagem", "A multidão recebeu textos escritos"],
     correctAnswer: "Eles falavam em diferentes línguas",
     explanation:
-      "Pessoas de várias partes do mundo ouviram as grandezas de Deus em seus próprios idiomas.",
-    reference: "Atos 2:5-12",
+      "O início do capítulo diz que os discípulos passam a falar em outras línguas, conforme o Espírito lhes concede. A multidão se admira porque cada um ouve as grandezas de Deus em sua própria língua, embora reconheça os que falam como galileus. O relato não atribui essa compreensão a um intérprete ou a textos distribuídos. A pergunta trata dessa cena de Atos, sem decidir todas as interpretações atuais sobre línguas.",
+    reference: "Atos 2:1-12",
   },
   {
     id: 280,
@@ -944,29 +944,29 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Quinhentas", "Três mil", "Cinco mil", "Doze mil"],
     correctAnswer: "Três mil",
     explanation:
-      "Depois de acolherem a mensagem e serem batizadas, cerca de três mil pessoas se juntaram à comunidade.",
+      "Depois da fala de Pedro, os ouvintes perguntam o que devem fazer. O texto informa que os que recebem sua palavra são batizados e que quase três mil pessoas são acrescentadas naquele dia. Três mil é a aproximação dada para esse acontecimento, não uma contagem de todos os ouvintes nem o total de participantes de todos os episódios de Atos.",
     reference: "Atos 2:37-41",
   },
   {
     id: 281,
     topics: ["igreja-primitiva"],
     journey: 3,
-    question: "O que Pedro e os apóstolos disseram que deveriam fazer antes de obedecer às ordens humanas?",
+    question: "Diante da proibição de ensinar sobre Jesus em Atos 5, qual prioridade Pedro e os apóstolos afirmaram?",
     options: ["Consultar a comunidade", "Esperar outro sinal", "Obedecer a Deus", "Deixar Jerusalém"],
     correctAnswer: "Obedecer a Deus",
     explanation:
-      "Diante da proibição de ensinar sobre Jesus, os apóstolos afirmaram que sua primeira lealdade era a Deus.",
+      "O sumo sacerdote questiona os apóstolos por continuarem a ensinar sobre Jesus apesar da proibição. Pedro e os apóstolos respondem que a obrigação de obedecer a Deus é maior que a de obedecer às pessoas e continuam seu testemunho sobre Jesus. A resposta expressa uma prioridade nesse conflito, não uma sequência em que primeiro cumprem uma ordem e depois a outra, nem uma licença genérica para descumprir qualquer regra.",
     reference: "Atos 5:27-32",
   },
   {
     id: 282,
     topics: ["igreja-primitiva"],
     journey: 3,
-    question: "Quem abriu as portas da prisão e libertou os apóstolos durante a noite?",
+    question: "Segundo Atos 5:19, quem abriu as portas da prisão e levou os apóstolos para fora durante a noite?",
     options: ["Um guarda convertido", "Gamaliel", "Um grupo de discípulos", "Um anjo do Senhor"],
     correctAnswer: "Um anjo do Senhor",
     explanation:
-      "Depois de libertá-los, o mensageiro orientou os apóstolos a voltar ao templo e continuar anunciando a mensagem.",
+      "Um anjo do Senhor abre as portas da prisão pública e leva os apóstolos para fora. Sua orientação é que falem ao povo no templo; pela manhã, eles estão lá ensinando. Os oficiais encontram a prisão fechada e guardada, mas sem os presos. A pergunta identifica o agente da libertação em Atos 5, não outros episódios de prisão e saída narrados no livro.",
     reference: "Atos 5:17-25",
   },
   {
@@ -977,7 +977,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Simão, o mágico", "Alexandre, o latoeiro", "Demétrio, o ourives", "Tértulo, o orador"],
     correctAnswer: "Simão, o mágico",
     explanation:
-      "Pedro repreendeu Simão por imaginar que o dom de Deus pudesse ser adquirido com dinheiro.",
+      "Simão, apresentado como alguém que praticava magia em Samaria, vê a imposição das mãos dos apóstolos e oferece dinheiro para ter esse poder. Pedro o repreende por tratar o dom de Deus como algo comprável e o chama ao arrependimento. A oferta é feita por Simão, não por Pedro, que também tem o nome Simão em outras passagens. O trecho termina com o pedido de Simão para que orem por ele.",
     reference: "Atos 8:9-24",
   },
   {
@@ -988,7 +988,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Disfarçado de soldado", "Dentro de um cesto", "Por uma passagem subterrânea", "Misturado a uma caravana"],
     correctAnswer: "Dentro de um cesto",
     explanation:
-      "Os discípulos o desceram pela muralha durante a noite para que ele escapasse do plano contra sua vida.",
+      "Saulo fica sabendo do plano contra sua vida e da vigilância nas portas da cidade, de dia e de noite. Os discípulos o descem pelo muro dentro de um cesto durante a noite. A fuga não ocorre por uma porta aberta, um disfarce ou uma passagem subterrânea. O trecho não informa o nome de quem organiza a descida nem as dimensões do cesto.",
     reference: "Atos 9:23-25",
   },
   {
@@ -999,7 +999,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["João", "Filipe", "Pedro", "Barnabé"],
     correctAnswer: "Pedro",
     explanation:
-      "Pedro pediu que todos saíssem, ajoelhou-se para orar e depois apresentou Dorcas viva à comunidade.",
+      "A discípula de Jope é chamada Tabita, nome que o próprio texto traduz como Dorcas. Depois de sua morte, Pedro é chamado de Lida, pede que os presentes saiam e se ajoelha para orar. Diz a Tabita que se levante e depois a apresenta viva às viúvas e aos demais. Tabita e Dorcas são nomes da mesma pessoa, e Jope é o lugar do encontro, não Lida.",
     reference: "Atos 9:36-43",
   },
   {
@@ -1010,18 +1010,18 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Sacerdote", "Governador", "Comerciante", "Centurião"],
     correctAnswer: "Centurião",
     explanation:
-      "Cornélio comandava soldados da coorte italiana e era conhecido por suas orações e generosidade.",
+      "Atos apresenta Cornélio em Cesareia como centurião do grupo chamado Italiano e destaca suas orações e doações. Depois da visão, ele envia dois servos e um soldado a Jope para chamar Pedro. Centurião é sua função militar; não é apresentado como sacerdote ou governador. Na tradução do leitor, o grupo militar é chamado de esquadrão.",
     reference: "Atos 10:1-8",
   },
   {
     id: 287,
     topics: ["igreja-primitiva"],
     journey: 3,
-    question: "Qual profeta anunciou que haveria uma grande fome no mundo romano?",
+    question: "Qual profeta anunciou a grande fome que Atos 11 situa no tempo de Cláudio César?",
     options: ["Ágabo", "Silas", "Judas Barsabás", "Manaém"],
     correctAnswer: "Ágabo",
     explanation:
-      "A comunidade de Antioquia respondeu à previsão organizando ajuda para os irmãos que viviam na Judeia.",
+      "Ágabo é um dos profetas que chegam de Jerusalém a Antioquia e anuncia uma grande fome. O narrador informa que ela acontece no tempo de Cláudio César. Os discípulos decidem enviar ajuda aos irmãos da Judeia, cada um conforme suas possibilidades, por meio de Barnabé e Saulo. A cena distingue quem faz o anúncio, quem reúne o auxílio e quem o transporta.",
     reference: "Atos 11:27-30",
   },
   {
@@ -1032,7 +1032,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["André", "Tiago", "Filipe", "Tomé"],
     correctAnswer: "Tiago",
     explanation:
-      "Herodes mandou matar Tiago e, percebendo a reação favorável de alguns, também ordenou a prisão de Pedro.",
+      "Atos identifica o Tiago morto por Herodes como irmão de João. Depois, o rei também prende Pedro, e a comunidade ora por ele enquanto está sob guarda. A indicação do parentesco distingue esse Tiago de outros personagens com o mesmo nome. O trecho narra ações de Herodes e reações daquela situação, não atribui responsabilidade a todos os integrantes de um povo.",
     reference: "Atos 12:1-5",
   },
   {
@@ -1043,7 +1043,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Simão", "Demétrio", "Elimas", "Trófimo"],
     correctAnswer: "Elimas",
     explanation:
-      "Em Chipre, Elimas se opôs à mensagem de Paulo e Barnabé até ser atingido por uma cegueira temporária.",
+      "Em Pafo, na ilha de Chipre, o homem apresentado como Barjesus também é chamado Elimas. Ele procura afastar o procônsul Sérgio Paulo da fé, e Saulo, também chamado Paulo, anuncia que ficará sem ver por algum tempo. A cegueira ocorre logo, mas o trecho não descreve sua recuperação. Elimas é esse personagem; Simão, o mágico de Samaria, pertence a outra cena.",
     reference: "Atos 13:4-12",
   },
   {
@@ -1054,7 +1054,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Barnabé", "Silas", "Lucas", "O sobrinho de Paulo"],
     correctAnswer: "O sobrinho de Paulo",
     explanation:
-      "O jovem ouviu sobre a emboscada, procurou Paulo na fortaleza e levou a informação ao comandante romano.",
+      "O filho da irmã de Paulo ouve sobre a emboscada e vai avisá-lo na área fortificada. Paulo pede a um centurião que leve o rapaz ao comandante, que o escuta em particular e manda manter a conversa em segredo. O parentesco o identifica como sobrinho de Paulo; o relato não informa seu nome nem idade exata. Ele transmite o alerta, enquanto o centurião o conduz ao comandante.",
     reference: "Atos 23:12-22",
   },
 ];

@@ -243,7 +243,7 @@ export const completePhraseQuestions: CompletePhraseQuestion[] = [
   },
   {
     id: "way-truth-life",
-    prompt: "Eu sou o caminho, a verdade e a vida....",
+    prompt: "Eu sou o caminho, a verdade e a vida...",
     answer: "Ninguém vem ao Pai, a não ser por mim.",
     options: [
       "Quem me segue nunca terá perguntas.",

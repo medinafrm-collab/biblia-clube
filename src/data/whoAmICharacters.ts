@@ -148,7 +148,7 @@ export const whoAmICharacters: WhoAmICharacter[] = [
     ],
     options: ["Marta", "Maria Madalena", "Salomé", "Joana"],
     explanation: "Marta conversou com Jesus sobre ressurreição e esperança antes que ele fosse ao túmulo de Lázaro.",
-    reference: "João 11:17-27",
+    reference: "João 11:17-30",
   },
   {
     id: "bartimeu",
@@ -186,7 +186,7 @@ export const whoAmICharacters: WhoAmICharacter[] = [
       "Incentivei os demais discípulos a acompanhá-lo, mesmo que isso significasse morrer com ele.",
     ],
     options: ["Tomé", "Filipe", "André", "Natanael"],
-    explanation: "Antes da ida a Betânia, Tomé reagiu ao perigo com disposição de seguir Jesus junto com os outros discípulos.",
+    explanation: "Antes da ida a Betânia, Tomé disse aos outros discípulos que fossem também para morrer com Jesus. A pista se apoia nessa fala, sem decidir quais sentimentos motivaram sua resposta.",
     reference: "João 11:7-16",
   },
   {
@@ -222,7 +222,7 @@ export const whoAmICharacters: WhoAmICharacter[] = [
     clues: [
       "Eu era um oficial etíope na casa do rei.",
       "Intercedi por um profeta lançado em uma cisterna.",
-      "Usei cordas e panos velhos para retirar Jeremias sem feri-lo.",
+      "Pedi que Jeremias colocasse panos sob os braços, entre o corpo e as cordas do resgate.",
     ],
     options: ["Ebede-Meleque", "Baruque", "Gedalias", "Pasur"],
     explanation: "Ebede-Meleque pediu autorização ao rei Zedequias e organizou o resgate cuidadoso de Jeremias.",
@@ -299,7 +299,7 @@ export const whoAmICharacters: WhoAmICharacter[] = [
     name: "Jeoseba",
     clues: [
       "Retirei uma criança real do meio dos filhos do rei que seriam mortos.",
-      "Escondi o menino e sua ama em um quarto do templo.",
+      "Escondi o menino e sua ama em um quarto, protegendo-o de Atalia.",
       "Protegi Joás durante seis anos enquanto Atalia governava.",
     ],
     options: ["Jeoseba", "Atalia", "Jezabel", "Maaca"],
@@ -343,6 +343,6 @@ export const whoAmICharacters: WhoAmICharacter[] = [
     ],
     options: ["Áquila", "Apolo", "Crispo", "Sóstenes"],
     explanation: "Áquila e Priscila acolheram Paulo em Corinto e trabalharam com ele antes de seguirem para Éfeso.",
-    reference: "Atos 18:1-3, 18-19",
+    reference: "Atos 18:1-3; 18:18-19",
   },
 ];

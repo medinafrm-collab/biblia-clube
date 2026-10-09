@@ -56,7 +56,7 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
                 <span className="eyebrow">{resource.eyebrow}</span>
                 <h1 className="display-title mt-5 max-w-4xl text-[clamp(3rem,6vw,5rem)] text-[var(--navy)]">{resource.title}</h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted)]">{resource.summary}</p>
-                <p className="mt-5 text-sm font-bold text-[var(--olive-dark)]">{resource.audience} · {resource.pages}</p>
+                <p className="mt-5 text-sm font-bold text-[var(--olive-dark)]">{resource.audience} · Impressão em A4</p>
               </div>
               <PrintActions />
             </div>
@@ -69,8 +69,17 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
               <h2 className="font-serif text-2xl text-[var(--navy)]">Como usar</h2>
               <ol className="grid gap-2 leading-7 text-[var(--muted)]">
                 {resource.instructions.map((instruction, index) => <li key={instruction}>{index + 1}. {instruction}</li>)}
+                <li>Confira a prévia: a quantidade de páginas varia com a escala, as margens e o navegador. Não preencha dados pessoais sensíveis.</li>
               </ol>
             </div>
+
+            {resource.slug === "roteiro-de-encontro" && (
+              <section className="mb-8 max-w-3xl print:hidden">
+                <h2 className="font-serif text-2xl text-[var(--navy)]">Um exemplo de preenchimento</h2>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Público: família. Duração: 20 minutos. Objetivo: reconhecer a sequência de ações de Zaqueu em Lucas 19:1-6. Reserve 3 minutos para acolher, 5 para ler, 7 para ordenar procurar, subir, descer e receber, e 5 para conferir as respostas e encerrar. Não proponha subir em móveis: represente as ações com palavras ou desenhos.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Pergunta de observação: por que Zaqueu não conseguia ver Jesus? Apoio: multidão e altura, no versículo 3. Para continuar, consulte <Link href="/biblioteca/culto-domestico-com-criancas">No lar: um roteiro com crianças</Link>. O exemplo é uma sugestão, não um relato de aplicação real; a folha abaixo permanece em branco para o seu plano.</p>
+              </section>
+            )}
 
             <article className="print-sheet mx-auto max-w-[900px] rounded-sm bg-white p-8 shadow-[0_18px_55px_rgba(37,50,43,0.12)] sm:p-12 print:max-w-none print:p-0 print:shadow-none">
               <header className="border-b-2 border-[var(--navy)] pb-6">
@@ -99,7 +108,7 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
               </div>
 
               <footer className="mt-10 border-t border-[var(--border)] pt-4 text-xs text-[var(--muted)] print:mt-4 print:pt-2">
-                bibliaclube.com.br · Preparado e revisado pelo Bíblia Clube.
+                bibliaclube.com.br · Material do Bíblia Clube. Adapte ao seu grupo.
               </footer>
             </article>
           </div>

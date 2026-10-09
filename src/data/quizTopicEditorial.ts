@@ -22,14 +22,14 @@ export const quizTopicRelatedPaths: Record<QuizTopicId, string[]> = {
     "/ligue-os-pares",
   ],
   personagens: [
-    "/jogo-da-memoria-biblico",
+    "/quem-sou-eu",
     "/ligue-os-pares",
     "/biblioteca/como-transformar-respostas-erradas-em-aprendizado",
   ],
   "mulheres-da-biblia": [
-    "/biblioteca/como-incluir-pessoas-timidas-e-visitantes",
-    "/guias/ideias-para-estudo-biblico-em-grupo",
-    "/modo-grupo",
+    "/quem-sou-eu",
+    "/jogo-da-memoria-biblico",
+    "/ligue-os-pares",
   ],
   "parabolas-de-jesus": [
     "/biblioteca/plano-de-quatro-encontros-em-marcos",

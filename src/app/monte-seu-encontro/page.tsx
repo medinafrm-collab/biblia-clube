@@ -23,9 +23,9 @@ export default function MonteSeuEncontroPage() {
     title: dynamic.title,
     summary: dynamic.summary,
     duration: dynamic.duration,
+    meetingCore: dynamic.meetingCore,
     materials: dynamic.materials,
     objective: dynamic.objective,
-    steps: dynamic.steps,
     questions: dynamic.questions,
     references: dynamic.references,
     leaderNote: dynamic.leaderNote,
@@ -46,6 +46,14 @@ export default function MonteSeuEncontroPage() {
           </div>
         </section>
         <MeetingBuilder dynamics={meetingDynamics} />
+        <section className="border-t border-[var(--border)] bg-white py-12 print:hidden">
+          <div className="container-site max-w-4xl">
+            <h2 className="font-serif text-3xl text-[var(--navy)]">Critérios e limites do roteiro</h2>
+            <p className="mt-4 leading-7 text-[var(--muted)]">As sugestões combinam recursos já publicados no acervo, sem gerar novos textos por IA durante o uso. Primeiro são consideradas as dinâmicas indicadas para o público escolhido; depois, palavras relacionadas ao objetivo ajudam a ordenar as opções. Essa seleção não substitui a avaliação de quem conhece o grupo.</p>
+            <p className="mt-4 leading-7 text-[var(--muted)]">Em 30 minutos, a distribuição é 3 para acolhimento, 5 para dinâmica, 5 para jogo, 7 para leitura, 7 para conversa e 3 para encerramento. É uma adaptação curta, não a promessa de executar integralmente uma dinâmica mais longa. Se a conversa crescer, reduza atividades em vez de apressar participantes.</p>
+            <p className="mt-4 leading-7 text-[var(--muted)]">As escolhas não criam páginas públicas de resultados e o site não salva o roteiro em uma conta. A cópia compartilhada ou impressa fica sob seu controle. Não inclua informações pessoais sensíveis; confira as referências e use participação voluntária. Para um modelo em branco, consulte <Link href="/materiais/roteiro-de-encontro">Roteiro de encontro para preencher</Link>.</p>
+          </div>
+        </section>
       </main>
       <div className="print:hidden"><Footer /></div>
     </>

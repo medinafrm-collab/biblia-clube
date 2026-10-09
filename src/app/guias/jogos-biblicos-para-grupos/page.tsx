@@ -254,7 +254,7 @@ export default function BiblicalGamesForGroupsGuide() {
                 <section className="mt-12 border-y border-[var(--border)] py-8">
                   <h2 className="font-serif text-3xl text-[var(--navy)]">Pontuação e resultado de exemplo</h2>
                   <p className="mt-3 leading-7 text-[var(--muted)]">Resposta direta vale 10 pontos; após um erro, a equipe seguinte pode usar o rebote por 5. Não desconte pontos por erro. Em caso de empate, peça que as equipes localizem uma das referências da rodada; todas que encontrarem participam da leitura, sem “morte súbita”.</p>
-                  <div className="mt-6 overflow-x-auto">
+                  <div className="mt-6 overflow-x-auto" role="region" aria-label="Tabela de formatos de jogos" tabIndex={0}>
                     <table className="w-full min-w-[38rem] border-collapse text-left text-sm">
                       <caption className="sr-only">Exemplo de pontuação de uma rodada com três equipes</caption>
                       <thead><tr className="border-b border-[var(--border)] text-[var(--navy)]"><th className="py-3 pr-4">Pergunta</th><th className="py-3 pr-4">Equipe da vez</th><th className="py-3 pr-4">Resultado</th><th className="py-3">Placar acumulado</th></tr></thead>

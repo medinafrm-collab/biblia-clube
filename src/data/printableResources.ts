@@ -10,7 +10,7 @@ export type PrintableResource = {
   eyebrow: string;
   summary: string;
   audience: string;
-  pages: string;
+  format: string;
   instructions: string[];
   sections: PrintableSection[];
 };
@@ -23,7 +23,7 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Vinte e quatro perguntas organizadas em quatro temas para abrir conversas sem exigir respostas íntimas.",
     audience: "Células, jovens e famílias",
-    pages: "2 páginas",
+    format: "A4",
     instructions: [
       "Imprima em tamanho A4 e use a opção frente única.",
       "Recorte pelas linhas e separe os cartões por tema.",
@@ -87,10 +87,10 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Um placar para até seis equipes e cinco rodadas, com espaço para registrar colaboração e descobertas.",
     audience: "Grupos e eventos",
-    pages: "1 página",
+    format: "A4",
     instructions: [
       "Defina antes quantos pontos vale cada rodada.",
-      "Use a coluna colaboração para reconhecer escuta e participação.",
+      "Use o campo Equipe que melhor colaborou para reconhecer escuta e participação.",
       "Registre uma descoberta do grupo antes de encerrar.",
     ],
     sections: [
@@ -123,7 +123,7 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Uma lista objetiva para preparar conteúdo, acolhimento, ambiente e acompanhamento antes de cada encontro.",
     audience: "Líderes e anfitriões",
-    pages: "2 páginas",
+    format: "A4",
     instructions: [
       "Use a primeira parte durante a preparação.",
       "Revise a segunda parte depois do encontro.",
@@ -169,7 +169,7 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Uma folha de planejamento com campos para objetivo, passagem, perguntas, atividade, aplicação e acompanhamento.",
     audience: "Líderes, famílias e professores",
-    pages: "2 páginas",
+    format: "A4",
     instructions: [
       "Preencha primeiro objetivo e passagem.",
       "Escolha apenas uma atividade principal.",
@@ -215,7 +215,7 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Dezoito perguntas sobre rotina, cuidado, decisões e fé, pensadas para conversa particular e sem exposição pública.",
     audience: "Casais",
-    pages: "2 páginas",
+    format: "A4",
     instructions: [
       "Cada casal escolhe de duas a quatro perguntas.",
       "As respostas permanecem entre o casal, salvo se ambos desejarem compartilhar.",
@@ -234,14 +234,14 @@ export const printableResources: PrintableResource[] = [
         ],
       },
       {
-        title: "Decisões e finanças",
+        title: "Planos e atividades",
         items: [
-          "Que prioridade familiar queremos proteger neste mês?",
-          "Qual decisão precisa de mais informação antes de ser tomada?",
-          "O que significa contentamento para nós hoje?",
-          "Como podemos planejar sem alimentar ansiedade?",
-          "Que compromisso financeiro precisa estar claro para os dois?",
-          "Como queremos praticar generosidade?",
+          "Que passeio simples gostaríamos de fazer juntos?",
+          "Qual jogo combina com uma tarde em família?",
+          "Que receita gostaríamos de preparar juntos?",
+          "Que livro ou história queremos conhecer?",
+          "Quem gostaríamos de convidar para uma atividade leve?",
+          "Qual atividade nova seria divertida para os dois?",
         ],
       },
       {
@@ -264,7 +264,7 @@ export const printableResources: PrintableResource[] = [
     summary:
       "Sete encontros de dez minutos sobre gratidão, coragem, cuidado, perdão, escolhas, serviço e esperança.",
     audience: "Famílias",
-    pages: "1 página",
+    format: "A4",
     instructions: [
       "Escolha um horário curto e possível para a casa.",
       "Leia apenas a passagem indicada e uma pergunta.",
@@ -276,7 +276,7 @@ export const printableResources: PrintableResource[] = [
         items: [
           "[ ] Dia 1 — Gratidão | Lucas 17:11-19 | O que podemos agradecer hoje?",
           "[ ] Dia 2 — Coragem | Daniel 1:8-17 | Que escolha certa pode exigir coragem?",
-          "[ ] Dia 3 — Cuidado | Marcos 2:1-12 | Como os amigos ajudaram e quem podemos ajudar?",
+          "[ ] Dia 3 — Cuidado | Marcos 2:1-12 | Como os que carregavam o homem ajudaram e quem podemos ajudar?",
         ],
       },
       {

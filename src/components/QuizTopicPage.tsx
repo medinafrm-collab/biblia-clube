@@ -197,7 +197,7 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
                     Veja como o conteúdo é apresentado.
                   </h2>
                   <p className="mt-5 leading-7 text-[var(--muted)]">
-                    Estes exemplos permanecem visíveis para que o tema, a resposta e a fonte possam ser avaliados antes de iniciar o jogo.
+                    Explore três perguntas com resposta comentada e referência para leitura. Compare o que cada explicação destaca com o contexto da passagem.
                   </p>
                 </div>
                 <div className="grid gap-0 border-y border-[var(--border)]">

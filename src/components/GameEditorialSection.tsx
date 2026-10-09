@@ -1,9 +1,16 @@
+export type GameEditorialExample = {
+  title: string;
+  explanation: string;
+  reference: string;
+};
+
 type GameEditorialSectionProps = {
   title: string;
   paragraphs: string[];
   benefits: string[];
   groupTips: string[];
   sourceNote: string;
+  examples?: GameEditorialExample[];
 };
 
 export function GameEditorialSection({
@@ -12,6 +19,7 @@ export function GameEditorialSection({
   benefits,
   groupTips,
   sourceNote,
+  examples = [],
 }: GameEditorialSectionProps) {
   return (
     <section className="border-t border-[var(--border)] bg-white py-16 sm:py-20">
@@ -61,6 +69,22 @@ export function GameEditorialSection({
             </ol>
           </div>
         </div>
+
+        {examples.length > 0 && (
+          <section className="mt-10 max-w-4xl">
+            <h3 className="font-serif text-3xl text-[var(--navy)]">Exemplos comentados</h3>
+            <p className="mt-3 leading-7 text-[var(--muted)]">Estes exemplos mostram como conferir uma associação ou resposta. Não garantem a ordem de uma rodada sorteada.</p>
+            <div className="mt-6 divide-y divide-[var(--border)]">
+              {examples.map((example) => (
+                <article key={example.title} className="py-5 first:pt-0">
+                  <h4 className="font-serif text-2xl text-[var(--navy)]">{example.title}</h4>
+                  <p className="mt-3 leading-7 text-[var(--muted)]">{example.explanation}</p>
+                  <p className="mt-3 text-sm font-bold text-[var(--olive-dark)]">Para conferir: {example.reference}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         <p className="mt-8 max-w-4xl text-sm leading-7 text-[var(--muted)]">
           <strong className="text-[var(--navy)]">Critério editorial: </strong>

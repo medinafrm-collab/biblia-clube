@@ -92,6 +92,7 @@ export default function QuemSouEuPage() {
         <WhoAmIGame />
 
         <GameEditorialSection
+          examples={[{"title":"Uma pista que distingue duas colaboradoras","explanation":"Em Atos 9:36-39, Tabita também é chamada Dorcas, vive em Jope e é lembrada por boas obras e roupas feitas para as viúvas. Em Atos 16:14-15, Lídia aparece em Filipos como vendedora de púrpura. Trabalho com roupas, sozinho, não identifica uma pessoa: lugar, outro nome e ação tornam a pista mais precisa.","reference":"Atos 9:36-39; Atos 16:14-15"},{"title":"Priscila e Áquila: observe o que a pista pede","explanation":"Romanos 16:3-5 saúda Priscila e Áquila como cooperadores e menciona a igreja em sua casa. Uma pista apenas sobre essa casa serviria aos dois; uma pista que diz cooperadora e menciona meu marido distingue Priscila. Uma resposta precisa depender do conjunto de pistas, não de uma ligação compartilhada.","reference":"Romanos 16:3-5"}]}
           title="Um jogo de reconhecimento, contexto e leitura."
           paragraphs={[
             "As pistas foram construídas para destacar ações, relações e circunstâncias registradas nas passagens indicadas. Personagens conhecidos aparecem por fatos diferentes dos desafios já existentes no Bíblia Clube, enquanto a jornada intermediária amplia o repertório com nomes menos frequentes.",

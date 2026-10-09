@@ -76,7 +76,7 @@ export const matchingThemes: MatchingTheme[] = [
       { id: "profeta-ezequiel", left: "Ezequiel", right: "A responsabilidade do atalaia", explanation: "Ezequiel recebeu a imagem do atalaia para explicar sua responsabilidade de transmitir o aviso recebido.", reference: "Ezequiel 33:1-9" },
       { id: "profeta-oseias", left: "Oséias", right: "Amor fiel diante da infidelidade", explanation: "A vida e a mensagem de Oséias comunicam o chamado de Deus para que o povo retorne.", reference: "Oséias 1-3; 14:1-4" },
       { id: "profeta-miqueias", left: "Miqueias", right: "Um governante vindo de Belém", explanation: "Miqueias apontou para Belém ao anunciar a origem de um governante para Israel.", reference: "Miqueias 5:2" },
-      { id: "profeta-malaquias", left: "Malaquias", right: "Um mensageiro prepararia o caminho", explanation: "Malaquias encerra sua mensagem com a expectativa de preparação antes da vinda do Senhor.", reference: "Malaquias 3:1" },
+      { id: "profeta-malaquias", left: "Malaquias", right: "Um mensageiro prepararia o caminho", explanation: "Em Malaquias 3:1, o Senhor anuncia o envio de um mensageiro para preparar o caminho diante dele.", reference: "Malaquias 3:1" },
     ],
   },
   {

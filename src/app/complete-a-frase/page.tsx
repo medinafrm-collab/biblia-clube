@@ -26,9 +26,10 @@ export default function CompleteAFrasePage() {
       <main>
         <CompletePhraseGame />
         <GameEditorialSection
+          examples={[{"title":"Lâmpada e caminho","explanation":"No jogo, A tua palavra é lâmpada para os meus pés continua com e luz para o meu caminho, em Salmos 119:105. As duas imagens relacionam palavra e orientação; não são uma previsão detalhada do futuro de quem lê. Compare o trecho com os versículos próximos e observe a versão indicada.","reference":"Salmos 119:105-112"},{"title":"Força em diferentes circunstâncias","explanation":"A frase Posso todas as coisas, de Filipenses 4:13, vem depois de Paulo falar sobre fartura, fome e necessidade. Ler os versículos 11-13 impede tratar a frase isolada como garantia de ganhar qualquer competição ou conseguir todo desejo.","reference":"Filipenses 4:11-13"}]}
           title="Reconheça a passagem sem separar frase e contexto."
           paragraphs={[
-            "Complete a Frase apresenta o início de uma passagem e quatro possibilidades de continuação. Depois da resposta, o texto completo e a referência ficam disponíveis para conferência. Assim, a atividade não termina no acerto: ela também ajuda a localizar a frase e perceber seu sentido dentro da passagem.",
+            "Complete a Frase apresenta o início de uma passagem e quatro possibilidades de continuação. Depois da resposta, o trecho selecionado e a referência ficam disponíveis para conferência; algumas frases são recortes, não o versículo inteiro. Assim, a atividade não termina no acerto: ela também ajuda a localizar a frase e perceber seu sentido dentro da passagem.",
             "Em grupos, o jogo pode ser usado como revisão de textos estudados ou como início de uma conversa. O condutor pode selecionar uma frase da rodada, ler os versículos próximos e perguntar o que muda quando o trecho é observado em seu contexto.",
           ]}
           benefits={[

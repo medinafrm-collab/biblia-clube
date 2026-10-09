@@ -78,6 +78,7 @@ export function Hero() {
             width={1448}
             height={1086}
             priority
+            fetchPriority="high"
             sizes="(min-width: 1024px) 58vw, 100vw"
             className="h-auto w-full"
           />

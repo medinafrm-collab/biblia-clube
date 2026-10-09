@@ -123,7 +123,7 @@ export function CompletePhraseGame() {
             </h1>
             <p className="section-copy mx-auto">
               Escolha a continuação correta em uma rodada rápida com dez
-              frases, referências e o texto completo após cada resposta.
+              frases, referências e o trecho para conferir após cada resposta.
             </p>
           </div>
 

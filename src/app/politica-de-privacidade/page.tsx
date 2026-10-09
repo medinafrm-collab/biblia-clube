@@ -24,6 +24,7 @@ export default function PoliticaDePrivacidadePage() {
       <div>
         <h2>Dados tratados atualmente</h2>
         <p className="mt-4">Os jogos funcionam no navegador e não exigem cadastro. Respostas, pontuações e nomes informados no Modo Grupo não são enviados para um banco de dados do Bíblia Clube.</p>
+        <p className="mt-4">O quiz utiliza armazenamento local do navegador para lembrar o progresso e o histórico de jornadas concluídas. Esses registros ficam naquele navegador, não em uma conta do site; apagar os dados do site nas configurações do navegador remove esse histórico. O criador de roteiro não salva planos em uma conta. Ao compartilhar ou copiar um roteiro, você escolhe onde enviar ou guardar o texto.</p>
         <p className="mt-4">Utilizamos Web Analytics e Speed Insights, da Vercel, para entender acessos e desempenho. Essas ferramentas podem registrar dados técnicos e agregados, como página visitada, origem do acesso, país, dispositivo, navegador e métricas de velocidade. O Web Analytics da Vercel não usa cookies nem cria um histórico que identifique o visitante entre diferentes sites ou dias.</p>
         <p className="mt-4">Com a autorização do visitante, também utilizamos o Google Analytics 4 para medir visualizações, início e conclusão de jogos, retomadas e compartilhamentos. Não enviamos respostas escolhidas, nomes de equipes, e-mails ou outros dados informados durante os jogos.</p>
       </div>
@@ -61,7 +62,7 @@ export default function PoliticaDePrivacidadePage() {
       <div>
         <h2>Atualizações desta política</h2>
         <p className="mt-4">Esta página poderá ser revisada quando novos recursos, fornecedores ou formas de tratamento forem adicionados.</p>
-        <p className="mt-4 text-sm">Última atualização: 5 de setembro de 2026.</p>
+        <p className="mt-4 text-sm">Última atualização: 9 de outubro de 2026.</p>
       </div>
     </InstitutionalPage>
   );

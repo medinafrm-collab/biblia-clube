@@ -26,6 +26,7 @@ export default function LigueOsParesPage() {
       <main>
         <MatchingGame />
         <GameEditorialSection
+          examples={[{"title":"Belém e Jordão não pertencem à mesma cena","explanation":"Lucas 2:4-7 situa o nascimento de Jesus em Belém. Marcos 1:9-11 narra seu batismo no Jordão, por João. A pessoa é a mesma, mas os acontecimentos e os lugares são distintos: nascimento liga-se a Belém; batismo, ao Jordão.","reference":"Lucas 2:4-7; Marcos 1:9-11"},{"title":"Casa sobre a rocha: ouvir e praticar","explanation":"Mateus 7 compara quem ouve e pratica as palavras de Jesus a alguém que constrói sobre a rocha. Ouvir também aparece no contraste com a casa sobre a areia; por isso, apenas ouvir não é a diferença entre os dois exemplos.","reference":"Mateus 7:24-27"}]}
           title="Conexões que ajudam a organizar o conhecimento."
           paragraphs={[
             "Ligue os Pares trabalha com relações entre personagens, livros, lugares, acontecimentos e imagens presentes nas narrativas bíblicas. Em vez de depender apenas da memorização de uma resposta isolada, a atividade convida a observar como duas informações se conectam e por que formam um par.",

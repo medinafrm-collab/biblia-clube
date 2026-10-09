@@ -26,6 +26,7 @@ export default function BibleMemoryGamePage() {
       <main>
         <MemoryGame />
         <GameEditorialSection
+          examples={[{"title":"Davi e a harpa: uma ligação específica","explanation":"Em 1 Samuel 16:23, Davi toca a harpa quando Saul é atormentado. Esse episódio explica o símbolo usado no par; a harpa não resume toda a biografia de Davi. Depois de localizar as cartas, confira quem toca e para quem.","reference":"1 Samuel 16:14-23"},{"title":"Noé e a arca: orientação e execução","explanation":"Gênesis 6 descreve instruções sobre a arca e termina afirmando que Noé fez o que Deus ordenou. A associação vem desse relato, não da ideia de que qualquer barco representa Noé.","reference":"Gênesis 6:13-22"}]}
           title="Memória visual com significado e contexto."
           paragraphs={[
             "O Jogo da Memória propõe dois modos de associação. No primeiro, personagens são relacionados a símbolos que ajudam a recordar suas histórias. No segundo, trechos são conectados às respectivas referências. As cartas foram pensadas para que o par encontrado também revele uma informação útil.",

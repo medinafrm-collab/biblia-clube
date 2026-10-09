@@ -76,7 +76,7 @@ export default function SobrePage() {
           Artigos editoriais informam a data da revisão mais recente. Sugestões de atividades são verificadas quanto à clareza, ao contexto bíblico e ao risco de exposição desnecessária de participantes. Correções relevantes são incorporadas ao conteúdo assim que confirmadas.
         </p>
         <p className="mt-4">
-          A última revisão geral desta página foi feita em 6 de setembro de 2026.
+          A última revisão geral desta página foi feita em 9 de outubro de 2026.
         </p>
       </div>
       <div>

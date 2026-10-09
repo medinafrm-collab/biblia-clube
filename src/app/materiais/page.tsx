@@ -63,7 +63,7 @@ export default function MateriaisPage() {
               {printableResources.map((resource, index) => (
                 <Link key={resource.slug} href={`/materiais/${resource.slug}`} className="group flex min-h-80 flex-col border-t border-[var(--border)] py-7 text-inherit no-underline hover:border-[var(--gold)]">
                   <div className="flex items-center justify-between text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--olive-dark)]">
-                    <span>{String(index + 1).padStart(2, "0")}</span><span>{resource.pages}</span>
+                    <span>{String(index + 1).padStart(2, "0")}</span><span>{resource.format}</span>
                   </div>
                   <h2 className="mt-6 font-serif text-3xl leading-tight text-[var(--navy)]">{resource.title}</h2>
                   <p className="mt-4 flex-1 leading-7 text-[var(--muted)]">{resource.summary}</p>

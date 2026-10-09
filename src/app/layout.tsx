@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
 import { SiteIntegrations } from "@/components/SiteIntegrations";
+import { cellDynamics } from "@/data/cellDynamics";
+import { editorialArticles } from "@/data/editorialContent";
+import { libraryItems } from "@/data/libraryItems";
 import "./globals.css";
 
+const adEligiblePaths = [
+  "/",
+  ...editorialArticles.map((article) => `/biblioteca/${article.slug}`),
+  ...cellDynamics.map((dynamic) => `/dinamicas-para-celulas/${dynamic.id}`),
+  ...libraryItems.filter((item) => item.type === "Guia").map((item) => item.href),
+];
+
 export const metadata: Metadata = {
+  other: { "google-adsense-account": "ca-pub-8150008386108071" },
   metadataBase: new URL("https://www.bibliaclube.com.br"),
   title: {
     default: "Bíblia Clube — Jogos e Quiz Online",
@@ -46,7 +57,7 @@ export default function RootLayout({
     <html lang="pt-BR" data-scroll-behavior="smooth">
       <body>
         {children}
-        <SiteIntegrations />
+        <SiteIntegrations adEligiblePaths={adEligiblePaths} />
       </body>
     </html>
   );
