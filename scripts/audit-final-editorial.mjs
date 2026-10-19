@@ -9,7 +9,7 @@ const { quizTopics } = loadTs('src/data/quizTopics.ts');
 const { getQuizTopicContext } = loadTs('src/data/quizTopicContext.ts');
 const { cellDynamics } = loadTs('src/data/cellDynamics.ts');
 const { buildMeetingPlan } = loadTs('src/lib/meetingPlan.ts');
-const origin = 'http://127.0.0.1:3100';
+const origin = process.env.LOCAL_ORIGIN || 'http://127.0.0.1:3100';
 const results = [];
 const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH, headless: true });
 try {

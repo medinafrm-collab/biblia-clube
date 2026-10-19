@@ -13,6 +13,7 @@ const adEligiblePaths = [
 ];
 
 export const metadata: Metadata = {
+  verification: { google: "jqSoT54Y_R4s63ZPRGN3k4CDvwvB31Qtn2P4mCu-FD4" },
   other: { "google-adsense-account": "ca-pub-8150008386108071" },
   metadataBase: new URL("https://www.bibliaclube.com.br"),
   title: {

@@ -25,7 +25,7 @@ const guides: LibraryItem[] = [
   },
   {
     title: "Dinâmicas bíblicas para jovens",
-    description: "Conduza encontros participativos sem constranger o grupo.",
+    description: "Três desafios cooperativos em Lucas 19: encontrar informações, ordenar cenas e conferir afirmações.",
     href: "/guias/dinamicas-biblicas-para-jovens",
     type: "Guia",
     audience: "Jovens",
@@ -43,7 +43,7 @@ const guides: LibraryItem[] = [
   },
   {
     title: "Quiz bíblico para casais",
-    description: "Use perguntas para abrir conversas com cuidado e escuta.",
+    description: "Seis perguntas sobre narrativas bíblicas para jogar e conferir referências em dupla.",
     href: "/guias/quiz-biblico-para-casais",
     type: "Guia",
     audience: "Casais",

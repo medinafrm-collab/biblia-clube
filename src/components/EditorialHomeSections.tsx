@@ -7,7 +7,7 @@ export function HomeEditorialHighlights() {
   const featured = editorialArticles.find((article) => article.slug === "roteiro-completo-de-celula-em-60-minutos")!;
   const secondary = editorialArticles.filter((article) => [
     "culto-domestico-com-criancas",
-    "como-preparar-um-encontro-para-jovens",
+    "como-montar-uma-noite-de-jogos-biblicos",
     "jogos-biblicos-sem-impressao",
   ].includes(article.slug));
   const highlights = [featured, ...secondary];
@@ -24,7 +24,7 @@ export function HomeEditorialHighlights() {
               <span className="eyebrow">Biblioteca em destaque</span>
               <h2 className="mt-3 max-w-xl font-serif text-[clamp(2rem,3.2vw,2.8rem)] leading-[1.1] text-[var(--navy)]">Ideias e roteiros para aplicar hoje.</h2>
             </div>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] lg:justify-self-end">Artigos, planos completos e orientações práticas para diferentes momentos da vida em comunidade.</p>
+            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] lg:justify-self-end">Escolha um encontro completo ou compare formatos. Os roteiros incluem perguntas, apoio para conferir na Bíblia e alternativas de participação; as durações são sugestões.</p>
           </div>
         </ScrollReveal>
 

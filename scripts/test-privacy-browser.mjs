@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const local = 'http://127.0.0.1:3100';
+const local = process.env.LOCAL_ORIGIN || 'http://127.0.0.1:3100';
 const origin = 'https://www.bibliaclube.com.br';
 const policy = '/politica-de-privacidade';
 const output = '.test-artifacts/audit';

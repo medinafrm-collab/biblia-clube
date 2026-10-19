@@ -145,5 +145,7 @@ export function trackGoogleAnalyticsEvent(
     return;
   }
 
+  // Game effects can run before the tag loader; queue allowed events immediately.
+  if (!window.bibliaClubeGaInitialized && !initializeGoogleAnalytics()) return;
   window.gtag?.("event", name, parameters);
 }

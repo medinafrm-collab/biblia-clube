@@ -3,27 +3,27 @@ import Image from "next/image";
 const benefits = [
   {
     number: "01",
-    title: "Gratuito e sem cadastro",
+    title: "Pergunta, resposta e referência",
     description:
-      "Abra o jogo no navegador e comece uma rodada sem instalar aplicativos ou criar uma conta.",
+      "No quiz, confirme a escolha, leia a explicação e consulte a passagem. Não precisa decorar antes de jogar.",
   },
   {
     number: "02",
-    title: "Respostas que ensinam",
+    title: "Pistas para descobrir personagens",
     description:
-      "Os quizzes apresentam correção, explicação e referência para continuar a leitura com contexto.",
+      "Em Quem sou eu?, revele uma pista por vez ou arrisque uma resposta. Mais pistas reduzem a pontuação, mas ajudam a conferir.",
   },
   {
     number: "03",
-    title: "Feito para compartilhar",
+    title: "Rodada com equipes",
     description:
-      "Use os jogos em família, células, encontros de jovens ou equipes reunidas no mesmo ambiente.",
+      "No Modo Grupo, configure equipes, perguntas, tempo e rebote antes de começar. Quem conduz pode ler para todos.",
   },
   {
     number: "04",
-    title: "Guias para quem conduz",
+    title: "Roteiros com apoio pronto",
     description:
-      "Encontre orientações práticas para transformar perguntas e dinâmicas em boas conversas.",
+      "Na Biblioteca, encontre cenas, cronogramas e gabaritos que podem ser usados sem depender de uma rodada aleatória.",
   },
 ];
 
@@ -46,12 +46,12 @@ export function BenefitsSection() {
           </figure>
 
           <div className="flex flex-col justify-center border-b border-[var(--border)] p-6 lg:border-b-0 lg:border-r lg:p-7">
-            <span className="eyebrow">Por que usar</span>
+            <span className="eyebrow">O que você encontra</span>
             <h2 className="mt-4 font-serif text-[clamp(1.8rem,2.6vw,2.4rem)] leading-[1.08] text-[var(--navy)]">
-              Conteúdo que ensina, conecta e transforma.
+              Diferentes maneiras de jogar e conferir.
             </h2>
             <p className="mt-4 text-sm leading-6 text-[var(--muted)]">
-              Recursos para aprender, conduzir conversas e compartilhar a Palavra em diferentes contextos.
+              Jogos gratuitos no navegador e instruções para organizar a leitura, sem cadastro nem instalação.
             </p>
           </div>
           <div className="grid sm:grid-cols-2">

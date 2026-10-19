@@ -86,7 +86,7 @@ function readingInstruction(dynamic: MeetingDynamic, minutes: number) {
 
 function conversationInstruction(dynamic: MeetingDynamic, minutes: number) {
   const count = minutes <= 7 ? 1 : minutes <= 12 ? 2 : 3;
-  return `Converse sobre ${count === 1 ? "esta pergunta" : `estas ${count} perguntas`}: ${dynamic.questions.slice(0, count).join(" / ")} Termine escolhendo uma aplicação pequena, voluntária e possível para a próxima semana.`;
+  return `Converse sobre ${count === 1 ? "esta pergunta" : `estas ${count} perguntas`}: ${dynamic.questions.slice(0, count).join(" / ")} Termine conferindo uma observação no texto ou uma solução fictícia. Não há tarefa para a semana nem cobrança de compromisso pessoal.`;
 }
 
 export function buildMeetingPlan(

@@ -5,18 +5,19 @@ import { GuideHeroPanel } from "@/components/GuideHeroPanel";
 import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
+import { youthReadingWorkshop as workshop } from "@/data/recreationalGuides";
 
 const title = "Dinâmicas bíblicas para jovens";
 const description =
-  "Ideias e orientações para conduzir dinâmicas bíblicas com jovens, criando participação, conversa e aplicação prática da Palavra.";
+  "Uma oficina cooperativa em Lucas 19:1-6 para jovens: localizar informações, ordenar seis cenas e conferir afirmações, com gabaritos e consulta livre.";
 
 const themes = [
-  "Identidade em Cristo.",
-  "Amizades e influência.",
-  "Pressões do mundo e escolhas diárias.",
-  "Vida devocional e constância.",
-  "Perdão, reconciliação e cuidado com palavras.",
-  "Serviço, dons e participação na igreja.",
+  "Personagens identificados pelo próprio texto.",
+  "Lugares mencionados na narrativa.",
+  "Ações em ordem de apresentação.",
+  "Objetos e palavras que pedem explicação.",
+  "Diferenças entre uma informação e um detalhe não informado.",
+  "Uma descoberta para conferir em dupla.",
 ];
 
 const cautions = [
@@ -27,27 +28,18 @@ const cautions = [
   "Prefira textos bíblicos curtos e bem contextualizados.",
 ];
 
-const fictionalSituations = [
-  "No grupo da turma, várias pessoas começam a ridicularizar um colega que não está presente.",
-  "Um amigo oferece a resposta de uma atividade e diz que todo mundo copia porque a tarefa não vale muitos pontos.",
-  "Uma tendência online propõe uma gravação arriscada e promete muitos seguidores para quem participar.",
-  "Alguém pede que você guarde segredo sobre uma situação em que uma pessoa pode estar em perigo.",
-  "Uma notícia alarmante chega sem fonte, e o grupo pressiona todos a compartilhar imediatamente.",
-  "Os amigos mudam um plano para incluir alguém que não teria dinheiro para participar da ideia original.",
-];
-
 const adaptations = [
   {
     title: "Grupo tímido",
-    text: "Entregue a situação por escrito e dê dois minutos para cada trio anotar respostas antes de falar. O porta-voz lê a síntese do grupo; ninguém precisa dizer o que faria pessoalmente.",
+    text: "Leia uma pergunta por vez e aceite apontar o versículo ou escrever uma letra. O condutor pode apresentar o gabarito se ninguém quiser falar; observar também é uma opção.",
   },
   {
     title: "Grupo agitado",
-    text: "Mostre uma situação por vez, use cronômetro visível de três minutos e atribua papéis: leitor, anotador e porta-voz. Pontue clareza e cuidado, não velocidade ou barulho.",
+    text: "Mostre um desafio por vez. Ofereça funções voluntárias de leitor, anotador e conferente; não faça corrida nem pontue velocidade. Mantenha a passagem aberta.",
   },
   {
     title: "Mais de 24 jovens",
-    text: "Repita as situações entre equipes de quatro a seis pessoas. Recolha somente uma resposta por pergunta e compare duas soluções diferentes no plenário.",
+    text: "Repita os mesmos desafios entre equipes de quatro a seis pessoas. Confira coletivamente a ordem das letras e ouça até duas justificativas por desafio, em vez de uma apresentação de cada equipe.",
   },
 ];
 
@@ -70,6 +62,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: title,
+  dateModified: "2026-10-10",
   description,
   inLanguage: "pt-BR",
   author: {
@@ -115,15 +108,15 @@ export default function DinamicasBiblicasParaJovensPage() {
 
               <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
                 <div>
-                  <span className="eyebrow">Guia para ministério jovem</span>
+                  <span className="eyebrow">Leitura e jogos para jovens</span>
                   <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,6vw,4.7rem)] text-[var(--navy)]">
                     Dinâmicas bíblicas para jovens.
                   </h1>
                 </div>
                 <GuideHeroPanel
-                  description="Dinâmicas bem conduzidas ajudam os jovens a participar, conversar e perceber que a Bíblia fala com situações reais da vida. O segredo está em unir leveza, cuidado e propósito."
-                  chips={["Jovens", "Participação", "Aplicação"]}
-                  steps={["Escolher tema", "Criar segurança", "Fechar em oração"]}
+                  description="Três desafios cooperativos para descobrir detalhes de uma narrativa: encontrar informações, ordenar cenas e conferir o que a passagem realmente diz."
+                  chips={["Jovens", "Cooperação", "Consulta livre"]}
+                  steps={["Ler", "Resolver juntos", "Conferir"]}
                 />
               </div>
             </div>
@@ -136,9 +129,9 @@ export default function DinamicasBiblicasParaJovensPage() {
                   Neste guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Oficina completa para 35 minutos.</li>
-                  <li>- Seis situações fictícias prontas.</li>
-                  <li>- Temas que costumam gerar boas conversas.</li>
+                  <li>- Sugestão de oficina de 35 minutos.</li>
+                  <li>- Três desafios em Lucas 19:1-6.</li>
+                  <li>- Seis cenas e gabaritos comentados.</li>
                   <li>- Adaptações para grupos tímidos ou agitados.</li>
                 </ul>
                 <Link href="/dinamicas-para-celulas" className="button-primary mt-6">
@@ -151,25 +144,25 @@ export default function DinamicasBiblicasParaJovensPage() {
                 <div className="prose-content">
                   <h2>O que torna uma dinâmica útil para jovens?</h2>
                   <p>
-                    Uma dinâmica não deve ser apenas uma brincadeira para ocupar
-                    tempo. Ela funciona melhor quando ajuda o grupo a se
-                    envolver com um tema, ouvir outras pessoas e chegar ao texto
-                    com mais atenção.
+                    Nesta oficina, o grupo acompanha a passagem de Jesus por
+                    Jericó e o encontro com Zaqueu. O objetivo é localizar
+                    informações e reconstruir a ordem da narrativa, com a Bíblia
+                    aberta. Não há eliminação nem avaliação individual.
                   </p>
                   <p>
-                    Jovens costumam responder bem a propostas simples,
-                    participativas e conectadas com situações reais. Quando o
-                    líder prepara a atividade com clareza, o encontro ganha
-                    ritmo sem perder profundidade.
+                    A proposta serve a 6 a 24 participantes em duplas ou trios.
+                    Um único exemplar e leitura em voz alta são suficientes;
+                    papel ou aparelhos individuais são opcionais. Quem quiser
+                    pode responder, acompanhar a consulta ou passar a vez.
                   </p>
 
-                  <h2>Antes de escolher a atividade, escolha o propósito</h2>
+                  <h2>Conferir uma descoberta, não contar uma experiência</h2>
                   <p>
-                    A mesma dinâmica pode ter resultados diferentes dependendo
-                    do objetivo. Se o grupo está recebendo visitantes, talvez o
-                    melhor seja algo leve e inclusivo. Se o grupo já caminha
-                    junto há mais tempo, a atividade pode abrir uma conversa
-                    mais profunda sobre escolhas, fé e testemunho.
+                    Cada desafio tem um resultado concreto: uma resposta com
+                    versículo de apoio, uma sequência de letras ou uma afirmação
+                    conferida. Ninguém precisa falar da própria vida. Os
+                    gabaritos abaixo ficam visíveis para preparar a atividade;
+                    leia primeiro apenas a pergunta ou as frases misturadas.
                   </p>
                 </div>
 
@@ -196,67 +189,70 @@ export default function DinamicasBiblicasParaJovensPage() {
                     },
                     {
                       label: "✓",
-                      title: "Aplicação possível",
-                      text: "O encontro termina com uma atitude prática para a semana.",
+                      title: "Gabarito conferido",
+                      text: "A resposta vem acompanhada do versículo que permite verificá-la.",
                     },
                   ]}
                 />
 
                 <section className="mt-12" aria-labelledby="dinamica-pronta">
-                  <span className="eyebrow">Dinâmica pronta · 35 minutos</span>
-                  <h2 id="dinamica-pronta" className="section-title mt-4">Pausa, escolha e apoio.</h2>
-                  <p className="section-copy max-w-3xl">Uma oficina para analisar pressão e discernimento por meio de situações fictícias. O objetivo é praticar um caminho de decisão, não descobrir histórias particulares dos participantes.</p>
+                  <span className="eyebrow">Oficina cooperativa · tempo sugerido de 35 minutos</span>
+                  <h2 id="dinamica-pronta" className="section-title mt-4">Encontre, ordene e confira.</h2>
+                  <p className="section-copy max-w-3xl">Os desafios usam somente Lucas 19:1-6. A sequência inclui a apresentação de Zaqueu pelo narrador; não é uma lista de ações que todos os personagens executam.</p>
 
                   <div className="mt-8 grid gap-6 border-y border-[var(--border)] py-7 sm:grid-cols-2">
                     <div>
                       <h3 className="font-serif text-2xl text-[var(--navy)]">Materiais e preparação</h3>
                       <ul className="mt-4 grid gap-2 leading-7 text-[var(--muted)]">
                         <li>- Bíblia ou aplicativo bíblico.</li>
-                        <li>- As seis situações impressas ou copiadas em cartões.</li>
-                        <li>- Uma folha e uma caneta por equipe.</li>
-                        <li>- Cronômetro visível para o condutor.</li>
+                        <li>- As seis frases desta página, lidas ou copiadas.</li>
+                        <li>- Uma folha e uma caneta por equipe, opcionais.</li>
+                        <li>- Relógio para acompanhar o tempo.</li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="font-serif text-2xl text-[var(--navy)]">Texto e propósito</h3>
-                      <p className="mt-4 leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Leia:</strong> Daniel 1:8-16.</p>
-                      <p className="mt-2 leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Observe:</strong> Daniel decide, procura a pessoa responsável, apresenta um pedido respeitoso e propõe uma alternativa que pode ser avaliada.</p>
-                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">O episódio tem contexto próprio e não oferece uma fórmula para toda escolha. A oficina usa o processo de discernimento, diálogo e apoio, sem igualar cada situação moderna à decisão alimentar de Daniel.</p>
+                      <p className="mt-4 leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Leia:</strong> {workshop.reference}.</p>
+                      <p className="mt-2 leading-7 text-[var(--muted)]"><strong className="text-[var(--navy)]">Observe:</strong> o lugar, as ações de Zaqueu e a fala de Jesus. Compare a resposta com os versículos, sem completar detalhes que o recorte não informa.</p>
+                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">A árvore pode aparecer como sicômoro ou ser descrita de outra forma na tradução. Aceite palavras equivalentes. A atividade acompanha o início do encontro, não resume todo o capítulo nem propõe aconselhamento.</p>
                     </div>
                   </div>
 
                   <section className="mt-9">
-                    <h3 className="font-serif text-2xl text-[var(--navy)]">Cartões de situações</h3>
-                    <p className="mt-2 leading-7 text-[var(--muted)]">Recorte ou leia um cartão por equipe. Todos analisam personagens fictícios, sem citar nomes ou acontecimentos do próprio grupo.</p>
-                    <ol className="mt-5 grid gap-4 sm:grid-cols-2">
-                      {fictionalSituations.map((situation, index) => (
-                        <li key={situation} className="border-t border-[var(--border)] pt-4 leading-7 text-[var(--muted)]">
-                          <span className="mr-2 font-serif text-xl text-[var(--gold-ink)]">{index + 1}.</span>{situation}
-                        </li>
-                      ))}
+                    <h3 className="font-serif text-2xl text-[var(--navy)]">1. Encontre no texto</h3>
+                    <p className="mt-2 leading-7 text-[var(--muted)]">Leia uma pergunta, permita consulta e só então apresente o apoio. Mostrem o versículo, não apenas uma resposta de memória.</p>
+                    <ol className="mt-5 grid gap-4">
+                      {workshop.facts.map((item) => <li key={item.question} className="border-t border-[var(--border)] pt-4 leading-7"><strong className="text-[var(--navy)]">{item.question}</strong><p className="mt-2 text-[var(--muted)]">Gabarito: {item.answer}</p></li>)}
                     </ol>
                   </section>
 
+                  <section className="mt-9">
+                    <h3 className="font-serif text-2xl text-[var(--navy)]">2. Coloque as cenas em ordem</h3>
+                    <p className="mt-2 leading-7 text-[var(--muted)]">As letras estão misturadas. Em equipe, ordenem as seis frases conforme sua apresentação nos versículos 1 a 6. Respondam por letras; não é necessário imprimir ou recortar.</p>
+                    <ol className="mt-5 grid gap-4 sm:grid-cols-2">
+                      {workshop.sequence.map((scene) => (
+                        <li key={scene.id} className="border-t border-[var(--border)] pt-4 leading-7 text-[var(--muted)]">
+                          <span className="mr-2 font-serif text-xl text-[var(--gold-ink)]">{scene.id}.</span>{scene.text}
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-5 leading-7 text-[var(--muted)]"><strong>Gabarito:</strong> {workshop.sequenceAnswer.join(", ")}. Jesus passa por Jericó (1); Zaqueu é apresentado (2), procura vê-lo (3) e sobe (4); Jesus o chama (5); ele desce e o recebe (6). Uma ordem diferente deve ser conferida nesses versículos, sem atribuir o erro a quem respondeu.</p>
+                  </section>
+
                   <section className="mt-9 border-t border-[var(--border)] pt-7">
-                    <h3 className="font-serif text-2xl text-[var(--navy)]">Quatro perguntas para cada equipe</h3>
+                    <h3 className="font-serif text-2xl text-[var(--navy)]">3. O texto afirma ou não informa?</h3>
+                    <p className="mt-3 leading-7 text-[var(--muted)]">Não informar um detalhe é diferente de afirmar que ele é falso. Confiram cada frase antes de classificá-la.</p>
                     <ol className="mt-4 grid gap-3 leading-7 text-[var(--muted)]">
-                      <li><strong className="text-[var(--olive-dark)]">1. Pressão:</strong> o que está tentando apressar, silenciar ou influenciar a decisão?</li>
-                      <li><strong className="text-[var(--olive-dark)]">2. Opções:</strong> quais respostas são possíveis, além de simplesmente aceitar ou atacar?</li>
-                      <li><strong className="text-[var(--olive-dark)]">3. Consequências:</strong> quem pode ser protegido ou prejudicado por cada opção?</li>
-                      <li><strong className="text-[var(--olive-dark)]">4. Apoio:</strong> que pessoa responsável ou fonte confiável pode ajudar?</li>
+                      {workshop.comparisons.map((item) => <li key={item.statement} className="border-t border-[var(--border)] pt-4"><strong className="text-[var(--navy)]">{item.statement}</strong><p className="mt-2">Conferência: {item.answer}</p></li>)}
                     </ol>
                   </section>
 
                   <section className="mt-9 border-t border-[var(--border)] pt-7">
                     <h3 className="font-serif text-2xl text-[var(--navy)]">Roteiro minuto a minuto</h3>
                     <ol className="mt-5 grid gap-4 leading-7 text-[var(--muted)] sm:grid-cols-2">
-                      <li><strong className="text-[var(--navy)]">0–4 min · Combinado:</strong> “Hoje analisaremos casos inventados. Ninguém precisa contar uma experiência pessoal.”</li>
-                      <li><strong className="text-[var(--navy)]">4–10 min · Leitura:</strong> leia Daniel 1:8-16 e identifique decisão, conversa, alternativa e acompanhamento.</li>
-                      <li><strong className="text-[var(--navy)]">10–13 min · Instruções:</strong> forme equipes de três a cinco pessoas, distribua os cartões e leia as quatro perguntas.</li>
-                      <li><strong className="text-[var(--navy)]">13–22 min · Análise:</strong> cada equipe discute duas situações e registra uma resposta possível para cada pergunta.</li>
-                      <li><strong className="text-[var(--navy)]">22–31 min · Plenário:</strong> ouça sínteses curtas e compare caminhos respeitosos, seguros e honestos.</li>
-                      <li><strong className="text-[var(--navy)]">31–35 min · Resposta:</strong> cada jovem anota em particular uma pessoa segura a quem pode pedir ajuda; encerre em oração.</li>
+                      {workshop.schedule.map((step) => <li key={step.title}><strong className="text-[var(--navy)]">{step.minutes} min · {step.title}:</strong> {step.text}</li>)}
                     </ol>
+                    <p className="mt-5 text-sm leading-6 text-[var(--muted)]">Os blocos somam 35 minutos sugeridos, não uma duração medida em aplicação real. Para 20 minutos, use 3 de combinado, 5 de leitura, 9 apenas de sequência e 3 de fechamento. Não apresse a consulta para cumprir o cronograma.</p>
                   </section>
                 </section>
 
@@ -274,12 +270,12 @@ export default function DinamicasBiblicasParaJovensPage() {
                 </section>
 
                 <div className="prose-content mt-12">
-                  <h2>Temas que funcionam bem com jovens</h2>
+                  <h2>O que observar em outra passagem</h2>
                   <p>
-                    Bons temas são aqueles que criam conexão entre o texto
-                    da Palavra e as decisões que os jovens enfrentam. Eles não
-                    precisam ser tratados com peso excessivo, mas precisam ser
-                    tratados com verdade e respeito.
+                    Para repetir o formato, escolha outro trecho curto e prepare
+                    seu próprio gabarito antes do encontro. As categorias abaixo
+                    ajudam a formular perguntas; não garantem que qualquer
+                    passagem contenha todos esses elementos.
                   </p>
                 </div>
 
@@ -344,11 +340,12 @@ export default function DinamicasBiblicasParaJovensPage() {
                 <div className="prose-content mt-12">
                   <h2>Conclusão</h2>
                   <p>
-                    Dinâmicas para jovens são mais fortes quando unem
-                    participação e cuidado. Elas ajudam o grupo a se aproximar,
-                    mas também podem abrir espaço para arrependimento, fé,
-                    oração e decisões práticas diante de Deus.
+                    Ao final, o grupo terá localizado três informações, ordenado
+                    seis cenas e conferido quatro afirmações. O resultado é uma
+                    leitura compartilhada e uma rodada de desafios, sem perguntas
+                    íntimas, testes de fé ou compromissos pessoais.
                   </p>
+                  <p>Revisão de conteúdo: 10 de outubro de 2026. Gabaritos conferidos na Almeida 1819 (Bíblia Livre); redações equivalentes de outras traduções podem ser usadas.</p>
                 </div>
               </div>
             </div>

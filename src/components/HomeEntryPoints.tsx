@@ -5,7 +5,7 @@ import { ScrollReveal } from "./ScrollReveal";
 const entryPoints = [
   {
     title: "Jogos bíblicos",
-    description: "Quizzes, desafios e dinâmicas para aprender brincando sozinho ou em grupo.",
+    description: "Responda perguntas, descubra personagens por pistas, associe pares ou encontre cartas iguais. Confira as respostas e referências.",
     action: "Explorar jogos",
     href: "#jogos",
     image: "/images/editorial/jogos-apresentacao-grupo.webp",
@@ -13,7 +13,7 @@ const entryPoints = [
   },
   {
     title: "Biblioteca",
-    description: "Guias, roteiros e conteúdos práticos para aplicar a Bíblia no cotidiano.",
+    description: "Encontre uma noite de jogos de 75 minutos, um encontro de 60 minutos e uma leitura de 15 minutos com crianças, com exemplos e gabaritos.",
     action: "Ver conteúdos",
     href: "/biblioteca",
     image: "/images/editorial/recursos-estudo-biblico-mesa-cinza.webp",
@@ -21,7 +21,7 @@ const entryPoints = [
   },
   {
     title: "Criar roteiro",
-    description: "Monte uma atividade com público, duração e objetivo definidos por você.",
+    description: "Escolha público, duração e objetivo para combinar leitura, um núcleo de dinâmica e jogo em um plano que pode ser impresso.",
     action: "Montar roteiro",
     href: "/monte-seu-encontro",
     image: "/images/editorial/roteiro-folhas.webp",

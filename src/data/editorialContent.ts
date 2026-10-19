@@ -79,8 +79,8 @@ const editorialArticleDrafts: EditorialArticle[] = [
     category: "Jogos bíblicos",
       readTime: "7 min de leitura",
     ...gamesImage,
-      updatedAt: "7 de outubro de 2026",
-      updatedAtISO: "2026-10-07",
+      updatedAt: "12 de outubro de 2026",
+      updatedAtISO: "2026-10-12",
     introduction: [
         "Este roteiro organiza uma noite de 75 minutos para 6 a 16 participantes, divididos em duas equipes. O objetivo é conhecer histórias e conversar durante os jogos, sem eliminar quem errou ou exigir que visitantes demonstrem conhecimento. Um único aparelho pode servir a todos: quem conduz lê e confirma as escolhas.",
         "Você encontra aqui a preparação, a configuração da rodada digital e exemplos que também funcionam oralmente. A sessão não precisa usar todos os jogos do site nem terminar com um vencedor. As perguntas e combinações deste artigo são demonstrações com gabarito visível; as rodadas digitais têm seu próprio conjunto de itens.",
@@ -90,7 +90,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
           heading: "Prepare a sala e o aparelho",
         paragraphs: [
             "Separe uma Bíblia, um relógio e um celular, tablet ou computador para o condutor. Papel e caneta são opcionais para registrar respostas; projetor, impressão, prêmios e aparelhos individuais não são necessários. Antes da chegada, abra Modo Grupo e Complete a Frase, confira se o texto pode ser lido confortavelmente e teste a conexão.",
-            "Deixe as perguntas orais abaixo disponíveis em uma anotação local ou tenha este roteiro aberto antes do encontro. Isso é um plano alternativo, não uma promessa de que o site funciona offline. Leia antecipadamente as referências e combine com uma pessoa voluntária quem vai acompanhar o tempo.",
+            "Antes do encontro, guarde em uma anotação local os três pares, as quatro perguntas e as três frases abaixo, incluindo alternativas, respostas e referências. Confira se a anotação abre com a conexão desligada e deixe uma Bíblia impressa disponível para consulta. Manter apenas a página aberta não garante acesso depois de recarregar. O site não promete funcionamento offline. Combine com uma pessoa voluntária quem vai acompanhar o tempo.",
         ],
         bullets: [
             "Organize assentos com passagem livre e ofereça leitura em voz alta. Não mova móveis pesados nem exija que participantes fiquem em pé para responder.",
@@ -104,10 +104,19 @@ const editorialArticleDrafts: EditorialArticle[] = [
             { time: "0–10 min", title: "Chegada e combinados", text: "Apresente a proposta, forme duas equipes e explique a consulta e a opção de observar. Escolham nomes simples, sem classificar uma equipe como mais experiente." },
             { time: "10–25 min", title: "Três pares para aquecer", text: "Use os pares prontos abaixo: 3 minutos para explicar, 6 para conversar e 6 para conferir as referências. Essa etapa não precisa valer pontos." },
             { time: "25–45 min", title: "Modo Grupo ou rodada oral", text: "No site, escolha duas equipes, tema geral, cinco perguntas, Sem tempo e rebote desativado. Reserve tempo para as explicações. Sem conexão, use as quatro perguntas orais deste artigo." },
-            { time: "45–60 min", title: "Complete a Frase", text: "Faça até três frases no jogo, lendo as alternativas para todos. Sem conexão, use o exemplo do artigo e releia o versículo. O restante do bloco pode ser uma pausa e conversa; não acrescente perguntas só para ocupar tempo." },
+            { time: "45–60 min", title: "Complete a Frase", text: "Faça até três frases no jogo ou use as três frases orais abaixo. Reserve 2 minutos para explicar, até 9 para conversar e conferir as frases e 4 para pausa ou releitura. Se a consulta demorar, faça uma ou duas frases, preservando a conferência." },
             { time: "60–75 min", title: "Conferência e encerramento", text: "Releia uma referência que gerou dúvida, use as perguntas de fechamento e agradeça a colaboração. Uma oração breve é opcional; não é necessário ouvir cada participante em toda pergunta." },
         ],
-          note: "Os intervalos somam 75 minutos. Se a conversa se alongar, retire a terceira atividade, não a conferência das respostas. O tempo organiza a sessão; terminar antes é uma possibilidade legítima.",
+          note: "Os intervalos somam 75 minutos sugeridos, não medidos em aplicação real. Ao chegar ao minuto 45, conclua a referência da pergunta em andamento e não abra outra. Se houver atraso, omita o bloco de frases e siga ao fechamento; não corte a explicação da resposta. O tempo organiza a sessão; terminar antes é uma possibilidade legítima.",
+      },
+      {
+        heading: "Kit de condução: o que ler em cada etapa",
+        steps: [
+          { title: "Combinado inicial", text: "Leia: 'Podemos consultar a Bíblia, pedir releitura ou apenas acompanhar. Não há eliminação. Na rodada de perguntas, as equipes alternam; nas frases, todos decidem juntos'. Escolham se a rodada oral terá um ponto por acerto ou nenhum placar." },
+          { title: "Pares, depois perguntas", text: "Em Aquecimento pronto, leia as duas listas antes de revelar as ligações. Em Rodada oral, leia só o título e as alternativas de cada item; a resposta e a explicação estão no mesmo item para o condutor. Não projete o gabarito antes da escolha. Alterne as equipes nas quatro perguntas." },
+          { title: "Frases e encerramento", text: "Em Troque o ritmo, leia cada início e suas duas opções; depois confira a resposta e a passagem. Use as perguntas de fechamento para retomar uma descoberta. Os exemplos orais são preparados para este roteiro, não uma sequência garantida dos jogos digitais." },
+        ],
+        note: "Sem impressão: quem conduz lê a anotação local e o grupo consulta a Bíblia. Teste a anotação antes da chegada. Não dependa de abrir links para recuperar os gabaritos durante uma falha de conexão.",
       },
       {
         heading: "Como formar equipes sem constranger",
@@ -132,18 +141,23 @@ const editorialArticleDrafts: EditorialArticle[] = [
             "Leia uma pergunta por vez, sem mostrar o gabarito antes da escolha. Uma equipe responde e a outra pode acompanhar a leitura da referência. Se ninguém quiser responder, revele e confira juntas. As perguntas abaixo são deste roteiro e não representam a sequência garantida do Modo Grupo.",
           ],
           steps: [
-            { title: "1. Quem recebeu instruções para construir uma arca?", text: "Alternativas: A) Noé; B) Moisés; C) Davi. Resposta: A, Noé. Gênesis 6:13-14 identifica a pessoa a quem Deus fala e dá a instrução. O episódio envolve o dilúvio; a pergunta observa um fato da narrativa, não recomenda construir algo." },
-            { title: "2. Quem acompanhou Noemi até Belém?", text: "Alternativas: A) Ester; B) Rute; C) Marta. Resposta: B, Rute. Em Rute 1:16-19, ela afirma que seguirá Noemi e as duas chegam a Belém. Pergunte onde o destino aparece, sem exigir decorar o versículo." },
+            { title: "1. Em que cidade Zaqueu encontrou Jesus?", text: "Alternativas: A) Jericó; B) Belém; C) Caná. Resposta: A, Jericó. Lucas 19:1-6 situa a entrada de Jesus na cidade e apresenta Zaqueu procurando vê-lo. Localizem o nome da cidade no versículo 1, sem exigir memorização." },
+            { title: "2. Qual era a profissão compartilhada por Paulo, Áquila e Priscila?", text: "Alternativas: A) pescadores; B) fabricantes de tendas; C) agricultores. Resposta: B, fabricantes de tendas. Atos 18:2-3 apresenta o casal e explica que Paulo ficou e trabalhou com eles por terem o mesmo ofício. A pergunta trata do trabalho citado, não de todas as atividades dessas pessoas." },
             { title: "3. Em qual rio Jesus foi batizado por João?", text: "Alternativas: A) Nilo; B) Eufrates; C) Jordão. Resposta: C, Jordão. Marcos 1:9 informa o lugar e quem realizou o batismo; os versículos seguintes descrevem o que acontece depois." },
             { title: "4. O que Moisés viu que ardia sem se consumir?", text: "Alternativas: A) uma sarça; B) um barco; C) uma mesa. Resposta: A, uma sarça, um arbusto. Êxodo 3:1-4 situa a cena e registra a atenção de Moisés ao que vê. Explique a palavra antes de cobrar reconhecimento." },
           ],
-          note: "Há duas perguntas que retomam o aquecimento de propósito: elas permitem revisar a leitura feita, não medir conhecimento anterior. Leia o apoio após cada escolha. Nenhuma equipe é eliminada por errar.",
+          note: "As quatro perguntas exploram cenas diferentes do aquecimento. Em 20 minutos, use 2 para explicar, até 4 por pergunta para leitura, consulta e gabarito, e 2 para a transição. Se uma referência exigir mais tempo, retire a última pergunta. Leia o apoio após cada escolha. Nenhuma equipe é eliminada por errar.",
         },
         {
           heading: "Troque o ritmo com Complete a Frase",
           paragraphs: [
             "No jogo, leia o início e as quatro alternativas. As duas equipes conversam juntas, e uma pessoa confirma a escolha na tela. Nesta etapa não é preciso transferir o resultado para o placar das equipes: ela funciona como rodada cooperativa. Após responder, leia a frase completa e confira a referência.",
-            "Exemplo disponível no acervo para continuar oralmente: 'A tua palavra é lâmpada para os meus pés,...'. Ofereça 'e luz para o meu caminho' ou 'e abrigo para a minha alma'. A primeira é a continuação exibida no jogo, em Salmos 119:105. Ao conferir em outra tradução, aceite diferenças de redação que preservem a imagem de lâmpada e luz; não trate uma variante de tradução como falta de conhecimento.",
+            "Para a rodada oral, use os três exemplos abaixo, preparados com duas opções para este roteiro. Eles não reproduzem obrigatoriamente as alternativas nem a ordem do jogo. As expressões podem variar entre traduções: confira o sentido na passagem, sem penalizar uma redação equivalente. As opções incorretas são distratores criados para a atividade, não citações bíblicas.",
+          ],
+          steps: [
+            { title: "1. A tua palavra é lâmpada para os meus pés...", text: "A) e luz para o meu caminho; B) e abrigo para a minha alma. Resposta: A. Salmos 119:105 usa as imagens de lâmpada e luz para descrever a palavra como orientação. Localizem as duas imagens na tradução usada; não é uma promessa de iluminação física." },
+            { title: "2. O Senhor é o meu pastor...", text: "A) nunca precisarei descansar; B) nada me faltará. Resposta: B. Salmos 23:1-3 apresenta a imagem do pastor e fala de pastos, águas e restauração. A expressão de confiança não deve ser usada como garantia de riqueza nem para cobrar que alguém negue dificuldades." },
+            { title: "3. Tudo tem o seu tempo determinado...", text: "A) e há tempo para todo propósito debaixo do céu; B) e todos os dias são iguais. Resposta: A. Eclesiastes 3:1-8 enumera tempos e situações contrastantes. Localizem dois contrastes; a passagem não fornece o cronograma deste encontro nem uma previsão pessoal." },
           ],
           reference: "Salmos 119:105",
           sources: [{ title: "Abrir Complete a Frase", href: "/complete-a-frase" }],
@@ -182,10 +196,10 @@ const editorialArticleDrafts: EditorialArticle[] = [
     category: "Condução de grupos",
     readTime: "9 min de leitura",
     ...discussionImage,
-    updatedAt: "7 de outubro de 2026",
-    updatedAtISO: "2026-10-07",
+    updatedAt: "12 de outubro de 2026",
+    updatedAtISO: "2026-10-12",
     introduction: [
-      "Este encontro tem um tema definido: pequenos gestos que aproximam. O grupo vai experimentar formas de acolher, ler Colossenses 3:12-17 e escolher uma atitude simples de bondade ou gratidão para a semana. A proposta serve para uma célula com adultos ou jovens e leva uma hora, do acolhimento ao encerramento.",
+      "Este encontro tem um tema definido: pequenos gestos que aproximam. O grupo vai ler Colossenses 3:12-17 e criar respostas de bondade e gratidão para situações fictícias de uma reunião. A proposta serve para adultos ou jovens acompanhados pelo responsável do grupo, sem tarefa pessoal para depois. Os 60 minutos são uma duração sugerida, não medida em aplicação real.",
       "Você encontra abaixo a preparação, as situações da dinâmica, as perguntas e o apoio para conduzir a conversa. Organize os participantes em duplas, deixe a passagem aberta e acompanhe os tempos do cronograma. Os exemplos permitem participar mesmo a quem está conhecendo a Bíblia agora.",
     ],
     sections: [
@@ -193,6 +207,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
         heading: "Prepare o encontro em dez minutos",
         paragraphs: [
           "O objetivo é reconhecer atitudes presentes no texto e traduzi-las em ações observáveis: receber alguém, escutar uma resposta, ajudar numa tarefa e agradecer um cuidado. O roteiro principal foi pensado para 6 a 16 participantes. As adaptações para outros tamanhos aparecem no final.",
+          "A preparação de dez minutos acontece antes da chegada e não integra os 60 minutos do encontro. Leia as situações e seus exemplos de apoio; escolha apenas duas para a abertura. Se depender de internet, guarde as instruções em uma anotação local e tenha a passagem numa Bíblia impressa. Uma página aberta não garante acesso após recarregar sem conexão.",
         ],
         bullets: [
           "Separe uma Bíblia ou um celular com Colossenses 3:12-17. Leia a passagem antes do encontro; a turma pode acompanhar na tradução que já utiliza.",
@@ -205,13 +220,14 @@ const editorialArticleDrafts: EditorialArticle[] = [
       {
         heading: "Cronograma: do início ao minuto 60",
         schedule: [
-          { time: "0-8 min", title: "Receber e apresentar", text: "Cumprimente o grupo, explique o tema e convide cada pessoa a dizer seu nome e uma pequena coisa boa do dia. Apresente as duplas e o combinado de passar a vez." },
+          { time: "0-8 min", title: "Receber e apresentar", text: "Use 3 minutos para acolher, 2 para explicar a proposta e a opção de ouvir ou passar e 3 para formar duplas ou um trio. Apresentar-se é opcional; não peça relatos sobre o dia. Demonstre como encontrar a passagem." },
           { time: "8-15 min", title: "Dinâmica: um gesto, uma frase", text: "Leia duas das situações prontas abaixo. Em cada uma, as duplas escolhem um gesto de ajuda e uma frase acolhedora. Ouça duas respostas por situação e faça a ligação com a leitura." },
           { time: "15-27 min", title: "Ler e observar", text: "Leia Colossenses 3:12-17, apresente o contexto em duas frases e releia a passagem. Peça que as duplas localizem uma atitude e uma orientação de gratidão." },
           { time: "27-45 min", title: "Conversar com o texto aberto", text: "Use as quatro perguntas comentadas. Reserve cerca de quatro minutos para cada uma e os dois minutos finais para reunir as descobertas do grupo." },
-          { time: "45-55 min", title: "Escolher um gesto para a semana", text: "Cada pessoa escolhe uma ação possível, registra quando pretende realizá-la e, se desejar, compartilha em dupla. Ouça até três exemplos sem transformar a escolha em cobrança." },
-          { time: "55-60 min", title: "Agradecer e encerrar", text: "Ouça dois motivos breves de gratidão, faça a oração sugerida e use os minutos finais para os avisos e a despedida. Termine no horário combinado." },
+          { time: "45-55 min", title: "Melhorar uma resposta fictícia", text: "Use 2 minutos para reler uma situação, 4 para a dupla propor um gesto e uma frase, 3 para ouvir até três contribuições voluntárias e 1 para resumir. Não é compromisso para a semana nem encenação obrigatória." },
+          { time: "55-60 min", title: "Agradecer e encerrar", text: "Use 1 minuto para retomar uma descoberta, até 2 para a oração opcional ou uma releitura e 2 para avisos e despedida. Não cobre motivos pessoais de gratidão nem oração em voz alta." },
         ],
+        note: "Os blocos somam 8 + 7 + 12 + 18 + 10 + 5 = 60 minutos sugeridos. Se houver atraso, use apenas as perguntas 1 e 4 e reduza as contribuições coletivas; preserve a leitura e os cinco minutos finais. Não tente compensar o atraso exigindo respostas rápidas.",
       },
       {
         heading: "Dinâmica pronta: um gesto, uma frase",
@@ -232,11 +248,23 @@ const editorialArticleDrafts: EditorialArticle[] = [
         ],
       },
       {
+        heading: "Apoio para as cinco situações",
+        steps: [
+          { title: "1. Chegada sem saber onde sentar", text: "Gesto possível: indicar um assento livre, sem mover a pessoa ou tocar nela. Frase: 'Há um lugar aqui; prefere sentar perto da mesa ou ali?'. A escolha continua com quem chegou." },
+          { title: "2. Recomeço na leitura", text: "Gesto possível: dar tempo para recomeçar e oferecer ajuda sem assumir a leitura. Frase: 'Podemos esperar; quer tentar de novo ou prefere que eu leia?'. Não imite o erro nem peça que alguém repita uma palavra diante do grupo." },
+          { title: "3. Ajuda com as cadeiras", text: "Gesto possível: reconhecer a ajuda e perguntar antes de colaborar. Frase: 'Obrigado por preparar os lugares. Posso ajudar com algo leve?'. Não atribua tarefas a quem não se ofereceu nem proponha mover móveis pesados." },
+          { title: "4. Uma resposta interrompida", text: "Gesto possível: devolver a oportunidade de concluir, se a pessoa desejar. Frase: 'Vamos deixar esta ideia terminar; você quer continuar?'. Se ela preferir passar, siga sem insistir nem transformar a interrupção em julgamento de alguém." },
+          { title: "5. Procurar a passagem", text: "Gesto possível: mostrar no índice onde fica Colossenses, se a ajuda for aceita. Frase: 'Quer procurar comigo no índice ou prefere acompanhar a leitura?'. Não pegue a Bíblia da pessoa sem autorização nem faça teste de conhecimento." },
+        ],
+        note: "São exemplos de organização criados para a atividade, não respostas únicas nem acontecimentos narrados na passagem. Aceite outras propostas respeitosas. Use apenas duas situações na abertura; a revisão final retoma uma delas, sem acrescentar cinco rodadas ao cronograma.",
+      },
+      {
         heading: "Leitura: convivência, palavras e gratidão",
         paragraphs: [
           "Colossenses 3 relaciona a vida em Cristo com atitudes e relações. Nos versículos 12 a 17, o foco inclui a convivência entre pessoas da comunidade cristã: bondade, humildade, mansidão, paciência, perdão, amor, paz e gratidão. O convite a ensinar, orientar e cantar aparece junto dessas atitudes.",
           "Depois da primeira leitura, diga: 'Este trecho nos ajuda a observar como a fé aparece nas palavras e nas ações de um grupo. Vamos procurar no texto o que podemos praticar juntos'. Na segunda leitura, peça que cada dupla encontre uma atitude do versículo 12 e uma orientação dos versículos 15 a 17.",
           "Mantenha a Bíblia aberta durante a conversa. A lista começa com a descrição de pessoas amadas por Deus e segue para sua convivência; o versículo 17 reúne palavras, ações e agradecimento. Essa sequência ajuda a conversar sobre o conjunto da passagem, em vez de escolher uma palavra isolada como regra para outra pessoa.",
+          "Leia o trecho integralmente, inclusive a menção ao perdão no versículo 13. Esta atividade se limita à observação do texto e às cenas fictícias: não pede relatos íntimos, reconciliações públicas ou aconselhamento sobre conflitos. Se surgir uma questão pessoal, não a desenvolva diante do grupo; explique o limite do encontro e respeite a privacidade. Não use a passagem para pressionar alguém a aceitar uma situação que lhe faça mal.",
         ],
         reference: "Colossenses 3:12-17",
       },
@@ -258,18 +286,18 @@ const editorialArticleDrafts: EditorialArticle[] = [
         reference: "Colossenses 3:12; 3:14; 3:16; 3:15-17",
       },
       {
-        heading: "Uma ação possível e um encerramento preparado",
+        heading: "Uma resposta melhor e um encerramento preparado",
         paragraphs: [
-          "Distribua dois minutos para cada pessoa completar: 'Nesta semana, em..., quero praticar...'. Um exemplo é: 'Na próxima reunião, quero me apresentar a quem chegar pela primeira vez e mostrar onde está a passagem'. Outro é: 'Depois do encontro, vou agradecer a quem preparou o espaço, dizendo o que percebi'. A pessoa pode apenas pensar na escolha, se preferir.",
-          "Reserve quatro minutos para as duplas conversarem, três para ouvir até três exemplos e um para retomar o tema. Escolher uma ação pequena e um momento definido torna a proposta mais fácil de realizar. Na próxima reunião, convide quem desejar a contar como foi; evite verificar individualmente quem cumpriu a atividade.",
-          "Nos cinco minutos finais, use um minuto para ouvir dois motivos de gratidão, até dois para orar e os dois restantes para avisos e despedida. Uma oração possível: 'Senhor Jesus, obrigado pelas pessoas reunidas aqui. Ajuda-nos a agir com bondade, a escutar com paciência e a reconhecer o cuidado que recebemos. Que nossas palavras e ações expressem amor e gratidão nesta semana. Amém'.",
+          "Nos 2 minutos iniciais, releia uma das situações usadas na abertura. Em 4 minutos, cada dupla melhora sua resposta: ela oferece ajuda concreta, permite recusar e evita decidir pela outra pessoa? Exemplo para a situação 5: substituir 'Me dê sua Bíblia que eu encontro' por 'Quer procurar comigo no índice?'. É possível apontar um dos exemplos, escrever ou apenas ouvir; ninguém precisa encenar.",
+          "Use 3 minutos para até três contribuições voluntárias e 1 para a síntese. A conferência é sobre a instrução fictícia, não sobre o comportamento de quem respondeu. Não há um gabarito único nem lista de compromissos. A atividade termina aqui, sem tarefa para a semana ou verificação na reunião seguinte.",
+          "Nos cinco minutos finais, use 1 para retomar uma descoberta sobre a leitura, até 2 para uma oração opcional ou releitura do versículo 12 e 2 para avisos e despedida. O condutor pode dizer: 'Senhor Jesus, obrigado por este encontro. Ajuda-nos a ouvir com paciência e a oferecer ajuda com respeito. Amém'. Cada pessoa pode acompanhar em silêncio; não distribua falas de oração obrigatórias.",
         ],
       },
       {
         heading: "Adapte o tamanho do grupo e o ritmo",
         steps: [
           { title: "Quatro a oito pessoas", text: "Ouça todas as duplas que desejarem falar, mantendo respostas breves. Quem conduz também pode participar da dinâmica. Preserve os minutos de leitura mesmo se houver menos respostas para compartilhar." },
-          { title: "Dezessete a vinte e quatro pessoas", text: "Forme trios e faça as quatro perguntas dentro deles. Na conversa coletiva, convide um trio diferente por pergunta. Assim, todos têm espaço para conversar sem alongar a reunião. Para um grupo maior, organize círculos menores com um condutor por círculo." },
+          { title: "Dezessete a vinte e quatro pessoas", text: "Forme trios para consultar as perguntas. Na conversa coletiva, convide até um trio voluntário por pergunta, sem prometer que todos falarão. Escutar, apontar o texto e observar são opções. Para um grupo maior, organize círculos menores com um condutor por círculo." },
           { title: "O grupo está tímido", text: "Leia primeiro o exemplo da cadeira e permita que as duplas escolham entre dois gestos: oferecer um lugar ou mostrar a passagem. Depois, pergunte por que escolheram aquele gesto. Deixe a explicação para quem desejar falar." },
           { title: "Uma conversa tomou mais tempo", text: "Use só uma situação na dinâmica e encurte o compartilhamento final. Se a discussão se alongar depois, escolha as perguntas 1 e 4 para a conversa coletiva, mantendo a leitura integral e o horário de encerramento." },
         ],
@@ -281,7 +309,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
           "Escolhi duas das cinco situações e consigo explicar o desafio de um gesto e uma frase.",
           "Tenho o cronograma visível e sei quais compartilhamentos encurtar, se necessário.",
           "As duplas ou trios conseguem conversar, e quem chegou agora entende o formato.",
-          "As perguntas, a proposta para a semana e a oração estão disponíveis nesta página.",
+          "As perguntas, os cinco exemplos de apoio, a revisão fictícia e o encerramento opcional estão disponíveis nesta página; não há tarefa posterior.",
         ],
         paragraphs: [
           "Os textos de 1 Coríntios 14:26 e 14:40 podem apoiar a preparação de quem conduz: tratam de edificação e ordem na reunião da comunidade. Os sessenta minutos e a dinâmica são escolhas práticas deste roteiro. Use o encontro como uma proposta adaptável ao seu grupo.",
@@ -381,8 +409,8 @@ const editorialArticleDrafts: EditorialArticle[] = [
     category: "Família",
         readTime: "7 min de leitura",
     ...familyImage,
-      updatedAt: "7 de outubro de 2026",
-      updatedAtISO: "2026-10-07",
+      updatedAt: "12 de outubro de 2026",
+      updatedAtISO: "2026-10-12",
     introduction: [
         "Este roteiro oferece uma leitura e uma brincadeira que podem ser realizadas em casa com um adulto responsável e uma ou mais crianças. Não exige impressão, celular, alimento ou objetos especiais: uma Bíblia ou aplicativo bíblico basta; papel e lápis são opcionais. A passagem escolhida é Marcos 10:13-16, em que Jesus recebe e abençoa crianças.",
         "Os 15 minutos são uma proposta de organização, não uma obrigação. A criança pode ouvir, perguntar, desenhar ou passar uma pergunta. Não há placar nem comparação entre irmãos. Se o momento precisar ser mais curto, preserve a leitura e uma pergunta, deixando a brincadeira para outro dia.",
@@ -402,11 +430,11 @@ const editorialArticleDrafts: EditorialArticle[] = [
         schedule: [
             { time: "0–2 min", title: "Chegada", text: "Diga: 'Vamos conhecer uma cena em que crianças chegam perto de Jesus'. Pergunte o que ajuda alguém a se sentir bem recebido; aceite uma resposta breve, um gesto ou silêncio." },
             { time: "2–5 min", title: "Leitura", text: "Leia Marcos 10:13-16 devagar. Identifique três participantes: Jesus, os discípulos e as pessoas que trazem as crianças. Explique que discípulos são seguidores de Jesus. Releia uma frase se houver dúvida." },
-            { time: "5–9 min", title: "Conversa", text: "Use as duas primeiras perguntas comentadas abaixo. Dê tempo para responder e mostre o versículo que sustenta cada resposta. Se houver várias crianças, não é necessário ouvir uma resposta de cada uma em toda pergunta." },
+            { time: "5–9 min", title: "Conversa", text: "Use as perguntas 1 e 2 abaixo: quem foi trazido e o que Jesus disse. A pergunta 3, sobre o que ele fez, pode substituir uma delas, sem somar outra rodada. Reserve cerca de 2 minutos por pergunta, incluindo releitura e resposta. Não é necessário ouvir cada criança em toda pergunta." },
             { time: "9–13 min", title: "Jogo de sequência", text: "Leia as quatro cenas na ordem misturada indicada abaixo. Organizem juntas o começo, a reação e o final. Se preferirem, desenhem apenas uma cena e expliquem onde ela aparece na história." },
-            { time: "13–15 min", title: "Fechamento", text: "Resuma: Jesus não quis que as crianças fossem impedidas de chegar até ele. Sugira um gesto de acolhimento, como explicar uma brincadeira a quem está chegando. Faça a oração breve sugerida; não é preciso que cada criança ore em voz alta." },
+            { time: "13–15 min", title: "Fechamento", text: "Use 1 minuto para resumir: Jesus mandou não impedir as crianças e as recebeu. No minuto restante, escolha uma oração breve opcional ou releia o versículo 14 e encerre. A criança pode apenas ouvir; não há gesto, fala ou demonstração de fé obrigatória." },
         ],
-          note: "Os intervalos são contínuos e somam 15 minutos. O tempo de leitura deste artigo é separado do tempo de aplicação. Encerre com tranquilidade mesmo se alguma etapa ficar para depois.",
+          note: "Os intervalos são contínuos e somam 15 minutos sugeridos, não medidos em aplicação real. A preparação e a leitura deste artigo acontecem antes. Se a conversa demorar, use só duas cenas no jogo ou deixe-o para outra ocasião; preserve a leitura, a conferência da resposta e o encerramento tranquilo.",
         },
         {
           heading: "O que observar em Marcos 10",
@@ -419,9 +447,10 @@ const editorialArticleDrafts: EditorialArticle[] = [
         {
           heading: "Perguntas com apoio para o adulto",
           steps: [
-            { title: "Quem estava sendo trazido até Jesus?", text: "Resposta apoiada no versículo 13: crianças. Pergunte onde a criança encontrou essa informação. Se não lembrar, releia o início em vez de pedir que adivinhe." },
-            { title: "O que Jesus disse e fez quando os discípulos impediram a aproximação?", text: "Nos versículos 14 e 16, Jesus manda deixar as crianças virem, toma-as nos braços e as abençoa. Não diga que os discípulos tinham medo ou ciúme: a passagem não explica sua motivação." },
-            { title: "Como poderíamos receber alguém em uma brincadeira?", text: "Esta é uma aplicação, não uma pergunta de gabarito bíblico. Exemplos possíveis: mostrar as regras, oferecer um lugar ou respeitar quem prefere observar. Não peça que a criança nomeie colegas que a excluíram." },
+            { title: "1. Quem estava sendo trazido até Jesus?", text: "Resposta: crianças, em Marcos 10:13. Mostre a palavra na passagem ou releia o início. A criança pode apontar, responder com suas palavras ou ouvir o apoio; não precisa adivinhar." },
+            { title: "2. O que Jesus disse sobre a chegada das crianças?", text: "Resposta: que as deixassem vir e não as impedissem, em Marcos 10:14. Aceite uma frase equivalente na tradução usada. Não diga que os discípulos tinham medo ou ciúme: a passagem não explica sua motivação." },
+            { title: "3. O que Jesus fez no final da cena?", text: "Resposta: tomou as crianças nos braços e as abençoou, em Marcos 10:16. Localizem as ações na leitura. Não é necessário encenar abraço ou toque para conferir a resposta." },
+            { title: "4. Como poderíamos receber alguém em uma brincadeira?", text: "Pergunta opcional de aplicação, não um gabarito bíblico nem uma rodada extra obrigatória. Exemplos: mostrar as regras, oferecer um lugar ou respeitar quem prefere observar. Pode substituir uma pergunta no tempo de conversa. Não peça nomes de colegas nem relatos de exclusão." },
           ],
         },
         {
@@ -430,6 +459,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
             "Leia estas quatro frases misturadas: A) Jesus recebe as crianças e as abençoa; B) os discípulos repreendem quem traz as crianças; C) pessoas trazem crianças até Jesus; D) Jesus diz que não as impeçam. Peça que escolham qual vem primeiro e releiam a passagem para conferir. A ordem é C, B, D, A.",
             "Sem papel, o adulto pode repetir as frases conforme a criança escolhe. Com papel, escreva uma frase em cada parte da folha e deixe que apontem a sequência, sem necessidade de recortar. Para quem ainda não lê, conte as cenas e aceite que a criança as descreva com suas próprias palavras. Não é preciso representar contato físico: um desenho ou uma explicação serve.",
             "Se a sequência sair diferente, pergunte 'Onde essa cena aparece na leitura?' e confiram juntas. Termine com a pergunta 'O que mudou entre o começo e o final?'. Uma resposta possível é que, após a tentativa de impedir a aproximação, Jesus recebe as crianças. O objetivo é localizar acontecimentos, não testar velocidade ou desempenho escolar.",
+            "Instrução oral pronta: 'Vou contar quatro cenas fora de ordem. Vamos escolher o começo e conferir na Bíblia'. Leia as frases uma vez; se as letras atrapalharem, peça a cena por suas palavras e repita as que faltam. Em até 4 minutos, use 1 para explicar, 2 para escolher e 1 para reler e conferir. Não exija memorizar todas as opções. Na versão de duas cenas, leia primeiro 'Jesus recebe as crianças' e depois 'As pessoas trazem as crianças'; a ordem é trazer, depois receber, apoiada nos versículos 13 e 16.",
           ],
       },
       {
@@ -437,22 +467,25 @@ const editorialArticleDrafts: EditorialArticle[] = [
         steps: [
             { title: "Até 6 anos", text: "Depois da leitura, apresente só duas cenas: as crianças são trazidas; Jesus as recebe. Pergunte qual acontece primeiro e ofereça um desenho livre. Para crianças muito pequenas, ouvir um trecho curto já é uma forma de participação; as idades são sugestões, não uma avaliação de desenvolvimento." },
             { title: "De 7 a 10 anos", text: "Use as quatro cenas e peça que encontrem as palavras crianças e discípulos na leitura, com ajuda se necessário. Uma criança pode organizar a sequência enquanto outra confere o texto; depois troquem as funções." },
-            { title: "Pré-adolescentes", text: "Inclua a terceira pergunta e releia o versículo 15. Distinga o que o texto afirma de uma hipótese: sabemos o que os discípulos fizeram, mas não por que fizeram. Registre perguntas que precisem de estudo, sem improvisar uma resposta definitiva." },
+            { title: "Pré-adolescentes", text: "Se desejarem, substitua uma pergunta de conversa pela aplicação da pergunta 4 ou releia o versículo 15, sem adicionar um bloco ao cronograma. Distinga o que o texto afirma de uma hipótese: sabemos o que os discípulos fizeram, mas não por que fizeram. Registre dúvidas para estudo, sem improvisar resposta definitiva." },
             { title: "Idades misturadas", text: "A criança maior pode ler uma frase se quiser; a menor escolhe ou desenha uma cena. Não faça da maior uma professora responsável pela participação da menor. Todas podem optar por ouvir." },
         ],
       },
       {
-          heading: "Três próximos encontros sem inventar atividades",
+          heading: "Sugestões independentes para outra ocasião",
+          paragraphs: [
+            "Escolha uma sugestão apenas se quiser repetir a experiência. Não é um programa semanal, tarefa ou compromisso de participação. Cada proposta abaixo é uma continuação possível, não um roteiro adicional de 15 minutos já cronometrado. Leia o trecho antes e ajuste a duração à criança.",
+          ],
           steps: [
-            { title: "Semana 2: Zaqueu quer ver Jesus", text: "Leia Lucas 19:1-6. Pergunte por que Zaqueu não conseguia ver Jesus e o que fez: a multidão e sua altura aparecem no versículo 3; ele sobe em uma árvore no 4. Joguem com a ordem procurar, subir, descer e receber. Não incentive a criança a subir em móveis. O trecho é o início da história; não apresente o recorte como relato completo da mudança de Zaqueu." },
-            { title: "Semana 3: pães e peixes", text: "Leia João 6:1-13, ou comece pelos versículos 8-13 se o tempo estiver curto. Pergunte quantos pães e peixes são mencionados: cinco pães e dois peixes, no versículo 9. Desenhem esses elementos e depois os doze cestos do versículo 13. A narrativa apresenta um sinal realizado por Jesus, não uma promessa de que a criança pode multiplicar objetos ou alimentos." },
-            { title: "Semana 4: recordar sem competir", text: "Escolham uma das três passagens já lidas. O adulto lê novamente; cada pessoa escolhe um acontecimento para desenhar ou resumir. As demais localizam esse acontecimento no texto. Não acrescentem pontuação nem obriguem alguém a recordar sem consultar. Usem o mesmo ritmo de chegada, leitura, conversa, atividade e encerramento." },
+            { title: "Zaqueu quer ver Jesus", text: "Leia Lucas 19:1-6. Por que Zaqueu não conseguia ver? A multidão e sua altura aparecem no versículo 3. O que fez? Subiu numa árvore, no 4. Para ordenar, leia A descer, B procurar ver Jesus, C receber Jesus com alegria, D subir na árvore. Gabarito: B, D, A, C, nos versículos 3, 4 e 6. Aceite a descrição oral, sem letras. Não incentive subir em móveis. O recorte é o início da história, não o relato completo da mudança de Zaqueu." },
+            { title: "Pães e peixes", text: "Leia João 6:1-13, ou apresente o contexto e leia 8-13: uma multidão acompanha Jesus, e a cena trata de sua alimentação. Pergunte quantos pães e peixes o menino tinha. Apoio: cinco pães e dois peixes, no versículo 9. Quantos cestos foram recolhidos com os pedaços dos pães? Apoio: doze, no 13. Desenhem apenas uma dessas quantidades e confiram juntos; não é teste de contagem. A narrativa apresenta um sinal de Jesus, não promete que a criança possa multiplicar objetos ou alimentos." },
+            { title: "Recordar sem competir", text: "Escolham uma passagem que já tenham lido, sem exigir completar as outras sugestões. O adulto relê; quem quiser desenha ou resume um acontecimento. Apoio em Marcos 10:13-16: pessoas trazem crianças no 13, Jesus manda não impedir no 14 e as recebe e abençoa no 16. Confiram o acontecimento escolhido no texto, sem gabarito único de desenho. Não pontuem nem exijam recordar sem consulta." },
         ],
       },
       {
         heading: "Quando algo não funciona",
         paragraphs: [
-            "Se houver cansaço ou pouca atenção, faça uma versão de 5 minutos: 2 para ler Marcos 10:13-16, 2 para escolher uma cena e 1 para encerrar. Se surgir uma pergunta difícil, diga 'Não sei responder ainda; podemos pesquisar'. Não transforme a falta de uma resposta em desobediência ou falta de fé.",
+            "Se houver cansaço, ofereça uma versão de 5 minutos sugeridos, não medidos em aplicação real: 2 para ler Marcos 10:13-16, 2 para escolher uma cena e conferir seu versículo, e 1 para resumir ou orar opcionalmente. Se a leitura precisar de mais tempo, dispense o jogo; não acelere para cumprir o relógio. Se surgir uma pergunta difícil, diga 'Não sei responder ainda; podemos pesquisar'. Não transforme a falta de resposta em desobediência ou falta de fé.",
             "Evite aproveitar o encontro para listar comportamentos errados da semana. Não peça revelações íntimas, confissões ou pedidos de oração obrigatórios. Se a criança trouxer uma preocupação pessoal, ouça com cuidado fora da atividade; este roteiro não oferece aconselhamento ou avaliação profissional.",
         ],
           note: "Uma sugestão de oração final: 'Jesus, obrigado por receber as crianças. Ajuda-nos a ouvir e acolher com respeito. Amém.' É possível acompanhar em silêncio. Nenhuma etapa exige abraço, toque, fotografia ou publicação do que a criança desenhou.",
@@ -550,15 +583,15 @@ const editorialArticleDrafts: EditorialArticle[] = [
     title: "Jogos digitais: 7 formatos simples",
     eyebrow: "Pouco preparo",
     summary:
-        "Sete formatos sem impressão, com regras, exemplos comentados e referências: quiz cooperativo, sequência, pistas, frases, pares, histórias e fechamento da rodada.",
+        "Compare cinco formatos apoiados em jogos do site e duas adaptações de leitura sem impressão, com exemplos comentados e uma combinação de vinte minutos.",
     audience: "Todos os grupos",
     category: "Ideias de jogos",
     readTime: "7 min de leitura",
     ...digitalGamesImage,
-      updatedAt: "7 de outubro de 2026",
-      updatedAtISO: "2026-10-07",
+      updatedAt: "12 de outubro de 2026",
+      updatedAtISO: "2026-10-12",
     introduction: [
-        "Um celular ou computador compartilhado pode servir a um grupo inteiro: uma pessoa lê, as demais conversam e uma escolha é feita na tela. Não é necessário que cada participante tenha aparelho ou conta. Os formatos abaixo combinam jogos disponíveis no Bíblia Clube com adaptações orais que podem ser conduzidas com uma Bíblia. Nenhuma exige impressão.",
+        "Um celular ou computador compartilhado pode servir a um grupo inteiro: uma pessoa lê, as demais conversam e uma escolha é feita na tela. Este artigo compara formatos, não oferece sete jogos digitais diferentes: os itens 1, 3, 4, 5 e 6 usam jogos do site; o 2 é uma sequência oral e o 7 é um fechamento de leitura. Não é necessário aparelho individual nem impressão. Para um evento completo, consulte a noite de jogos de 75 minutos.",
         "Escolha uma atividade conforme o tempo e a familiaridade do grupo, em vez de tentar executar as sete no mesmo encontro. Os exemplos deste artigo são demonstrações com respostas visíveis, não desafios que precisam valer pontos. Consulta e leitura em voz alta fazem parte da proposta; rapidez não precisa decidir quem participa.",
     ],
     sections: [
@@ -568,7 +601,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
             "Com 4 a 12 pessoas, use uma roda e alterne quem lê e quem confirma a escolha. Em grupos maiores, forme equipes de 3 a 5 e peça uma resposta por equipe, sem eliminar quem errou.",
             "Abra o jogo e teste som, tamanho do texto e conexão antes de reunir o grupo. Se uma pessoa lê a tela, não é necessário projetor; posicione o aparelho de modo que o leitor fique confortável.",
             "Combine que qualquer pessoa pode apenas observar, pedir releitura ou passar a vez. Não exija empréstimo de celular nem exposição de conhecimento individual.",
-            "Deixe este artigo e as passagens escolhidas disponíveis antes do encontro. Os exemplos orais permitem continuar se houver falha de conexão; uma página não carregada não funciona automaticamente offline.",
+            "Guarde os exemplos, gabaritos e referências numa anotação local testada antes do encontro, com Bíblia impressa para consulta. Uma aba aberta não garante acesso após recarregar sem conexão; o site não promete funcionamento offline.",
           ],
         },
       {
@@ -1236,10 +1269,10 @@ const editorialArticleDrafts: EditorialArticle[] = [
     category: "Juventude",
       readTime: "8 min de leitura",
     ...discussionImage,
-      updatedAt: "8 de outubro de 2026",
-      updatedAtISO: "2026-10-08",
+      updatedAt: "12 de outubro de 2026",
+      updatedAtISO: "2026-10-12",
     introduction: [
-        "Este roteiro demonstra a preparação de um encontro para 6 a 18 jovens sobre uma pergunta concreta: como organizar uma rodada de jogo que considere os outros? A sessão combina leitura de Filipenses 2:1-4, situações fictícias e uma experiência cooperativa. Não exige que participantes contem conflitos, dificuldades ou histórias pessoais.",
+        "Este roteiro demonstra a preparação de um encontro para 6 a 18 jovens: criar uma instrução de rodada que outro trio consiga executar e conferir. A sessão combina Filipenses 2:1-4, ajustes de organização e uma minirodada própria com três afirmações. O resultado é uma instrução testada durante a atividade, não um diagnóstico de cooperação nem um relato de aplicação real. Não exige histórias pessoais.",
         "A proposta dura 70 minutos, com uma versão de 45 ao final. O objetivo é observar a atenção aos outros no texto e experimentar escolhas simples de organização, como explicar regras e respeitar quem prefere ouvir. Os tempos e as atividades são escolhas do projeto, não exigências da passagem nem garantia de mudança de comportamento.",
     ],
     sections: [
@@ -1249,7 +1282,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
             { title: "Pergunta de preparação", text: "Como oferecer participação sem concentrar decisões em uma pessoa? É uma pergunta sobre o formato do encontro, não uma acusação de que algum jovem domina ou se isola." },
             { title: "Passagem escolhida", text: "Filipenses 2:1-4 trata de unidade, humildade e atenção aos outros. Leia também 2:5-11 antes de conduzir, pois o texto continua com a referência a Cristo; não transforme os quatro versículos numa técnica de dinâmica desligada da carta." },
             { title: "Atividade coerente", text: "As quatro situações abaixo permitem observar escolhas fictícias antes de propor um ajuste na rodada. O roteiro não precisa recolher pressões ou problemas pessoais para gerar conversa." },
-            { title: "Resultado verificável", text: "Ao final, o grupo pode localizar uma orientação no texto e explicar uma regra que ofereça escolha de participação. Isso não mede fé, personalidade ou maturidade individual." },
+            { title: "Resultado verificável", text: "Preparem uma instrução com três campos: o que ler, como registrar a escolha e onde conferir. Modelo: 'Leiam Filipenses 2:1-4; apontem A e C ou anotem as letras; confiram A no versículo 4 e C no 3'. Outro trio testa a instrução no bloco de experiência. Isso confere clareza do material, não fé ou maturidade individual." },
         ],
       },
         {
@@ -1271,7 +1304,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
             { time: "40–60 min", title: "Experiência cooperativa", text: "Teste a minirodada pronta abaixo: 3 minutos para combinar funções, 7 para consulta, 5 para conferir e 5 para conversar sobre a organização. Quem observar também participa da experiência." },
             { time: "60–70 min", title: "Síntese e encerramento", text: "Retome a terceira pergunta comentada, aceite uma sugestão de organização e apresente Filipenses 2:5-11 como continuação da leitura. Uma oração breve é opcional, sem compromisso público." },
         ],
-          note: "Os intervalos são contínuos e somam 70 minutos. Se houver mais trios, limite as apresentações a três contribuições voluntárias; não prometa que todos falarão no plenário.",
+          note: "Os intervalos são contínuos e somam 70 minutos sugeridos, não medidos em aplicação real. O teste de instrução ocorre dentro dos 20 minutos de experiência, não é bloco adicional. Com mais trios, limite as apresentações a três contribuições voluntárias; não prometa que todos falarão no plenário.",
       },
       {
           heading: "Perguntas com apoio na passagem",
@@ -1288,10 +1321,10 @@ const editorialArticleDrafts: EditorialArticle[] = [
       {
           heading: "Quatro cenas prontas para os trios",
           steps: [
-            { title: "A. Um jogo sem explicação", text: "Cena fictícia: uma pessoa abre a rodada e responde antes que os outros entendam as regras. Pergunta: o que ajustar antes da próxima escolha? Apoio possível: ler o enunciado e as regras, depois dar tempo de conversa. Não peçam ao grupo que identifique quem faz isso na vida real." },
-            { title: "B. Um convite repetido", text: "Cena: alguém prefere observar, mas recebe vários pedidos para ser porta-voz. Pergunta: como respeitar sua escolha? Apoio: aceitar a recusa e manter disponível o convite para outra ocasião, sem insistência ou justificativa pública." },
-            { title: "C. Um aparelho para todos", text: "Cena: só uma pessoa tem celular disponível e todos querem clicar. Pergunta: como participar sem exigir aparelhos pessoais? Apoio: o condutor lê e confirma a escolha coletiva; outras pessoas podem consultar a referência. Ninguém precisa emprestar seu aparelho." },
-            { title: "D. Uma dúvida interrompida", text: "Cena: durante a explicação, alguém pergunta o significado de uma palavra e recebe uma piada como resposta. Pergunta: como retomar? Apoio: explicar o termo sem ridicularizar, reler se necessário e pedir que a fala termine antes de outra contribuição." },
+            { title: "A. Falta a passagem", text: "Ficha fictícia: 'Escolha A ou C', mas não informa o que ler. Ajuste possível: incluir Filipenses 2:1-4 antes da escolha. Não presumam que outro trio conhece o roteiro." },
+            { title: "B. Falta o modo de responder", text: "Ficha: 'Leiam e decidam', sem dizer se é oral ou escrito. Ajuste: podem apontar ou anotar as letras; uma pessoa voluntária confirma a escolha coletiva. Observar também é uma opção." },
+            { title: "C. Falta a conferência", text: "Ficha: 'A e C estão corretas', sem referência. Ajuste: A se apoia no versículo 4, C no 3. B, sobre escolher o mais rápido como líder, não é instrução da passagem." },
+            { title: "D. A instrução acrescenta uma tarefa", text: "Ficha: 'Após responder, cada pessoa deve contar um conflito'. Ajuste: retirar a exigência; a rodada confere três afirmações do texto, sem coleta de experiências pessoais. Não realizem a tarefa da ficha." },
           ],
           note: "Os ajustes são exemplos, não respostas únicas. Aceite outras propostas que preservem clareza, escolha e respeito. Não pontue a moralidade dos trios nem use as cenas para investigar conflitos pessoais.",
         },
@@ -1300,7 +1333,7 @@ const editorialArticleDrafts: EditorialArticle[] = [
         paragraphs: [
             "Cada trio escolhe funções voluntárias e confere três afirmações. A) a passagem chama atenção também para o que é dos outros; B) a passagem manda escolher o participante mais rápido como líder; C) a passagem contrapõe humildade à rivalidade. Pergunte quais são sustentadas pelo recorte e em qual versículo. Não há corrida nem eliminação.",
             "Gabarito: A, no versículo 4, e C, no 3. B não é uma instrução da passagem. A pessoa pode apontar o trecho, escrever A e C ou acompanhar a conferência. Depois pergunte: a organização ofereceu mais de uma forma de participar? Aceite até duas sugestões sem identificar quem falou menos.",
-            "Essa minirodada pertence ao artigo, não é uma configuração automática do quiz digital. Se quiser usar um jogo do site, substitua o bloco por uma atividade adequada ao tempo, mas não garanta perguntas sobre Filipenses 2. O texto continua sendo a referência principal para a conversa.",
+            "Nos 3 minutos de organização, escrevam ou ditem os três campos da instrução. Nos 7 de consulta, outro trio usa a instrução para responder; sem troca, o condutor demonstra. Nos 5 de conferência, usem o gabarito acima; nos 5 finais, corrijam um campo pouco claro. Essa minirodada é própria do artigo, não uma configuração automática do quiz nem a comparação de atitudes da dinâmica de amizades. Um jogo digital pode substituir o bloco, mas não garante perguntas sobre Filipenses 2.",
         ],
       },
       {

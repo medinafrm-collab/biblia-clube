@@ -86,10 +86,10 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
                 <span>{dynamic.audienceLabel}</span>
               </nav>
 
-              <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-                <div>
+              <div className="mt-10 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end">
+                <div className="min-w-0">
                   <span className="eyebrow">Dinâmica para {dynamic.audienceLabel.toLowerCase()}</span>
-                  <h1 className="display-title mt-5 text-[clamp(3rem,7vw,5.4rem)] text-[var(--navy)]">
+                  <h1 className="display-title mt-5 break-words text-[clamp(3rem,7vw,5.4rem)] text-[var(--navy)]">
                     {dynamic.title}
                   </h1>
                   <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
@@ -97,7 +97,7 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
                   </p>
                 </div>
 
-                <aside className="rounded-lg border border-[var(--border)] bg-white/75 p-6 sm:p-7">
+                <aside className="min-w-0 rounded-lg border border-[var(--border)] bg-white/75 p-6 sm:p-7">
                   <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--olive-dark)]">Visão rápida</p>
                   <dl className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                     <div>
@@ -109,7 +109,7 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
                       <dd className="mt-1 font-serif text-2xl text-[var(--navy)]">{dynamic.groupSize}</dd>
                     </div>
                   </dl>
-                  <a href="#conducao" className="button-primary mt-6">Começar a condução <span aria-hidden="true">↓</span></a>
+                  <a href="#conducao" className="button-primary mt-6 w-full whitespace-normal text-center">Começar a condução <span aria-hidden="true">↓</span></a>
                 </aside>
               </div>
             </div>
@@ -137,6 +137,7 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
                 <section id="conducao" className="scroll-mt-28 pt-14">
                   <span className="eyebrow">Sugestão de condução</span>
                   <h2 className="section-title">Um caminho simples para orientar o encontro.</h2>
+                  <p className="mt-4 leading-7 text-[var(--muted)]">Os tempos são sugestões de organização, não resultados medidos em aplicação real. Se a consulta precisar de mais tempo, reduza cenas e contribuições, preservando a leitura e a conferência. O criador de roteiro usa um núcleo adaptado, não soma este cronograma integral.</p>
                   <ol className="mt-9 grid gap-0 border-y border-[var(--border)]">
                     {dynamic.steps.map((step, index) => (
                       <li key={step.title} className="grid gap-4 border-b border-[var(--border)] py-7 last:border-0 sm:grid-cols-[4.5rem_1fr]">
@@ -149,6 +150,24 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
                     ))}
                   </ol>
                 </section>
+
+                {dynamic.planningWorksheet && (
+                  <section className="pt-14" aria-labelledby="modelo-do-plano">
+                    <span className="eyebrow">Entrega da oficina</span>
+                    <h2 id="modelo-do-plano" className="section-title">Um plano curto, com cinco decisões.</h2>
+                    <p className="mt-4 leading-7 text-[var(--muted)]">Copiem os cinco campos para papel ou respondam oralmente. Os exemplos abaixo formam um plano fictício preenchido, não um relato de uso. Os tempos do evento são diferentes dos tempos de preparação da oficina.</p>
+                    <dl className="mt-7 border-y border-[var(--border)]">
+                      {dynamic.planningWorksheet.fields.map((field) => (
+                        <div key={field.label} className="border-b border-[var(--border)] py-6 last:border-0">
+                          <dt className="font-serif text-2xl text-[var(--navy)]">{field.label}</dt>
+                          <dd className="mt-3 leading-7 text-[var(--muted)]"><p>{field.prompt}</p><p className="mt-3"><strong>Exemplo preenchido:</strong> {field.example}</p></dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <h3 className="mt-9 font-serif text-2xl text-[var(--navy)]">Variação opcional: organize a mesa em cinco minutos</h3>
+                    <p className="mt-4 leading-7 text-[var(--muted)]">{dynamic.planningWorksheet.variation}</p>
+                  </section>
+                )}
 
                 <section className="pt-14">
                   <span className="eyebrow">Conversa guiada</span>

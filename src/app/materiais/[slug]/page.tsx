@@ -51,10 +51,10 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
               <Link href="/" className="font-bold text-[var(--navy)] no-underline">Início</Link><span aria-hidden="true">/</span>
               <Link href="/materiais" className="font-bold text-[var(--navy)] no-underline">Materiais</Link><span aria-hidden="true">/</span><span>{resource.title}</span>
             </nav>
-            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div>
+            <div className="mt-9 grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+              <div className="min-w-0">
                 <span className="eyebrow">{resource.eyebrow}</span>
-                <h1 className="display-title mt-5 max-w-4xl text-[clamp(3rem,6vw,5rem)] text-[var(--navy)]">{resource.title}</h1>
+                <h1 className="display-title mt-5 max-w-4xl break-words text-[clamp(3rem,6vw,5rem)] text-[var(--navy)]">{resource.title}</h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted)]">{resource.summary}</p>
                 <p className="mt-5 text-sm font-bold text-[var(--olive-dark)]">{resource.audience} · Impressão em A4</p>
               </div>
@@ -78,6 +78,22 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
                 <h2 className="font-serif text-2xl text-[var(--navy)]">Um exemplo de preenchimento</h2>
                 <p className="mt-3 leading-7 text-[var(--muted)]">Público: família. Duração: 20 minutos. Objetivo: reconhecer a sequência de ações de Zaqueu em Lucas 19:1-6. Reserve 3 minutos para acolher, 5 para ler, 7 para ordenar procurar, subir, descer e receber, e 5 para conferir as respostas e encerrar. Não proponha subir em móveis: represente as ações com palavras ou desenhos.</p>
                 <p className="mt-3 leading-7 text-[var(--muted)]">Pergunta de observação: por que Zaqueu não conseguia ver Jesus? Apoio: multidão e altura, no versículo 3. Para continuar, consulte <Link href="/biblioteca/culto-domestico-com-criancas">No lar: um roteiro com crianças</Link>. O exemplo é uma sugestão, não um relato de aplicação real; a folha abaixo permanece em branco para o seu plano.</p>
+              </section>
+            )}
+
+            {resource.slug === "plano-familiar-semanal" && (
+              <section className="mb-8 max-w-3xl print:hidden">
+                <h2 className="font-serif text-2xl text-[var(--navy)]">Um dia completo, sem cobrança</h2>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Exemplo do dia 1: em 2 minutos, combine que é possível responder, apontar ou ouvir. Use até 4 para ler Marcos 10:13-16. Em 3, pergunte quem foi trazido e confira crianças no versículo 13; depois, localize receber e abençoar no 16. No minuto final, releia uma frase ou resuma a cena. Total: 10 minutos sugeridos, não medidos em aplicação real. Se a leitura demorar, use só a primeira pergunta e preserve a conferência.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Para quem ainda não lê, o adulto conta a sequência trazer, impedir, acolher, apoiada nos versículos 13, 14 e 16. Não encene abraço nem peça contato físico. O registro pode ficar em branco. Em textos mais longos, escolha uma pergunta por ocasião; não prometa terminar todo trecho em quatro minutos. As sete sugestões são independentes e não avaliam a rotina da família.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">A folha abaixo inclui o apoio para cada pergunta. Para outro formato, consulte <Link href="/biblioteca/culto-domestico-com-criancas">No lar: um roteiro com crianças</Link>, uma sessão de 15 minutos com jogo de sequência. Esta folha serve para escolher leituras e registrar observações, não reproduz aquele encontro inteiro.</p>
+              </section>
+            )}
+
+            {resource.slug === "folha-de-pontuacao" && (
+              <section className="mb-8 max-w-3xl print:hidden">
+                <h2 className="font-serif text-2xl text-[var(--navy)]">Exemplo de soma</h2>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Exemplo fictício com um ponto por acerto e sem desconto: Equipe A registra 1, 0, 1, 1, 0 nas cinco rodadas, total 3. Equipe B registra 0, 1, 1, 0, 1, também total 3. O empate permanece; não invente bônus por comportamento. No Modo Grupo, use os pontos definidos pelo jogo, sem misturar escalas. Os campos impressos permanecem em branco para a sua rodada.</p>
               </section>
             )}
 

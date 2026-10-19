@@ -37,7 +37,7 @@ export default function SobrePage() {
       <div>
         <h2>Responsabilidade editorial</h2>
         <p className="mt-4">
-          Os conteúdos são preparados e revisados pelo projeto Bíblia Clube.
+          A publicação é de responsabilidade do projeto independente Bíblia Clube.
           Nosso compromisso é apresentar informações claras, referências
           verificáveis e atividades respeitosas para diferentes contextos
           cristãos.
@@ -46,7 +46,7 @@ export default function SobrePage() {
       <div>
         <h2>Quem produz o conteúdo</h2>
         <p className="mt-4">
-          O Bíblia Clube é um projeto independente. Os textos, roteiros, perguntas e explicações são preparados e revisados sob a autoria editorial do próprio projeto. Não atribuímos credenciais, equipe ou especialistas que não existem.
+          O Bíblia Clube é um projeto independente, sem conselho editorial ou assessoria profissional. Ferramentas de IA auxiliam a preparação e a conferência; isso não significa revisão por especialistas. A decisão de publicar cabe ao responsável pelo projeto. Nosso foco é leitura bíblica e divertimento, não aconselhamento médico, financeiro ou conjugal.
         </p>
         <p className="mt-4">
           O acervo atual inclui {editorialArticles.length} artigos editoriais, {cellDynamics.length} dinâmicas completas e {printableResources.length} materiais para imprimir, além dos jogos e guias interativos.
@@ -76,7 +76,7 @@ export default function SobrePage() {
           Artigos editoriais informam a data da revisão mais recente. Sugestões de atividades são verificadas quanto à clareza, ao contexto bíblico e ao risco de exposição desnecessária de participantes. Correções relevantes são incorporadas ao conteúdo assim que confirmadas.
         </p>
         <p className="mt-4">
-          A última revisão geral desta página foi feita em 9 de outubro de 2026.
+          A última revisão desta página foi feita em 12 de outubro de 2026. O <Link href="/como-produzimos-conteudos">registro de revisões</Link> descreve exemplos concretos das mudanças, seus critérios e limites. Os roteiros são sugestões; não alegamos aplicação presencial quando ela não ocorreu.
         </p>
       </div>
       <div>

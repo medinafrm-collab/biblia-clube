@@ -19,7 +19,7 @@ const guides = [
   {
     title: "Dinâmicas bíblicas para jovens",
     description:
-      "Ideias para conduzir encontros com jovens sem constranger, conectando participação, Palavra e aplicação prática.",
+      "Uma oficina cooperativa em Lucas 19 para encontrar informações, ordenar cenas e conferir afirmações com consulta livre.",
     href: "/guias/dinamicas-biblicas-para-jovens",
     audience: "Jovens",
   },
@@ -33,7 +33,7 @@ const guides = [
   {
     title: "Quiz bíblico para casais",
     description:
-      "Sugestões para usar perguntas em encontros de casais com cuidado, escuta e edificação.",
+      "Seis perguntas sobre personagens, lugares e acontecimentos para jogar em dupla e conferir as referências juntos.",
     href: "/guias/quiz-biblico-para-casais",
     audience: "Casais",
   },

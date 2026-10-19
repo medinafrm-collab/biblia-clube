@@ -76,10 +76,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <span>{article.category}</span>
               </nav>
 
-              <div className="mt-9 grid gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-end">
-                <div>
+              <div className="mt-9 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:items-end">
+                <div className="min-w-0">
                   <span className="eyebrow">{article.eyebrow}</span>
-                  <h1 className="display-title mt-5 max-w-4xl text-[clamp(3rem,6vw,5.2rem)] text-[var(--navy)]">{article.title}</h1>
+                  <h1 className="display-title mt-5 max-w-4xl break-words text-[clamp(3rem,6vw,5.2rem)] text-[var(--navy)]">{article.title}</h1>
                   <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted)]">{article.summary}</p>
                   <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-[var(--olive-dark)]">
                     <span>{article.audience}</span>

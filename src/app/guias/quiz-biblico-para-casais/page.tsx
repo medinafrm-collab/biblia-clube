@@ -5,88 +5,38 @@ import { GuideHeroPanel } from "@/components/GuideHeroPanel";
 import { GuideVisualBlock } from "@/components/GuideVisualBlock";
 import { Header } from "@/components/Header";
 import { RelatedTools } from "@/components/RelatedTools";
+import { couplesRecreationalQuiz as couplesQuiz } from "@/data/recreationalGuides";
 
 const title = "Quiz bíblico para casais";
 const description =
-  "Orientações para usar quiz bíblico em encontros de casais, células e reuniões com foco em diálogo, cuidado e edificação.";
+  "Seis perguntas bíblicas para jogar em dupla, com alternativas, gabaritos, referências e detalhes para conferir juntos, sem avaliar o relacionamento.";
 
 const principles = [
   {
-    title: "Use perguntas como início de conversa",
-    text: "O quiz não precisa testar conhecimento. Ele pode abrir um tema sobre aliança, perdão, serviço, paciência, comunicação e vida espiritual no lar.",
+    title: "Escolham juntos ou alternem",
+    text: "Uma pessoa pode ler e a outra procurar a referência; troquem quando quiserem. Também é possível decidir uma resposta em conjunto, sem pontos individuais.",
   },
   {
-    title: "Evite expor histórias pessoais",
-    text: "Em grupos de casais, algumas conversas exigem cuidado. O condutor deve evitar perguntas que obriguem alguém a revelar conflitos íntimos diante de todos.",
+    title: "Consultem antes de conferir",
+    text: "A Bíblia pode ficar aberta durante toda a rodada. Depois de escolher, comparem o gabarito com o versículo, aceitando diferenças de palavras entre traduções.",
   },
   {
-    title: "Valorize escuta e respeito",
-    text: "Depois de uma resposta, convide o grupo a refletir sobre o princípio bíblico sem transformar o momento em comparação entre casais.",
+    title: "Façam uma pausa quando necessário",
+    text: "É possível pular uma pergunta ou apenas acompanhar. Se houver dúvida sobre quem age na cena, releiam o recorte antes de avançar; não há corrida para responder.",
   },
   {
-    title: "Finalize apontando para prática e oração",
-    text: "Uma boa rodada pode terminar com uma decisão simples: pedir perdão, melhorar a comunicação, orar juntos ou cultivar mais serviço dentro de casa.",
+    title: "Encerrem com uma descoberta",
+    text: "Escolham um detalhe que conseguiram localizar: um lugar, um nome ou uma ação. Não é necessário compartilhar experiências pessoais nem avaliar o desempenho da dupla.",
   },
 ];
 
 const themes = [
-  "Comunicação e escuta.",
-  "Perdão e reconciliação.",
-  "Aliança e fidelidade.",
-  "Cuidado com palavras.",
-  "Serviço mútuo.",
-  "Oração no lar.",
-];
-
-const couplesQuiz = [
-  {
-    question: "Segundo Provérbios 18:13, o que acontece quando alguém responde antes de ouvir?",
-    options: ["Demonstra segurança", "Evita uma discussão", "Comete insensatez e passa vergonha", "Ganha tempo"],
-    answer: "Comete insensatez e passa vergonha.",
-    explanation: "O provérbio liga uma resposta precipitada à falta de sabedoria. O princípio vale para qualquer conversa e ajuda o casal a distinguir escutar de apenas esperar a vez de falar.",
-    reference: "Provérbios 18:13",
-    conversation: "Que atitude simples pode nos ajudar a verificar se entendemos o outro antes de responder?",
-  },
-  {
-    question: "Em Efésios 4:29, que tipo de palavra deve ocupar o lugar da comunicação prejudicial?",
-    options: ["Uma palavra que edifique conforme a necessidade", "Uma resposta mais forte", "O silêncio em toda situação", "Uma explicação pública"],
-    answer: "Uma palavra que edifique conforme a necessidade.",
-    explanation: "Paulo orienta a comunidade a usar palavras que façam bem a quem ouve. Aplicado ao lar, o texto convida a considerar tanto o conteúdo quanto o momento da fala.",
-    reference: "Efésios 4:29",
-    conversation: "Como podemos falar a verdade sem perder de vista a necessidade de quem escuta?",
-  },
-  {
-    question: "Qual é o padrão de perdão apresentado em Colossenses 3:13?",
-    options: ["Perdoar somente quando houver acordo", "Perdoar como o Senhor perdoou", "Esquecer sem conversar", "Evitar qualquer limite"],
-    answer: "Perdoar como o Senhor perdoou.",
-    explanation: "O texto chama os cristãos a suportar e perdoar uns aos outros. Perdão não significa negar o dano, dispensar limites seguros ou impedir a busca de ajuda quando necessária.",
-    reference: "Colossenses 3:12-13",
-    conversation: "Sem relatar conflitos pessoais, o que diferencia perdão de fingir que nada aconteceu?",
-  },
-  {
-    question: "Em Filipenses 2:4, para onde o olhar do cristão também deve se voltar?",
-    options: ["Apenas para seus próprios interesses", "Para os interesses dos outros", "Para a opinião da maioria", "Para evitar toda discordância"],
-    answer: "Para os interesses dos outros.",
-    explanation: "A orientação faz parte de um chamado comunitário à humildade. No casamento, ela pode inspirar atenção real às necessidades do outro sem apagar responsabilidades, limites ou individualidade.",
-    reference: "Filipenses 2:3-4",
-    conversation: "Que pergunta prática ajuda a descobrir do que o outro precisa, em vez de apenas presumir?",
-  },
-  {
-    question: "O que Priscila e Áquila fizeram quando ouviram Apolo ensinando em Éfeso?",
-    options: ["Expuseram o erro diante de todos", "Afastaram-se dele", "Explicaram-lhe com mais exatidão o caminho de Deus", "Pediram que ele parasse de ensinar"],
-    answer: "Explicaram-lhe com mais exatidão o caminho de Deus.",
-    explanation: "O casal acolheu Apolo e o ajudou a compreender melhor. A cena oferece um exemplo de serviço conjunto e correção cuidadosa, sem transformar o casal em modelo perfeito ou tirar o episódio de seu contexto missionário.",
-    reference: "Atos 18:24-26",
-    conversation: "Como duas pessoas podem aprender e servir juntas sem competir por reconhecimento?",
-  },
-  {
-    question: "Qual atitude é rejeitada na descrição do amor em 1 Coríntios 13:5?",
-    options: ["Alegrar-se com a verdade", "Perseverar", "Buscar somente os próprios interesses", "Ter esperança"],
-    answer: "Buscar somente os próprios interesses.",
-    explanation: "O capítulo foi escrito à igreja de Corinto no contexto dos dons e da vida comunitária, não como um manual exclusivo de casamento. Ainda assim, seu retrato do amor confronta o egoísmo também na convivência do casal.",
-    reference: "1 Coríntios 12:31-13:7",
-    conversation: "Que decisão cotidiana pode equilibrar cuidado próprio e consideração pelo outro nesta semana?",
-  },
+  "Lugares de chegada e de passagem.",
+  "Nomes e parentescos mencionados no texto.",
+  "Objetos presentes em uma cena.",
+  "Trabalhos e atividades dos personagens.",
+  "Ações realizadas com outras pessoas.",
+  "Sequência dos acontecimentos narrados.",
 ];
 
 export const metadata: Metadata = {
@@ -108,6 +58,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: title,
+  dateModified: "2026-10-10",
   description,
   inLanguage: "pt-BR",
   author: {
@@ -155,15 +106,15 @@ export default function CouplesQuizGuide() {
 
               <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
                 <div>
-                  <span className="eyebrow">Guia para casais e células</span>
+                  <span className="eyebrow">Leitura e lazer em dupla</span>
                   <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,6vw,4.7rem)] text-[var(--navy)]">
                     Quiz bíblico para casais.
                   </h1>
                 </div>
                 <GuideHeroPanel
-                  description="Perguntas bem escolhidas podem ajudar casais a conversar com mais leveza sobre temas importantes, desde que a condução seja respeitosa e pastoral."
-                  chips={["Casais", "Escuta", "Cuidado"]}
-                  steps={["Perguntar", "Refletir", "Aplicar no lar"]}
+                  description="Uma rodada para descobrir nomes, lugares e acontecimentos juntos. Consultem a Bíblia, escolham uma alternativa e confiram um detalhe da narrativa."
+                  chips={["Casais", "Jogo em dupla", "Consulta livre"]}
+                  steps={["Escolher", "Responder juntos", "Conferir"]}
                 />
               </div>
             </div>
@@ -176,10 +127,10 @@ export default function CouplesQuizGuide() {
                   Neste guia
                 </h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-[var(--muted)]">
-                  <li>- Como usar quiz sem expor o casal.</li>
-                  <li>- Temas que favorecem diálogo e oração.</li>
+                  <li>- Uma rodada cooperativa para jogar em dupla.</li>
+                  <li>- Personagens, lugares, objetos e ações.</li>
                   <li>- Rodada pronta com seis perguntas e respostas.</li>
-                  <li>- Sugestão de condução em 15 minutos.</li>
+                  <li>- Sugestão de 15 minutos para três perguntas.</li>
                   <li>- Links para atividades relacionadas.</li>
                 </ul>
                 <Link href="/dinamicas-para-celulas" className="button-primary mt-6">
@@ -190,64 +141,64 @@ export default function CouplesQuizGuide() {
 
               <div className="min-w-0">
                 <div className="prose-content">
-                  <h2>O quiz pode servir a uma conversa mais profunda</h2>
+                  <h2>Uma rodada para descobrir juntos</h2>
                   <p>
-                    Em encontros de casais, nem sempre é simples começar uma
-                    conversa sobre fé, rotina, comunicação e cuidado mútuo. Uma
-                    pergunta simples pode funcionar como porta de
-                    entrada, tirando o peso de uma abordagem direta demais.
+                    Escolham três das seis perguntas desta página. Uma pessoa
+                    lê o enunciado e as alternativas; a outra pode procurar a
+                    referência. Decidam juntas ou alternem quem responde. Um
+                    exemplar compartilhado é suficiente, sem impressão ou cadastro.
                   </p>
                   <p>
-                    O objetivo não é avaliar quem conhece mais a Bíblia, nem
-                    apontar falhas no relacionamento. O melhor uso do quiz é
-                    conduzir o casal e o grupo a perceber princípios da Palavra
-                    que podem ser praticados no lar.
+                    As respostas estão visíveis para preparação: leiam primeiro
+                    somente a pergunta e as opções. O gabarito explica o detalhe
+                    pedido e sugere uma segunda observação. Esta seleção é do
+                    guia; o quiz digital não garante as mesmas perguntas nem a mesma ordem.
                   </p>
 
-                  <h2>Conduza com cuidado pastoral</h2>
+                  <h2>Lazer compartilhado, sem avaliação do casal</h2>
                   <p>
-                    Casais vivem realidades diferentes. Alguns estão em fases
-                    leves, outros enfrentam cansaço, conflitos ou dores
-                    silenciosas. Por isso, a condução precisa ser acolhedora,
-                    sem brincadeiras que diminuam alguém ou exponham situações
-                    delicadas.
+                    O público deste guia são casais, mas as perguntas tratam
+                    das narrativas, não do relacionamento de quem joga. Não há
+                    comparação entre duplas nem perguntas sobre intimidade.
+                    Consultar, pular uma questão e apenas acompanhar são opções
+                    durante toda a atividade.
                   </p>
                 </div>
 
                 <GuideVisualBlock
-                  eyebrow="Condução com cuidado"
-                  title="Do jogo para a conversa"
-                  description="Em encontros de casais, o melhor resultado vem de perguntas que aproximam sem expor."
+                  eyebrow="Rodada cooperativa"
+                  title="Da alternativa ao versículo"
+                  description="Uma resposta pode ser conferida por ambos, sem cronômetro de disputa ou placar individual."
                   variant="flow"
                   items={[
                     {
                       label: "01",
                       title: "Pergunta",
-                      text: "Use o quiz como início leve, não como avaliação do casal.",
+                      text: "Leiam o enunciado e as quatro alternativas.",
                     },
                     {
                       label: "02",
-                      title: "Princípio",
-                      text: "Converse sobre o valor da Palavra presente na resposta.",
+                      title: "Escolha",
+                      text: "Proponham uma resposta, com consulta livre.",
                     },
                     {
                       label: "03",
-                      title: "Prática",
-                      text: "Convide cada casal a pensar em um gesto simples para a semana.",
+                      title: "Referência",
+                      text: "Localizem quem age, o lugar ou o objeto pedido.",
                     },
                     {
                       label: "04",
-                      title: "Oração",
-                      text: "Ore por unidade, perdão, escuta e cuidado dentro do lar.",
+                      title: "Descoberta",
+                      text: "Confiram o detalhe complementar antes de avançar.",
                     },
                   ]}
                 />
 
                 <section className="mt-12" aria-labelledby="rodada-pronta">
                   <span className="eyebrow">Atividade pronta</span>
-                  <h2 id="rodada-pronta" className="section-title mt-4">Seis perguntas para jogar e conversar.</h2>
+                  <h2 id="rodada-pronta" className="section-title mt-4">Seis perguntas para jogar em dupla.</h2>
                   <p className="section-copy max-w-3xl">
-                    Leia as alternativas antes de revelar a resposta. Em seguida, confira a passagem e escolha apenas a pergunta de conversa que couber no grupo. Ninguém precisa relatar conflitos ou responder em nome do cônjuge.
+                    A seleção passa por viagens, pesca, um casamento, um ofício e funções em uma cena. O tema casais descreve o público, não uma interpretação das histórias como regras de casamento.
                   </p>
 
                   <div className="mt-8 border-y border-[var(--border)]">
@@ -265,7 +216,7 @@ export default function CouplesQuizGuide() {
                               <p className="mt-2 leading-7 text-[var(--muted)]">{item.explanation}</p>
                               <p className="mt-2 text-sm font-bold text-[var(--olive-dark)]">Leia: {item.reference}</p>
                             </div>
-                            <p className="mt-4 leading-7 text-[var(--foreground)]"><strong>Para conversar sem exposição:</strong> {item.conversation}</p>
+                            <p className="mt-4 leading-7 text-[var(--foreground)]"><strong>Para conferir juntos:</strong> {item.observation}</p>
                           </div>
                         </div>
                       </section>
@@ -276,13 +227,13 @@ export default function CouplesQuizGuide() {
                 <section className="mt-12 border-y border-[var(--border)] py-8">
                   <h2 className="font-serif text-3xl text-[var(--navy)]">Uma rodada de 15 minutos</h2>
                   <ol className="mt-5 grid gap-4 leading-7 text-[var(--muted)] sm:grid-cols-2">
-                    <li><strong className="text-[var(--navy)]">2 min · Combinado:</strong> explique que o objetivo é aprender e que compartilhar experiências é opcional.</li>
+                    <li><strong className="text-[var(--navy)]">2 min · Combinado:</strong> escolham três perguntas e decidam como alternar leitura e consulta. Pontuação é dispensável.</li>
                     <li><strong className="text-[var(--navy)]">6 min · Quiz:</strong> use três perguntas, com até dois minutos para resposta e explicação.</li>
-                    <li><strong className="text-[var(--navy)]">5 min · Texto e conversa:</strong> leia uma referência completa e faça uma pergunta de aplicação.</li>
-                    <li><strong className="text-[var(--navy)]">2 min · Oração:</strong> cada casal pode orar em silêncio ou acompanhar uma oração breve do condutor.</li>
+                    <li><strong className="text-[var(--navy)]">5 min · Texto e descoberta:</strong> releiam um recorte indicado e confiram seu detalhe complementar.</li>
+                    <li><strong className="text-[var(--navy)]">2 min · Fechamento:</strong> escolham uma informação que localizaram e encerrem. Uma oração breve é opcional.</li>
                   </ol>
                   <p className="mt-6 text-sm leading-6 text-[var(--muted)]">
-                    Nota de contexto: Efésios, Colossenses, Filipenses e 1 Coríntios foram escritos para comunidades cristãs. As aplicações ao casamento derivam de princípios de convivência presentes nesses textos; elas não substituem a leitura do contexto nem aconselhamento adequado em situações de violência, coerção ou risco.
+                    Os blocos somam 15 minutos sugeridos, não uma duração medida em uso real. Para jogar as seis perguntas, reservem mais tempo ou façam duas sessões. A rodada não oferece aconselhamento nem propõe mudanças no relacionamento; seu objetivo é ler e brincar juntos.
                   </p>
                 </section>
 
@@ -306,12 +257,12 @@ export default function CouplesQuizGuide() {
                 </div>
 
                 <div className="prose-content mt-12">
-                  <h2>Temas que combinam com encontros de casais</h2>
+                  <h2>O que procurar na próxima rodada</h2>
                   <p>
-                    Os temas mais úteis são aqueles que levam a atitudes
-                    possíveis. Em vez de terminar apenas com uma reflexão geral,
-                    o condutor pode propor uma pergunta prática: que gesto de
-                    cuidado podemos cultivar nesta semana?
+                    Para continuar, escolham um tema do quiz digital ou outra
+                    passagem curta. As categorias abaixo ajudam a observar a
+                    narrativa. Não transformem cada personagem em modelo de
+                    casal nem exijam respostas sobre a vida de quem joga.
                   </p>
                 </div>
 
@@ -331,11 +282,11 @@ export default function CouplesQuizGuide() {
                     Sugestão de condução
                   </h2>
                   <ol className="mt-5 grid gap-4 leading-7 text-[var(--olive-dark)]">
-                    <li>1. Abra com uma oração breve pelo encontro.</li>
-                    <li>2. Escolha poucas perguntas e leia as referências com calma.</li>
-                    <li>3. Depois de uma resposta, pergunte qual princípio aparece no texto.</li>
-                    <li>4. Evite pedir relatos pessoais diante de todos.</li>
-                    <li>5. Encerre orando por unidade, perdão, escuta e serviço no lar.</li>
+                    <li>1. Separem uma Bíblia e escolham três perguntas.</li>
+                    <li>2. Leiam apenas o enunciado e as alternativas antes da escolha.</li>
+                    <li>3. Confiram a resposta e o versículo de apoio.</li>
+                    <li>4. Revezem as funções se desejarem, sem obrigação de responder.</li>
+                    <li>5. Encerrem com um detalhe descoberto na leitura, sem relatos pessoais.</li>
                   </ol>
                 </section>
 
@@ -366,11 +317,12 @@ export default function CouplesQuizGuide() {
                 <div className="prose-content mt-12">
                   <h2>Conclusão</h2>
                   <p>
-                    Um quiz para casais pode ser simples e ainda assim
-                    profundo. Quando há cuidado na condução, as perguntas ajudam
-                    o grupo a conversar melhor, ouvir a Palavra e orar por
-                    relacionamentos mais saudáveis.
+                    Esta rodada oferece seis perguntas e seis observações
+                    complementares para lazer e leitura em dupla. O resultado
+                    esperado é conferir informações das passagens, não medir
+                    conhecimento, fé ou qualidade do relacionamento.
                   </p>
+                  <p>Revisão de conteúdo: 10 de outubro de 2026. Gabaritos conferidos na Almeida 1819 (Bíblia Livre); palavras equivalentes de outras traduções são aceitas.</p>
                 </div>
               </div>
             </div>

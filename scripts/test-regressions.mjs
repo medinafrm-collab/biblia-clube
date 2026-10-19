@@ -10,6 +10,113 @@ const { whoAmICharacters, whoAmIJourneys } = loadTs('src/data/whoAmICharacters.t
 const { isAdEligiblePath } = loadTs('src/lib/adEligibility.ts');
 const { quizQuestions } = loadTs('src/data/quizQuestions.ts');
 
+test('Differentiated dynamics keep distinct tasks and short planner cores', () => {
+  const byId = id => cellDynamics.find(item => item.id === id);
+  assert.match(byId('verdade-ou-pressao').title, /Jogo limpo/);
+  assert.match(byId('amizades-que-edificam').meetingCore, /livro/);
+  assert.doesNotMatch(byId('amizades-que-edificam').meetingCore, /quiz/);
+  assert.match(byId('digital-com-proposito').steps[2].description, /20\/11\/2030.*15h.*EXEMPLO/);
+  assert.match(byId('maos-que-servem').meetingCore, /seis itens/);
+  assert.match(byId('boas-novas-em-uma-frase').steps[2].description, /observação.*não informado.*aplicação/);
+  assert.equal(new Set(cellDynamics.map(item => item.meetingCore)).size, cellDynamics.length);
+  for (const item of cellDynamics) {
+    assert.equal(item.steps.length, 4);
+    for (const ref of item.references) assert.ok(resolveBibleReference(ref).sections.length, `${item.id}: ${ref}`);
+  }
+});
+
+test('Family printable offers seven factual readings without a weekly commitment', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'plano-familiar-semanal');
+  const days = resource.sections.slice(0, 2).flatMap(section => section.items);
+  assert.equal(days.length, 7);
+  for (const item of days) assert.match(item, /Apoio:/);
+  assert.match(resource.instructions.join(' '), /estimativa/);
+  assert.doesNotMatch(JSON.stringify(resource), /Como podemos falar com Deus sobre o medo|Uma pessoa por quem vamos orar|Uma atitude que praticaremos|Que escolha certa/);
+  for (const ref of ['Marcos 10:13-16', 'Lucas 19:1-6', 'Marcos 1:16-20', 'João 6:8-13', 'Atos 18:1-3', 'Êxodo 31:1-6', 'Salmos 119:105']) assert.ok(resolveBibleReference(ref).sections.every(section => section.verses.length), ref);
+});
+
+test('Family reading keeps optional participation and complete oral sequence support', () => {
+  const { editorialArticles } = loadTs('src/data/editorialContent.ts');
+  const article = editorialArticles.find(item => item.slug === 'culto-domestico-com-criancas');
+  const schedule = article.sections.find(item => item.schedule);
+  let end = 0;
+  for (const item of schedule.schedule) {
+    const [from, to] = item.time.match(/\d+/g).map(Number);
+    assert.equal(from, end);
+    assert.ok(to > from);
+    end = to;
+  }
+  assert.equal(end, 15);
+  assert.match(schedule.note, /não medidos em aplicação real/);
+  assert.match(schedule.schedule.at(-1).text, /oração breve opcional ou releia/);
+  const questions = article.sections.find(item => item.heading === 'Perguntas com apoio para o adulto');
+  assert.equal(questions.steps.length, 4);
+  for (const [index, verse] of [13, 14, 16].entries()) assert.match(questions.steps[index].text, new RegExp(`Marcos 10:${verse}`));
+  const sequence = article.sections.find(item => item.heading === 'Jogo pronto: coloque a cena em ordem');
+  assert.match(sequence.paragraphs.join(' '), /C, B, D, A/);
+  assert.match(sequence.paragraphs.join(' '), /trazer, depois receber/);
+  const suggestions = article.sections.find(item => item.heading === 'Sugestões independentes para outra ocasião');
+  assert.equal(suggestions.steps.length, 3);
+  assert.match(suggestions.steps[0].text, /B, D, A, C/);
+  assert.doesNotMatch(JSON.stringify(article), /Semana [234]:|Faça a oração breve/);
+  for (const ref of ['Marcos 10:13-16', 'Lucas 19:1-6', 'João 6:1-13']) assert.ok(resolveBibleReference(ref).sections.every(section => section.verses.length));
+});
+
+test('Sixty minute meeting keeps five fictional examples and no weekly assignment', () => {
+  const { editorialArticles } = loadTs('src/data/editorialContent.ts');
+  const article = editorialArticles.find(item => item.slug === 'roteiro-completo-de-celula-em-60-minutos');
+  const schedule = article.sections.find(item => item.schedule);
+  let end = 0;
+  for (const item of schedule.schedule) {
+    const [from, to] = item.time.match(/\d+/g).map(Number);
+    assert.equal(from, end);
+    assert.ok(to > from);
+    end = to;
+  }
+  assert.equal(end, 60);
+  assert.match(schedule.note, /60 minutos sugeridos/);
+  const examples = article.sections.find(item => item.heading === 'Apoio para as cinco situações');
+  assert.equal(examples.steps.length, 5);
+  for (const item of examples.steps) assert.match(item.text, /Frase:/);
+  assert.match(examples.note, /não respostas únicas/);
+  assert.equal(article.sections.find(item => item.questions).questions.length, 4);
+  const revision = article.sections.find(item => item.heading === 'Uma resposta melhor e um encerramento preparado');
+  assert.match(revision.paragraphs.join(' '), /sem tarefa para a semana/);
+  assert.match(revision.paragraphs.join(' '), /acompanhar em silêncio/);
+  assert.doesNotMatch(JSON.stringify(article), /Nesta semana, em|Na próxima reunião, convide|todos têm espaço para conversar/);
+  assert.match(JSON.stringify(article), /não pede relatos íntimos/);
+  const passage = resolveBibleReference('Colossenses 3:12-17');
+  assert.equal(passage.sections[0].verses.length, 6);
+  assert.ok(passage.sections[0].verses.some(verse => verse.number === 13));
+});
+
+test('Game night has a complete oral kit and a continuous 75 minute schedule', () => {
+  const { editorialArticles } = loadTs('src/data/editorialContent.ts');
+  const article = editorialArticles.find(item => item.slug === 'como-montar-uma-noite-de-jogos-biblicos');
+  const schedule = article.sections.find(item => item.schedule).schedule;
+  let end = 0;
+  for (const item of schedule) {
+    const [from, to] = item.time.match(/\d+/g).map(Number);
+    assert.equal(from, end);
+    assert.ok(to > from);
+    end = to;
+  }
+  assert.equal(end, 75);
+  assert.equal(article.sections.find(item => item.heading.startsWith('Kit de condução')).steps.length, 3);
+  const questions = article.sections.find(item => item.heading === 'Rodada oral para falta de conexão').steps;
+  const phrases = article.sections.find(item => item.heading === 'Troque o ritmo com Complete a Frase').steps;
+  assert.equal(questions.length, 4);
+  assert.equal(phrases.length, 3);
+  for (const item of [...questions, ...phrases]) assert.match(item.text, /Resposta: [ABC][,.]/);
+  for (const ref of ['Lucas 19:1-6', 'Atos 18:2-3', 'Marcos 1:9', 'Êxodo 3:1-4', 'Salmos 119:105', 'Salmos 23:1-3', 'Eclesiastes 3:1-8']) {
+    const passage = resolveBibleReference(ref);
+    assert.ok(passage.sections.length, ref);
+    assert.ok(passage.sections.every(section => section.verses.length), ref);
+  }
+  assert.match(article.sections.find(item => item.schedule).note, /não medidos em aplicação real/);
+});
+
 test('Every quiz context provides distinct readable examples', () => {
   const { quizTopics } = loadTs('src/data/quizTopics.ts');
   const { getQuizTopicContext } = loadTs('src/data/quizTopicContext.ts');
@@ -34,6 +141,65 @@ test('Materials use an honest print format and neutral couple activities', () =>
   assert.doesNotMatch(JSON.stringify(couples), /finanç|financeir|ansiedade/i);
   const score = printableResources.find(resource => resource.slug === 'folha-de-pontuacao');
   assert.doesNotMatch(score.instructions.join(' '), /coluna colaboração/);
+});
+
+test('Recreational couple quiz has six unambiguous choices and readable references', () => {
+  const { couplesRecreationalQuiz } = loadTs('src/data/recreationalGuides.ts');
+  assert.equal(couplesRecreationalQuiz.length, 6);
+  assert.equal(new Set(couplesRecreationalQuiz.map(item => item.question)).size, 6);
+  for (const item of couplesRecreationalQuiz) {
+    assert.equal(item.options.length, 4);
+    assert.equal(new Set(item.options).size, 4);
+    assert.equal(item.options.filter(option => option === item.answer).length, 1);
+    assert.ok(resolveBibleReference(item.reference).sections.length, item.reference);
+    assert.ok(item.explanation && item.observation);
+  }
+  assert.doesNotMatch(JSON.stringify(couplesRecreationalQuiz), /reconcilia|pastoral|conflito|intimidade/i);
+});
+
+test('Youth workshop follows its passage and offers an honest 35 minute plan', () => {
+  const { youthReadingWorkshop } = loadTs('src/data/recreationalGuides.ts');
+  const passage = resolveBibleReference(youthReadingWorkshop.reference);
+  assert.equal(passage.sections[0].verses.length, 6);
+  assert.equal(youthReadingWorkshop.facts.length, 3);
+  assert.equal(youthReadingWorkshop.comparisons.length, 4);
+  assert.equal(youthReadingWorkshop.sequence.length, 6);
+  assert.equal(new Set(youthReadingWorkshop.sequence.map(item => item.id)).size, 6);
+  const expected = [...youthReadingWorkshop.sequence].sort((a, b) => a.verse - b.verse).map(item => item.id);
+  assert.deepEqual(youthReadingWorkshop.sequenceAnswer, expected);
+  assert.equal(youthReadingWorkshop.schedule.reduce((sum, item) => sum + item.minutes, 0), 35);
+  assert.match(youthReadingWorkshop.comparisons[2].answer, /não informa/);
+});
+
+test('Planning workshop separates preparation, event and optional replacement', () => {
+  const planning = cellDynamics.find(item => item.id === 'planejar-juntos');
+  assert.deepEqual(planning.planningWorksheet.fields.map(field => field.label), ['Jogo', 'Tempo do evento', 'Funções', 'Participação', 'Sem internet']);
+  assert.ok(planning.planningWorksheet.fields.every(field => field.prompt && field.example));
+  assert.match(planning.planningWorksheet.fields[1].example, /3 minutos.*12.*5/);
+  assert.match(planning.planningWorksheet.fields[4].example, /Noé.*Gênesis 6:13-22/);
+  assert.match(planning.planningWorksheet.variation, /B, C, D, A/);
+  assert.match(planning.planningWorksheet.variation, /5 minutos, substituindo/);
+  assert.match(planning.steps[3].description, /6 \+ 5 \+ 12 \+ 7 = 30/);
+  assert.match(planning.meetingCore, /não executem.*nem acrescentem a variação/);
+  assert.ok(!cellDynamics.some(item => item.id === 'rotina-com-proposito'));
+  const config = loadTs('next.config.ts');
+  return config.default.redirects().then(redirects => {
+    assert.ok(redirects.some(item => item.source === '/dinamicas-para-celulas/rotina-com-proposito' && item.destination === '/dinamicas-para-celulas/planejar-juntos' && item.permanent));
+  });
+});
+
+test('Couple cards keep eighteen distinct recreational prompts in three categories', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const cards = printableResources.find(item => item.slug === 'cartoes-para-casais');
+  assert.deepEqual(cards.sections.map(section => section.title), ['Preferências', 'Atividades juntos', 'Leitura bíblica']);
+  for (const section of cards.sections) assert.equal(section.items.length, 6);
+  assert.equal(new Set(cards.sections.flatMap(section => section.items)).size, 18);
+  assert.match(cards.instructions.join(' '), /passar qualquer cartão/);
+  for (const card of cards.sections[2].items) {
+    const reference = card.match(/Em (.*?), /)[1];
+    assert.ok(resolveBibleReference(reference).sections.length, reference);
+  }
+  assert.doesNotMatch(cards.sections.flatMap(section => section.items).join(' '), /perdão|conflito|sonho|orar|tarefa.*dividida/i);
 });
 
 test('Character clues do not conflate Jeoseba rooms or claim an undocumented rescue outcome', () => {
@@ -597,6 +763,14 @@ test('Analytics cannot initialize without consent or outside the allowed host', 
   analytics.trackGoogleAnalyticsEvent('test');
   assert.equal(browser[disableKey], true);
   assert.equal(calls.some(call => call[0] === 'config' || call[0] === 'event'), false);
+});
+
+test('Analytics queues the first consented game event before the tag loader mounts', t => {
+  const { calls } = analyticsBrowser(t);
+  analytics.saveAnalyticsConsent('granted');
+  analytics.trackGoogleAnalyticsEvent('game_view', { game: 'quem-sou-eu' });
+  assert.equal(calls.filter(call => call[0] === 'config').length, 1);
+  assert.equal(calls.filter(call => call[0] === 'event' && call[1] === 'game_view' && call[2].game === 'quem-sou-eu').length, 1);
 });
 
 test('Analytics reset revokes synchronously and requires a new explicit grant', t => {

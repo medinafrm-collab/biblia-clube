@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const local = 'http://127.0.0.1:3100';
+const local = process.env.LOCAL_ORIGIN || 'http://127.0.0.1:3100';
 const simulated = 'https://www.bibliaclube.com.br';
 const consentKey = 'biblia-clube:analytics-consent:v1';
 const scriptId = 'biblia-clube-google-analytics';

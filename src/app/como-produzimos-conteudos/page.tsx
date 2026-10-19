@@ -127,6 +127,19 @@ export default function EditorialProcessPage() {
         </div>
 
         <div>
+          <h2>Registro de revisões do acervo</h2>
+          <p className="mt-4">Em 12 de outubro de 2026, conferimos referências e instruções dos conteúdos abaixo no acervo bíblico utilizado pelo site e executamos testes de conteúdo, navegação e apresentação. Essa conferência com apoio de IA e automação não equivale a parecer de especialistas nem a aplicação presencial com participantes.</p>
+          <ul className="mt-4">
+            <li><Link href="/biblioteca/como-montar-uma-noite-de-jogos-biblicos">Noite de jogos</Link>: três frases com respostas e referências, perguntas mais variadas e limites do uso sem internet.</li>
+            <li><Link href="/biblioteca/roteiro-completo-de-celula-em-60-minutos">Encontro de 60 minutos</Link>: cinco situações com exemplos e revisão fictícia, sem compromisso semanal ou exposição pessoal.</li>
+            <li><Link href="/biblioteca/culto-domestico-com-criancas">No lar</Link>: perguntas separadas, sequência oral e encerramento opcional.</li>
+            <li><Link href="/dinamicas-para-celulas/planejar-juntos">Planejar juntos</Link>: modelo de cinco campos e variação curta da antiga atividade Rotina com propósito, cuja URL é redirecionada.</li>
+            <li><Link href="/materiais/plano-familiar-semanal">Plano familiar</Link>: leituras independentes, perguntas de observação e apoio para conferir, sem avaliação da família.</li>
+          </ul>
+          <p className="mt-4">Durações são sugestões, não tempos observados em encontros reais. Não apresentamos os exemplos fictícios ou imagens ilustrativas como relatos de uso. Uma data de revisão indica trabalho no conteúdo, não certificação de que ele está livre de erros.</p>
+        </div>
+
+        <div>
           <h2>Correções e atualização</h2>
           <p className="mt-4">
             Sugestões de correção são analisadas a partir da referência e do
@@ -142,7 +155,7 @@ export default function EditorialProcessPage() {
             . Consulte também a página <Link href="/sobre">Sobre</Link> e nossos{" "}
             <Link href="/termos-de-uso">Termos de Uso</Link>.
           </p>
-          <p className="mt-4">Última revisão desta página: 9 de outubro de 2026.</p>
+          <p className="mt-4">Última revisão desta página: 12 de outubro de 2026.</p>
         </div>
       </InstitutionalPage>
     </>

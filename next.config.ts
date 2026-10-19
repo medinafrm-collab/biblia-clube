@@ -3,6 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   agentRules: false,
   poweredByHeader: false,
+  async redirects() {
+    return [{
+      source: "/dinamicas-para-celulas/rotina-com-proposito",
+      destination: "/dinamicas-para-celulas/planejar-juntos",
+      permanent: true,
+    }];
+  },
   async headers() {
     return [
       {

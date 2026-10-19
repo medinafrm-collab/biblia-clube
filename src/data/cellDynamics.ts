@@ -17,55 +17,60 @@ export type CellDynamic = {
   references: string[];
   leaderNote: string;
   prayerSuggestion: string;
+  planningWorksheet?: {
+    fields: { label: string; prompt: string; example: string }[];
+    variation: string;
+  };
 };
 
 const cellDynamicDrafts: CellDynamic[] = [
   {
-    id: "verdade-ou-pressao",
-    meetingCore: "Leia a cena fictícia: uma equipe recebeu um ponto a mais e alguém propõe ficar quieto para vencer. Em duplas ou trios, escolham o que conferir e uma fala respeitosa. Apoio: verificar o placar e avisar quem conduz. Não peçam relatos reais nem confissões.",
-    audience: "jovens",
-    audienceLabel: "Jovens",
-    category: "Escolhas e honestidade",
-    title: "Verdade ou press\u00e3o?",
-    summary:
-      "Quatro cenas fictícias de jogos para distinguir informação verdadeira, pressão da equipe e combinados justos, sem contar histórias pessoais.",
-    duration: "35 a 45 min",
-    groupSize: "6 a 20 pessoas",
-    materials: ["Bíblia ou aplicativo bíblico", "Este roteiro com as quatro cenas", "Relógio", "Papel e caneta por trio, opcionais"],
-    objective:
-      "Observar o convite a falar a verdade em Efésios 4:25 e propor escolhas honestas em situações fictícias de uma rodada de jogos.",
-    steps: [
-      {
-        title: "Leitura b\u00edblica",
-        description:
-          "Reserve 7 minutos. Explique que o encontro usa personagens fictícios e não vai recolher experiências pessoais. Leia Efésios 4:25 e 4:29, depois de consultar 4:25-32 na preparação. A passagem trata da vida em comunidade, da verdade e de palavras que contribuam para os outros. Pergunte que orientação aparece no versículo 25: falar a verdade ao próximo. As regras de jogo desta atividade são uma aplicação proposta, não uma lista presente na carta. Romanos 12:2 e 1 Timóteo 4:12 ficam para consulta posterior, sem exigir que os jovens resolvam todas as questões desses textos nesta rodada.",
-      },
-      {
-        title: "Abertura",
-        description:
-          "Núcleo de até 5 minutos: leia a cena fictícia: 'Uma equipe percebe que recebeu um ponto a mais por engano. Uma pessoa propõe avisar; outra diz que é melhor ficar quieto para ganhar'. Pergunte que informação pode ser conferida e que resposta respeita o combinado. Apoio: conferir o resultado e avisar quem conduz. Uma frase possível é 'Vamos verificar o placar antes de seguir'. Aceite duas contribuições voluntárias ou leia o apoio se ninguém quiser responder. O grupo pode consultar, escrever ou apenas ouvir, sem revelar como agiria numa situação real.",
-      },
-      {
-        title: "Escolha e conversa",
-        description:
-          "Reserve 15 minutos. Em 3 minutos, apresente as outras três cenas fictícias: A) uma rodada permite consultar a Bíblia, mas um colega diz que pedir consulta é sinal de saber menos; B) a equipe recebeu uma dica depois do prazo e alguém propõe dizer que já tinha respondido antes; C) uma pessoa pede que a regra seja repetida e recebe a resposta 'todo mundo entendeu, só você não'. Em trios ou quartetos, escolham uma cena e usem 6 minutos para separar o fato conhecido, a pressão exercida e uma resposta possível. Apoios: em A, consulta é permitida e pode ser usada sem desqualificação; em B, informar quando a resposta foi dada, sem inventar um horário; em C, repetir a regra sem ridicularizar. Usem os 6 minutos finais para até três sínteses voluntárias, de até 1 minuto cada, e a conferência. Não tentem identificar colegas reais nas cenas. Para a versão de 45 minutos, acrescentem 10 minutos para reescrever uma fala de pressão como convite respeitoso e comparar as propostas.",
-      },
-      {
-        title: "Fechamento",
-        description:
-          "Use 8 minutos para uma das perguntas abaixo, uma síntese e uma oração breve, se desejada. Escolham uma regra para uma próxima rodada, como conferir o placar antes de avançar ou permitir pedidos de releitura. Não cobrem promessas individuais nem confissões sobre trapaça. As etapas somam 35 minutos; a reescrita das falas acrescenta 10, totalizando 45. No criador de roteiro, use somente as etapas selecionadas e os tempos exibidos, não a duração integral desta página.",
-      },
+    "id": "verdade-ou-pressao",
+    "meetingCore": "Leia a cena fictícia: uma equipe recebeu um ponto a mais e alguém propõe ficar quieto para vencer. Em duplas ou trios, escolham o que conferir e uma fala respeitosa. Apoio: verificar o placar e avisar quem conduz. Não peçam relatos reais nem confissões.",
+    "audience": "jovens",
+    "audienceLabel": "Jovens",
+    "category": "Regras e conferência",
+    "title": "Jogo limpo: confira o combinado",
+    "summary": "Quatro cenas de placar, prazo e consulta para produzir um combinado de jogo limpo, sem avaliar pressões da vida pessoal.",
+    "duration": "35 a 45 min",
+    "groupSize": "6 a 20 pessoas",
+    "materials": [
+      "Bíblia ou aplicativo bíblico",
+      "Este roteiro com as quatro cenas",
+      "Relógio",
+      "Papel e caneta por trio, opcionais"
     ],
-    questions: [
+    "objective": "Conferir fatos de uma rodada e escrever uma regra verificável sobre placar, consulta ou releitura, à luz de Efésios 4:25 e 4:29.",
+    "steps": [
+      {
+        "title": "Leitura bíblica",
+        "description": "Reserve 7 minutos. Explique que o encontro usa personagens fictícios e não vai recolher experiências pessoais. Leia Efésios 4:25 e 4:29, depois de consultar 4:25-32 na preparação. A passagem trata da vida em comunidade, da verdade e de palavras que contribuam para os outros. Pergunte que orientação aparece no versículo 25: falar a verdade ao próximo. As regras de jogo desta atividade são uma aplicação proposta, não uma lista presente na carta. Romanos 12:2 e 1 Timóteo 4:12 ficam para consulta posterior, sem exigir que os jovens resolvam todas as questões desses textos nesta rodada."
+      },
+      {
+        "title": "Abertura",
+        "description": "Núcleo de até 5 minutos: leia a cena fictícia: 'Uma equipe percebe que recebeu um ponto a mais por engano. Uma pessoa propõe avisar; outra diz que é melhor ficar quieto para ganhar'. Pergunte que informação pode ser conferida e que resposta respeita o combinado. Apoio: conferir o resultado e avisar quem conduz. Uma frase possível é 'Vamos verificar o placar antes de seguir'. Aceite duas contribuições voluntárias ou leia o apoio se ninguém quiser responder. O grupo pode consultar, escrever ou apenas ouvir, sem revelar como agiria numa situação real."
+      },
+      {
+        "title": "Escolha e conversa",
+        "description": "Reserve 15 minutos. Em 3 minutos, apresente as outras três cenas fictícias: A) uma rodada permite consultar a Bíblia, mas um colega diz que pedir consulta é sinal de saber menos; B) a equipe recebeu uma dica depois do prazo e alguém propõe dizer que já tinha respondido antes; C) uma pessoa pede que a regra seja repetida e recebe a resposta 'todo mundo entendeu, só você não'. Em trios ou quartetos, escolham uma cena e usem 6 minutos para separar o fato conhecido, a pressão exercida e uma resposta possível. Apoios: em A, consulta é permitida e pode ser usada sem desqualificação; em B, informar quando a resposta foi dada, sem inventar um horário; em C, repetir a regra sem ridicularizar. Usem os 6 minutos finais para até três sínteses voluntárias, de até 1 minuto cada, e a conferência. Não tentem identificar colegas reais nas cenas. Para a versão de 45 minutos, acrescentem 10 minutos para reescrever uma fala de pressão como convite respeitoso e comparar as propostas."
+      },
+      {
+        "title": "Fechamento",
+        "description": "Use 8 minutos para uma das perguntas abaixo, uma síntese e uma oração breve, se desejada. Escolham uma regra para uma próxima rodada, como conferir o placar antes de avançar ou permitir pedidos de releitura. Não cobrem promessas individuais nem confissões sobre trapaça. As etapas somam 35 minutos; a reescrita das falas acrescenta 10, totalizando 45. No criador de roteiro, use somente as etapas selecionadas e os tempos exibidos, não a duração integral desta página."
+      }
+    ],
+    "questions": [
       "Na cena do placar, o que pode ser conferido antes de seguir? O resultado da pergunta e o ponto registrado, sem adivinhar a intenção de alguém.",
       "Na cena da consulta, qual diferença há entre uma regra e a opinião de um colega? A consulta está permitida; a fala que desqualifica não muda esse combinado.",
-      "Como relacionar Efésios 4:25 e 4:29 às respostas propostas? Observem verdade e palavras que ajudem, sem usar os versículos para rotular participantes como mentirosos.",
+      "Como relacionar Efésios 4:25 e 4:29 às respostas propostas? Observem verdade e palavras que ajudem, sem usar os versículos para rotular participantes como mentirosos."
     ],
-    references: ["Efésios 4:25-29", "Romanos 12:2", "1 Timóteo 4:12"],
-    leaderNote:
-      "Prepare trios ou quartetos para 6 a 20 pessoas e deixe as cenas disponíveis por leitura ou na tela. Ofereça leitura assistida e a opção de observar. Não peça bilhetes sobre pressões reais, não investigue quem já mentiu e não transforme a atividade em aconselhamento. Recusa e silêncio não precisam de justificativa. Os exemplos não diagnosticam o grupo nem autorizam cobrança de relatos. Respostas e imagens não devem ser publicadas sem autorização.",
-    prayerSuggestion:
-      "Sugestão opcional: 'Deus, ajuda-nos a falar com verdade e respeito, a ouvir e a cuidar uns dos outros. Obrigado por podermos aprender juntos. Amém.' Quem preferir pode acompanhar em silêncio.",
+    "references": [
+      "Efésios 4:25-29",
+      "Romanos 12:2",
+      "1 Timóteo 4:12"
+    ],
+    "leaderNote": "Prepare trios ou quartetos para 6 a 20 pessoas e deixe as cenas disponíveis por leitura ou na tela. Ofereça leitura assistida e a opção de observar. Não peça bilhetes sobre pressões reais, não investigue quem já mentiu e não transforme a atividade em aconselhamento. Recusa e silêncio não precisam de justificativa. Os exemplos não diagnosticam o grupo nem autorizam cobrança de relatos. Respostas e imagens não devem ser publicadas sem autorização.",
+    "prayerSuggestion": "Sugestão opcional: 'Deus, ajuda-nos a falar com verdade e respeito, a ouvir e a cuidar uns dos outros. Obrigado por podermos aprender juntos. Amém.' Quem preferir pode acompanhar em silêncio."
   },
   {
     id: "escuta-que-aproxima",
@@ -163,18 +168,18 @@ const cellDynamicDrafts: CellDynamic[] = [
   },
   {
     id: "planejar-juntos",
-    meetingCore: "Leia o cenário fictício: seis adultos têm um celular e duas pessoas não conhecem o site. Cada dupla escolhe um jogo e uma forma de incluir todos. Apoio: ler perguntas em voz alta e conversar antes da resposta. Acrescente apenas como explicar a regra se a conexão cair, sem jogar a sessão planejada agora.",
+    meetingCore: "Leia o cenário fictício: seis adultos têm um celular, duas pessoas não conhecem o site e há 20 minutos para uma sessão futura. Cada dupla escolhe um jogo e registra quem explica e como todos podem acompanhar. Apoio: quiz cooperativo, leitura em voz alta e consulta compartilhada. Preparem somente uma decisão do plano neste bloco curto; não executem a sessão nem acrescentem a variação da mesa.",
     audience: "casais",
     audienceLabel: "Casais",
     category: "Planejamento e cooperação",
     title: "Planejar juntos",
     summary:
-      "Planeje em dupla uma tarde de jogos para um grupo fictício, escolhendo atividades, turnos e uma alternativa sem internet.",
+      "Uma oficina em dupla para preencher um plano de 20 minutos de jogos: formato, tempo, funções, participação e alternativa sem internet, com exemplo pronto.",
     duration: "30 a 45 min",
     groupSize: "3 a 8 casais",
     materials: ["Um papel por casal", "Canetas", "Bíblia ou aplicativo bíblico", "Relógio"],
     objective:
-      "Praticar escuta e cooperação em um planejamento simples de atividade, sem discutir dinheiro ou conflitos pessoais.",
+      "Preparar um plano curto que outra dupla consiga compreender: jogo, distribuição do tempo, funções voluntárias, participação com um aparelho e alternativa oral. Não executar o evento durante a oficina nem avaliar o relacionamento.",
     steps: [
       {
         title: "Leitura bíblica",
@@ -184,76 +189,39 @@ const cellDynamicDrafts: CellDynamic[] = [
       {
         title: "Uma tarde de jogos",
         description:
-          "Núcleo de até 5 minutos: leia este cenário fictício: 'Seis adultos têm 20 minutos para jogar. Há um celular e duas pessoas nunca usaram o site'. Cada dupla escolhe entre quiz cooperativo, adivinhação de personagens com pistas ou associação oral de pares. Uma pessoa sugere um formato; a outra resume o que ouviu antes de propor um ajuste. Registrem o jogo e um modo de incluir quem está chegando. Uma solução possível é ler as perguntas do quiz em voz alta e deixar todos conversarem antes da escolha. Não há um único plano correto.",
+          "Use até 5 minutos para o cenário fictício: seis adultos têm 20 minutos para uma sessão futura; há um celular e duas pessoas nunca usaram o site. Cada dupla escolhe quiz cooperativo, pistas de personagens ou pares narrados e registra como explicar a regra. Uma pessoa sugere, a outra confirma o que entendeu. Não há um plano único correto. Em vez desta etapa, é possível usar a variação da mesa descrita abaixo, também de 5 minutos; escolha uma das duas, sem somar tempos.",
       },
       {
         title: "Cenários para decidir",
         description:
-          "Reserve 12 minutos para transformar a ideia em um roteiro: 3 minutos para explicar regras, 12 para jogar e 5 para conversar sobre uma referência, totalizando os 20 minutos do cenário. Definam quem lê e como alternar respostas, sem exigir que alguém use o celular. Depois apresente a mudança: 'A conexão caiu'. Alternativa pronta: uma pessoa lê estas pistas, uma por vez: 'Construí uma embarcação'; 'Minha família entrou nela'; 'Minha história aparece em Gênesis 6-9'. Resposta: Noé; confira Gênesis 6:13-22. Nos últimos 3 minutos deste bloco, ouça até três planos em uma frase. Para a versão de 45 minutos, acrescente 15 minutos para trocar os planos entre duplas e verificar se as instruções podem ser seguidas sem explicação adicional.",
+          "Reserve 12 minutos para preencher os cinco campos abaixo: 2 para ler o modelo, 7 para registrar decisões e 3 para conferir o tempo e a alternativa sem conexão. O plano do evento deve distribuir seus próprios 20 minutos, por exemplo 3 de regras, 12 de jogo e 5 de conferência. Esses 20 minutos não são executados agora nem somados à oficina. Definam funções voluntárias, como ler, confirmar a escolha e acompanhar o relógio; a mesma pessoa pode fazer mais de uma, e ninguém precisa emprestar aparelho. A alternativa deve incluir pergunta ou pistas, resposta e referência disponíveis antes do evento.",
       },
       {
         title: "Um acordo possível",
         description:
-          "Use 7 minutos para conferir os combinados: quem explica, quanto tempo dura, como participar sem aparelho e o que fazer sem conexão. Converse sobre uma das perguntas abaixo e encerre com uma oração breve, se desejado. O plano é um exercício fictício, não um compromisso de organizar um evento. As etapas somam 30 minutos, ou 45 com a troca entre duplas. No criador de roteiro, respeite o tempo e as etapas selecionadas, não este cronograma integral.",
+          "Use 7 minutos: 2 para outra dupla ler o plano, 3 para localizar uma instrução ausente ou pouco clara e 2 para corrigir e encerrar. Sem troca, o condutor lê um exemplo e a dupla confere seus campos. Na sugestão de 45 minutos, acrescente 15: 5 para cada dupla ler as regras da outra, 5 para simular oralmente a falha de conexão e 5 para revisar os campos, sem jogar o evento inteiro. A oficina soma 6 + 5 + 12 + 7 = 30 minutos sugeridos, ou 45 com esse teste; não são tempos observados em aplicação real. No criador de roteiro, use apenas o núcleo e os tempos selecionados, não o modelo inteiro nem sua variação.",
       },
     ],
     questions: [
-      "Que ajuste ajudou a incluir as duas pessoas novas? Explicar uma rodada sem pontuação é uma possibilidade.",
-      "Como resumir a sugestão do outro antes de responder? Tente 'Você propôs este jogo porque...; entendi corretamente?'.",
-      "O plano funciona sem internet? Verifiquem se as pistas, a resposta e a referência estão disponíveis no próprio roteiro.",
+      "Outra dupla consegue identificar o jogo e quem explica a regra? Se faltar uma informação, acrescentem ao campo correspondente, sem avaliar quem escreveu.",
+      "Os blocos do evento somam 20 minutos? Confiram regras, jogo e conferência; não incluam os 30 minutos de preparo nesse total.",
+      "O plano funciona sem internet? A alternativa precisa ter uma pergunta ou pistas, resposta e referência já disponíveis, não apenas mandar abrir outra página.",
     ],
     references: ["Eclesiastes 4:9-10", "Gênesis 6:13-22"],
+    planningWorksheet: {
+      fields: [
+        { label: "Jogo", prompt: "Que formato será usado e qual regra será explicada?", example: "Quiz cooperativo: o condutor lê uma pergunta e as alternativas; o grupo conversa e escolhe uma resposta. Consulta permitida, sem ranking individual." },
+        { label: "Tempo do evento", prompt: "Como distribuir os 20 minutos, incluindo explicação e conferência?", example: "3 minutos de regras, 12 de até três perguntas com explicações e 5 para reler uma referência. Se faltar tempo, retire uma pergunta; não apresse a consulta." },
+        { label: "Funções", prompt: "Quem deseja ler, confirmar escolhas e acompanhar o horário?", example: "Uma pessoa voluntária lê, outra confirma a escolha no celular e outra acompanha o relógio. Trocas são opcionais; uma pessoa pode acumular funções." },
+        { label: "Participação", prompt: "Como acompanhar com um celular e sem conhecer o site?", example: "Faça uma pergunta de demonstração sem pontuação, leia as opções em voz alta e deixe a Bíblia aberta. É possível apenas ouvir ou passar." },
+        { label: "Sem internet", prompt: "Qual exemplo oral fica pronto antes do evento, com resposta e referência?", example: "Leia as pistas: recebeu instruções para construir uma arca; sua história aparece em Gênesis 6. Resposta: Noé; confira Gênesis 6:13-22. As pistas e a passagem ficam anotadas ou abertas numa Bíblia impressa antes do evento. Não prometa funcionamento offline do site." },
+      ],
+      variation: "Alternativa para a etapa de escolha, não uma atividade extra: em 1 minuto, apresente uma mesa fictícia com livros, folhas comuns e uma anotação pessoal. Em 2 minutos, ordenem A conferir; B pedir autorização e combinar ajuda voluntária; C separar os materiais autorizados; D colocá-los no lugar combinado. Gabarito: B, C, D, A. Nos 2 minutos finais, expliquem por que autorização vem antes de mover os materiais e confiram a resposta. Total: 5 minutos, substituindo Uma tarde de jogos. Não usem objetos reais, não leiam anotações privadas e não avaliem a rotina doméstica. Depois, sigam ao modelo do evento: esta sequência serve como aquecimento para instruções claras, não altera seus 20 minutos.",
+    },
     leaderNote:
       "Use apenas o cenário fictício. Não avalie o relacionamento de ninguém nem compare duplas. Ofereça leitura assistida e a opção de observar. Os planos não exigem compras, coleta de dinheiro, exposição familiar ou aconselhamento. Com oito casais, limite as apresentações a três voluntários para preservar o tempo.",
     prayerSuggestion:
       "Sugestão opcional: 'Deus, ajuda-nos a ouvir com atenção, cooperar e receber bem as pessoas. Obrigado pela oportunidade de aprender juntos. Amém.' Quem preferir pode acompanhar em silêncio.",
-  },
-  {
-    id: "rotina-com-proposito",
-    meetingCore: "Leia a cena fictícia de uma mesa com livros, folhas comuns e uma anotação pessoal. Ordenem: B pedir autorização; C separar os materiais autorizados; D colocá-los no lugar combinado; A conferir. Apoio: B, C, D, A. Cada dupla sugere uma frase de ajuda; não movam objetos reais nem leiam anotações privadas.",
-    audience: "casais",
-    audienceLabel: "Casais",
-    category: "Dia a dia e cuidado",
-    title: "Rotina com propósito",
-    summary:
-      "Organize uma mesa de leitura fictícia em dupla, colocando tarefas em sequência e oferecendo ajuda sem cobranças sobre a rotina do casal.",
-    duration: "40 a 55 min",
-    groupSize: "3 a 10 casais",
-    materials: ["Bíblia ou aplicativo bíblico", "Este roteiro com as tarefas", "Relógio", "Papel e caneta por dupla, opcionais"],
-    objective:
-      "Observar a ajuda mútua em Eclesiastes 4:9-10 e praticar uma sequência simples de tarefas compartilhadas, sem avaliar responsabilidades familiares reais.",
-    steps: [
-      {
-        title: "Leitura bíblica",
-        description:
-          "Reserve 7 minutos para acolher, explicar que o cenário é fictício e ler Eclesiastes 4:9-10. Pergunte qual exemplo de ajuda o versículo 10 apresenta: uma pessoa levantar a outra quando cai. O texto valoriza companhia e cooperação; não determina uma divisão de tarefas domésticas nem se restringe a casais. A organização da mesa é uma aplicação criada pelo roteiro. Gálatas 6:2 e Colossenses 3:12-14 ficam para consulta posterior, sem pedir relatos de cargas pessoais ou conflitos.",
-      },
-      {
-        title: "Uma tarefa pequena, em dupla",
-        description:
-          "Núcleo de até 5 minutos: leia o cenário fictício: 'Uma mesa vai receber quatro pessoas para leitura. Há dois livros, folhas comuns e uma anotação pessoal. Antes de organizar, o responsável deve indicar o que pode ser movido'. Pergunte qual deve ser o primeiro passo e como oferecer ajuda. Apoio: pedir autorização antes de mexer e não ler a anotação pessoal. Uma frase possível é 'Posso separar os livros enquanto você verifica quais folhas podem ser guardadas?'. Cada dupla propõe uma frase ou acompanha a demonstração do condutor. Não é necessário usar objetos reais, contar como a própria casa funciona ou comparar quem faz mais.",
-      },
-      {
-        title: "Antes, durante e depois",
-        description:
-          "Reserve 18 minutos. Em 3 minutos, apresente quatro tarefas misturadas: A) conferir se a mesa ficou pronta; B) perguntar o que pode ser movido e combinar quem deseja ajudar; C) separar os livros e as folhas autorizadas; D) colocar os materiais autorizados no lugar combinado. Em 6 minutos, as duplas ordenam as tarefas e propõem uma função voluntária para cada pessoa. Gabarito de sequência: B, C, D, A. Use mais 6 minutos para testar oralmente: uma pessoa lê os passos, a outra procura algo que faltou explicar, e depois trocam se desejarem. Nos 3 minutos finais, recolha até duas observações sobre a instrução, sem informações da rotina real. Não há uma divisão única de funções: uma pessoa pode ler, ambas podem decidir juntas ou alguém pode apenas observar. Para 55 minutos, acrescente 15 minutos com a variação fictícia 'Só uma pessoa quer executar; a outra prefere acompanhar'. Adaptem o plano sem atribuir tarefas a quem não se ofereceu.",
-      },
-      {
-        title: "Conferência sem cobrança pessoal",
-        description:
-          "Use 10 minutos para uma das perguntas abaixo, até três contribuições voluntárias e a síntese. Uma conclusão possível é: pedir autorização, combinar ajuda e conferir o resultado são partes da tarefa, não apenas mover objetos. Não cobrem acordos domésticos, pedidos de perdão ou mudanças para a semana seguinte. A oração é opcional. As etapas somam 40 minutos; a variação acrescenta 15, totalizando 55. No criador de roteiro, siga somente as etapas selecionadas e o tempo de cada bloco, não a duração integral desta página.",
-      },
-    ],
-    questions: [
-      "Por que a tarefa B vem antes de mover os materiais? É preciso saber o que pode ser mexido e quem deseja ajudar; a anotação pessoal não deve ser lida.",
-      "Como oferecer uma ajuda concreta sem decidir pelo outro? Uma possibilidade é perguntar 'Posso separar os livros?' e aceitar a resposta.",
-      "Em Eclesiastes 4:9-10, qual exemplo mostra ajuda mútua? Localizem o auxílio a quem cai; a sequência de tarefas da mesa foi criada para esta atividade, não está na passagem.",
-    ],
-    references: ["Eclesiastes 4:9-10", "Gálatas 6:2", "Colossenses 3:12-14"],
-    leaderNote:
-      "Para 3 a 10 casais, trabalhe em duplas e limite o plenário a três contribuições. Use apenas o cenário fictício; não recolha listas da casa, horas de trabalho ou queixas sobre o outro. Papéis não dependem de gênero, rapidez ou conhecimento prévio. Leitura assistida, resposta escrita e escuta são alternativas; ninguém precisa justificar uma recusa. Não manipulem objetos pesados nem dados privados. A atividade não oferece diagnóstico ou aconselhamento; um assunto pessoal não deve ser desenvolvido no grupo como parte do exercício. Não publique respostas ou imagens sem autorização.",
-    prayerSuggestion:
-      "Sugestão opcional: 'Deus, ajuda-nos a oferecer ajuda com respeito, a ouvir e a cooperar nas pequenas tarefas. Obrigado por aprendermos juntos. Amém.' Quem preferir pode acompanhar em silêncio.",
   },
   {
     id: "casa-que-cresce",
@@ -303,51 +271,53 @@ const cellDynamicDrafts: CellDynamic[] = [
       "Sugestão opcional: 'Deus, ajuda-nos a ler com atenção, explicar com paciência e respeitar as diferentes formas de participar. Obrigado por podermos aprender juntos. Amém.' É possível acompanhar em silêncio.",
   },
   {
-    id: "amizades-que-edificam",
-    meetingCore: "Leia a cena fictícia: uma pessoa chega ao quiz sem conhecer as regras, e um colega explica e oferece jogar em dupla. Em trios, completem Um bom amigo, nesta cena... com uma ação observável. Apoios: explicar sem rir, convidar sem obrigar e esperar a pergunta terminar. Não nomeiem colegas reais.",
-    audience: "jovens",
-    audienceLabel: "Jovens",
-    category: "Amizade e influência",
-    title: "Amizades que edificam",
-    summary:
-      "Um semáforo de atitudes com quatro cenas fictícias para praticar inclusão, respeito e encorajamento, sem avaliar colegas reais.",
-    duration: "35 a 50 min",
-    groupSize: "6 a 24 pessoas",
-    materials: ["Um papel por participante", "Canetas", "Bíblia ou aplicativo bíblico", "Relógio", "Três papéis por equipe com as palavras verde, amarelo e vermelho"],
-    objective:
-      "Ajudar jovens a reconhecer características de amizades saudáveis e atitudes que fortalecem ou enfraquecem vínculos.",
-    steps: [
-      {
-        title: "Leitura bíblica",
-        description:
-          "Reserve 7 minutos para apresentar os combinados e ler Provérbios 17:17 e 27:17. São ditados breves sobre amizade constante e influência mútua; não são uma lista para classificar pessoas como boas ou más. Pergunte o que muda entre estar presente e concordar com tudo. As cenas e o semáforo são uma proposta do roteiro. Deixe 1 Coríntios 15:33 para consulta posterior: o versículo está em uma discussão sobre a ressurreição, não autoriza humilhar colegas.",
-      },
-      {
-        title: "Um bom amigo...",
-        description:
-          "Núcleo de 5 minutos: forme trios ou quartetos. Leia a cena fictícia: 'Uma pessoa chega à rodada de quiz sem conhecer as regras. Um colega explica e oferece jogar em dupla'. Cada equipe completa 'Um bom amigo, nesta cena...' com uma ação observável. Sugestões: explicar sem rir, convidar sem obrigar ou esperar a pessoa terminar a pergunta. Ouça duas respostas voluntárias. Não escrevam nomes nem histórias pessoais; quem preferir pode apenas ouvir.",
-      },
-      {
-        title: "Semáforo das atitudes",
-        description:
-          "Reserve 15 minutos: explique verde como uma atitude que ajuda, amarelo como algo que precisa de contexto e vermelho como uma atitude a evitar. Leia estas quatro cenas fictícias: 1) alguém convida um colega para jogar e aceita quando ele prefere observar; 2) alguém decide o jogo por todos antes de perguntar; 3) um grupo ri de quem errou uma resposta e repete a piada; 4) alguém oferece ajuda com uma pista, mas pergunta antes se o colega quer. Use 1 minuto para explicar as regras e até 3 por cena para escolher uma palavra e justificar; os 2 minutos finais servem para resumir. Pontos de apoio: respeitar uma recusa e oferecer ajuda são atitudes acolhedoras; decidir sozinho pede conversa; ridicularizar o erro deve ser evitado. Não dê pontos nem trate a cor como diagnóstico de uma pessoa. Na versão de 50 minutos, acrescente 15 minutos para cada equipe reescrever uma cena de forma mais acolhedora e apresentar uma frase, não uma encenação obrigatória.",
-      },
-      {
-        title: "Encorajamento prático",
-        description:
-          "Use 8 minutos para conversar sobre uma das perguntas abaixo, recolher até três sugestões e encerrar. Cada pessoa pode escolher uma atitude pequena para a próxima rodada: esperar a vez, explicar uma regra ou respeitar quem quer observar. Não é necessário anunciar um compromisso. As etapas somam 35 minutos, ou 50 com a reescrita das cenas. No criador de roteiro, use apenas as etapas e o tempo do bloco selecionado.",
-      },
+    "id": "amizades-que-edificam",
+    "meetingCore": "Leia a cena fictícia: uma pessoa emprestou um livro e a outra pergunta onde guardá-lo antes de devolver. Escolham verde, amarelo ou vermelho para a atitude e expliquem o que a cena informa. Apoio: verde, pois pergunta antes de decidir. Não classifiquem amigos reais.",
+    "audience": "jovens",
+    "audienceLabel": "Jovens",
+    "category": "Amizade e influência",
+    "title": "Amizades que edificam",
+    "summary": "Compare quatro atitudes fictícias envolvendo um livro, um desenho e um marcador; produza uma justificativa e uma nova fala, sem avaliar amizades reais.",
+    "duration": "35 a 50 min",
+    "groupSize": "6 a 24 pessoas",
+    "materials": [
+      "Um papel por participante",
+      "Canetas",
+      "Bíblia ou aplicativo bíblico",
+      "Relógio",
+      "Três papéis por equipe com as palavras verde, amarelo e vermelho"
     ],
-    questions: [
-      "Na primeira cena, o que torna o convite respeitoso? Observe que a recusa é aceita, sem insistência.",
-      "Como refazer a segunda cena para ouvir o grupo antes de escolher um jogo? Uma votação com opção de observar é uma possibilidade.",
-      "Como encorajar quem errou sem dar a resposta por ele? Pergunte se quer uma explicação e espere sua resposta.",
+    "objective": "Distinguir ação observável e informação ausente em cenas leves, usando um semáforo de atitudes, não um diagnóstico de amizades.",
+    "steps": [
+      {
+        "title": "Leitura bíblica",
+        "description": "Reserve 7 minutos para os combinados e Provérbios 17:17 e 27:17. Os provérbios falam de amizade constante e influência mútua, não oferecem um teste para classificar pessoas. Localizem amizade e comparação com o ferro. O semáforo é uma atividade criada pelo roteiro; 1 Coríntios 15:33 fica para consulta posterior em seu contexto sobre ressurreição."
+      },
+      {
+        "title": "Uma atitude observável",
+        "description": "Em até 5 minutos, leia: uma pessoa emprestou um livro; quem o recebeu pergunta onde guardá-lo antes de devolver. Pergunte qual ação aparece, sem adivinhar intenções. Apoio: pedir informação antes de decidir. Mostre que verde avalia uma atitude nesta cena, não toda uma pessoa. Aceite resposta oral, escrita ou apenas escuta."
+      },
+      {
+        "title": "Semáforo das atitudes",
+        "description": "Reserve 15 minutos: 1 para explicar, até 3 por cena e 2 para síntese. Verde ajuda na cena; amarelo pede informação; vermelho indica algo a evitar. Cenas: A alguém pergunta antes de usar o marcador emprestado; B alguém guarda um livro sem saber se a leitura terminou; C alguém rasga o desenho de outra pessoa para fazer uma piada; D alguém elogia uma cor do desenho e pergunta se a pessoa quer uma sugestão. Apoios: A e D, verde, pois preservam escolha; B, amarelo, falta confirmar o uso; C, vermelho, danifica algo alheio. Outras justificativas podem ser discutidas com base nos fatos. Produto: uma cor e uma frase que a sustente por cena. Para 50 minutos, acrescente 15: 5 para escolher B ou C, 5 para reescrever a ação com respeito e 5 para conferir, sem encenação obrigatória."
+      },
+      {
+        "title": "Compare sem rotular",
+        "description": "Use 8 minutos: 3 para uma pergunta, 3 para até três contribuições e 2 para encerrar. Compare ação conhecida e hipótese sobre intenção. Não nomeiem colegas nem anunciem compromissos. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 50 com reescrita; não medido em aplicação real. No criador, use apenas o núcleo e o tempo reservado."
+      }
     ],
-    references: ["Provérbios 17:17", "Provérbios 27:17", "1 Coríntios 15:33"],
-    leaderNote:
-      "Não incentive acusações nem relatos com nomes. Casos de ameaça, humilhação ou isolamento persistente devem ser acolhidos em particular por adultos responsáveis.",
-    prayerSuggestion:
-      "O condutor pode orar por amizades sábias, coragem para estabelecer limites e disposição para ser uma presença leal e acolhedora.",
+    "questions": [
+      "Por que B pede mais contexto? Não sabemos se a pessoa terminou a leitura; perguntar evita decidir por ela.",
+      "O que muda numa reescrita de C? Preservar o desenho e perguntar antes de comentar são possibilidades; não julguem o caráter de quem aparece na cena.",
+      "Qual diferença entre observar um gesto e classificar uma amizade? Os provérbios não fornecem uma nota nem um semáforo para pessoas."
+    ],
+    "references": [
+      "Provérbios 17:17",
+      "Provérbios 27:17",
+      "1 Coríntios 15:33"
+    ],
+    "leaderNote": "Use cenas fictícias, sem nomes, bilhetes íntimos ou diagnóstico de amizades. Não rasguem desenhos nem usem objetos pessoais na atividade. Leitura assistida e observação são opções; não investigue experiências reais. Se surgir preocupação pessoal, interrompa essa discussão coletiva e preserve a privacidade.",
+    "prayerSuggestion": "Sugestão opcional: 'Deus, ajuda-nos a tratar as pessoas e suas escolhas com respeito. Obrigado por aprendermos juntos. Amém.' É possível apenas ouvir."
   },
   {
     id: "quando-a-mente-acelera",
@@ -400,15 +370,15 @@ const cellDynamicDrafts: CellDynamic[] = [
     meetingCore: "Leia a cena fictícia: o convite diz 15h, mas uma mensagem encaminhada diz 17h. Em trios, identifiquem o que sabemos e o que falta confirmar. Apoio: há horários diferentes; é preciso conferir com a organização antes de divulgar. Não abram perfis, contatos ou mensagens reais.",
     audience: "jovens",
     audienceLabel: "Jovens",
-    category: "Redes sociais e escolhas",
+    category: "Convite e conferência",
     title: "Digital com propósito",
     summary:
-      "Três cenas fictícias para conferir informações, pedir autorização antes de divulgar imagens e escrever comentários respeitosos, sem abrir perfis ou mensagens reais.",
+      "Revise um convite fictício com informações conflitantes e produza uma versão marcada como exemplo, sem abrir perfis ou enviar mensagens reais.",
     duration: "35 a 45 min",
     groupSize: "6 a 24 pessoas",
     materials: ["Bíblia ou aplicativo bíblico", "Este roteiro com as cenas", "Relógio", "Papel e caneta por equipe, opcionais"],
     objective:
-      "Observar o valor do que é verdadeiro e respeitável em Filipenses 4:8 e propor cuidados concretos antes de compartilhar conteúdo fictício de um encontro.",
+      "Produzir um convite fictício conferível com atividade, data, horário e local, separando dado confirmado e informação ausente, com apoio de Filipenses 4:8.",
     steps: [
       {
         title: "Leitura bíblica",
@@ -423,17 +393,17 @@ const cellDynamicDrafts: CellDynamic[] = [
       {
         title: "Antes de publicar",
         description:
-          "Reserve 15 minutos. Em 3 minutos, apresente as cenas fictícias: A) alguém encontrou um cartaz sem data e quer divulgar como convite para o próximo sábado; B) alguém fotografou participantes, mas não sabe se eles concordam com a publicação; C) alguém quer postar uma captura do erro de uma equipe no quiz com uma legenda de deboche. Formem equipes de 3 a 5 e usem 6 minutos para escolher uma cena, identificar o que precisa ser conferido e redigir uma resposta. Apoios: em A, confirmar data e contexto com a organização, sem divulgar como fato o que ainda é incerto; em B, não publicar enquanto não houver autorização e usar um convite sem imagem de pessoas; em C, não expor o erro para ridicularizar e comentar uma descoberta da leitura sem nomes ou capturas. Nos 6 minutos finais, ouça até três sínteses e confira as propostas. Para 45 minutos, acrescente 10 minutos para escrever um convite fictício completo, com título, data, horário e local claramente marcados como exemplo, e revisar se nenhuma informação foi presumida.",
+          "Reserve 15 minutos: 3 para ler a ficha fictícia, 6 para revisar e 6 para até três conferências. Ficha EXEMPLO: atividade = leitura e quiz; data = 20/11/2030; horário confirmado pela organização fictícia = 15h; local = Sala A do espaço imaginário. Rascunho: 'Jogos, sábado, 17h, no lugar de sempre'. Sem consultar calendário, confiram os campos: faltam data e local completos, o horário conflita com a ficha e o dia da semana não foi informado. Modelo corrigido: 'EXEMPLO FICTÍCIO: leitura e quiz, 20/11/2030, às 15h, Sala A do espaço imaginário. Participação opcional'. Não acrescente endereço real, inscrição, gratuidade ou dia da semana sem fonte. Use texto sem foto de pessoas; autorização desconhecida não permite publicação. Para 45 minutos, acrescente 10: 5 para outra equipe conferir os quatro campos e 5 para corrigir. Não divulguem o convite nem usem dados reais.",
       },
       {
         title: "Uma regra clara de compartilhamento",
         description:
-          "Use 8 minutos para uma pergunta abaixo, uma síntese e uma oração breve, se desejada. Uma conclusão possível é: antes de compartilhar, conferir a informação, considerar as pessoas envolvidas e escolher uma linguagem respeitosa. Isso não garante que todo conteúdo será seguro nem substitui análise de situações reais. Não cobrem mudanças de hábitos, revisão de contatos ou compromissos públicos. As etapas somam 35 minutos; o convite fictício acrescenta 10, totalizando 45. No criador de roteiro, siga as etapas selecionadas e seus tempos, não a duração integral desta página.",
+          "Use 8 minutos para uma pergunta, até três contribuições e encerramento opcional. Produto: um convite fictício com quatro campos conferidos e marcação EXEMPLO. Isso não diagnostica hábitos digitais nem garante segurança em situações reais. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 45 com revisão cruzada; não medido em aplicação real. No criador, o núcleo é só a conferência dos horários, não a produção integral do convite.",
       },
     ],
     questions: [
       "Na cena dos horários, podemos afirmar qual é o correto? Não: a diferença exige conferência com quem organiza, sem adivinhar ou divulgar primeiro.",
-      "Na cena da foto, qual alternativa não depende de expor participantes? Preparar um convite sem imagens de pessoas enquanto a autorização não está confirmada.",
+      "Quais campos precisam estar conferidos no convite? Atividade, data, horário e local; o dia da semana não deve ser presumido. Use texto sem foto de participantes.",
       "Como Filipenses 4:8 se relaciona às propostas? Localizem verdadeiro e respeitável; conferir cartazes e pedir autorização são escolhas práticas do roteiro, não regras digitais escritas no versículo.",
     ],
     references: ["Filipenses 4:8-9", "Salmos 101:3"],
@@ -443,51 +413,52 @@ const cellDynamicDrafts: CellDynamic[] = [
       "Sugestão opcional: 'Deus, ajuda-nos a conferir o que compartilhamos e a tratar as pessoas com respeito. Obrigado pela oportunidade de aprender juntos. Amém.' Quem preferir pode acompanhar em silêncio.",
   },
   {
-    id: "maos-que-servem",
-    meetingCore: "Leia a cena fictícia: visitantes ainda não receberam as regras do jogo. Em pequenos grupos, proponham uma ajuda simples, como explicar uma rodada sem pontuação. Confiram se a proposta preserva a escolha de participar. Não identifiquem visitantes reais nem atribuam tarefas a quem não se ofereceu.",
-    audience: "todos",
-    audienceLabel: "Toda a célula",
-    category: "Serviço e compaixão",
-    title: "Mãos que servem",
-    summary:
-      "Três desafios fictícios de organização do encontro para escolher uma pequena ação de serviço, sem expor necessidades pessoais ou assumir tarefas especializadas.",
-    duration: "35 a 50 min",
-    groupSize: "5 a 30 pessoas",
-    materials: ["Um papel por equipe", "Canetas", "Bíblia ou aplicativo bíblico", "Relógio"],
-    objective:
-      "Ajudar a célula a enxergar necessidades reais e organizar uma resposta possível, respeitosa e responsável.",
-    steps: [
-      {
-        title: "Leitura bíblica",
-        description:
-          "Reserve 7 minutos para acolher e ler Marcos 10:42-45. No contexto de uma discussão sobre posição e importância, Jesus contrasta o domínio sobre os outros com o serviço. Pergunte que contraste o texto apresenta antes de falar de tarefas. Organizar uma sala é uma aplicação cotidiana proposta aqui, não o sentido completo da passagem. Gálatas 5:13 e Tiago 2:14-17 ficam para aprofundamento; o roteiro não substitui trabalho social ou orientação profissional.",
-      },
-      {
-        title: "Necessidades ao redor",
-        description:
-          "Núcleo de 5 minutos: forme equipes de 3 a 5 e leia uma cena fictícia: 'O encontro vai começar, mas as regras do jogo ainda não foram explicadas aos visitantes'. Cada equipe escreve uma ajuda simples e pede duas contribuições voluntárias. Exemplos: explicar uma rodada sem contar pontos ou mostrar onde ficam as instruções. Não identifiquem visitantes reais. Quem preferir pode ouvir ou ditar uma ideia para outra pessoa escrever.",
-      },
-      {
-        title: "Recursos que já temos",
-        description:
-          "Reserve 15 minutos. Distribua estas três cenas fictícias entre as equipes: A) as cadeiras deixam uma passagem estreita; B) só há um celular para uma rodada cooperativa; C) os papéis usados no encontro ficaram espalhados. Cada equipe tem 5 minutos para propor uma tarefa, 5 para responder 'temos autorização, material e uma pessoa voluntária?' e 5 para compartilhar uma frase. Pontos de apoio: em A, pedir ao responsável que organize uma passagem livre, sem mover peso por conta própria; em B, combinar turnos e leitura em voz alta, sem exigir empréstimo de aparelhos; em C, combinar recolhimento dos papéis comuns, sem ler anotações privadas. Não coletem dinheiro ou dados pessoais. Para 50 minutos, acrescente 15 minutos para comparar duas soluções e desenhar um plano de três passos.",
-      },
-      {
-        title: "Uma ação responsável",
-        description:
-          "Use 8 minutos para escolher uma tarefa do próprio encontro e combinar quem deseja ajudar, quando e com autorização de quem. Exemplo: ao final, duas pessoas voluntárias recolhem os papéis comuns em uma caixa, sem fotografá-los. Se não houver uma tarefa adequada, guardem a proposta; não é obrigatório executar algo. Converse sobre uma pergunta abaixo e encerre. Total: 35 minutos, ou 50 com o planejamento ampliado. No criador de roteiro, siga o tempo e as etapas selecionadas, não a duração integral desta página.",
-      },
+    "id": "maos-que-servem",
+    "meetingCore": "Em grupo, distribuam seis itens fictícios entre três caixas: livros, materiais de escrita e folhas comuns. Itens: Bíblia, caderno, caneta, lápis, folha de regras e folha de placar. Apoio: Bíblia/caderno; caneta/lápis; regras/placar. Confiram se cada item tem destino. Usem palavras, sem mover peso ou materiais pessoais.",
+    "audience": "todos",
+    "audienceLabel": "Toda a célula",
+    "category": "Serviço e compaixão",
+    "title": "Mãos que servem",
+    "summary": "Uma tarefa cooperativa de separar seis materiais fictícios, testar instruções e conferir o resultado, sem planejamento de eventos ou investigação de necessidades pessoais.",
+    "duration": "35 a 50 min",
+    "groupSize": "5 a 30 pessoas",
+    "materials": [
+      "Um papel por equipe",
+      "Canetas",
+      "Bíblia ou aplicativo bíblico",
+      "Relógio"
     ],
-    questions: [
-      "Qual solução ajuda sem decidir pelo outro? Pedir autorização e aceitar uma recusa são parte do serviço.",
-      "Na cena do celular, como incluir quem não tem aparelho? Turnos e uma leitura compartilhada permitem participar sem emprestar bens pessoais.",
-      "O que precisamos combinar antes de executar uma tarefa? Identifiquem responsável, material, autorização e momento, sem atribuir trabalho a quem não se ofereceu.",
+    "objective": "Produzir uma distribuição completa de materiais fictícios e instruções que outra equipe consiga conferir, relacionando cooperação ao serviço em Marcos 10:42-45.",
+    "steps": [
+      {
+        "title": "Leitura bíblica",
+        "description": "Use 7 minutos para acolher e ler Marcos 10:42-45. Jesus contrasta domínio e serviço; localizar esse contraste não reduz a passagem a arrumação de objetos. A tarefa é uma aplicação criada pelo roteiro. Gálatas 5:13 e Tiago 2:14-17 ficam para consulta, sem propor trabalho social ou aconselhamento."
+      },
+      {
+        "title": "Distribua seis materiais",
+        "description": "Em 5 minutos, apresente três caixas fictícias: livros, escrita e folhas comuns. Distribuam Bíblia, caderno, caneta, lápis, folha de regras e folha de placar. Apoio por categoria: Bíblia/caderno; caneta/lápis; regras/placar. Neste exemplo, caderno fica com livros por convenção anunciada, não por regra universal. Usem palavras ou desenhos; nenhuma caixa ou objeto real é necessário. Cada pessoa pode ler, apontar, ditar ou observar."
+      },
+      {
+        "title": "Teste a instrução de outra equipe",
+        "description": "Reserve 15 minutos: 3 para registrar destinos, 5 para escrever três instruções e 5 para outra equipe conferir os seis itens; use 2 para corrigir. Modelo: 'Coloque Bíblia e caderno em livros; caneta e lápis em escrita; regras e placar em folhas comuns'. Conferência: todo item aparece uma vez? Existe destino para cada um? Se alguém propuser outra categoria, explicite a convenção antes de conferir. Não há corrida nem ranking. Para 50 minutos, acrescente 15: 5 para inserir o item fictício envelope, 5 para combinar seu destino e 5 para atualizar e testar as instruções. Não há destino único para envelope; o acordo precisa estar escrito."
+      },
+      {
+        "title": "Confira a tarefa, não as pessoas",
+        "description": "Use 8 minutos: 3 para uma pergunta abaixo, 3 para até três contribuições e 2 para encerrar. Produto: três instruções completas e uma lista de seis itens conferida. Não atribua tarefas domésticas ou ação social aos participantes. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 50 com envelope; não medido em aplicação real. No criador, pratique somente a distribuição do núcleo no tempo do bloco."
+      }
     ],
-    references: ["Marcos 10:42-45", "Gálatas 5:13", "Tiago 2:14-17"],
-    leaderNote:
-      "Não divulgue histórias ou imagens de pessoas ajudadas sem consentimento. Ações com crianças, idosos ou pessoas vulneráveis devem seguir as orientações da igreja e responsáveis.",
-    prayerSuggestion:
-      "O condutor pode orar por sensibilidade, humildade e perseverança para que o serviço seja expressão de amor e não busca por visibilidade.",
+    "questions": [
+      "Na distribuição inicial, algum item ficou sem destino? Confiram os seis nomes; isso avalia a instrução, não quem escreveu.",
+      "Por que o envelope pede uma convenção nova? O exemplo inicial não define seu destino; combinar antes é melhor que adivinhar.",
+      "Em Marcos 10:42-45, que contraste aparece? Domínio e serviço; as três caixas não estão no texto, são uma aplicação recreativa."
+    ],
+    "references": [
+      "Marcos 10:42-45",
+      "Gálatas 5:13",
+      "Tiago 2:14-17"
+    ],
+    "leaderNote": "Não movam móveis, peso, objetos pessoais ou anotações privadas. As caixas e os itens são fictícios. Funções são voluntárias; não distribua trabalho a quem prefere ouvir. Esta tarefa não identifica necessidades sociais nem oferece cuidado profissional.",
+    "prayerSuggestion": "Sugestão opcional: 'Deus, ajuda-nos a cooperar com respeito e clareza. Obrigado por este encontro. Amém.' Acompanhar em silêncio é uma opção."
   },
   {
     id: "uma-mesa-muitas-historias",
@@ -537,51 +508,52 @@ const cellDynamicDrafts: CellDynamic[] = [
       "O condutor pode agradecer pelas diferentes histórias presentes e orar para que a célula seja um ambiente de hospitalidade, amizade e cuidado sincero.",
   },
   {
-    id: "boas-novas-em-uma-frase",
-    meetingCore: "Leia a cena fictícia: depois de um jogo, alguém pergunta o que o grupo leu. Apoio: Hoje lemos uma passagem que destaca responder com mansidão e respeito. Em duplas, proponham uma frase clara sobre esse assunto. Confiram se ela informa sem pressionar a pessoa nem inventar uma experiência pessoal.",
-    audience: "todos",
-    audienceLabel: "Toda a célula",
-    category: "Comunicação e respeito",
-    title: "Boas notícias em uma frase",
-    summary:
-      "Três cenas fictícias para explicar uma descoberta bíblica, fazer um convite claro e respeitar uma recusa, sem exigir testemunhos pessoais.",
-    duration: "35 a 50 min",
-    groupSize: "6 a 24 pessoas",
-    materials: ["Bíblia", "Este roteiro com as situações", "Relógio", "Papel e caneta opcionais"],
-    objective:
-      "Praticar clareza e respeito em conversas fictícias sobre uma leitura bíblica ou um encontro, distinguindo explicação, convite e insistência.",
-    steps: [
-      {
-        title: "Leitura bíblica",
-        description:
-          "Reserve 7 minutos para ler Colossenses 4:5-6 e 1 Pedro 3:15-16. Observe a atenção à resposta de cada pessoa e a orientação de mansidão e respeito. Pedro trata da resposta sobre a esperança cristã, não de uma técnica para conseguir adesões. Marcos 5:18-20 é uma leitura complementar sobre o relato de uma pessoa específica; ninguém precisa reproduzir sua experiência ou contar a própria história. As cenas e os tempos abaixo são propostas de comunicação, não instruções literais dessas passagens.",
-      },
-      {
-        title: "Uma descoberta em uma frase",
-        description:
-          "Em 5 minutos, leia a cena fictícia: depois de um jogo, alguém pergunta o que o grupo leu. Ofereça a frase de apoio: Hoje lemos uma passagem que destaca responder com mansidão e respeito. Convide até duas pessoas a propor uma versão simples, sem prometer mudanças na vida de quem ouve nem inventar experiências pessoais. Compare se a frase informa o assunto e pode ser entendida sem conhecer o jogo. O condutor pode ler o exemplo sozinho; acompanhar em silêncio também é participar. Esse passo funciona como uma prática curta completa.",
-      },
-      {
-        title: "Ouvir antes de responder",
-        description:
-          "Reserve 15 minutos: 3 para apresentar as cenas, 6 para duplas ou grupos de três escolherem uma frase e 6 para até três contribuições. Cena A: alguém pergunta o que haverá no encontro. Apoio: Teremos leitura e jogos bíblicos; você quer saber como funciona? Cena B: alguém diz que não deseja participar. Apoio: Tudo bem, obrigado por responder. Encerre o convite, sem pedir justificativa ou repeti-lo. Cena C: alguém não entende a palavra mansidão. Apoio: Aqui estamos falando de responder com gentileza, sem agressividade. Explique que uma frase ajuda a iniciar a conversa, mas não substitui todo o contexto da passagem. Não é necessário encenar; escrever, ouvir ou pedir leitura assistida são alternativas. Para a versão de 50 minutos, acrescente 15 para criar um convite fictício com atividade, horário e local claramente identificados como exemplos.",
-      },
-      {
-        title: "Convite sem pressão",
-        description:
-          "Use 8 minutos para as perguntas, uma síntese e oração opcional. Compare Você pode participar se quiser com Você tem de ir para mostrar que tem fé. A primeira preserva a escolha; a segunda pressiona e não deve ser usada. Retome o exemplo de recusa e encerre sem recolher nomes, contatos ou compromissos. As etapas somam 35 minutos; a criação adicional de um convite acrescenta 15. No criador de roteiro, siga o tempo reservado no plano gerado em vez de somar novamente a duração integral desta atividade.",
-      },
+    "id": "boas-novas-em-uma-frase",
+    "meetingCore": "Leia Colossenses 4:5-6 e a frase fictícia: O texto orienta cuidar da maneira de falar e responder a cada pessoa. Confiram o que sustenta esse resumo. Apoio: versículo 6. Uma frase-resumo não substitui o trecho nem promete resultados pessoais.",
+    "audience": "todos",
+    "audienceLabel": "Toda a célula",
+    "category": "Comunicação e respeito",
+    "title": "Uma leitura em uma frase",
+    "summary": "Resuma uma observação de Colossenses 4:5-6 e compare três frases com a passagem, sem criar outro convite ou exigir testemunho pessoal.",
+    "duration": "35 a 50 min",
+    "groupSize": "6 a 24 pessoas",
+    "materials": [
+      "Bíblia",
+      "Este roteiro com as situações",
+      "Relógio",
+      "Papel e caneta opcionais"
     ],
-    questions: [
-      "Na cena A, que informação ajuda a pessoa a decidir? Apoio: explicar a atividade e responder ao que ela quer saber, sem prometer resultados.",
-      "O que fazer após a recusa da cena B? Apoio: aceitar e encerrar o convite, sem insistir ou pedir explicações.",
-      "Na cena C, a frase simples substitui a leitura bíblica? Apoio: não; esclarece uma palavra, mas o contexto continua importante.",
+    "objective": "Escrever uma frase fiel ao recorte lido e distinguir observação, detalhe não informado e aplicação, sem técnica de persuasão.",
+    "steps": [
+      {
+        "title": "Leia antes de resumir",
+        "description": "Use 7 minutos para os combinados e Colossenses 4:5-6. Localizem a orientação sobre palavra e resposta no versículo 6. A comparação com sal precisa ser lida no contexto, não encenada com alimentos. 1 Pedro 3:15-16 e Marcos 5:18-20 são referências complementares, não pedidos de testemunho ou promessa de adesão."
+      },
+      {
+        "title": "Uma descoberta em uma frase",
+        "description": "Em 5 minutos, apresente: 'O texto orienta cuidar da maneira de falar e responder a cada pessoa'. Confiram no versículo 6. Cada dupla propõe outra redação ou acompanha a leitura do exemplo. A frase informa uma observação; não promete mudar a vida de quem a ouvir e não substitui a passagem."
+      },
+      {
+        "title": "Três frases para conferir",
+        "description": "Reserve 15 minutos: 3 para ler as frases, 6 para consultar e 6 para até três contribuições. A 'O texto menciona responder a cada pessoa'; B 'O texto determina uma reunião de 35 minutos'; C 'Podemos explicar uma regra de jogo com gentileza'. Apoio: A é observação apoiada no versículo 6; B é detalhe não informado; C é aplicação criada para a atividade, não uma regra de jogo na carta. Produto: marcar observação, não informado ou aplicação e escrever um resumo fiel. Para 50 minutos, acrescente 15: 5 para outra dupla ler o resumo, 5 para localizar palavras de apoio e 5 para corrigir algo que extrapole o recorte."
+      },
+      {
+        "title": "Uma frase com referência",
+        "description": "Use 8 minutos: 3 para escolher uma pergunta, 3 para até três resumos e 2 para encerramento opcional. Anotem Colossenses 4:5-6 junto da frase para permitir conferência. Não enviem mensagens, recolham contatos ou meçam persuasão. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 50 com conferência ampliada; não medido em aplicação real. No criador, use somente o núcleo e o tempo indicado."
+      }
     ],
-    references: ["Marcos 5:18-20", "Colossenses 4:5-6", "1 Pedro 3:15-16"],
-    leaderNote:
-      "Use somente cenas fictícias. Não solicite testemunhos, relatos de sofrimento, listas de pessoas a convidar ou avaliação da fé dos participantes. Não transforme clareza de comunicação em competição ou promessa de conversão. Não envie os convites nem fotografe ou publique respostas durante a atividade. Respeite recusas, diferenças de crença e a opção de apenas observar. Esta prática não oferece aconselhamento nem substitui uma conversa consentida e atenta ao contexto.",
-    prayerSuggestion:
-      "Se o grupo desejar, o condutor pode fazer uma oração breve por palavras honestas, gentileza e respeito às escolhas de cada pessoa. Ninguém precisa falar ou acompanhar a oração.",
+    "questions": [
+      "Qual frase é observação apoiada no versículo 6? A, sobre responder a cada pessoa.",
+      "Por que B não pode ser apresentada como instrução bíblica? A passagem não informa a duração da reunião.",
+      "Qual é a diferença entre C e o resumo? C aplica uma ideia a um jogo; o resumo descreve o recorte, sem inventar que ele menciona esse jogo."
+    ],
+    "references": [
+      "Marcos 5:18-20",
+      "Colossenses 4:5-6",
+      "1 Pedro 3:15-16"
+    ],
+    "leaderNote": "Não peça testemunhos, relatos íntimos, conversões ou convites reais. O produto é uma frase com referência e limite de escopo. Aceite formas equivalentes da tradução e participação por escuta. Uma frase não resolve todo o sentido da passagem.",
+    "prayerSuggestion": "Oração breve opcional por palavras respeitosas e leitura atenta; ninguém precisa falar ou aderir à oração."
   },
 ];
 
