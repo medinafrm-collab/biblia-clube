@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 
 const title = "Guias para jogos e células";
 const description =
-  "Guias práticos para usar jogos, quiz, dinâmicas e estudos em células, grupos de jovens, casais e pequenos grupos cristãos.";
+  "Uma seleção da Biblioteca com guias para preparar e conduzir jogos, leituras e atividades bíblicas em família ou em grupo.";
 
 const guides = [
   {
@@ -106,20 +106,27 @@ export default function GuidesPage() {
                 Início
               </Link>
               <span aria-hidden="true">/</span>
-              <span>Guias</span>
+              <Link href="/biblioteca" className="font-bold text-[var(--navy)] no-underline">
+                Biblioteca
+              </Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Guias</span>
             </nav>
 
             <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
               <div>
-                <span className="eyebrow">Conteúdo para conduzir melhor</span>
+                <span className="eyebrow">Guias da Biblioteca</span>
                 <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,5vw,4.25rem)] text-[var(--navy)]">
                   Guias para jogos, células e estudos em grupo.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-                  Reunimos orientações práticas para líderes, casais, jovens e
-                  pequenos grupos usarem as ferramentas do Bíblia Clube com
-                  propósito, leveza e cuidado.
+                  Uma seleção da Biblioteca para preparar e conduzir jogos,
+                  leituras e atividades bíblicas. Escolha orientações e exemplos
+                  para organizar a participação de famílias e grupos.
                 </p>
+                <Link href="/biblioteca" className="button-secondary mt-8">
+                  Explorar toda a Biblioteca
+                </Link>
               </div>
 
               <figure className="relative mb-3 mr-3">

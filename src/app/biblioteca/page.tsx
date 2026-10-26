@@ -40,7 +40,7 @@ export default function BibliotecaPage() {
                   Conteúdo para aprender, preparar e compartilhar.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-                  Um acervo organizado para quem joga, ensina, conduz grupos ou deseja criar uma rotina bíblica em família.
+                  Pesquise todo o acervo: artigos, guias, jogos, dinâmicas, quizzes, materiais e ferramentas para famílias e grupos.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a href="#acervo-title" className="button-primary">Explorar o acervo <span aria-hidden="true">↓</span></a>

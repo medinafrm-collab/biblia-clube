@@ -10,7 +10,7 @@ const consentKey = 'biblia-clube:analytics-consent:v1';
 const scriptId = 'biblia-clube-google-analytics';
 const output = '.test-artifacts/audit';
 fs.mkdirSync(output, { recursive: true });
-const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH, headless: true });
+const browser = await chromium.launch({ ...(process.env.CHROME_CHANNEL ? { channel: process.env.CHROME_CHANNEL } : { executablePath: process.env.CHROME_PATH }), headless: true });
 const results = [];
 const closingContexts = new WeakSet();
 

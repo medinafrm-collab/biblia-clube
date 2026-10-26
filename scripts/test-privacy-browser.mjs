@@ -9,7 +9,7 @@ const origin = 'https://www.bibliaclube.com.br';
 const policy = '/politica-de-privacidade';
 const output = '.test-artifacts/audit';
 fs.mkdirSync(output, { recursive: true });
-const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH, headless: true });
+const browser = await chromium.launch({ ...(process.env.CHROME_CHANNEL ? { channel: process.env.CHROME_CHANNEL } : { executablePath: process.env.CHROME_PATH }), headless: true });
 const results = [];
 
 async function makeContext(consent, width = 375, javaScriptEnabled = true) {

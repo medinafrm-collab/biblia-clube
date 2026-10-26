@@ -11,7 +11,7 @@ const { cellDynamics } = loadTs('src/data/cellDynamics.ts');
 const { buildMeetingPlan } = loadTs('src/lib/meetingPlan.ts');
 const origin = process.env.LOCAL_ORIGIN || 'http://127.0.0.1:3100';
 const results = [];
-const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH, headless: true });
+const browser = await chromium.launch({ ...(process.env.CHROME_CHANNEL ? { channel: process.env.CHROME_CHANNEL } : { executablePath: process.env.CHROME_PATH }), headless: true });
 try {
   const staticContext = await browser.newContext({ javaScriptEnabled: false });
   await staticContext.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());

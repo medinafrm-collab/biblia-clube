@@ -30,10 +30,10 @@ export default function MateriaisPage() {
             </nav>
             <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
               <div>
-                <span className="eyebrow">Baixe, imprima e compartilhe</span>
+                <span className="eyebrow">Imprima, salve e compartilhe</span>
                 <h1 className="display-title mt-5 max-w-4xl text-[clamp(2.7rem,5vw,4.25rem)] text-[var(--navy)]">Materiais prontos para o próximo encontro.</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-                  Recursos sem cadastro, preparados para funcionar em folha A4 ou como PDF no celular.
+                  Materiais gratuitos, sem cadastro, para imprimir em A4 ou salvar em PDF pelo navegador.
                 </p>
               </div>
 

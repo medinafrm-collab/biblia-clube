@@ -26,7 +26,7 @@ if (process.env.START_LOCAL_BUILD === '1') {
 const origin = 'https://www.bibliaclube.com.br';
 const output = '.test-artifacts/audit';
 fs.mkdirSync(output, { recursive: true });
-const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH, headless: true });
+const browser = await chromium.launch({ ...(process.env.CHROME_CHANNEL ? { channel: process.env.CHROME_CHANNEL } : { executablePath: process.env.CHROME_PATH }), headless: true });
 const context = await browser.newContext({ viewport: { width: 375, height: 850 }, reducedMotion: 'reduce', serviceWorkers: 'block' });
 await context.addInitScript(() => {
   localStorage.setItem('biblia-clube:analytics-consent:v1', 'granted');
