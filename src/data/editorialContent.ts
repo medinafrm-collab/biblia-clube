@@ -580,18 +580,18 @@ const editorialArticleDrafts: EditorialArticle[] = [
   },
   {
     slug: "jogos-biblicos-sem-impressao",
-    title: "Jogos digitais: 7 formatos simples",
+    title: "Jogos e atividades sem impressão: 7 formatos simples",
     eyebrow: "Pouco preparo",
     summary:
-        "Compare cinco formatos apoiados em jogos do site e duas adaptações de leitura sem impressão, com exemplos comentados e uma combinação de vinte minutos.",
+        "Escolha entre quatro formatos com jogos digitais, duas atividades orais e um fechamento de leitura, com exemplos comentados e uma combinação de vinte minutos.",
     audience: "Todos os grupos",
     category: "Ideias de jogos",
     readTime: "7 min de leitura",
     ...digitalGamesImage,
-      updatedAt: "12 de outubro de 2026",
-      updatedAtISO: "2026-10-12",
+      updatedAt: "27 de outubro de 2026",
+      updatedAtISO: "2026-10-27",
     introduction: [
-        "Um celular ou computador compartilhado pode servir a um grupo inteiro: uma pessoa lê, as demais conversam e uma escolha é feita na tela. Este artigo compara formatos, não oferece sete jogos digitais diferentes: os itens 1, 3, 4, 5 e 6 usam jogos do site; o 2 é uma sequência oral e o 7 é um fechamento de leitura. Não é necessário aparelho individual nem impressão. Para um evento completo, consulte a noite de jogos de 75 minutos.",
+        "Um celular ou computador compartilhado pode servir a um grupo inteiro: uma pessoa lê, as demais conversam e uma escolha é feita na tela. Os itens 1, 3, 4 e 5 usam jogos digitais do site; os itens 2 e 6 são atividades orais; o item 7 é um fechamento de leitura. São sete formatos para escolher, não sete jogos digitais diferentes. Não é necessário aparelho individual nem impressão. Para um evento completo, consulte a noite de jogos de 75 minutos.",
         "Escolha uma atividade conforme o tempo e a familiaridade do grupo, em vez de tentar executar as sete no mesmo encontro. Os exemplos deste artigo são demonstrações com respostas visíveis, não desafios que precisam valer pontos. Consulta e leitura em voz alta fazem parte da proposta; rapidez não precisa decidir quem participa.",
     ],
     sections: [

@@ -24,7 +24,7 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
     topicQuestions.map((question) => question.journey ?? 1),
   ).size;
   const sampleQuestions = topicQuestions.slice(0, 3);
-  const faq = getQuizTopicFaq(topic.label, topicQuestions.length, journeyCount);
+  const faq = getQuizTopicFaq(topic.label, topicQuestions.length, journeyCount, topic.id);
   const relatedItems = quizTopicRelatedPaths[topic.id]
     .map((path) => libraryItems.find((item) => item.href === path))
     .filter((item) => item !== undefined);

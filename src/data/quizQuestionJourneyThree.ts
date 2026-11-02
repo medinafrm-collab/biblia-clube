@@ -20,7 +20,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Tito", "Filemom", "Judas", "2 João"],
     correctAnswer: "Filemom",
     explanation:
-      "Paulo pede a Filemom que receba Onésimo como um irmão amado e como receberia o próprio Paulo. Também se oferece para assumir eventual dívida ou prejuízo. A carta registra o pedido, mas o trecho não conta como Filemom reagiu nem descreve um reencontro já realizado. A palavra servo aparece na tradução do leitor, dentro da relação descrita na carta.",
+      "Paulo pede a Filemom que receba Onésimo como um irmão amado e como receberia o próprio Paulo. Também se oferece para assumir eventual dívida ou prejuízo. A carta registra o pedido, mas o trecho não conta como Filemom reagiu nem descreve um reencontro já realizado. A versão exibida pelo site usa a palavra servo no versículo 16, dentro da relação descrita na carta.",
     reference: "Filemom 1:8-21",
   },
   {
@@ -65,7 +65,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     correctAnswer: "Lamentações",
     explanation:
       "A abertura de Lamentações retrata a cidade antes populosa agora solitária, seus caminhos em pranto e seu povo no cativeiro. No capítulo 3, a lembrança das misericórdias do Senhor aparece como motivo de esperança em meio à aflição. A esperança não apaga a dor expressa nos poemas; os dois trechos ajudam a perceber esse contraste.",
-    reference: "Lamentações 1:1-5; Lamentações 3:21-24",
+    reference: "Lamentações 1:1-8; Lamentações 3:21-24",
   },
   {
     id: 201,
@@ -97,7 +97,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Ezequiel", "Jeremias", "Zacarias", "Daniel"],
     correctAnswer: "Ezequiel",
     explanation:
-      "O capítulo situa Ezequiel entre os exilados junto ao rio Quebar. A visão descreve quatro seres, rodas com aros cheios de olhos e, acima deles, a semelhança de um trono. O encerramento a identifica como visão da semelhança da glória do Senhor. Na edição do leitor, os seres também são chamados de animais; o texto usa imagens e comparações, não uma descrição de máquinas modernas.",
+      "O capítulo situa Ezequiel entre os exilados junto ao rio Quebar. A visão descreve quatro seres, rodas com aros cheios de olhos e, acima deles, a semelhança de um trono. O encerramento a identifica como visão da semelhança da glória do Senhor. Na versão exibida pelo site, os seres são chamados de animais; o texto usa imagens e comparações, não uma descrição de máquinas modernas.",
     reference: "Ezequiel 1:1-28",
   },
   {
@@ -115,7 +115,7 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     id: 205,
     topics: ["geral"],
     journey: 3,
-    question: "Qual carta apresenta Jesus de modo destacado como grande sumo sacerdote?",
+    question: "Em qual livro, no capítulo 4, Jesus é chamado de grande sumo sacerdote?",
     options: ["1 Pedro", "Romanos", "Hebreus", "Judas"],
     correctAnswer: "Hebreus",
     explanation:
@@ -229,8 +229,8 @@ export const quizQuestionJourneyThree: QuizQuestion[] = [
     options: ["Jônatas", "Isbosete", "Abinadabe", "Malquisua"],
     correctAnswer: "Jônatas",
     explanation:
-      "Jônatas e Davi fazem uma aliança, e Jônatas lhe entrega roupas, espada, arco e cinto. Mais adiante, Jônatas promete informar Davi sobre a disposição de seu pai e ajudá-lo a partir em segurança se houver ameaça. Ele também pede que a bondade alcance sua família. Os dois trechos mostram o compromisso inicial e uma ação concreta de lealdade.",
-    reference: "1 Samuel 18:1-4; 1 Samuel 20:12-17",
+      "1 Samuel 14:1 identifica Jônatas como filho de Saul. Em 18:1-4, ele faz uma aliança com Davi e lhe entrega roupas, espada, arco e cinto. Em 20:12-17, promete informar Davi sobre a disposição de seu pai e ajudá-lo a partir em segurança se houver ameaça; também pede bondade para sua família. A entrega dos objetos é uma ação narrada; avisar e ajudar na partida são compromissos expressos nesse segundo recorte, não o relato de que a partida já aconteceu.",
+    reference: "1 Samuel 14:1; 1 Samuel 18:1-4; 1 Samuel 20:12-17",
   },
   {
     id: 216,

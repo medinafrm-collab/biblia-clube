@@ -73,11 +73,30 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
               </ol>
             </div>
 
+            {resource.slug === "checklist-do-lider" && (
+              <section className="mb-8 max-w-3xl print:hidden" aria-labelledby="exemplo-checklist">
+                <h2 id="exemplo-checklist" className="font-serif text-2xl text-[var(--navy)]">Exemplo: preparar uma noite de jogos</h2>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Esta folha acompanha o roteiro <Link href="/biblioteca/como-montar-uma-noite-de-jogos-biblicos">Como montar uma noite de jogos bíblicos</Link>, com sessão de 75 minutos sugeridos, duas equipes e alternativa oral. O roteiro oferece perguntas e gabaritos; o checklist ajuda a conferir o preparo, sem substituir a atividade.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Exemplo fictício: o aparelho abre o jogo, mas a anotação de apoio não abre com a conexão desligada. O item de alternativa sem internet fica pendente. Antes do encontro, guarde as perguntas com alternativas, respostas e referências em um arquivo local e teste novamente. Marque só depois de confirmar o acesso.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Para criar outra sessão, use o <Link href="/materiais/roteiro-de-encontro">roteiro de encontro para preencher</Link>. A folha abaixo contém as decisões essenciais e pode ser impressa sem abrir esses links.</p>
+              </section>
+            )}
+
+            {resource.slug === "cartoes-para-casais" && (
+              <section className="mb-8 max-w-3xl print:hidden" aria-labelledby="kit-casais">
+                <h2 id="kit-casais" className="font-serif text-2xl text-[var(--navy)]">Use os cartões com ou sem o guia</h2>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Para jogar com os cartões, escolham de dois a quatro e consultem as passagens indicadas. As preferências e atividades imaginadas não têm resposta certa. Não é necessário abrir outra página para começar.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Se preferirem alternativas, explicações e uma observação complementar, abram o <Link href="/guias/quiz-biblico-para-casais">guia Quiz bíblico para casais</Link>. Ele retoma cinco temas dos cartões e acrescenta uma pergunta sobre Arão, enquanto este material traz a sequência de Zaqueu. Usem uma versão por ocasião; o guia não é uma segunda rodada inteiramente diferente.</p>
+              </section>
+            )}
+
             {resource.slug === "roteiro-de-encontro" && (
               <section className="mb-8 max-w-3xl print:hidden">
                 <h2 className="font-serif text-2xl text-[var(--navy)]">Um exemplo de preenchimento</h2>
-                <p className="mt-3 leading-7 text-[var(--muted)]">Público: família. Duração: 20 minutos. Objetivo: reconhecer a sequência de ações de Zaqueu em Lucas 19:1-6. Reserve 3 minutos para acolher, 5 para ler, 7 para ordenar procurar, subir, descer e receber, e 5 para conferir as respostas e encerrar. Não proponha subir em móveis: represente as ações com palavras ou desenhos.</p>
-                <p className="mt-3 leading-7 text-[var(--muted)]">Pergunta de observação: por que Zaqueu não conseguia ver Jesus? Apoio: multidão e altura, no versículo 3. Para continuar, consulte <Link href="/biblioteca/culto-domestico-com-criancas">No lar: um roteiro com crianças</Link>. O exemplo é uma sugestão, não um relato de aplicação real; a folha abaixo permanece em branco para o seu plano.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Exemplo fictício para uma família, com adulto responsável: duração disponível de 20 minutos; objetivo de reconhecer quatro ações de Zaqueu em Lucas 19:1-6. Distribuição: acolhimento, 3; leitura, 5; atividade, 7; conferência e encerramento, 5. Soma: 20 minutos sugeridos, ainda não medidos em aplicação com participantes.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Contexto: Jesus atravessa Jericó e Zaqueu procura vê-lo. Pergunta 1: por que Zaqueu não conseguia vê-lo? Apoio: a multidão e sua baixa estatura, no versículo 3. Pergunta 2: qual é a ordem entre procurar, subir, descer e receber? Apoio: essa é a sequência dos versículos 3 a 6. Leia as ações misturadas — receber, subir, procurar, descer — e peça que as ordenem, com consulta livre. Use palavras ou desenhos, sem subir em móveis nem encenar as ações.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Se houver atraso, mantenha a leitura e confira somente a sequência. A alternativa sem internet é ler as quatro ações anotadas e consultar uma Bíblia impressa; não exige outro jogo. Quem preferir pode apontar a passagem ou apenas ouvir. A folha abaixo permanece em branco: o exemplo não é preenchido automaticamente.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Para uma proposta já pronta, <Link href="/biblioteca/culto-domestico-com-criancas">No lar: um roteiro com crianças</Link> oferece outra sessão, sobre Marcos 10, não uma continuação da história de Zaqueu. Para combinar recursos do acervo, use o <Link href="/monte-seu-encontro">Criador de roteiro</Link>; este material serve para registrar suas próprias escolhas.</p>
               </section>
             )}
 
@@ -93,7 +112,8 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
             {resource.slug === "folha-de-pontuacao" && (
               <section className="mb-8 max-w-3xl print:hidden">
                 <h2 className="font-serif text-2xl text-[var(--navy)]">Exemplo de soma</h2>
-                <p className="mt-3 leading-7 text-[var(--muted)]">Exemplo fictício com um ponto por acerto e sem desconto: Equipe A registra 1, 0, 1, 1, 0 nas cinco rodadas, total 3. Equipe B registra 0, 1, 1, 0, 1, também total 3. O empate permanece; não invente bônus por comportamento. No Modo Grupo, use os pontos definidos pelo jogo, sem misturar escalas. Os campos impressos permanecem em branco para a sua rodada.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Na rodada oral com 1 ponto por acerto, a Equipe A registra 1, traço, 0, traço, 1 e soma 2. O traço indica que não teve tentativa, não um erro. No Modo Grupo, copie a pontuação da tela: 10 pelo acerto inicial ou 5 pelo rebote, quando ativado. Não acrescente pontos por comportamento.</p>
+                <p className="mt-3 leading-7 text-[var(--muted)]">Para usar com uma sessão pronta, consulte <Link href="/biblioteca/como-montar-uma-noite-de-jogos-biblicos">Como montar uma noite de jogos bíblicos</Link>. O roteiro usa duas equipes e rebote desativado no jogo digital. Os exemplos desta folha são fictícios; os campos ficam em branco para sua partida.</p>
               </section>
             )}
 
@@ -106,10 +126,29 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
 
               <div className="mt-8 grid gap-9">
                 {resource.sections.map((section) => (
-                  <section key={section.title} className="print-section break-inside-avoid">
+                  <section key={section.title} className="print-section min-w-0 break-inside-avoid">
                     <h3 className="font-serif text-2xl text-[var(--navy)]">{section.title}</h3>
                     {section.description && <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{section.description}</p>}
-                    <ul className="mt-4 grid gap-0 border-y border-[var(--border)]">
+                    {section.table && (
+                      <div className="mt-4 overflow-x-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy)] print:overflow-visible" role="region" aria-label={section.table.caption} tabIndex={0}>
+                        <table className="w-full min-w-[32rem] table-fixed border-collapse text-sm print:min-w-0">
+                          <caption className="mb-3 text-left text-sm text-[var(--muted)]">{section.table.caption}</caption>
+                          <thead>
+                            <tr>{section.table.columns.map((column, index) => <th key={column} scope="col" className={`border border-[var(--border)] p-2 text-center font-bold text-[var(--navy)] ${index === 0 ? "w-[28%] text-left" : ""}`}>{column}</th>)}</tr>
+                          </thead>
+                          <tbody>
+                            {section.table.rows.map((row) => (
+                              <tr key={row[0]}>
+                                {row.map((cell, index) => index === 0
+                                  ? <th key={index} scope="row" className="break-words border border-[var(--border)] px-2 py-4 text-left font-normal">{cell}</th>
+                                  : <td key={index} className="border border-[var(--border)] px-1 py-4 text-center">{cell}</td>)}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                    {section.items.length > 0 && <ul className="mt-4 grid gap-0 border-y border-[var(--border)]">
                       {section.items.map((item) => (
                         <li
                           key={item}
@@ -118,10 +157,25 @@ export default async function MaterialPage({ params }: MaterialPageProps) {
                           {item}
                         </li>
                       ))}
-                    </ul>
+                    </ul>}
                   </section>
                 ))}
               </div>
+
+              {resource.answerKey && (
+                <section className="mt-10 border-t-2 border-[var(--navy)] pt-6 print:break-before-page print:mt-0" aria-labelledby="gabarito">
+                  <h3 id="gabarito" className="font-serif text-2xl text-[var(--navy)]">Gabarito para quem conduz</h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Separe esta parte antes de distribuir os cartões. Os cartões 1 a 6 são de preferências e não têm resposta certa. Nos demais, aceite palavras equivalentes da tradução utilizada.</p>
+                  <dl className="mt-5 grid gap-4">
+                    {resource.answerKey.map((entry) => (
+                      <div key={entry.card} className="break-inside-avoid border-b border-[var(--border)] pb-3">
+                        <dt className="font-bold text-[var(--navy)]">Cartão {entry.card}</dt>
+                        <dd className="mt-1 leading-6 text-[var(--foreground)]">{entry.answer}<span className="mt-1 block text-sm text-[var(--muted)]">Confira: {entry.reference}.</span></dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              )}
 
               <footer className="mt-10 border-t border-[var(--border)] pt-4 text-xs text-[var(--muted)] print:mt-4 print:pt-2">
                 bibliaclube.com.br · Material do Bíblia Clube. Adapte ao seu grupo.

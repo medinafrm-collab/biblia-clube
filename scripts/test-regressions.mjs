@@ -10,6 +10,69 @@ const { whoAmICharacters, whoAmIJourneys } = loadTs('src/data/whoAmICharacters.t
 const { isAdEligiblePath } = loadTs('src/lib/adEligibility.ts');
 const { quizQuestions } = loadTs('src/data/quizQuestions.ts');
 
+test('Memory symbol feedback explains each association with a resolvable passage', () => {
+  const { memoryGameModes } = loadTs('src/data/memoryGamePairs.ts');
+  const symbols = memoryGameModes.find(mode => mode.id === 'symbols');
+  assert.equal(symbols.pairs.length, 12);
+  for (const pair of symbols.pairs) {
+    const reference = pair.note.match(/(?:[1-3] )?[\p{L}]+ \d+:\d+(?:-\d+)?/u)?.[0];
+    assert.ok(reference, pair.id);
+    const passage = resolveBibleReference(reference);
+    assert.ok(passage.sections.length && passage.sections.every(section => section.verses.length), reference);
+  }
+  assert.match(symbols.pairs.find(pair => pair.id === 'peter-keys').note, /Mateus 16:19/);
+  assert.match(symbols.pairs.find(pair => pair.id === 'joshua-trumpets').note, /não indica que ele próprio tocava/);
+});
+
+test('Meeting integration never requests more associations than a playable theme', () => {
+  const { matchingThemes } = loadTs('src/data/matchingPairs.ts');
+  for (const duration of meeting.meetingDurations) {
+    const plan = meeting.buildMeetingPlan(cellDynamics, 'celulas', 'integrar', duration);
+    const instruction = plan.timeline[2].instruction;
+    const count = Number(instruction.match(/até (\d+) associações/)?.[1]);
+    assert.ok(count > 0 && matchingThemes.every(theme => count <= theme.pairs.length));
+    assert.match(instruction, /encerre antes de completar/);
+    assert.equal(meeting.meetingPlanTotal(plan.timeline), duration);
+  }
+});
+
+test('Quiz questions identify the observed scene within their supplied passage', () => {
+  const byId = id => quizQuestions.find(question => question.id === id);
+  assert.match(byId(93).question, /atribuiu a Deus a revelação/);
+  assert.equal(byId(93).correctAnswer, 'Daniel');
+  assert.match(byId(103).question, /entre os juncos à margem/);
+  assert.equal(byId(103).reference, 'Êxodo 2:3-9; Números 26:59');
+});
+
+test('Seven print-free formats distinguish digital games from oral activities', () => {
+  const { editorialArticles } = loadTs('src/data/editorialContent.ts');
+  const article = editorialArticles.find(item => item.slug === 'jogos-biblicos-sem-impressao');
+  assert.equal(article.title, 'Jogos e atividades sem impressão: 7 formatos simples');
+  assert.match(article.summary, /quatro formatos com jogos digitais, duas atividades orais e um fechamento/);
+  assert.match(article.introduction[0], /itens 1, 3, 4 e 5 usam jogos digitais/);
+  assert.match(article.introduction[0], /itens 2 e 6 são atividades orais/);
+  assert.match(article.introduction[0], /item 7 é um fechamento/);
+  assert.equal(article.sections.filter(section => /^[1-7]\. /.test(section.heading)).length, 7);
+});
+
+test('Group cards provide eighteen referenced answers without personal disclosures', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'cartoes-de-perguntas');
+  const cards = resource.sections.flatMap(section => section.items);
+  assert.equal(resource.sections.length, 4);
+  assert.equal(cards.length, 24);
+  cards.forEach((card, index) => assert.ok(card.startsWith(`${index + 1}. `)));
+  assert.deepEqual(resource.answerKey.map(entry => entry.card), Array.from({ length: 18 }, (_, index) => index + 7));
+  for (const entry of resource.answerKey) {
+    const resolved = resolveBibleReference(entry.reference);
+    assert.ok(resolved.sections.length && resolved.sections.every(section => section.verses.length), entry.reference);
+    assert.ok(entry.answer.trim());
+    assert.ok(cards[entry.card - 1].includes(entry.reference));
+  }
+  assert.match(resource.instructions.join(' '), /gabarito.*depois/);
+  assert.doesNotMatch(cards.join(' '), /Que dificuldade|deixar de adiar|Por quem podemos orar|momento bom em família/);
+});
+
 test('Differentiated dynamics keep distinct tasks and short planner cores', () => {
   const byId = id => cellDynamics.find(item => item.id === id);
   assert.match(byId('verdade-ou-pressao').title, /Jogo limpo/);
@@ -23,6 +86,119 @@ test('Differentiated dynamics keep distinct tasks and short planner cores', () =
     assert.equal(item.steps.length, 4);
     for (const ref of item.references) assert.ok(resolveBibleReference(ref).sections.length, `${item.id}: ${ref}`);
   }
+});
+
+test('Service workshop offers a short instruction test with a complete correction', () => {
+  const dynamic = cellDynamics.find(item => item.id === 'maos-que-servem');
+  assert.equal(dynamic.duration, '15 min; extensão de 5 min');
+  assert.equal(dynamic.steps.length, 4);
+  assert.match(dynamic.steps[0].description, /3 minutos/);
+  assert.match(dynamic.steps[1].description, /3 minutos/);
+  assert.match(dynamic.steps[2].description, /6 minutos: 2.*2.*2/);
+  assert.match(dynamic.steps[2].description, /não informado/);
+  assert.match(dynamic.steps[2].description, /folha de regras e folha de placar em folhas comuns/);
+  assert.match(dynamic.steps[2].description, /nenhum ajuste necessário/);
+  assert.match(dynamic.steps[3].description, /3 \+ 3 \+ 6 \+ 3 = 15/);
+  assert.match(dynamic.steps[3].description, /ainda não medidas/);
+  assert.match(dynamic.meetingCore, /Qual item ficou sem destino\? Apoio: folha de placar/);
+  assert.doesNotMatch(JSON.stringify(dynamic), /35 a 50|50 minutos|envelope/);
+  for (const duration of meeting.meetingDurations) {
+    const plan = meeting.buildMeetingPlan([dynamic], 'celulas', 'integrar', duration);
+    assert.equal(meeting.meetingPlanTotal(plan.timeline), duration);
+    assert.match(plan.timeline[1].instruction, /folha de placar/);
+  }
+});
+
+test('Listening round keeps a short reciprocal exercise and a factual extension', () => {
+  const dynamic = cellDynamics.find(item => item.id === 'escuta-que-aproxima');
+  assert.equal(dynamic.duration, '15 min; extensão de 5 min');
+  assert.equal(dynamic.steps.length, 4);
+  assert.match(dynamic.steps[1].description, /A retoma a preferência; B oferece outra escolha/);
+  assert.match(dynamic.steps[2].description, /primeiro minuto.*Troquem.*No minuto final/);
+  assert.match(dynamic.steps[2].description, /não inventem um erro/);
+  assert.match(dynamic.steps[2].description, /dia e o horário inventados/);
+  assert.match(dynamic.steps[3].description, /3 \+ 3 \+ 6 \+ 3 = 15/);
+  assert.match(dynamic.steps[3].description, /ainda não medidas/);
+  assert.match(dynamic.meetingCore, /quem falou confirma ou corrige/);
+  assert.doesNotMatch(JSON.stringify(dynamic), /45 a 60|22 minutos|três ciclos/);
+  for (const duration of meeting.meetingDurations) {
+    const plan = meeting.buildMeetingPlan([dynamic], 'casais', 'conversar', duration);
+    assert.equal(meeting.meetingPlanTotal(plan.timeline), duration);
+    assert.match(plan.timeline[1].instruction, /depois troquem/i);
+    assert.match(plan.timeline[1].instruction, /não toda a oficina/);
+  }
+});
+
+test('One sentence reading distinguishes observation and application in a short round', () => {
+  const dynamic = cellDynamics.find(item => item.id === 'boas-novas-em-uma-frase');
+  assert.equal(dynamic.duration, '12 min; extensão de 3 min');
+  assert.equal(dynamic.references[0], 'Colossenses 4:5-6');
+  assert.match(dynamic.steps[1].description, /não uma citação literal/);
+  assert.match(dynamic.steps[2].description, /A: observação, Colossenses 4:6; B: não informado; C: aplicação/);
+  assert.match(dynamic.steps[2].description, /Se a frase já estiver sustentada, mantenham-na/);
+  assert.match(dynamic.steps[3].description, /3 \+ 2 \+ 5 \+ 2 = 12/);
+  assert.match(dynamic.steps[3].description, /ainda não medidos/);
+  assert.doesNotMatch(JSON.stringify(dynamic), /35 a 50|50 minutos|35 minutos/);
+  for (const duration of meeting.meetingDurations) {
+    const plan = meeting.buildMeetingPlan([dynamic], 'celulas', 'aprender', duration);
+    assert.equal(meeting.meetingPlanTotal(plan.timeline), duration);
+    assert.match(plan.timeline[3].instruction, /Use Colossenses 4:5-6/);
+    assert.match(plan.timeline[1].instruction, /somente essa comparação/);
+  }
+});
+
+test('Couples printable describes its overlap with the companion guide honestly', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'cartoes-para-casais');
+  assert.equal(resource.sections.flatMap(section => section.items).length, 18);
+  assert.match(resource.summary, /doze.*seis bíblicos, cinco/);
+  assert.match(resource.instructions.join(' '), /Escolham uma versão para não repetir/);
+  assert.match(resource.instructions.join(' '), /Zaqueu é a pergunta diferente/);
+});
+
+test('Preparation checklist connects twelve checks to a concrete game session', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'checklist-do-lider');
+  assert.equal(resource.sections.length, 3);
+  const items = resource.sections.flatMap(section => section.items);
+  assert.equal(items.length, 12);
+  assert.ok(items.every(item => item.startsWith('[ ] ')));
+  assert.match(items.join(' '), /duas equipes, tema geral, cinco perguntas, Sem tempo e rebote desativado/);
+  assert.match(items.join(' '), /minuto 45/);
+  assert.match(items.join(' '), /alternativas, gabaritos e referências/);
+  assert.match(items.join(' '), /não reutilize a pergunta por pontos/);
+  assert.match(items.join(' '), /sem inventar um problema/);
+  assert.match(resource.instructions.join(' '), /não nomes, respostas individuais/);
+  assert.doesNotMatch(items.join(' '), /quem ficou à margem|acompanhamentos que prometi/);
+});
+
+test('Score sheet uses a six team grid without subjective score bonuses', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'folha-de-pontuacao');
+  const table = resource.sections[0].table;
+  assert.deepEqual(table.columns, ['Equipe', '1', '2', '3', '4', '5', 'Total']);
+  assert.equal(table.rows.length, 6);
+  assert.ok(table.rows.every(row => row.length === table.columns.length));
+  assert.match(resource.instructions.join(' '), /10 pelo acerto inicial e 5 pelo rebote/);
+  assert.match(resource.instructions.join(' '), /um traço quando a equipe não teve tentativa/);
+  assert.doesNotMatch(JSON.stringify(resource), /Equipe que melhor colaborou/);
+  assert.match(resource.sections[1].description, /soma 2/);
+});
+
+test('Blank meeting worksheet includes a time budget and referenced answer support', () => {
+  const { printableResources } = loadTs('src/data/printableResources.ts');
+  const resource = printableResources.find(item => item.slug === 'roteiro-de-encontro');
+  const table = resource.sections.find(section => section.table).table;
+  assert.deepEqual(table.columns, ['Etapa', 'Minutos', 'O que ler ou fazer']);
+  assert.equal(table.rows.length, 5);
+  assert.ok(table.rows.every(row => row.length === 3));
+  assert.equal(table.rows[4][0], 'Total');
+  const text = JSON.stringify(resource);
+  assert.match(text, /3 \+ 5 \+ 7 \+ 5/);
+  assert.equal(resource.sections.flatMap(section => section.items).filter(item => item.startsWith('Resposta de apoio e versículo:')).length, 2);
+  assert.match(text, /O que retirar se faltar tempo/);
+  assert.match(text, /Alternativa sem internet já preparada/);
+  assert.doesNotMatch(text, /Acompanhamento necessário|Próximo passo do grupo/);
 });
 
 test('Family printable offers seven factual readings without a weekly commitment', () => {
@@ -241,6 +417,23 @@ test('General quiz first journey preserves all rounds with readable references',
     assert.ok(resolveBibleReference(question.reference)?.sections.length, question.reference);
   }
   assert.match(questions.find(question => question.id === 43).question, /tradição protestante/);
+  assert.match(questions.find(question => question.id === 12).question, /Romanos 1:1/);
+  assert.match(questions.find(question => question.id === 12).explanation, /versículo 7.*destinatários/);
+  assert.equal(questions.find(question => question.id === 12).correctAnswer, 'Paulo');
+  assert.match(questions.find(question => question.id === 25).question, /objetivos na abertura/);
+  assert.equal(questions.find(question => question.id === 25).correctAnswer, 'Provérbios');
+});
+
+test('General quiz FAQ answers specific organization questions without changing other topics', () => {
+  const { getQuizTopicFaq } = loadTs('src/data/quizTopicEditorial.ts');
+  const questions = quizQuestions.filter(question => question.topics.includes('geral'));
+  const journeys = new Set(questions.map(question => question.journey ?? 1)).size;
+  const faq = getQuizTopicFaq('Geral', questions.length, journeys, 'geral');
+  assert.equal(faq.length, 3);
+  assert.match(faq[0].answer, new RegExp(`${questions.length} perguntas em ${journeys} jornadas`));
+  assert.match(faq[1].answer, /índice.*não prova sua posição/);
+  assert.match(faq[2].answer, /Atos é um livro; Evangelhos é o conjunto/);
+  assert.equal(getQuizTopicFaq('Antigo Testamento', 36, 3, 'antigo-testamento').length, 4);
 });
 
 test('Who am I journeys contain complete and unambiguous character rounds', () => {
@@ -269,6 +462,12 @@ test('Old Testament first journey retains unique answers and complete reference 
     assert.ok(passage.sections.every(section => section.verses.length > 0));
   }
   assert.equal(questions.find(question => question.id === 27).reference, 'Êxodo 16:23-31');
+  assert.match(questions.find(question => question.id === 14).question, /após ser vendido.*autoridade/);
+  assert.equal(questions.find(question => question.id === 14).correctAnswer, 'José');
+  assert.match(questions.find(question => question.id === 29).question, /seleção junto à água/);
+  assert.equal(questions.find(question => question.id === 29).correctAnswer, '300');
+  assert.match(questions.find(question => question.id === 45).question, /1 Reis 6:1.*quarto ano/);
+  assert.equal(questions.find(question => question.id === 45).correctAnswer, 'Salomão');
 });
 
 test('Gospels first journey keeps its rounds and specifies ambiguous scenes', () => {
@@ -365,7 +564,13 @@ test('General quiz second journey keeps its answers and contextualizes book orga
     assert.equal(passage.sections.length, question.reference.split(';').length);
     assert.ok(passage.sections.every(section => section.verses.length > 0));
   }
-  assert.match(questions.find(question => question.id === 61).question, /atribuição tradicional/);
+  assert.match(questions.find(question => question.id === 57).question, /paciente e bondoso/);
+  assert.equal(questions.find(question => question.id === 59).reference, 'Rute 1:4; Rute 1:14-18');
+  assert.match(questions.find(question => question.id === 60).question, /cinquenta e dois dias/);
+  assert.match(questions.find(question => question.id === 60).explanation, /Esdras 4 também menciona/);
+  assert.match(questions.find(question => question.id === 60).reference, /Esdras 4:12-13/);
+  assert.match(questions.find(question => question.id === 61).question, /dirigido a Teófilo/);
+  assert.match(questions.find(question => question.id === 61).explanation, /não identificam o autor pelo nome/);
 });
 
 test('Old Testament second journey keeps its answers and resolves all references', () => {
@@ -379,6 +584,10 @@ test('Old Testament second journey keeps its answers and resolves all references
     assert.equal(passage.sections.length, question.reference.split(';').length);
     assert.ok(passage.sections.every(section => section.verses.length > 0));
   }
+  assert.match(questions.find(question => question.id === 68).question, /rompeu as amarras.*Juízes 15:14/);
+  assert.match(questions.find(question => question.id === 71).question, /quinze anos de vida em 2 Reis 20/);
+  for (const id of [66, 72]) assert.match(questions.find(question => question.id === id).explanation, /versão exibida pelo site/);
+  assert.doesNotMatch(questions.map(question => question.explanation).join(' '), /edição do leitor|tradução do leitor/);
 });
 
 test('Gospels second journey preserves answers and specifies the initial temptation location', () => {
@@ -479,12 +688,20 @@ test('General third journey preserves answers and distinguishes similar passages
   assert.match(questions.find(question => question.id === 197).question, /sétimo ano de Artaxerxes/);
   assert.match(questions.find(question => question.id === 199).question, /viva, eficaz/);
   assert.match(questions.find(question => question.id === 196).question, /pedido de Paulo/);
+  assert.match(questions.find(question => question.id === 196).explanation, /versão exibida pelo site/);
+  assert.equal(questions.find(question => question.id === 200).reference, 'Lamentações 1:1-8; Lamentações 3:21-24');
+  assert.match(questions.find(question => question.id === 203).explanation, /versão exibida pelo site/);
+  assert.match(questions.find(question => question.id === 205).question, /capítulo 4.*grande sumo sacerdote/);
+  assert.doesNotMatch(questions.map(question => question.explanation).join(' '), /tradução do leitor|edição do leitor/);
 });
 
 test('Old Testament third journey preserves answers and clarifies Jacob and Job', () => {
   const questions = quizQuestions.filter(question => question.topics.includes('antigo-testamento') && question.journey === 3);
   assert.deepEqual(questions.map(question => question.id), Array.from({ length: 12 }, (_, index) => 207 + index));
   assert.deepEqual(questions.map(question => question.correctAnswer), ['Babel', 'Ló', 'Rebeca', 'Doze', 'Balaão', 'Josué', 'Eúde', 'Uma porção de lã', 'Jônatas', 'Eliseu', 'Jó', 'Belsazar']);
+  assert.match(questions.find(question => question.id === 215).reference, /^1 Samuel 14:1;/);
+  assert.match(questions.find(question => question.id === 215).explanation, /entrega dos objetos é uma ação narrada/);
+  assert.match(questions.find(question => question.id === 215).explanation, /não o relato de que a partida já aconteceu/);
   for (const question of questions) {
     assert.equal(new Set(question.options).size, 4);
     assert.equal(question.options.filter(option => option === question.correctAnswer).length, 1);

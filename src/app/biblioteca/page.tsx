@@ -25,7 +25,7 @@ export default function BibliotecaPage() {
     <>
       <Header />
       <main>
-        <section className="paper-texture border-b border-[var(--border)] py-14 sm:py-20">
+        <section className="paper-texture border-b border-[var(--border)] py-6 sm:py-8">
           <div className="container-site">
             <nav aria-label="Navegação estrutural" className="flex gap-2 text-sm text-[var(--muted)]">
               <Link href="/" className="font-bold text-[var(--navy)] no-underline">Início</Link>
@@ -33,37 +33,33 @@ export default function BibliotecaPage() {
               <span>Biblioteca</span>
             </nav>
 
-            <div className="mt-9 grid gap-10 lg:grid-cols-[1fr_0.92fr] lg:items-center">
+            <div className="mt-6 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
               <div>
-                <span className="eyebrow">Biblioteca Bíblia Clube</span>
-                <h1 className="display-title mt-5 max-w-4xl text-[clamp(3rem,6.8vw,5.5rem)] text-[var(--navy)]">
-                  Conteúdo para aprender, preparar e compartilhar.
+                <h1 className="font-serif text-4xl leading-tight text-[var(--navy)] sm:text-5xl">
+                  Biblioteca
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-                  Pesquise todo o acervo: artigos, guias, jogos, dinâmicas, quizzes, materiais e ferramentas para famílias e grupos.
+                <p className="mt-3 max-w-2xl leading-7 text-[var(--muted)]">
+                  Artigos, jogos e materiais para aprender e preparar encontros.
+                  Busque por assunto ou escolha um tipo de conteúdo e público.
                 </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a href="#acervo-title" className="button-primary">Explorar o acervo <span aria-hidden="true">↓</span></a>
-                  <Link href="/monte-seu-encontro" className="button-secondary">Montar um encontro</Link>
-                </div>
               </div>
 
               <Link href={`/biblioteca/${featured.slug}`} className="group block text-inherit no-underline">
-                <figure>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <figure className="grid grid-cols-[5.5rem_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[7rem_minmax(0,1fr)]">
+                  <div className="relative aspect-square overflow-hidden rounded-md">
                     <Image
                       src="/images/editorial/grupo-modo-clean.webp"
                       alt="Grupo reunido ao redor de uma mesa com Bíblias e laptop"
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 46vw"
+                      sizes="(max-width: 640px) 88px, 112px"
                       className="object-cover transition duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <figcaption className="mt-4 flex items-start justify-between gap-5">
+                  <figcaption className="flex min-w-0 items-start justify-between gap-3">
                     <span>
                       <span className="block text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--olive-dark)]">Leitura em destaque</span>
-                      <strong className="mt-2 block font-serif text-2xl leading-tight text-[var(--navy)]">{featured.title}</strong>
+                      <strong className="mt-2 block font-serif text-xl leading-snug text-[var(--navy)]">{featured.title}</strong>
                     </span>
                     <span className="mt-1 text-xl text-[var(--olive-dark)]" aria-hidden="true">→</span>
                   </figcaption>

@@ -52,7 +52,24 @@ export function getQuizTopicFaq(
   topicLabel: string,
   questionCount: number,
   journeyCount: number,
+  topicId: QuizTopicId,
 ): QuizFaq[] {
+  if (topicId === "geral") {
+    return [
+      {
+        question: "Quantas perguntas há no quiz geral?",
+        answer: `O tema reúne ${questionCount} perguntas em ${journeyCount} jornadas. Escolha uma jornada por vez; as perguntas de exemplo desta página não são uma jornada adicional.`,
+      },
+      {
+        question: "Por que algumas respostas devem ser conferidas no índice da Bíblia?",
+        answer: "Perguntas sobre primeiro livro, último livro ou posição de uma carta tratam da organização da edição. Confira essas respostas no índice. A passagem indicada permite conhecer o conteúdo do livro, mas não prova sua posição nem a ordem em que os livros foram escritos.",
+      },
+      {
+        question: "Qual é a diferença entre um livro, um conjunto de livros e uma divisão da Bíblia?",
+        answer: "Atos é um livro; Evangelhos é o conjunto de Mateus, Marcos, Lucas e João; Novo Testamento é a divisão em que esses livros aparecem. Nas alternativas, observe qual dessas informações o enunciado pede. Dizer que Atos está no Novo Testamento não o transforma em um dos quatro Evangelhos.",
+      },
+    ];
+  }
   return [
     {
       question: `Quantas perguntas há no quiz de ${topicLabel}?`,

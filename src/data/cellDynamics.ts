@@ -74,14 +74,14 @@ const cellDynamicDrafts: CellDynamic[] = [
   },
   {
     id: "escuta-que-aproxima",
-    meetingCore: "Em dupla, uma pessoa escolhe entre um jogo de pistas e um de memória e explica a preferência em uma frase. A outra resume e pergunta se entendeu; depois troquem. Exemplo: Você prefere pistas e regras curtas para incluir quem chegou agora; entendi? Não avaliem o relacionamento da dupla.",
+    meetingCore: "Em dupla, uma pessoa escolhe entre um jogo de pistas e um de memória e explica a preferência em uma frase. A outra resume sem acrescentar uma sugestão e pergunta se entendeu; quem falou confirma ou corrige. Depois troquem. Exemplo fictício: 'Prefiro pistas com regras curtas'; resumo: 'Você prefere pistas e regras curtas; entendi?'. Se o resumo acrescentar uma ideia, retirem esse acréscimo e confiram de novo. Usem somente essa troca no bloco curto, não toda a oficina. É possível usar o exemplo ou apenas acompanhar, sem avaliar o relacionamento.",
     audience: "casais",
     audienceLabel: "Casais",
     category: "Relacionamento e cuidado",
     title: "Escuta que aproxima",
     summary:
-      "Uma atividade de escuta em dupla com temas leves, frases prontas e troca de funções, sem discutir conflitos ou avaliar o relacionamento.",
-    duration: "45 a 60 min",
+      "Uma rodada de escuta em dupla, com 15 minutos sugeridos: escolha uma preferência leve, ouça o resumo e confirme ou corrija, sem avaliar o relacionamento.",
+    duration: "15 min; extensão de 5 min",
     groupSize: "3 a 10 casais",
     materials: ["Bíblia ou aplicativo bíblico", "Este roteiro com os temas e exemplos", "Relógio", "Papel e caneta por dupla, opcionais"],
     objective:
@@ -90,32 +90,32 @@ const cellDynamicDrafts: CellDynamic[] = [
       {
         title: "Leitura b\u00edblica",
         description:
-          "Reserve 8 minutos para acolher, explicar as escolhas de participação e ler Tiago 1:19-21. Pergunte que contraste aparece no versículo 19: disposição para ouvir e cuidado ao falar e irar-se. A passagem se dirige à comunidade, não oferece um teste de comunicação conjugal. Resumir a fala do outro é uma prática proposta por este roteiro, não uma técnica descrita nesses versículos. Eclesiastes 4:9-12 e Colossenses 3:12-14 ficam para consulta posterior; companhia e cuidado nesses textos não se restringem a casais nem comprovam a qualidade de um relacionamento pela atividade.",
+          "Use 3 minutos para acolher e ler Tiago 1:19-21. No versículo 19, localizem a disposição para ouvir e o cuidado ao falar e irar-se. A passagem se dirige à comunidade; o exercício de resumo é uma proposta deste roteiro, não uma técnica conjugal descrita no texto. As outras referências ficam para consulta posterior. Se a leitura exigir mais tempo, omita a extensão e reduza as contribuições finais.",
       },
       {
-        title: "Aquecimento",
+        title: "Veja a diferença entre resumir e sugerir",
         description:
-          "Núcleo de até 5 minutos: apresente uma demonstração fictícia. Uma pessoa diz: 'Eu escolheria um jogo de pistas, com regras curtas, para que quem chegou agora possa acompanhar'. A outra resume: 'Você prefere pistas e regras curtas para incluir quem está chegando; entendi corretamente?'. Quem falou pode confirmar ou corrigir. Cada dupla escolhe um tema: um jogo que gostaria de experimentar, uma receita que gostaria de aprender ou um passeio imaginado. Uma pessoa fala por até 1 minuto; a outra resume em até 30 segundos, sem sugerir uma escolha melhor. Troquem as funções e usem o minuto restante para conferir a instrução. Não é preciso relatar planos reais, gastos ou lembranças do relacionamento. Quem preferir pode usar a fala fictícia ou apenas observar.",
+          "Reserve 3 minutos para esta demonstração fictícia. Fala: 'Eu escolheria um jogo de pistas com regras curtas'. Compare A) 'Você prefere pistas e regras curtas; entendi?' e B) 'Então vamos jogar memória, que é melhor'. A retoma a preferência; B oferece outra escolha sem confirmar o que ouviu. Não é uma disputa sobre qual jogo é melhor. Se o resumo fosse 'Você prefere jogar sozinho', haveria um detalhe acrescentado: uma correção possível é 'Não falei sobre jogar sozinho; falei sobre pistas e regras curtas'. Leia a fala corrigida e pergunte se agora corresponde ao exemplo.",
       },
       {
         title: "Ouça, resuma e confira",
         description:
-          "Reserve 22 minutos. Em 3 minutos, leia as duas situações fictícias: A) alguém descreve uma receita, mas a outra pessoa muda de assunto antes do fim; B) alguém fala de um passeio tranquilo, e a resposta já começa sugerindo um destino sem confirmar a preferência. Cada dupla escolhe uma e propõe uma fala de escuta, como 'Você quer terminar a ideia?' ou 'O ponto principal é um lugar tranquilo; entendi?'. Usem três ciclos de 4 minutos: 1 minuto de fala, 1 de resumo e confirmação por uma pessoa; depois invertam, com os mesmos tempos. É permitido usar os temas do aquecimento em vez das cenas, passar um ciclo ou acompanhar em silêncio. Nos 7 minutos restantes, conversem sobre a primeira pergunta abaixo e ouçam até três sínteses voluntárias sobre a regra da atividade, sem conteúdo privado. Na versão de 60 minutos, acrescentem 15 minutos para experimentar outro tema e comparar duas formas de resumo, sem julgar qual casal escuta melhor.",
+          "Reserve 6 minutos. No primeiro minuto, cada dupla escolhe um tema real ou imaginado: jogo de pistas ou memória; receita com frutas ou pão; passeio num jardim ou museu. Uma pessoa fala por até 30 segundos; a outra resume em até 30; use até 1 minuto para confirmar ou corrigir. Troquem as funções e repitam os mesmos 2 minutos. No minuto final, confiram a regra: o resumo manteve a preferência sem acrescentar uma escolha? Se já corresponder, não inventem um erro. Extensão opcional de 5 minutos: em 1 minuto, leiam 'Eu escolheria um passeio no jardim, mas ainda não decidi o horário'. Nos 2 seguintes, comparem os resumos 'Você quer ir ao jardim amanhã cedo' e 'Você escolheria o jardim e ainda não decidiu o horário'. Nos 2 finais, retirem do primeiro resumo o dia e o horário inventados e confiram a nova frase. A extensão testa um detalhe não informado, sem pedir histórias pessoais.",
       },
       {
         title: "Síntese sem avaliação do casal",
         description:
-          "Use 10 minutos para uma pergunta de observação, até três contribuições e um encerramento breve. Uma síntese possível é: ouvir antes de sugerir e perguntar se o resumo corresponde ao que foi dito. Uma dupla pode escolher repetir esse formato em outra atividade, mas não precisa anunciar compromissos, pedidos de perdão ou mudanças no relacionamento. A oração é opcional. As etapas somam 45 minutos; a prática adicional leva a 60. No criador de roteiro, respeite os blocos selecionados e seus tempos, não a duração integral desta página.",
+          "Use 3 minutos para uma pergunta abaixo, até duas contribuições sobre a regra do exercício e um encerramento breve. Não compartilhem o conteúdo da fala da outra pessoa sem autorização. Uma síntese possível é ouvir, resumir e confirmar antes de sugerir. Total sugerido: 3 + 3 + 6 + 3 = 15 minutos; com a extensão, 20. São estimativas, ainda não medidas com participantes. No criador de roteiro, use apenas a troca curta indicada no bloco, sem acrescentar a demonstração e a extensão da página.",
       },
     ],
     questions: [
-      "Qual diferença há entre resumir e decidir pelo outro? No exemplo, o resumo confirma pistas e regras curtas; não substitui a preferência por outro jogo.",
-      "Se um resumo não corresponder à fala, como corrigir sem avaliação pessoal? Uma resposta possível é 'Quis dizer um passeio tranquilo, não necessariamente esse destino'.",
+      "Qual diferença há entre os exemplos A e B? A confirma pistas e regras curtas; B sugere memória antes de confirmar a preferência. Sugerir outro jogo é diferente de resumir.",
+      "Que detalhe não estava na fala sobre pistas e regras curtas? Jogar sozinho. Uma correção possível é retirar esse acréscimo e confirmar a preferência novamente.",
       "Que orientação aparece em Tiago 1:19? Localizem ouvir e falar; a troca de funções e o cronômetro são escolhas desta atividade, não exigências do versículo.",
     ],
     references: ["Tiago 1:19-21", "Eclesiastes 4:9-12", "Colossenses 3:12-14"],
     leaderNote:
-      "Para 3 a 10 casais, mantenha as conversas em duplas e limite o plenário a três contribuições. Não observe nem pontue intimidade, afeto ou desempenho conjugal. Não recolha conflitos, queixas ou pedidos de perdão. É possível acompanhar sozinho, usar falas fictícias, responder por escrito ou apenas ouvir; uma recusa não pede explicação. Se surgir um assunto pessoal, não o desenvolva como atividade nem prometa aconselhamento. Não publique respostas ou imagens sem autorização.",
+      "Para 3 a 10 casais, as duplas praticam ao mesmo tempo; o fechamento recebe até duas contribuições voluntárias sobre a regra, não relatos do relacionamento. É possível usar as falas fictícias, escrever ou apenas ouvir, sem justificar. Quem acompanha sozinho pode comparar os exemplos com quem conduz, se desejar. Não pontue a escuta nem recolha conflitos ou pedidos de perdão; se surgir um assunto íntimo, preserve-o fora da atividade coletiva.",
     prayerSuggestion:
       "Sugestão opcional: 'Deus, ajuda-nos a ouvir com atenção e falar com respeito. Obrigado pela oportunidade de aprender juntos. Amém.' Não peça que cada casal ore ou relate algo íntimo em voz alta.",
   },
@@ -414,42 +414,42 @@ const cellDynamicDrafts: CellDynamic[] = [
   },
   {
     "id": "maos-que-servem",
-    "meetingCore": "Em grupo, distribuam seis itens fictícios entre três caixas: livros, materiais de escrita e folhas comuns. Itens: Bíblia, caderno, caneta, lápis, folha de regras e folha de placar. Apoio: Bíblia/caderno; caneta/lápis; regras/placar. Confiram se cada item tem destino. Usem palavras, sem mover peso ou materiais pessoais.",
+    "meetingCore": "Confiram esta instrução para seis itens fictícios: 'Bíblia e caderno em livros; caneta e lápis em escrita; folha de regras em folhas comuns'. A lista completa também inclui folha de placar. Qual item ficou sem destino? Apoio: folha de placar. Completem a instrução com esse item em folhas comuns e confiram se os seis nomes aparecem uma vez. Caderno em livros é uma convenção deste exercício. Usem palavras ou desenhos, sem mover objetos. Se houver tempo, outra dupla lê a instrução corrigida e aponta os destinos; não é necessário executar toda a oficina da página original.",
     "audience": "todos",
     "audienceLabel": "Toda a célula",
     "category": "Serviço e compaixão",
     "title": "Mãos que servem",
-    "summary": "Uma tarefa cooperativa de separar seis materiais fictícios, testar instruções e conferir o resultado, sem planejamento de eventos ou investigação de necessidades pessoais.",
-    "duration": "35 a 50 min",
+    "summary": "Uma rodada cooperativa de 15 minutos sugeridos: escreva instruções para seis itens fictícios, teste com outra equipe e corrija o que ficou faltando.",
+    "duration": "15 min; extensão de 5 min",
     "groupSize": "5 a 30 pessoas",
     "materials": [
-      "Um papel por equipe",
+      "Este roteiro e um papel por equipe para instruções e respostas",
       "Canetas",
       "Bíblia ou aplicativo bíblico",
       "Relógio"
     ],
-    "objective": "Produzir uma distribuição completa de materiais fictícios e instruções que outra equipe consiga conferir, relacionando cooperação ao serviço em Marcos 10:42-45.",
+    "objective": "Produzir e testar uma instrução que dê destino aos seis itens, sem omissões ou duplicações, relacionando clareza na cooperação ao serviço em Marcos 10:42-45.",
     "steps": [
       {
         "title": "Leitura bíblica",
-        "description": "Use 7 minutos para acolher e ler Marcos 10:42-45. Jesus contrasta domínio e serviço; localizar esse contraste não reduz a passagem a arrumação de objetos. A tarefa é uma aplicação criada pelo roteiro. Gálatas 5:13 e Tiago 2:14-17 ficam para consulta, sem propor trabalho social ou aconselhamento."
+        "description": "Reserve 3 minutos para apresentar a rodada e ler Marcos 10:42-45. Pergunte o que Jesus contrapõe ao domínio: o serviço. A atividade abaixo é uma proposta de cooperação, não uma tarefa descrita na passagem. Gálatas 5:13 e Tiago 2:14-17 ficam para consulta posterior. Se a leitura precisar de mais tempo, omita a extensão e reduza as contribuições finais."
       },
       {
-        "title": "Distribua seis materiais",
-        "description": "Em 5 minutos, apresente três caixas fictícias: livros, escrita e folhas comuns. Distribuam Bíblia, caderno, caneta, lápis, folha de regras e folha de placar. Apoio por categoria: Bíblia/caderno; caneta/lápis; regras/placar. Neste exemplo, caderno fica com livros por convenção anunciada, não por regra universal. Usem palavras ou desenhos; nenhuma caixa ou objeto real é necessário. Cada pessoa pode ler, apontar, ditar ou observar."
+        "title": "Prepare a instrução",
+        "description": "Use 3 minutos. Forme equipes de 2 a 5 pessoas e mantenha esta ficha visível: ITENS — Bíblia, caderno, caneta, lápis, folha de regras e folha de placar. DESTINOS — livros: Bíblia e caderno; escrita: caneta e lápis; folhas comuns: folha de regras e folha de placar. Caderno em livros é uma convenção anunciada para este exercício. Cada equipe escreve ou dita uma instrução que dê destino a todos os itens. Exemplo incompleto para demonstrar: 'Coloque Bíblia e caderno em livros; caneta e lápis em escrita; folha de regras em folhas comuns'. Falta a folha de placar. Não entreguem esse exemplo como solução pronta: completem sua própria instrução."
       },
       {
         "title": "Teste a instrução de outra equipe",
-        "description": "Reserve 15 minutos: 3 para registrar destinos, 5 para escrever três instruções e 5 para outra equipe conferir os seis itens; use 2 para corrigir. Modelo: 'Coloque Bíblia e caderno em livros; caneta e lápis em escrita; regras e placar em folhas comuns'. Conferência: todo item aparece uma vez? Existe destino para cada um? Se alguém propuser outra categoria, explicite a convenção antes de conferir. Não há corrida nem ranking. Para 50 minutos, acrescente 15: 5 para inserir o item fictício envelope, 5 para combinar seu destino e 5 para atualizar e testar as instruções. Não há destino único para envelope; o acordo precisa estar escrito."
+        "description": "Reserve 6 minutos: 2 para trocar instruções e registrar os destinos indicados, 2 para comparar com a ficha e 2 para corrigir e reler. Cada equipe usa apenas a instrução recebida na primeira tentativa; se um destino não estiver claro, registra 'não informado' em vez de adivinhar. Depois confere três critérios: os seis itens aparecem uma vez? Cada um tem destino? Os destinos correspondem à ficha? Modelo completo: 'Coloque Bíblia e caderno em livros; caneta e lápis em escrita; folha de regras e folha de placar em folhas comuns'. Se houver só uma equipe ou sobrar uma sem par, quem conduz faz a troca. Se a instrução já funcionar, registrem 'nenhum ajuste necessário'. Extensão opcional de 5 minutos: outra equipe recebe a instrução 'Coloque os materiais no lugar certo', identifica quais itens e destinos faltam, reescreve e testa a nova versão. Não acrescente apenas objetos para prolongar a rodada."
       },
       {
         "title": "Confira a tarefa, não as pessoas",
-        "description": "Use 8 minutos: 3 para uma pergunta abaixo, 3 para até três contribuições e 2 para encerrar. Produto: três instruções completas e uma lista de seis itens conferida. Não atribua tarefas domésticas ou ação social aos participantes. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 50 com envelope; não medido em aplicação real. No criador, pratique somente a distribuição do núcleo no tempo do bloco."
+        "description": "Use 3 minutos: ouça até duas contribuições sobre uma instrução que ficou clara ou precisou de ajuste e encerre. Produto: a instrução, o resultado do teste e uma correção quando necessária. Total sugerido: 3 + 3 + 6 + 3 = 15 minutos; com a extensão, 20. São estimativas, ainda não medidas em aplicação com participantes. A atividade confere o material, não classifica pessoas como prestativas. No criador de roteiro, use apenas o núcleo de identificar e corrigir o item sem destino, no tempo exibido."
       }
     ],
     "questions": [
-      "Na distribuição inicial, algum item ficou sem destino? Confiram os seis nomes; isso avalia a instrução, não quem escreveu.",
-      "Por que o envelope pede uma convenção nova? O exemplo inicial não define seu destino; combinar antes é melhor que adivinhar.",
+      "Qual item falta no exemplo incompleto? A folha de placar. Ao acrescentá-la em folhas comuns, os seis itens passam a ter destino.",
+      "O que falta em 'Coloque os materiais no lugar certo'? A lista dos itens e seus destinos. Uma instrução útil permite conferir o resultado sem adivinhar.",
       "Em Marcos 10:42-45, que contraste aparece? Domínio e serviço; as três caixas não estão no texto, são uma aplicação recreativa."
     ],
     "references": [
@@ -457,7 +457,7 @@ const cellDynamicDrafts: CellDynamic[] = [
       "Gálatas 5:13",
       "Tiago 2:14-17"
     ],
-    "leaderNote": "Não movam móveis, peso, objetos pessoais ou anotações privadas. As caixas e os itens são fictícios. Funções são voluntárias; não distribua trabalho a quem prefere ouvir. Esta tarefa não identifica necessidades sociais nem oferece cuidado profissional.",
+    "leaderNote": "Use palavras ou desenhos; não são necessárias caixas nem objetos reais. Ler, ditar, apontar e observar são opções. Com até 30 pessoas, forme equipes de 2 a 5 e faça as trocas ao mesmo tempo; limite o fechamento a duas contribuições. Não há corrida, ranking ou coleta de informações pessoais. A ficha avalia a clareza da instrução, não o valor de quem a escreveu.",
     "prayerSuggestion": "Sugestão opcional: 'Deus, ajuda-nos a cooperar com respeito e clareza. Obrigado por este encontro. Amém.' Acompanhar em silêncio é uma opção."
   },
   {
@@ -509,13 +509,13 @@ const cellDynamicDrafts: CellDynamic[] = [
   },
   {
     "id": "boas-novas-em-uma-frase",
-    "meetingCore": "Leia Colossenses 4:5-6 e a frase fictícia: O texto orienta cuidar da maneira de falar e responder a cada pessoa. Confiram o que sustenta esse resumo. Apoio: versículo 6. Uma frase-resumo não substitui o trecho nem promete resultados pessoais.",
+    "meetingCore": "Com Colossenses 4:5-6 aberto, comparem 'O texto menciona responder a cada pessoa' e 'O texto manda jogar durante 12 minutos'. A primeira frase se apoia no versículo 6; a duração do jogo não é informada. Corrijam a segunda para 'Nesta atividade, escolhemos jogar durante 12 minutos': agora é uma escolha do roteiro, não uma instrução da passagem. Leiam o exemplo ou proponham outra redação. No bloco curto, usem somente essa comparação; a leitura geral já tem etapa própria.",
     "audience": "todos",
     "audienceLabel": "Toda a célula",
     "category": "Comunicação e respeito",
     "title": "Uma leitura em uma frase",
-    "summary": "Resuma uma observação de Colossenses 4:5-6 e compare três frases com a passagem, sem criar outro convite ou exigir testemunho pessoal.",
-    "duration": "35 a 50 min",
+    "summary": "Compare observação, detalhe não informado e aplicação em Colossenses 4:5-6; escreva uma frase com referência numa rodada de 12 minutos sugeridos.",
+    "duration": "12 min; extensão de 3 min",
     "groupSize": "6 a 24 pessoas",
     "materials": [
       "Bíblia",
@@ -527,19 +527,19 @@ const cellDynamicDrafts: CellDynamic[] = [
     "steps": [
       {
         "title": "Leia antes de resumir",
-        "description": "Use 7 minutos para os combinados e Colossenses 4:5-6. Localizem a orientação sobre palavra e resposta no versículo 6. A comparação com sal precisa ser lida no contexto, não encenada com alimentos. 1 Pedro 3:15-16 e Marcos 5:18-20 são referências complementares, não pedidos de testemunho ou promessa de adesão."
+        "description": "Reserve 3 minutos para ler Colossenses 4:5-6 e localizar, no versículo 6, a orientação sobre a maneira de falar e responder a cada pessoa. O trecho se dirige à comunidade e relaciona fala e convivência; não define o formato deste encontro. As demais referências são complementares. Se a leitura precisar de mais tempo, dispense a extensão e reduza o compartilhamento final, sem apressar quem acompanha."
       },
       {
         "title": "Uma descoberta em uma frase",
-        "description": "Em 5 minutos, apresente: 'O texto orienta cuidar da maneira de falar e responder a cada pessoa'. Confiram no versículo 6. Cada dupla propõe outra redação ou acompanha a leitura do exemplo. A frase informa uma observação; não promete mudar a vida de quem a ouvir e não substitui a passagem."
+        "description": "Use 2 minutos para demonstrar: 'O texto orienta cuidar da maneira de falar e responder a cada pessoa — Colossenses 4:6'. Mostre onde o versículo sustenta a frase. Ela é uma paráfrase de uma observação, não uma citação literal nem um resumo completo da passagem. Para conferir outra frase, perguntem: que informação ela apresenta e onde essa informação aparece?"
       },
       {
         "title": "Três frases para conferir",
-        "description": "Reserve 15 minutos: 3 para ler as frases, 6 para consultar e 6 para até três contribuições. A 'O texto menciona responder a cada pessoa'; B 'O texto determina uma reunião de 35 minutos'; C 'Podemos explicar uma regra de jogo com gentileza'. Apoio: A é observação apoiada no versículo 6; B é detalhe não informado; C é aplicação criada para a atividade, não uma regra de jogo na carta. Produto: marcar observação, não informado ou aplicação e escrever um resumo fiel. Para 50 minutos, acrescente 15: 5 para outra dupla ler o resumo, 5 para localizar palavras de apoio e 5 para corrigir algo que extrapole o recorte."
+        "description": "Reserve 5 minutos: 1 para ler as frases, 2 para comparar em duplas e 2 para conferir e escrever uma frase com referência. A) 'O texto menciona responder a cada pessoa'; B) 'O texto determina uma reunião de 12 minutos'; C) 'Podemos explicar uma regra de jogo com gentileza'. Apoio: A é observação do versículo 6; B atribui ao texto uma duração não informada; C é aplicação proposta, pois a passagem não fala de jogos. Modelo de resposta: 'A: observação, Colossenses 4:6; B: não informado; C: aplicação'. Cada dupla escreve ou dita uma observação com referência; também pode usar o exemplo anterior. Extensão opcional de 3 minutos: em 1, outra dupla lê a frase; em 1, localiza o apoio; no último, corrigem algum acréscimo. Se a frase já estiver sustentada, mantenham-na. Sem troca de duplas, quem conduz demonstra a conferência."
       },
       {
         "title": "Uma frase com referência",
-        "description": "Use 8 minutos: 3 para escolher uma pergunta, 3 para até três resumos e 2 para encerramento opcional. Anotem Colossenses 4:5-6 junto da frase para permitir conferência. Não enviem mensagens, recolham contatos ou meçam persuasão. Total sugerido: 7 + 5 + 15 + 8 = 35 minutos, ou 50 com conferência ampliada; não medido em aplicação real. No criador, use somente o núcleo e o tempo indicado."
+        "description": "Use 2 minutos para ouvir até duas frases voluntárias e conferir a referência de uma delas. Exemplo de correção: troque 'A Bíblia manda reunir por 12 minutos' por 'Escolhemos 12 minutos para esta atividade'. A mudança distingue a organização do encontro da informação bíblica. Produto: uma observação com referência e a comparação das três frases. Total sugerido: 3 + 2 + 5 + 2 = 12 minutos; com a extensão, 15. Tempos ainda não medidos com participantes. No criador, execute somente a comparação curta indicada no bloco, não a oficina integral."
       }
     ],
     "questions": [
@@ -548,11 +548,11 @@ const cellDynamicDrafts: CellDynamic[] = [
       "Qual é a diferença entre C e o resumo? C aplica uma ideia a um jogo; o resumo descreve o recorte, sem inventar que ele menciona esse jogo."
     ],
     "references": [
-      "Marcos 5:18-20",
       "Colossenses 4:5-6",
+      "Marcos 5:18-20",
       "1 Pedro 3:15-16"
     ],
-    "leaderNote": "Não peça testemunhos, relatos íntimos, conversões ou convites reais. O produto é uma frase com referência e limite de escopo. Aceite formas equivalentes da tradução e participação por escuta. Uma frase não resolve todo o sentido da passagem.",
+    "leaderNote": "Forme duplas ou um trio e faça as comparações ao mesmo tempo, com até duas contribuições no fechamento. Ler, ditar e apenas acompanhar são opções. Não peça testemunhos, contatos ou relatos pessoais. Não use sal nem outros alimentos para encenar a passagem. Aceite palavras equivalentes da tradução e mantenha a referência junto da paráfrase; uma frase não substitui a leitura do trecho.",
     "prayerSuggestion": "Oração breve opcional por palavras respeitosas e leitura atenta; ninguém precisa falar ou aderir à oração."
   },
 ];

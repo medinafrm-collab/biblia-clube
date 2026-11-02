@@ -58,7 +58,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: title,
-  dateModified: "2026-10-10",
+  dateModified: "2026-10-27",
   description,
   inLanguage: "pt-BR",
   author: {
@@ -131,10 +131,10 @@ export default function CouplesQuizGuide() {
                   <li>- Personagens, lugares, objetos e ações.</li>
                   <li>- Rodada pronta com seis perguntas e respostas.</li>
                   <li>- Sugestão de 15 minutos para três perguntas.</li>
-                  <li>- Links para atividades relacionadas.</li>
+                  <li>- Cartões complementares para imprimir ou ler na tela.</li>
                 </ul>
-                <Link href="/dinamicas-para-celulas" className="button-primary mt-6">
-                  Ver dinâmicas
+                <Link href="/materiais/cartoes-para-casais" className="button-primary mt-6">
+                  Abrir cartões complementares
                   <span aria-hidden="true">→</span>
                 </Link>
               </aside>
@@ -153,6 +153,22 @@ export default function CouplesQuizGuide() {
                     somente a pergunta e as opções. O gabarito explica o detalhe
                     pedido e sugere uma segunda observação. Esta seleção é do
                     guia; o quiz digital não garante as mesmas perguntas nem a mesma ordem.
+                  </p>
+
+                  <h2>Guia e cartões: duas formas de usar o mesmo kit</h2>
+                  <p>
+                    Este guia oferece alternativas, respostas comentadas e uma observação
+                    complementar para cada pergunta. Os <Link href="/materiais/cartoes-para-casais">cartões de conversa para casais</Link> trazem
+                    perguntas abertas para usar na mesa, além de doze cartões de preferências
+                    e atividades imaginadas. Não são duas rodadas bíblicas inteiramente novas.
+                  </p>
+                  <p>
+                    Cinco temas se repetem: a chegada a Belém, Simão e André, os recipientes
+                    de Caná, o ofício de Paulo com Áquila e Priscila e a ajuda entre os barcos.
+                    O guia acrescenta uma pergunta sobre Arão; os cartões usam uma sequência
+                    de Zaqueu. Para não repetir, escolham a versão com alternativas aqui ou a
+                    versão aberta no material. Imprimir é opcional, e o guia já contém tudo
+                    para conduzir sua própria rodada.
                   </p>
 
                   <h2>Lazer compartilhado, sem avaliação do casal</h2>
@@ -322,7 +338,7 @@ export default function CouplesQuizGuide() {
                     esperado é conferir informações das passagens, não medir
                     conhecimento, fé ou qualidade do relacionamento.
                   </p>
-                  <p>Revisão de conteúdo: 10 de outubro de 2026. Gabaritos conferidos na Almeida 1819 (Bíblia Livre); palavras equivalentes de outras traduções são aceitas.</p>
+                  <p>Atualizado em 27 de outubro de 2026: relação entre guia e cartões esclarecida. Gabaritos conferidos na Almeida 1819 (Bíblia Livre); palavras equivalentes de outras traduções são aceitas.</p>
                 </div>
               </div>
             </div>

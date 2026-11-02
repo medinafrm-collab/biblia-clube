@@ -1,3 +1,5 @@
+import { matchingThemes } from "@/data/matchingPairs";
+
 export type MeetingAudience = "familias" | "jovens" | "casais" | "celulas";
 export type MeetingGoal = "integrar" | "aprender" | "conversar" | "celebrar";
 export type MeetingDuration = 30 | 45 | 60 | 90;
@@ -70,7 +72,11 @@ function dynamicInstruction(dynamic: MeetingDynamic, duration: MeetingDuration) 
 
 function gameInstruction(goal: MeetingGoal, minutes: number) {
   const count = minutes <= 5 ? 3 : minutes <= 7 ? 5 : minutes <= 10 ? 7 : 10;
-  if (goal === "integrar") return `Faça ${count} associações em modo cooperativo. Convide pessoas diferentes a explicar cada par em uma frase; pule uma associação se a conversa se alongar.`;
+  if (goal === "integrar") {
+    const availablePairs = Math.min(...matchingThemes.map((theme) => theme.pairs.length));
+    const associations = Math.min(count, availablePairs);
+    return `Escolha um tema do Ligue os Pares e faça até ${associations} associações em modo cooperativo, sem ultrapassar os ${minutes} minutos. Convide pessoas diferentes a explicar cada par em uma frase; encerre antes de completar a rodada se a conversa se alongar.`;
+  }
   if (goal === "aprender") return `Faça ${count} perguntas. Após cada resposta, leia apenas a explicação; marque no máximo duas referências para consulta posterior. A etapa de leitura usa a passagem da dinâmica.`;
   if (goal === "conversar") return `Complete ${count} frases. Escolha uma delas para reler no contexto e não transforme a atividade em teste de memorização.`;
   return `Faça uma rodada de ${count} perguntas com equipes equilibradas. Use rebote somente se houver tempo e reconheça colaboração, não apenas pontos.`;

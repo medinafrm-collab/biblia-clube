@@ -24,7 +24,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
   {
     id: 45,
     topics: ["antigo-testamento"],
-    question: "Qual rei de Israel construiu o primeiro templo em Jerusalém?",
+    question: "Segundo 1 Reis 6:1, qual rei começou a construir a casa do Senhor no quarto ano de seu reinado?",
     options: ["Davi", "Salomão", "Saul", "Josias"],
     correctAnswer: "Salomão",
     explanation:
@@ -151,11 +151,11 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     id: 57,
     topics: ["geral"],
     journey: 2,
-    question: "Qual carta fala de forma conhecida sobre o amor em seu capítulo 13?",
+    question: "Em qual carta, no capítulo 13, o amor é descrito como paciente e bondoso?",
     options: ["Romanos", "1 Coríntios", "Gálatas", "Efésios"],
     correctAnswer: "1 Coríntios",
     explanation:
-      "1 Coríntios 13 contrasta dons, conhecimento e outras ações com a ausência de amor, descreve atitudes como paciência e bondade e termina destacando o amor entre fé, esperança e amor. O capítulo fala à comunidade cristã, não exclusivamente a casais. Aqui, o capítulo inteiro é uma referência curta e adequada ao assunto perguntado.",
+      "1 Coríntios 13:4 descreve o amor como paciente e bondoso. Os versículos anteriores contrastam dons, conhecimento e outras ações com a ausência de amor; o final destaca o amor entre fé, esperança e amor. A pergunta pede essas características no capítulo 13, não apenas uma carta que fale de amor. O texto se dirige à comunidade cristã, não exclusivamente a casais.",
     reference: "1 Coríntios 13",
   },
   {
@@ -177,29 +177,29 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     options: ["Ester", "Rute", "Juízes", "Cantares"],
     correctAnswer: "Rute",
     explanation:
-      "O livro de Rute apresenta sua decisão de permanecer com Noemi, sua sogra, enquanto Orfa se despede. Rute declara que seguirá o caminho de Noemi e que seu povo será o dela. Esse episódio identifica o livro pela relação e pela escolha narradas, não apenas pela origem moabita da personagem.",
-    reference: "Rute 1:14-18",
+      "Rute 1:4 identifica Orfa e Rute como mulheres de Moabe. Nos versículos 14 a 18, Orfa se despede e Rute permanece com Noemi, sua sogra, declarando que irá com ela. As duas partes sustentam as pistas da pergunta: a origem moabita e a decisão de acompanhar a sogra.",
+    reference: "Rute 1:4; Rute 1:14-18",
   },
   {
     id: 60,
     topics: ["geral"],
     journey: 2,
-    question: "Qual livro apresenta a reconstrução dos muros de Jerusalém?",
+    question: "Em qual livro é registrada a conclusão do muro de Jerusalém em cinquenta e dois dias?",
     options: ["Neemias", "Esdras", "Daniel", "Ageu"],
     correctAnswer: "Neemias",
     explanation:
-      "Neemias convida o povo a reconstruir o muro de Jerusalém, e o grupo aceita participar. O capítulo 6 registra sua conclusão em cinquenta e dois dias. As duas passagens mostram a mobilização e o resultado de uma obra coletiva; a pergunta trata dos muros, não da reconstrução do templo.",
-    reference: "Neemias 2:17-18; Neemias 6:15-16",
+      "Neemias 6:15 registra a conclusão do muro em cinquenta e dois dias. Neemias 2:17-18 apresenta o convite e a resposta coletiva para a obra. Esdras 4 também menciona a restauração dos muros; por isso, o detalhe dos cinquenta e dois dias é o que distingue a resposta pedida, não a simples menção à reconstrução de Jerusalém.",
+    reference: "Neemias 2:17-18; Neemias 6:15-16; Esdras 4:12-13",
   },
   {
     id: 61,
     topics: ["geral"],
     journey: 2,
-    question: "Segundo a atribuição tradicional, qual Evangelho tem o mesmo autor de Atos?",
+    question: "Qual Evangelho é dirigido a Teófilo em sua abertura, assim como o livro de Atos?",
     options: ["Mateus", "Marcos", "Lucas", "João"],
     correctAnswer: "Lucas",
     explanation:
-      "A tradição cristã atribui o Evangelho de Lucas e Atos a Lucas. As duas introduções se dirigem a Teófilo, e Atos menciona um primeiro relato sobre Jesus, mostrando a ligação entre as obras. Esses trechos não nomeiam o autor; a atribuição tradicional deve ser distinguida dessa evidência textual.",
+      "Lucas 1:3 dirige o relato a Teófilo; Atos 1:1 também o nomeia e menciona um primeiro livro sobre o que Jesus fez e ensinou. A resposta se apoia nesse destinatário compartilhado. Os trechos não identificam o autor pelo nome, e a pergunta não exige concluir uma autoria apenas a partir das dedicatórias.",
     reference: "Lucas 1:1-4; Atos 1:1-2",
   },
   {
@@ -254,7 +254,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     options: ["Mar Morto", "Mar Vermelho", "Mar da Galileia", "Mar Mediterrâneo"],
     correctAnswer: "Mar Vermelho",
     explanation:
-      "Êxodo 13:18 usa o nome mar Vermelho na edição do leitor. Êxodo 14 descreve Moisés estendendo a mão e o povo atravessando em seco, com as águas divididas. A resposta segue essa tradução, sem determinar coordenadas modernas ou uma rota arqueológica.",
+      "Êxodo 13:18 usa o nome mar Vermelho na versão exibida pelo site. Êxodo 14 descreve Moisés estendendo a mão e o povo atravessando em seco, com as águas divididas. A resposta segue essa tradução, sem determinar coordenadas modernas ou uma rota arqueológica.",
     reference: "Êxodo 13:18; Êxodo 14:21-22",
   },
   {
@@ -272,7 +272,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     id: 68,
     topics: ["antigo-testamento"],
     journey: 2,
-    question: "Qual juiz era conhecido por sua grande força?",
+    question: "Quem rompeu as amarras quando o Espírito do Senhor veio sobre ele em Juízes 15:14?",
     options: ["Sansão", "Gideão", "Eli", "Samuel"],
     correctAnswer: "Sansão",
     explanation:
@@ -305,7 +305,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     id: 71,
     topics: ["antigo-testamento"],
     journey: 2,
-    question: "Qual rei teve sua vida prolongada depois de orar?",
+    question: "Qual rei recebeu, após orar, a mensagem de que teria mais quinze anos de vida em 2 Reis 20?",
     options: ["Ezequias", "Acabe", "Manassés", "Jeroboão"],
     correctAnswer: "Ezequias",
     explanation:
@@ -320,7 +320,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     options: ["Sadraque, Mesaque e Abede-Nego", "Eldade, Medade e Urias", "Nadabe, Abiú e Eleazar", "Hofni, Fineias e Eli"],
     correctAnswer: "Sadraque, Mesaque e Abede-Nego",
     explanation:
-      "Sadraque, Mesaque e Abede-Nego recusam adorar a estátua, mesmo diante da ameaça do rei. O trecho registra seus nomes e sua entrada na fornalha, distinguindo-os de Daniel. Na edição do leitor, Abede-Nego aparece com a grafia Abednego; é a mesma personagem.",
+      "Sadraque, Mesaque e Abede-Nego recusam adorar a estátua, mesmo diante da ameaça do rei. O trecho registra seus nomes e sua entrada na fornalha, distinguindo-os de Daniel. Na versão exibida pelo site, Abede-Nego aparece com a grafia Abednego; é a mesma personagem.",
     reference: "Daniel 3:16-23",
   },
   {
@@ -547,7 +547,7 @@ export const quizQuestionExpansions: QuizQuestion[] = [
     id: 93,
     topics: ["personagens"],
     journey: 2,
-    question: "Em Daniel 2, quem explicou ao rei Nabucodonosor o mistério de seu sonho?",
+    question: "Em Daniel 2:26-30, quem atribuiu a Deus a revelação do mistério do sonho do rei?",
     options: ["Daniel", "Ezequiel", "Esdras", "Neemias"],
     correctAnswer: "Daniel",
     explanation:
@@ -652,12 +652,12 @@ export const quizQuestionExpansions: QuizQuestion[] = [
   {
     id: 103,
     topics: ["mulheres-da-biblia"],
-    question: "Qual irmã de Moisés acompanhou de longe o cesto colocado no rio?",
+    question: "Qual irmã de Moisés acompanhou de longe o cesto colocado entre os juncos à margem do rio?",
     options: ["Joquebede", "Zípora", "Miriã", "Hulda"],
     correctAnswer: "Miriã",
     explanation:
       "Êxodo 2 descreve a irmã de Moisés observando de longe e oferecendo à filha do faraó chamar uma mulher hebreia para amamentar o menino. Nessa cena, ela não é nomeada. Números 26:59 identifica Miriã como irmã de Moisés e Arão, fornecendo o nome usado na resposta.",
-    reference: "Êxodo 2:4-9; Números 26:59",
+    reference: "Êxodo 2:3-9; Números 26:59",
   },
   {
     id: 104,

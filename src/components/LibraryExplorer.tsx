@@ -43,28 +43,26 @@ export function LibraryExplorer({ items }: LibraryExplorerProps) {
   }, [audience, items, query, type]);
 
   return (
-    <section className="bg-white py-14 sm:py-20" aria-labelledby="acervo-title">
+    <section className="bg-white py-6 sm:py-8" aria-labelledby="acervo-title">
       <div className="container-site">
-        <div className="grid gap-8 border-b border-[var(--border)] pb-9 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
           <div>
-            <span className="eyebrow">Pesquise o acervo</span>
-            <h2 id="acervo-title" className="section-title">Encontre um recurso para o seu momento.</h2>
+            <h2 id="acervo-title" className="font-serif text-2xl text-[var(--navy)]">Explore o acervo</h2>
           </div>
-          <p className="max-w-md leading-7 text-[var(--muted)]">
-            {items.length} recursos entre artigos, guias, jogos, dinâmicas,
-            quizzes e materiais para imprimir.
+          <p className="text-sm leading-6 text-[var(--muted)]">
+            {items.length} recursos gratuitos
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] p-5 md:grid-cols-[1fr_13rem_13rem]">
-          <label className="grid gap-2 text-sm font-bold text-[var(--navy)]">
+        <div className="mt-4 grid grid-cols-2 gap-4 border-y border-[var(--border)] py-4 md:grid-cols-[minmax(0,1fr)_13rem_13rem]">
+          <label className="col-span-2 grid min-w-0 gap-2 text-sm font-bold text-[var(--navy)] md:col-span-1">
             Buscar por palavra
             <input
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Ex.: jovens, Marcos, acolhimento"
-              className="min-h-12 rounded-md border border-[var(--border)] bg-white px-4 font-normal text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--gold)]"
+              className="min-h-12 min-w-0 rounded-md border border-[var(--border)] bg-white px-4 font-normal text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy)]"
             />
           </label>
           <label className="grid gap-2 text-sm font-bold text-[var(--navy)]">
@@ -72,7 +70,7 @@ export function LibraryExplorer({ items }: LibraryExplorerProps) {
             <select
               value={type}
               onChange={(event) => setType(event.target.value)}
-              className="min-h-12 rounded-md border border-[var(--border)] bg-white px-4 font-normal text-[var(--foreground)] outline-none focus:border-[var(--gold)]"
+              className="min-h-12 min-w-0 rounded-md border border-[var(--border)] bg-white px-3 font-normal text-[var(--foreground)] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy)]"
             >
               {types.map((item) => <option key={item}>{item}</option>)}
             </select>
@@ -82,14 +80,14 @@ export function LibraryExplorer({ items }: LibraryExplorerProps) {
             <select
               value={audience}
               onChange={(event) => setAudience(event.target.value)}
-              className="min-h-12 rounded-md border border-[var(--border)] bg-white px-4 font-normal text-[var(--foreground)] outline-none focus:border-[var(--gold)]"
+              className="min-h-12 min-w-0 rounded-md border border-[var(--border)] bg-white px-3 font-normal text-[var(--foreground)] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy)]"
             >
               {audiences.map((item) => <option key={item}>{item}</option>)}
             </select>
           </label>
         </div>
 
-        <p className="mt-7 text-sm font-bold text-[var(--muted)]" aria-live="polite">
+        <p className="mt-4 text-sm font-bold text-[var(--muted)]" aria-live="polite" aria-atomic="true">
           {visibleItems.length} {visibleItems.length === 1 ? "resultado" : "resultados"}
         </p>
 

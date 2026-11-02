@@ -143,11 +143,11 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: 12,
     topics: ["geral"],
-    question: "Quem escreveu muitas cartas presentes no Novo Testamento?",
+    question: "Quem se apresenta como servo de Jesus Cristo e chamado para ser apóstolo em Romanos 1:1?",
     options: ["Paulo", "Nicodemos", "Zaqueu", "Timóteo"],
     correctAnswer: "Paulo",
     explanation:
-      "Paulo se identifica na abertura de cartas como Romanos e 1 Coríntios, dirigidas a comunidades cristãs. Romanos 1:1-7 apresenta seu nome e os destinatários em Roma. Isso não significa que todas as cartas do Novo Testamento sejam de Paulo; há outros autores e destinatários.",
+      "Romanos começa com o nome Paulo, seguido de sua identificação como servo de Jesus Cristo e chamado para ser apóstolo. O versículo 7 indica os destinatários em Roma. A resposta pode ser conferida nessa abertura, sem calcular quantas cartas cada pessoa escreveu nem atribuir a Paulo todas as cartas do Novo Testamento.",
     reference: "Romanos 1:1-7",
   },
   {
@@ -163,11 +163,11 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: 14,
     topics: ["antigo-testamento"],
-    question: "Quem foi vendido pelos irmãos e tornou-se governador no Egito?",
+    question: "Quem foi levado ao Egito após ser vendido e mais tarde recebeu de Faraó autoridade sobre o país?",
     options: ["José", "Benjamim", "Isaque", "Calebe"],
     correctAnswer: "José",
     explanation:
-      "Gênesis 37 registra a venda de José e sua ida ao Egito. Anos depois, em Gênesis 41, o faraó o coloca sobre a administração do país, mantendo apenas o trono acima dele. As duas referências mostram etapas diferentes de sua história; a nomeação não acontece imediatamente após a venda.",
+      "Gênesis 37:26-28 apresenta a proposta de Judá, a concordância dos irmãos, a venda e a ida de José ao Egito. Em Gênesis 41:39-43, Faraó lhe confia autoridade sobre o país, mantendo o trono acima dele. A pergunta liga esses dois momentos pelo nome de José, sem depender de identificar o sujeito de cada ação na negociação nem sugerir que sua nomeação ocorreu logo após a venda.",
     reference: "Gênesis 37:26-28; Gênesis 41:39-43",
   },
   {
@@ -283,7 +283,7 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: 25,
     topics: ["geral"],
-    question: "Qual livro é conhecido por reunir muitos ensinamentos práticos de sabedoria?",
+    question: "Qual livro apresenta conhecer a sabedoria e a instrução entre seus objetivos na abertura?",
     options: ["Provérbios", "Levítico", "Atos", "Ezequiel"],
     correctAnswer: "Provérbios",
     explanation:
@@ -323,11 +323,11 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: 29,
     topics: ["antigo-testamento"],
-    question: "Com quantos homens Gideão enfrentou o exército midianita?",
+    question: "Quantos homens foram escolhidos para ficar com Gideão após a seleção junto à água em Juízes 7?",
     options: ["100", "300", "1.000", "12.000"],
     correctAnswer: "300",
     explanation:
-      "O grupo de Gideão é reduzido em etapas até restarem trezentos homens. O próprio texto explica que a redução impede Israel de atribuir a vitória apenas à sua força. Trezentos é o grupo escolhido ao final da seleção, não o número de pessoas que inicialmente se apresentaram.",
+      "Juízes 7:6 conta trezentos homens no grupo separado junto à água; no versículo 7, o Senhor indica que esses homens irão com Gideão e que os demais devem voltar. Antes disso, o grupo havia sido reduzido a dez mil. A pergunta pede o resultado dessa seleção, não o número inicial de participantes nem o de todos os envolvidos em acontecimentos posteriores.",
     reference: "Juízes 7:2-7",
   },
   {

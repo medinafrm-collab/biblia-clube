@@ -33,7 +33,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Tábuas",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Moisés recebeu a Lei e conduziu o povo no deserto.",
+        note: "Em Êxodo 31:18, Deus entrega a Moisés as duas tábuas do testemunho. As tábuas são o elemento associado a ele neste par.",
       },
       {
         id: "noah-ark",
@@ -41,7 +41,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Arca",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Noé obedeceu a Deus e preparou a arca.",
+        note: "Gênesis 6:14-22 apresenta as instruções para a arca e diz que Noé fez conforme Deus lhe ordenou.",
       },
       {
         id: "david-harp",
@@ -49,7 +49,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Harpa",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Davi é lembrado como rei, salmista e adorador.",
+        note: "Em 1 Samuel 16:23, Davi toca a harpa diante de Saul. O instrumento está ligado a essa cena, não apenas ao seu reinado.",
       },
       {
         id: "esther-crown",
@@ -57,7 +57,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Coroa",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Ester agiu com coragem para interceder por seu povo.",
+        note: "Ester 2:17 relata que o rei coloca a coroa real na cabeça de Ester e a faz rainha no lugar de Vasti.",
       },
       {
         id: "peter-keys",
@@ -65,7 +65,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Chaves",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Pedro foi chamado por Jesus e teve papel importante na igreja primitiva.",
+        note: "Em Mateus 16:19, Jesus fala a Pedro sobre as chaves do Reino dos céus. O par recorda essa imagem, sem decidir interpretações denominacionais sobre sua aplicação.",
       },
       {
         id: "jonah-fish",
@@ -73,7 +73,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Grande peixe",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "A história de Jonas fala sobre obediência, misericórdia e arrependimento.",
+        note: "Jonas 1:17 relata que um grande peixe engole Jonas. O texto não identifica uma espécie, por isso o par não usa o nome baleia.",
       },
       {
         id: "ruth-wheat",
@@ -81,7 +81,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Espigas",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Rute demonstrou lealdade e cuidado em uma história de redenção.",
+        note: "Em Rute 2:2-3, Rute vai ao campo recolher espigas atrás dos ceifeiros e chega à parte que pertence a Boaz.",
       },
       {
         id: "paul-letter",
@@ -89,7 +89,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Carta",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Paulo escreveu cartas que instruíram e fortaleceram igrejas.",
+        note: "Romanos 1:1-7 apresenta Paulo e os destinatários em Roma na abertura da carta. Carta é o objeto associado a ele neste par.",
       },
       {
         id: "joseph-tunic",
@@ -97,7 +97,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Túnica",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "A túnica recebida de seu pai aparece no início da história de José e de seus irmãos.",
+        note: "Gênesis 37:3 relata que Israel faz uma túnica para José. O par se refere a José, filho de Jacó, não a José do relato do nascimento de Jesus.",
       },
       {
         id: "joshua-trumpets",
@@ -105,7 +105,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Trombetas",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Trombetas acompanharam o povo nas voltas ao redor de Jericó sob a liderança de Josué.",
+        note: "Em Josué 6:6-9, Josué orienta os sacerdotes que levam as trombetas na marcha ao redor de Jericó. O par não indica que ele próprio tocava o instrumento.",
       },
       {
         id: "gideon-fleece",
@@ -113,7 +113,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Porção de lã",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Gideão usou uma porção de lã ao pedir confirmação antes de enfrentar os midianitas.",
+        note: "Juízes 6:36-40 descreve os pedidos de Gideão envolvendo uma porção de lã e o orvalho. O par identifica o objeto do episódio, não uma regra para tomar decisões hoje.",
       },
       {
         id: "daniel-lions",
@@ -121,7 +121,7 @@ export const memoryGameModes: MemoryGameModeConfig[] = [
         second: "Leões",
         firstKind: "Personagem",
         secondKind: "Símbolo",
-        note: "Daniel continuou orando e foi protegido quando o lançaram na cova dos leões.",
+        note: "Daniel 6:16-23 narra sua entrada na cova e a declaração de que Deus fechou a boca dos leões. O par identifica os animais dessa narrativa.",
       },
     ],
   },
