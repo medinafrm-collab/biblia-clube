@@ -13,6 +13,7 @@ import {
 } from "@/data/quizQuestions";
 import { quizTopics } from "@/data/quizTopics";
 import { trackGameEvent } from "@/lib/analytics";
+import { readAnalyticsConsent, trackGoogleAnalyticsEvent } from "@/lib/googleAnalytics";
 import {
   clearQuizProgress,
   getJourneyKey,
@@ -154,6 +155,29 @@ export function Quiz({
       (option) =>
         !completedJourneys[getJourneyKey(option.topic, option.journey)],
     ) ?? orderedRecommendations[0];
+  const recommendationCard = useRef<HTMLDivElement>(null);
+  const recommendationSeen = useRef(false);
+  const recommendationTarget = useRef<string | null>(null);
+  const suggestedTopic = recommendedJourney?.topic;
+  const suggestedJourney = recommendedJourney?.journey;
+
+  useEffect(() => {
+    const card = recommendationCard.current;
+    if (!isFinished || !card || !suggestedTopic || !suggestedJourney) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting || recommendationSeen.current ||
+          readAnalyticsConsent() !== "granted") return;
+      recommendationSeen.current = true;
+      trackGoogleAnalyticsEvent("quiz_recommendation_view", {
+        topic: suggestedTopic,
+        journey: suggestedJourney,
+      });
+      observer.disconnect();
+    });
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, [isFinished, suggestedTopic, suggestedJourney]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -177,6 +201,9 @@ export function Quiz({
               getQuestionJourney(question) === journey,
           );
           if (journeyExists) {
+            if (new URLSearchParams(window.location.search).get("origem") === "recomendacao") {
+              recommendationTarget.current = getJourneyKey(initialTopic, journey);
+            }
             setSelectedJourney(journey);
             window.history.replaceState(null, "", `${window.location.pathname}#quiz`);
             window.requestAnimationFrame(() =>
@@ -228,11 +255,20 @@ export function Quiz({
     if (selectedAnswer !== null) return;
 
     if (currentIndex === 0 && selectedAnswer === null) {
+      const fromRecommendation =
+        recommendationTarget.current === getJourneyKey(selectedTopic, selectedJourney);
+      recommendationTarget.current = null;
       trackGameEvent("quiz", "start", {
         topic: selectedTopic,
         journey: selectedJourney,
         questions: activeQuestions.length,
       });
+      if (fromRecommendation) {
+        trackGoogleAnalyticsEvent("quiz_recommendation_start", {
+          topic: selectedTopic,
+          journey: selectedJourney,
+        });
+      }
     }
 
     const nextScore =
@@ -256,6 +292,7 @@ export function Quiz({
     if (selectedAnswer === null) return;
     window.requestAnimationFrame(() => quizCardRef.current?.querySelector<HTMLElement>("h3")?.focus());
     if (currentIndex === activeQuestions.length - 1) {
+      recommendationSeen.current = false;
       trackGameEvent("quiz", "finish", {
         topic: selectedTopic,
         journey: selectedJourney,
@@ -301,6 +338,7 @@ export function Quiz({
   }
 
   function changeTopic(topic: QuizTopicId) {
+    recommendationTarget.current = null;
     trackGameEvent("quiz", "topic_select", {
       topic,
     });
@@ -313,6 +351,7 @@ export function Quiz({
   }
 
   function changeJourney(journey: QuizJourney) {
+    recommendationTarget.current = null;
     trackGameEvent("quiz", "journey_select", {
       topic: selectedTopic,
       journey,
@@ -336,6 +375,7 @@ export function Quiz({
       return;
     }
 
+    recommendationTarget.current = null;
     if (savedProgress.topic !== initialTopic) {
       router.push(`${savedProgress.topicPath}?continuar=1#quiz`);
       return;
@@ -366,10 +406,19 @@ export function Quiz({
   function startRecommendedJourney() {
     if (!recommendedJourney) return;
 
+    const { topic, journey } = recommendedJourney;
+    const parameters = { topic, journey };
+    const canTrack = readAnalyticsConsent() === "granted";
+    if (canTrack && !recommendationSeen.current) {
+      recommendationSeen.current = true;
+      trackGoogleAnalyticsEvent("quiz_recommendation_view", parameters);
+    }
+    trackGoogleAnalyticsEvent("quiz_recommendation_click", parameters);
+    recommendationTarget.current = canTrack ? getJourneyKey(topic, journey) : null;
     clearQuizProgress();
     if (recommendedJourney.topic !== selectedTopic) {
       router.push(
-        `${recommendedJourney.topicPath}?jornada=${recommendedJourney.journey}#quiz`,
+        `${recommendedJourney.topicPath}?jornada=${journey}${canTrack ? "&origem=recomendacao" : ""}#quiz`,
       );
       return;
     }
@@ -665,7 +714,7 @@ export function Quiz({
                 {getResultMessage(percentage)}
               </p>
               {recommendedJourney && (
-                <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6">
+                <div ref={recommendationCard} className="mx-auto mt-8 max-w-xl rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6">
                   <div>
                     <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--olive)]">
                       Próxima jornada recomendada

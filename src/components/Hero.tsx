@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HomeQuizLink } from "@/components/HomeQuizLink";
 import { completePhraseQuestions } from "@/data/completePhraseQuestions";
 import { quizQuestions } from "@/data/quizQuestions";
 import { quizTopics } from "@/data/quizTopics";
@@ -48,10 +49,7 @@ export function Hero() {
             jovens e todos que desejam aprender mais sobre a Palavra de Deus.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link href="/quiz-biblico" className="button-primary">
-              Jogar quiz grátis
-              <span aria-hidden="true">→</span>
-            </Link>
+            <HomeQuizLink />
             <Link href="/biblioteca" className="button-secondary">
               Conhecer a biblioteca
             </Link>

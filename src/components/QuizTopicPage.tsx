@@ -82,9 +82,19 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
                   {topic.title}
                 </h1>
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">{topic.description}</p>
-                <a href="#quiz" className="button-primary mt-7">
-                  Começar desafio <span aria-hidden="true">↓</span>
-                </a>
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <a href="#quiz" className="button-primary">
+                    Começar desafio <span aria-hidden="true">↓</span>
+                  </a>
+                  {(topic.id === "geral" || topic.id === "antigo-testamento") && (
+                    <a
+                      href="#exemplos-comentados"
+                      className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-[var(--olive-dark)] underline underline-offset-4 hover:text-[var(--navy)] focus-visible:outline-2 focus-visible:outline-offset-4"
+                    >
+                      Ver exemplos comentados
+                    </a>
+                  )}
+                </div>
               </div>
               <aside className="rounded-lg bg-[var(--navy)] p-7 text-white sm:p-8">
                 <div className="flex flex-wrap items-start justify-between gap-5">
@@ -189,7 +199,7 @@ export function QuizTopicPage({ topic }: QuizTopicPageProps) {
               </div>
             </section>
 
-            <section className="mt-16 border-t border-[var(--border)] pt-14" aria-labelledby="sample-questions-title">
+            <section id="exemplos-comentados" className="mt-16 scroll-mt-24 border-t border-[var(--border)] pt-14" aria-labelledby="sample-questions-title">
               <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
                 <div>
                   <span className="eyebrow">Exemplos comentados</span>
