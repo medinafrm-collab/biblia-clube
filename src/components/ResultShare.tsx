@@ -15,6 +15,7 @@ type ResultShareProps = {
   text: string;
   path: string;
   eventProperties?: GameEventProperties;
+  instagramInvite?: boolean;
 };
 
 async function copyToClipboard(value: string) {
@@ -41,6 +42,7 @@ export function ResultShare({
   text,
   path,
   eventProperties = {},
+  instagramInvite = false,
 }: ResultShareProps) {
   const [status, setStatus] = useState<ShareStatus>("idle");
   const [isSharing, setIsSharing] = useState(false);
@@ -81,12 +83,14 @@ export function ResultShare({
   }
 
   return (
-    <div className="mx-auto mt-8 max-w-xl border-y border-[var(--border)] py-6 text-center">
-      <strong className="font-serif text-xl text-[var(--navy)]">
+    <div className={instagramInvite ? "mx-auto mt-5 max-w-xl border-t border-[var(--border)] pt-4 text-center" : "mx-auto mt-8 max-w-xl border-y border-[var(--border)] py-6 text-center"}>
+      {!instagramInvite && <strong className="font-serif text-xl text-[var(--navy)]">
         Compartilhe sua conquista
-      </strong>
+      </strong>}
       <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-        Convide alguém para tentar o mesmo desafio no Bíblia Clube.
+        {instagramInvite ? (
+          <>Marque o <strong>@bibliaclube.br</strong> com seus resultados nos stories. Podemos repostar lá!</>
+        ) : "Convide alguém para tentar o mesmo desafio no Bíblia Clube."}
       </p>
       <button
         type="button"

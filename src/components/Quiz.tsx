@@ -731,7 +731,7 @@ export function Quiz({
                   <button
                     type="button"
                     onClick={startRecommendedJourney}
-                    className="button-primary mt-4 shrink-0 sm:mt-0"
+                    className="button-primary mt-4 w-full shrink-0 sm:mt-0 sm:w-auto"
                   >
                     Começar
                     <span aria-hidden="true">→</span>
@@ -740,6 +740,7 @@ export function Quiz({
               )}
               <ResultShare
                 game="quiz"
+                instagramInvite
                 title="Meu resultado no Quiz Bíblico"
                 text={`Concluí uma jornada do tema ${selectedTopicLabel} no Bíblia Clube e acertei ${score} de ${activeQuestions.length} perguntas (${percentage}%). Que tal tentar também?`}
                 path={`${selectedTopicDetails?.path ?? "/quiz-biblico"}#quiz`}

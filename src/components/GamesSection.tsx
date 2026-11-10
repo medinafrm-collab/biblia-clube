@@ -71,8 +71,8 @@ const games: Array<{
     description: "Forme equipes, acompanhe os pontos e jogue no mesmo ambiente.",
     href: "/modo-grupo",
     action: "Jogar em grupo",
-    image: "/images/editorial/grupo-modo-clean.webp",
-    imageAlt: "Grupo participando de uma atividade com Bíblias e laptop",
+    image: "/images/games/modo-grupo-placar.webp",
+    imageAlt: "Placar ilustrativo de duas equipes em um laptop, ao lado de uma Bíblia aberta",
   },
 ];
 
