@@ -751,7 +751,7 @@ export function Quiz({
                   total: activeQuestions.length,
                 }}
               />
-              <FeedbackPrompt game="quiz" label="quiz_result" />
+              <FeedbackPrompt game="quiz" label="quiz_result" topic={{ id: selectedTopic, name: selectedTopicLabel, journey: selectedJourney }} />
               <button
                 type="button"
                 onClick={restartQuiz}
